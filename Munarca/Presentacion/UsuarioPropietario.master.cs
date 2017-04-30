@@ -32,6 +32,7 @@ namespace Presentacion
         protected void bntCerrarSession_Click(object sender, EventArgs e)
         {
             Session.Clear();
+            Application.Clear();            
             Response.Redirect("Index.aspx");
         }
     }

@@ -16,7 +16,7 @@ namespace Negocio
         public int fk_id_Negocio { get; set; }
         public int fk_id_usuario { get; set; }
         #endregion
-        csCalificacion(int id_calificacion, int calificaion, string fecha, string hora, int fk_id_Negocio, int fk_id_usuario) 
+        public csCalificacion(int id_calificacion, int calificaion, string fecha, string hora, int fk_id_Negocio, int fk_id_usuario) 
         {
             this.calificaion = calificaion;
             this.fecha = fecha;

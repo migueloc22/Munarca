@@ -15,9 +15,11 @@ namespace Negocio
         public string imagen { get; set; }
         public string fecha { get; set; }
         public string hora { get; set; }
+        public int valor { get; set; }
         public int fk_id_negocio { get; set; }
+
         #endregion
-        public csServicio( int id_servicio,string nombre,string descripcion,string imagen,string fecha,string hora,int fk_id_negocio) 
+        public csServicio(int id_servicio, string nombre, string descripcion, string imagen, string fecha, string hora, int valor, int fk_id_negocio) 
         {
             this.descripcion = descripcion;
             this.fecha = fecha;
@@ -26,6 +28,7 @@ namespace Negocio
             this.id_servicio = id_servicio;
             this.imagen = imagen;
             this.nombre = nombre;
+            this.valor = valor;
         }
 
     }
