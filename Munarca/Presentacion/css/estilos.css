@@ -1,7 +1,11 @@
-﻿body {
+﻿*{
+    width: auto;
+    height: auto;
+}
+body {
     background:  url("../img/tecnico.jpg") fixed center center no-repeat;
     filter:alpha(opacity=50);
-    height:auto;
+    
    
     
 }

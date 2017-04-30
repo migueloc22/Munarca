@@ -1,7 +1,6 @@
-﻿{
-    width: *;
-    height: *;
-}
+﻿*{
+    width: auto;
+    }
 
 .fondo {
     background-color: black;
@@ -31,10 +30,8 @@
 }
 
 #cabecera {
-    width: 1170px;
-    margin-bottom: 5px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    margin-bottom: 5px;   
     background-color: #313131;
     color: white;
     height: 20%;
@@ -42,7 +39,7 @@
 
     #cabecera div {
         background-color: #cc0909;
-        margin: 0% 10% 0% 10%;
+        margin: 0 150px 0 240px;
         height: 30%;
     }
 
@@ -111,3 +108,4 @@
             background-color: #313131; /* Add a green color to the "active/current" link */
             color: white;
         }
+
