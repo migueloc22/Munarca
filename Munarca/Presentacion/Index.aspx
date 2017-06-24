@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        <gmaps:GMap runat="server"></gmaps:GMap>
     </div>
     </form>
 </body>
