@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Datos
+namespace BaseDatos
 {
-    class Conexion
+    public class Class1
     {
     }
 }
