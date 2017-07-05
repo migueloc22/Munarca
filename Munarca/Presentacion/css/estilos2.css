@@ -1,0 +1,103 @@
+﻿{
+    width: *;
+    height: *;
+}
+
+.fondo {
+    background-color: black;
+    filter: alpha(opacity=90);
+    opacity: 0.8;
+    z-index: 10000;
+}
+
+.panelModal {
+    display: none;
+    background-color: white;
+    width: auto;
+    height: auto;
+}
+
+#contenedor {
+    width: 945px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 1px;
+    border: none;
+    border-radius: 0.5px;
+    clear: both;
+    margin-bottom: 5px;
+}
+
+#cabecera {
+    width: 1170px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #313131;
+    color: white;
+    height: 20%;
+}
+
+    #cabecera div {
+        background-color: #cc0909;
+        margin: 0% 10% 0% 10%;
+        height: 30%;
+    }
+
+#menu {
+    height: 10%;
+    background-color: #C8CACC;
+}
+
+#izquierda {
+    height: 50%;
+    background-color: #BDD2EF;
+    float: left;
+    width: 50%;
+}
+
+#derecha {
+    height: 50%;
+    background-color: #DAF7E2;
+    float: right;
+    width: 50%;
+}
+
+#pie {
+    width: 945px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20%;
+    background-color: #313131;
+    clear: both;
+}
+
+.logo {
+    width: 300px;
+    height: auto;
+}
+
+.vertical-menu {
+    float: left;
+    width: 200px; /* Set a width if you like */
+}
+
+    .vertical-menu a {
+        background-color: #f44336; /* Grey background color */
+        color: white; /* Black text color */
+        display: block; /* Make the links appear below each other */
+        padding: 12px; /* Add some padding */
+        text-decoration: none; /* Remove underline from links */
+    }
+
+        .vertical-menu a:hover {
+            background-color: #313131; /* Dark grey background on mouse-over */
+            color:white;
+        }
+
+        .vertical-menu a.active {
+            background-color: #313131; /* Add a green color to the "active/current" link */
+            color: white;
+        }
