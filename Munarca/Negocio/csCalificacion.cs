@@ -8,5 +8,6 @@ namespace Negocio
 {
     public class csCalificacion
     {
+        public int id { get; set; }
     }
 }
