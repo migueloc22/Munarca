@@ -1,0 +1,46 @@
+﻿body {
+    background:  url("../img/tecnico.jpg") fixed center center no-repeat;
+    filter:alpha(opacity=50);
+    height:auto;
+   
+    
+}
+#logo{
+    position: relative;
+    width: 500px;
+    height: auto;
+    top: 250px;
+    left: 10%;
+    
+}
+
+#cajaLogin {
+    position: relative;
+    background-color: white;
+    width: 300px;
+    height: auto;
+    position: absolute;
+    top: 150px;
+    right: 15%;
+    padding: 10px;
+    border-radius: 15px ;
+    box-shadow: 10px 10px 5px #888888;
+     opacity: 0.95;
+}
+#pie{
+       
+    height:100%;
+    margin: 40% 0 0 0; 
+    
+}
+#sudpie1 {
+    background-color:#920000;     
+    width:100%;
+    height:25px;
+}
+#sudpie2 {
+    background-color:#313131;
+    width:100%;
+    height:85px;
+}
+
