@@ -8,6 +8,7 @@
     <title>Munarca</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/estilos.css" rel="stylesheet" />
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -20,24 +21,24 @@
                 <h2><span class="glyphicon glyphicon-log-in"></span>Login</h2>
                 </center>
                 <div class="btn-group btn-group-justified">
-                    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn .btn-link btn-lg active" ForeColor="Black"><span class="glyphicon glyphicon-user"></span> Suscriptor </asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink2" runat="server" CssClass="btn .btn-link btn-lg" ForeColor="Black"><span class="glyphicon glyphicon-flag"></span> Propietario </asp:HyperLink>
+                    <asp:LinkButton ID="btnAtivador1" runat="server" ForeColor="White" OnClick="btnAtivador1_Click" CssClass="btn btn-danger btn-lg"><span class="glyphicon glyphicon-user"></span> Suscriptor </asp:LinkButton>
+                    <asp:LinkButton ID="btnAtivador2" runat="server" ForeColor="Gray" OnClick="btnAtivador2_Click" CssClass="btn btn-link btn-lg"><span class="glyphicon glyphicon-flag"></span> Propietario </asp:LinkButton>
                 </div>
                 <br />
                 <div class="form-group">
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control form-group-lg" placeholder="email" TextMode="Email"></asp:TextBox>
+                    <asp:TextBox ID="txtEMail" runat="server" CssClass="form-control form-group-lg" placeholder="email" required="" TextMode="Email" MaxLength="20"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control form-group-lg" placeholder="Contraseña" TextMode="Password"></asp:TextBox>
-                </div>
-                 <div class="form-group">
-                   
-                     <asp:HyperLink ID="HyperLink3" runat="server">Registrarse</asp:HyperLink>
-                   
+                    <asp:TextBox ID="txtPass" runat="server" CssClass="form-control form-group-lg" required="" placeholder="Contraseña" TextMode="Password" MaxLength="15"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <asp:Button ID="Button1" runat="server" Text="Entrar" CssClass="btn btn-danger" />
-                    <input type="reset" class="btn btn-default"/>
+
+                    <asp:HyperLink ID="HyperLink3" runat="server">Registrarse</asp:HyperLink>
+
+                </div>
+                <div class="form-group">
+                    <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-danger" OnClick="btnEntrar_Click"  />
+                    <input type="reset" class="btn btn-default" />
                 </div>
             </div>
         </form>
@@ -48,3 +49,4 @@
     </div>
 </body>
 </html>
+

@@ -12,6 +12,7 @@ namespace Negocio
         public int id_usuario { get; set; }
         public string nombre1 { get; set; }
         public string nombre2 { get; set; }
+        public string contraseña { get; set; }
         public string apellido1 { get; set; }
         public string apellido2 { get; set; }
         public string correo { get; set; }
@@ -23,7 +24,7 @@ namespace Negocio
         public int fk_id_tipo_doc { get; set; }
         public int fk_id_ciudad { get; set; }
         #endregion
-         csUsuario( int id_usuario,string nombre1,string nombre2 ,string apellido1 ,string apellido2 ,  string correo, string foto , string direccion ,        string fecha_nacimiento , int telefono ,int num_documento,int fk_id_tipo_doc ,int fk_id_ciudad ) 
+         public csUsuario( int id_usuario,string nombre1,string nombre2 ,string apellido1 ,string apellido2 ,  string correo, string foto , string direccion , string fecha_nacimiento , int telefono ,int num_documento,int fk_id_tipo_doc ,int fk_id_ciudad,string contraseña ) 
          {
              this.apellido1 = apellido1;
              this.apellido2 = apellido2;
@@ -37,7 +38,8 @@ namespace Negocio
              this.nombre1 = nombre1;
              this.nombre2 = nombre2;
              this.num_documento = num_documento;
-             this.telefono = telefono;            
+             this.telefono = telefono;
+             this.contraseña = contraseña;
          }
     }
 }

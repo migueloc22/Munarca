@@ -1,5 +1,18 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="UsuarioSuscriptor.master.cs" Inherits="Presentacion.UsuarioSuscriptor" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="Menu">
+        <div class="vertical-menu">
+            <asp:HyperLink ID="LnkHome" runat="server" ><span class="glyphicon glyphicon-home btn-lg"></span></asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" ><span class="glyphicon  glyphicon-map-marker btn-lg"></span></asp:HyperLink>
+            <asp:HyperLink ID="HyperLink3" runat="server" ><span class="glyphicon glyphicon-cog btn-lg"></span></asp:HyperLink>
+            <asp:LinkButton ID="btnCerrarSession" runat="server" OnClick="btnCerrarSession_Click"  ><span class="glyphicon glyphicon-off btn-lg"></span></asp:LinkButton>
+        </div>
+    </div>
+    <div style="margin-left: 2%;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
 </asp:Content>
