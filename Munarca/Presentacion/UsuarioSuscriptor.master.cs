@@ -11,7 +11,31 @@ namespace Presentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuario"] != null && Session["TipoUsuario"] != null)
+            {
+                switch (Session["TipoUsuario"].ToString())
+                {
+                    case "1":
+                        break;
+                    case "2":
+                        Response.Redirect("IndexPropietario.aspx"); ;
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
+
+        protected void btnCerrarSession_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Index.aspx");
+        }
+
+        //protected void LinkButton1_Click(object sender, EventArgs e)
+        //{
+        //    Session.Clear();
+        //    Response.Redirect("Index.aspx");
+        //}
     }
 }
