@@ -9,17 +9,19 @@ namespace Negocio
     public class csUbicacion
     {
         #region Propiedades
-        public int id_Ubicaion { get; set; }
+        public int id_Ubicacion { get; set; }
         public string laptitup { get; set; }
         public string longitup { get; set; }
+        public string ubicacion { get; set; }
         public int fk_id_negocio { get; set; }
         #endregion
-        public csUbicacion(int id_Ubicaion, string laptitup, string longitup, int fk_id_negocio)
+        public csUbicacion(int id_Ubicacion, string laptitup, string longitup, int fk_id_negocio, string ubicacion)
         {
             this.fk_id_negocio = fk_id_negocio;
-            this.id_Ubicaion = id_Ubicaion;
+            this.id_Ubicacion = id_Ubicacion;
             this.laptitup = laptitup;
             this.longitup = longitup;
+            this.ubicacion = ubicacion;
         }
     }
 }
