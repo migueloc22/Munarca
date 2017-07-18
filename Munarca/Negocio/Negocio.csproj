@@ -50,6 +50,7 @@
     <Compile Include="csUsuario.cs" />
     <Compile Include="csVisita.cs" />
     <Compile Include="LogicaCalificacion.cs" />
+    <Compile Include="LogicaCategoria.cs" />
     <Compile Include="LogicaCiudad.cs" />
     <Compile Include="LogicaComentario.cs" />
     <Compile Include="LogicaDepartamento.cs" />

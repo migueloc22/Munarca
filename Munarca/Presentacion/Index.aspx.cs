@@ -34,8 +34,10 @@ namespace Presentacion
             }
             else
             {
+                
                 Session.Clear();
             }
+            
         }
         protected void btnAtivador1_Click(object sender, EventArgs e)
         {
