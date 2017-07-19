@@ -14,7 +14,8 @@ namespace Presentacion
     {
         List<csUbicacion> listarUbicacion;
         csUbicacion Ubicacion;
-
+        csUsuario Usuario;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,10 +24,10 @@ namespace Presentacion
             {
                 LogicaCategoria lgCategoria;
                 lgCategoria = new LogicaCategoria();
-                dpDownCategoria.DataSource = lgCategoria.Listar();
-                dpDownCategoria.DataTextField = "categoria";
-                dpDownCategoria.DataValueField = "id_categoria";
-                dpDownCategoria.DataBind();
+                dpCategoria.DataSource = lgCategoria.Listar();
+                dpCategoria.DataTextField = "categoria";
+                dpCategoria.DataValueField = "id_categoria";
+                dpCategoria.DataBind();
                 gvUbicacion.DataSource = this.ObtenerNuevaLista();
                 gvUbicacion.DataBind();
             }
@@ -80,8 +81,9 @@ namespace Presentacion
 
         protected void btnAgregarNegocio_Click(object sender, EventArgs e)
         {
+
             LogicaNegocio lgNegocio = new LogicaNegocio();
-            csNegocio negocio = new csNegocio(0, "negocio", "negocio", 21213, 1, 2);
+            csNegocio negocio = new csNegocio(0, txtNombre.Text, txtDesccrip.Text, int.Parse(txtTelefono.Text), 1, int.Parse(dpCategoria.SelectedValue.ToString()));
             Response.Write( lgNegocio.CrearNegocio(negocio));
         }
 

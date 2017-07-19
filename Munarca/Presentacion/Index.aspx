@@ -10,6 +10,14 @@
     <link href="css/estilos.css" rel="stylesheet" />
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <style>
+        .fondo {
+            background-color: black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+            z-index: 10000;
+        }
+    </style>
 </head>
 <body>
     <div id="encabezaso"></div>
@@ -35,12 +43,73 @@
 
                     <asp:HyperLink ID="HyperLink3" runat="server">Registrarse</asp:HyperLink>
 
+                    <ajaxToolkit:ModalPopupExtender ID="HyperLink3_ModalPopupExtender" runat="server" BehaviorID="HyperLink3_ModalPopupExtender" TargetControlID="HyperLink3" PopupControlID="PanelRegistro" CancelControlID="exit" BackgroundCssClass="fondo">
+                    </ajaxToolkit:ModalPopupExtender>
+
                 </div>
                 <div class="form-group">
-                    <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-danger" OnClick="btnEntrar_Click"  />
+                    <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-danger" OnClick="btnEntrar_Click" />
                     <input type="reset" class="btn btn-default" />
                 </div>
             </div>
+            <%-- Inicio Modal --%>
+            <asp:Panel ID="PanelRegistro" runat="server" Style="display: none; background-color: white; width: 720px; height: auto;">
+                <div class="modal-header">
+                    <button id="exit" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Registro de Usuario</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                       
+                        <asp:TextBox ID="txtNom1" runat="server" CssClass="form-control"  placeholder="Primer Nombre"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtNom2" runat="server" CssClass="form-control"  placeholder="Segundo Nombre"></asp:TextBox>
+                    </div>
+
+                     <div class="form-group">
+                        <asp:TextBox ID="txtApe1" runat="server" CssClass="form-control"  placeholder="Primer Apellido"></asp:TextBox>
+                    </div>
+
+                    <div class="form-group">
+                        <asp:TextBox ID="txtApe2" runat="server" CssClass="form-control"  placeholder="Segundo Apellido"></asp:TextBox>
+                    </div>
+
+                    <div class="form-group">
+                        <asp:DropDownList ID="dlTipoDoc" runat="server" CssClass="form-control" ></asp:DropDownList>
+                    </div>
+
+                   <div class="form-group">
+                        <asp:TextBox ID="txtNumDoc" runat="server" CssClass="form-control"  placeholder="Numero Documento"></asp:TextBox>
+                    </div>
+                    
+                   <div class="form-group">
+                        <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"  placeholder="Correo"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtDir" runat="server" CssClass="form-control"  placeholder="Direccion"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtFechaNac" runat="server" TextMode="Date" CssClass="form-control" ></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"  placeholder="Telefono"></asp:TextBox>
+                    </div>
+
+                    <div class="form-group">
+                        <asp:DropDownList ID="dlCiudad" runat="server" CssClass="form-control" ></asp:DropDownList>
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="btnRegistro" runat="server" Text="Agregar" CssClass="btn btn-primary btn-block" CausesValidation="False" />
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+                </div>
+
+            </asp:Panel>
+            <%-- Panel Modal --%>
         </form>
     </div>
     <div id="pie">
