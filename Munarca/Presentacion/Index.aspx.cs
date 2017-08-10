@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
 using Negocio;
+using System.IO;
 
 namespace Presentacion
 {
@@ -16,28 +17,60 @@ namespace Presentacion
         csUsuario Usuario;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuario"] != null && Session["TipoUsuario"] != null)
+            if (!IsPostBack)
             {
-                switch (Session["TipoUsuario"].ToString())
+                if (Session["Usuario"] != null && Session["TipoUsuario"] != null)
                 {
-                    case "1":
-                        Response.Redirect("IndexSuscriptor.aspx");
-                        break;
-                    case "2":
-                        Response.Redirect("IndexPropietario.aspx"); ;
-                        break;
-                    default:
-                        break;
+                    switch (Session["TipoUsuario"].ToString())
+                    {
+                        case "1":
+                            Response.Redirect("IndexSuscriptor.aspx");
+                            break;
+                        case "2":
+                            Response.Redirect("IndexPropietario.aspx"); ;
+                            break;
+                        default:
+                            break;
+                    }
+
+
                 }
+                else
+                {
+                    LogicaTipoDocumento lgTpDoc = new LogicaTipoDocumento();
+                    dlTipoDoc.DataSource = lgTpDoc.DataTableTpDoc();
+                    dlTipoDoc.DataTextField = "tipo_doc";
+                    dlTipoDoc.DataValueField = "id_tipo_doc";
+                    dlTipoDoc.DataBind();
+                    Session.Clear();
+                    //recuperarar id
+                    //int.Parse(dlTipoDoc.SelectedValue.ToString())
 
 
+
+                    LogicaDepartamento lgDpto = new LogicaDepartamento();
+                    dlDpto.DataSource = lgDpto.DataTableDpto();
+                    dlDpto.DataTextField = "departamento";
+                    dlDpto.DataValueField = "id_departamento";
+                    dlDpto.DataBind();
+                    Session.Clear();
+
+                    LogicaTipoUsuario lgTipoUsu = new LogicaTipoUsuario();
+                    dlTipoUsuario.DataSource = lgTipoUsu.DataTableTipoUsu();
+                    dlTipoUsuario.DataTextField = "tipo";
+                    dlTipoUsuario.DataValueField = "id_tipo_usuario";
+                    dlTipoUsuario.DataBind();
+                    Session.Clear();
+                    LogicaCiudad lgCiu = new LogicaCiudad();
+                    int cod = int.Parse(dlDpto.SelectedValue.ToString());
+                    dlCiudad.DataSource = lgCiu.DataTableCiudad(cod);
+                    dlCiudad.DataTextField = "ciudad";
+                    dlCiudad.DataValueField = "id_ciudad";
+                    dlCiudad.DataBind();
+                }
             }
-            else
-            {
-                
-                Session.Clear();
-            }
-            
+
+
         }
         protected void btnAtivador1_Click(object sender, EventArgs e)
         {
@@ -112,6 +145,49 @@ namespace Presentacion
                 Response.Write("el usuario no exite");
             }
 
+
+        }
+
+
+
+        protected void dlDpto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LogicaCiudad lgCiu = new LogicaCiudad();
+            int cod = int.Parse(dlDpto.SelectedValue.ToString());
+            dlCiudad.DataSource = lgCiu.DataTableCiudad(cod);
+            dlCiudad.DataTextField = "ciudad";
+            dlCiudad.DataValueField = "id_ciudad";
+            dlCiudad.DataBind();
+            HyperLink3_ModalPopupExtender.Show();
+
+        }
+
+        protected void btnRegistro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LogicaUsuario lgusuario = new LogicaUsuario();
+                HttpFileCollection file = Request.Files;
+                for (int i = 0; i <= file.Count - 1; i++)
+                {
+
+                    HttpPostedFile postefile = file[i];
+                    String[] nombres = new String[file.Count - 1];
+                    if (postefile.ContentLength > 0)
+                    {
+
+                        postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
+                        csUsuario user = new csUsuario(0, txtNom1.Text, txtNom2.Text, txtApe1.Text, txtApe2.Text, txtCorreo.Text, postefile.FileName.ToString(), txtDir.Text, txtFechaNac.Text, int.Parse(txtTelefono.Text), int.Parse(txtNumDoc.Text), int.Parse(dlTipoDoc.SelectedValue.ToString()), int.Parse(dlCiudad.SelectedValue.ToString()), txtContraseña.Text);
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Response.Write(ex.ToString());
+            }
 
         }
     }

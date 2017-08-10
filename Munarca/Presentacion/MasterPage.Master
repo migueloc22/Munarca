@@ -8,7 +8,7 @@
     <title>Munarca</title>
     <%-- estilos --%>
     <link href="css/estilos2.css" rel="stylesheet" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+     <link href="css/bootstrap.min.css" rel="stylesheet" />    
     <%-- JavaScrip --%>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -16,7 +16,8 @@
     <script type="text/javascript" src='https://maps.google.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyDlXrVL8twvDWaQKozKt01QloVH7CV1eYk'></script>
     <script src="js/locationpicker.jquery.js"></script>
     <script src="js/jquery.MultiFile.js"></script>
-    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="js/jquery-ui.js"></script>
     
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -32,12 +33,15 @@
         </div>
     </div>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <div id="contenedor">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>        
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+        
+        <div id="pie">
+            <div></div>
+            pie
+
         </div>
-        <div id="pie">pie</div>
     </form>
 </body>
 </html>

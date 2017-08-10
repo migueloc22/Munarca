@@ -7,22 +7,20 @@ using BaseDatos;
 using System.Data.SqlClient;
 using System.Data;
 
-
 namespace Negocio
 {
-    public class LogicaDepartamento : csRespuesta
+    public class LogicaTipoUsuario : csRespuesta
     {
         SqlConnection cnn;
         SqlCommand cmd;
         SqlDataReader read;
-
-         public DataTable DataTableDpto(){
+        public DataTable DataTableTipoUsu(){
              DataTable tabla = new DataTable();
 
              cnn = Conexion.AbrirCnn();
              try
              {
-                  cmd = new SqlCommand("Select * from departamento", cnn);
+                  cmd = new SqlCommand("Select * from tipo_usuario", cnn);
                   read = cmd.ExecuteReader();
                   tabla.Load(read);
              }
@@ -35,8 +33,5 @@ namespace Negocio
              return tabla;
          }
     }
-
-
-
     }
 

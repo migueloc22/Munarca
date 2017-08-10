@@ -10,6 +10,6 @@
 namespace Presentacion {
     
     
-    public partial class ConfigPropietario {
+    public partial class ModificarNegocioPropietario {
     }
 }

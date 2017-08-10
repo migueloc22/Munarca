@@ -35,5 +35,48 @@ namespace Negocio
             finally { Conexion.CerrarCnn(cnn); }
             return retorno;
         }
+        public List<csUbicacion> ListarUbicacion(double lat, double lon)
+        {
+            csUbicacion csubicacion;
+            List<csUbicacion> lista = new List<csUbicacion>();
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                string nombreNegocio;
+                string descrcicion;
+                double longitup;
+                double lapgitup;
+                double distancia;
+                int idNegocio;
+                int idUbicacion;
+                string ubicacion;
+                //cmd = new SqlCommand("select ubicacion.id_ubicacion,ubicacion.fk_id_negocio,ubicacion.laptitud,ubicacion.longitud,ubicacion.ubicacion,negocio.nombre,negocio.descripcion  from ubicacion inner join negocio on ubicacion.fk_id_negocio=negocio.id_negocio where negocio.estado=1;", cnn);
+                cmd = new SqlCommand("select * from ubicacion inner join negocio on ubicacion.fk_id_negocio=negocio.id_negocio where negocio.estado=1;", cnn);
+
+                read = cmd.ExecuteReader();
+                while (read.Read())
+                {
+                    nombreNegocio = read["nombre"].ToString();
+                    descrcicion = read["descripcion"].ToString(); ;
+                    longitup = double.Parse(read["longitud"].ToString());
+                    lapgitup = double.Parse(read["laptitud"].ToString());
+                    idNegocio = int.Parse(read["fk_id_negocio"].ToString());
+                    idUbicacion = int.Parse(read["id_ubicacion"].ToString());
+                    ubicacion = read["ubicacion"].ToString();
+                    distancia = Math.Sqrt(Math.Pow((longitup + lon), 2) + Math.Pow((lapgitup + lat), 2));
+                    csubicacion = new csUbicacion(idUbicacion, lapgitup.ToString(), longitup.ToString(), idNegocio, distancia, nombreNegocio, descrcicion, ubicacion);
+                    lista.Add(csubicacion);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+                rta = ex.ToString();
+            }
+            finally { Conexion.CerrarCnn(cnn); }
+            return lista;
+
+        }
+
     }
 }

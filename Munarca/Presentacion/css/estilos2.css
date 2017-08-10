@@ -1,12 +1,19 @@
-﻿*{
-    width: auto;
-    }
+﻿* {
+   
+    margin:0;
+    padding:0;
+}
 
 .fondo {
     background-color: black;
     filter: alpha(opacity=90);
     opacity: 0.8;
     z-index: 10000;
+}
+
+body {
+    width: 100%;
+    position: relative;
 }
 
 .panelModal {
@@ -17,72 +24,88 @@
 }
 
 #contenedor {
-    width: 945px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: none;
+    position: relative;
+    top: 50px;
+    bottom: auto;
+    left: 200px;
+    right: 200px;
     border: 1px solid #e3e3e3;
-    border-radius: 1px;
     border: none;
     border-radius: 0.5px;
-    clear: both;
-    margin-bottom: 5px;
 }
 
 #cabecera {
-    width: 100%;
-    margin-bottom: 5px;   
+    position: relative;    
     background-color: #313131;
     color: white;
-    height: 20%;
+    height: 150px;
 }
 
     #cabecera div {
+        position: absolute;
+        top: 100px;
+        bottom: auto;
+        left: 200px;
+        right: 200px;
         background-color: #cc0909;
-        margin: 0 150px 0 240px;
-        height: 30%;
+        height: 50px;
+        border-radius:3px;
     }
 
 #menu {
-    height: 10%;
-    background-color: #C8CACC;
-    
+    position: absolute;
+    top: 50px;
+    bottom: auto;
+    left: 30px;
+    right: auto;
+    position:static;
 }
 
 #izquierda {
-    height: 50%;
-    background-color: #BDD2EF;
-    float: left;
-    width: 50%;
-    
+    position: absolute;
+    top: 50px;
+    bottom: auto;
+    left: 200px;
+    right: auto;
 }
 
-#derecha {
-    height: 50%;
-    background-color: #DAF7E2;
-    float: right;
-    width: 50%;
+.derecha {
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    left: 200px;
+    right: 200px;
 }
 
 #pie {
-    width: 945px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 20%;
-    background-color: #313131;
-    clear: both;
+    position: absolute;
+    top: 1500px;
+    bottom: 0px;
+    left: 200px;
+    right: 200px;
+    height: 150px;
+    background-color: #cc0909;
+    color: white;
+    width:auto;
+    height:120px;
+    border-radius:3px;
 }
-
+#pie div {
+        background-color: #313131;
+        height: 20px;
+        border-radius:3px;
+    }
 .logo {
     width: 300px;
     height: auto;
 }
 
 .vertical-menu {
-    float: left;
-    width: auto; /* Set a width if you like */    
-    
-    
+    position: absolute;
+    top: 500px;
+    bottom: auto;
+    left: auto;
+    right: auto;
 }
 
     .vertical-menu a {
@@ -91,17 +114,12 @@
         display: block; /* Make the links appear below each other */
         padding: 12px; /* Add some padding */
         text-decoration: none; /* Remove underline from links */
-        
-
-        
-        
+        position:static;
     }
 
         .vertical-menu a:hover {
             background-color: #313131; /* Dark grey background on mouse-over */
-            color:white;
-
-            
+            color: white;
         }
 
         .vertical-menu a.active {
@@ -109,3 +127,27 @@
             color: white;
         }
 
+.scrolling {
+    height: 420px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#Negocio {
+    height: 420px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+   
+}
+#mapa {
+    height: 420px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    width:60%;
+}
+.Comentario {
+    height: 320px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color:#fc272733;      
+    border-radius:5px; 
+}

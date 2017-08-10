@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
 
 namespace Presentacion
 {
@@ -11,7 +12,42 @@ namespace Presentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if (!IsPostBack)
+            //{
+            //    LogicaUbicacion lgNEgocio = new LogicaUbicacion();
+            //    List<csUbicacion> listUbicacion = lgNEgocio.ListarUbicacion(4.69982544, -74.0550546);
+            //    dtUbicaion.DataSource = listUbicacion.OrderBy(v => v.distancia);
+            //    dtUbicaion.DataBind();
+            //}
+            
+        }
 
+        protected void btnUbicacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lkNegocio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LogicaUbicacion lgNEgocio = new LogicaUbicacion();
+                List<csUbicacion> listUbicacion = lgNEgocio.ListarUbicacion(double.Parse(txtLat.Text.ToString()), double.Parse(txtLon.Text.ToString()));
+                //List<csUbicacion> listUbicacion = lgNEgocio.ListarUbicacion(4.69982544, -74.0550546);
+                dtUbicaion.DataSource = listUbicacion.OrderBy(v => v.distancia);
+                dtUbicaion.DataBind();
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+            
         }
     }
 }

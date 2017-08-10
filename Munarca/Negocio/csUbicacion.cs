@@ -14,6 +14,9 @@ namespace Negocio
         public string longitup { get; set; }
         public string ubicacion { get; set; }
         public int fk_id_negocio { get; set; }
+        public string NombreNegocio { get; set; }
+        public string DescripNegocio { get; set; }
+        public double distancia { get; set; }
         #endregion
         public csUbicacion(int id_Ubicacion, string laptitup, string longitup, int fk_id_negocio, string ubicacion)
         {
@@ -22,6 +25,17 @@ namespace Negocio
             this.laptitup = laptitup;
             this.longitup = longitup;
             this.ubicacion = ubicacion;
+        }
+        public csUbicacion(int id_Ubicacion, string laptitup, string longitup, int fk_id_negocio, double distancia, string NombreNegocio, string DescripNegocio, string ubicacion)
+        {
+            this.fk_id_negocio = fk_id_negocio;
+            this.id_Ubicacion = id_Ubicacion;
+            this.laptitup = laptitup;
+            this.longitup = longitup;
+            this.ubicacion = ubicacion;
+            this.NombreNegocio = NombreNegocio;
+            this.DescripNegocio = DescripNegocio;
+            this.distancia = distancia;
         }
     }
 }

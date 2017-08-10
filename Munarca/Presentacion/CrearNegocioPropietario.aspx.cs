@@ -116,6 +116,7 @@ namespace Presentacion
                     lgUbicacion = new LogicaUbicacion();
                     lgUbicacion.CrearUbicacion(ubicacion);
                 }
+                Button2_ModalPopupExtender.Show();
                 
             }
             else

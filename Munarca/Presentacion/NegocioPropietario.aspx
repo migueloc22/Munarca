@@ -1,16 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioPropietario.master" AutoEventWireup="true" CodeBehind="NegocioPropietario.aspx.cs" Inherits="Presentacion.NegocioPropietario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h4>Negocio</h4>
-        </div>
-        <div class="panel-body">
-            <center>
+    <div class="well">
+        <div class="panel">
+            <div class="panel-primary">
+                <div class="panel-heading">
+                    <h4>Negocio</h4>
+                </div>
+                <div class="panel-body">
+                    <center>
+                    <div class="scrolling">
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/CrearNegocioPropietario.aspx" CssClass="btn btn-danger"><span class="glyphicon glyphicon-plus btn-md">Agregar</span></asp:HyperLink>
                     <br />
                     <br />
-                    <asp:GridView ID="gvNegocio" runat="server" AutoGenerateColumns="False" CssClass="table table-hover table-responsive "   DataKeyNames="id_negocio" OnRowDeleting="gvNegocio_RowDeleting1" OnSelectedIndexChanged="gvNegocio_SelectedIndexChanged">
+                    <asp:GridView ID="gvNegocio" runat="server" AutoGenerateColumns="False" CssClass="table table-hover table-responsive "   DataKeyNames="id_negocio" OnRowDeleting="gvNegocio_RowDeleting1" OnSelectedIndexChanged="gvNegocio_SelectedIndexChanged" GridLines="None">
                         <Columns>
                             <asp:BoundField DataField="id_negocio" ReadOnly="True" SortExpression="id_negocio" Visible="false"/>
                             <asp:BoundField DataField="nombre" HeaderText="Nombre Negocio" />
@@ -24,15 +27,16 @@
 
                             <ControlStyle CssClass="btn btn-warning"></ControlStyle>
 
-                            </asp:CommandField>
-
-                            
+                            </asp:CommandField>                         
 
                         </Columns>
                     </asp:GridView>
+                        </div>
             </center>
-            <asp:Button ID="btnModal" runat="server" Text="Button" Style="display: none;" />
-            <ajaxToolkit:ModalPopupExtender runat="server" BehaviorID="btnModal_ModalPopupExtender" TargetControlID="btnModal" ID="btnModal_ModalPopupExtender" PopupControlID="PanelModal" CancelControlID="exit" BackgroundCssClass="fondo"></ajaxToolkit:ModalPopupExtender>
+                    <asp:Button ID="btnModal" runat="server" Text="Button" Style="display: none;" />
+                    <ajaxToolkit:ModalPopupExtender runat="server" BehaviorID="btnModal_ModalPopupExtender" TargetControlID="btnModal" ID="btnModal_ModalPopupExtender" PopupControlID="PanelModal" CancelControlID="exit" BackgroundCssClass="fondo"></ajaxToolkit:ModalPopupExtender>
+                </div>
+            </div>
         </div>
     </div>
     <%-- Inicio Modal --%>
@@ -44,8 +48,8 @@
         </div>
         <div class="modal-footer">
 
-            <button id="exit" class=" btn btn-danger">Cancelar</button>
-            <asp:Button ID="btnEliminar" runat="server" Text="Agregar" CssClass="btn btn-primary " CausesValidation="False" OnClick="btnEliminar_Click" />
+            <button id="exit" class=" btn btn-default">Cancelar</button>
+            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger " CausesValidation="False" OnClick="btnEliminar_Click" />
 
 
         </div>

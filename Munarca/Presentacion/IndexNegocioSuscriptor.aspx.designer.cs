@@ -10,7 +10,7 @@
 namespace Presentacion {
     
     
-    public partial class VisitaPropietario {
+    public partial class IndexNegocioSuscriptor {
         
         /// <summary>
         /// Control lbNombre.
@@ -56,5 +56,14 @@ namespace Presentacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
+        
+        /// <summary>
+        /// Control gvServicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvServicio;
     }
 }

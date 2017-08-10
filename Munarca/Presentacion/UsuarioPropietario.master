@@ -3,15 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="Menu">
-        <div class="vertical-menu">
-            <asp:HyperLink ID="LnkHome" runat="server"  NavigateUrl="~/IndexPropietario.aspx" data-toggle="tooltip"  data-placement="right"  title="Home"><span class="glyphicon glyphicon-home btn-lg "></span></asp:HyperLink>
-            <asp:HyperLink ID="lnkNegocio" runat="server" NavigateUrl="~/NegocioPropietario.aspx" data-toggle="tooltip"  data-placement="right"  title="Negocio"><span class="glyphicon  glyphicon-flag btn-lg" ></span></asp:HyperLink>
-            <asp:HyperLink ID="lnkConfig" runat="server" NavigateUrl="~/ConfigPropietario.aspx" data-toggle="tooltip" data-placement="right"  title="Configuración"><span class="glyphicon glyphicon-cog btn-lg"></span></asp:HyperLink>
-            <asp:LinkButton  ID="bntCerrarSession" runat="server" OnClick="bntCerrarSession_Click" data-toggle="tooltip" data-placement="right"  title="Cerrar Sesion"><span class="glyphicon glyphicon-off btn-lg"></span></asp:LinkButton>
-        </div>
+    <div class="vertical-menu">
+        <asp:HyperLink ID="LnkHome" runat="server" NavigateUrl="~/IndexPropietario.aspx" data-toggle="tooltip" data-placement="right" title="Home"><span class="glyphicon glyphicon-home btn-lg "></span></asp:HyperLink>
+        <asp:HyperLink ID="lnkNegocio" runat="server" NavigateUrl="~/NegocioPropietario.aspx" data-toggle="tooltip" data-placement="right" title="Negocio"><span class="glyphicon  glyphicon-flag btn-lg" ></span></asp:HyperLink>
+        <asp:HyperLink ID="lnkConfig" runat="server" NavigateUrl="~/ConfigPropietario.aspx" data-toggle="tooltip" data-placement="right" title="Configuración"><span class="glyphicon glyphicon-cog btn-lg"></span></asp:HyperLink>
+        <asp:LinkButton ID="bntCerrarSession" runat="server" OnClick="bntCerrarSession_Click" data-toggle="tooltip" data-placement="right" title="Cerrar Sesion"><span class="glyphicon glyphicon-off btn-lg"></span></asp:LinkButton>
     </div>
-    <div  class="well well-lg">
+    <div class="derecha">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
     </div>
 </asp:Content>

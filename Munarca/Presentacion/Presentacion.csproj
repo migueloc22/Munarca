@@ -67,6 +67,7 @@
   <ItemGroup>
     <Content Include="CalificacionSuscriptor.aspx" />
     <Content Include="ComentarioPropietario.aspx" />
+    <Content Include="ComentarioSuscriptor.aspx" />
     <Content Include="ConfigPropietario.aspx" />
     <Content Include="ConfigSuscriptor.aspx" />
     <Content Include="CrearNegocioPropietario.aspx" />
@@ -92,6 +93,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\JavaScript.js" />
     <Content Include="js\jquery-3.2.1.min.js" />
+    <Content Include="js\jquery-ui.js" />
     <Content Include="js\jquery.MultiFile.js" />
     <Content Include="js\locationpicker.jquery.js" />
     <Content Include="js\npm.js" />
@@ -133,6 +135,13 @@
     </Compile>
     <Compile Include="ComentarioPropietario.aspx.designer.cs">
       <DependentUpon>ComentarioPropietario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComentarioSuscriptor.aspx.cs">
+      <DependentUpon>ComentarioSuscriptor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComentarioSuscriptor.aspx.designer.cs">
+      <DependentUpon>ComentarioSuscriptor.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfigPropietario.aspx.cs">
       <DependentUpon>ConfigPropietario.aspx</DependentUpon>
