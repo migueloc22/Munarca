@@ -178,10 +178,11 @@ namespace Presentacion
 
                         postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
                         csUsuario user = new csUsuario(0, txtNom1.Text, txtNom2.Text, txtApe1.Text, txtApe2.Text, txtCorreo.Text, postefile.FileName.ToString(), txtDir.Text, txtFechaNac.Text, int.Parse(txtTelefono.Text), int.Parse(txtNumDoc.Text), int.Parse(dlTipoDoc.SelectedValue.ToString()), int.Parse(dlCiudad.SelectedValue.ToString()), txtContraseña.Text);
-
+                        lgusuario.CrearUsuario(user, dlTipoUsuario.SelectedValue.ToString());
                     }
 
                 }
+                
             }
             catch (Exception ex)
             {

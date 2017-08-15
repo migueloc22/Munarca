@@ -8,6 +8,7 @@
             cursor: pointer;
             background-repeat: no-repeat;
             display: block;
+            border-radius:2px;
         }
 
         .FilledStars {
@@ -20,6 +21,14 @@
 
         .EmptyStars {
             background-image: url("../img/star_Plateado.png");
+        }
+        .auto-style1 {
+            width: 18%;
+            height: 76px;
+            border: 1px solid #000000;
+        }
+        .auto-style2 {
+            width: 20px;
         }
     </style>
     <div class="well">
@@ -50,13 +59,19 @@
                     </div>
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
+                            <table class="auto-style1">
+                                <tr>
+                                    <td class="auto-style2"> <asp:Label ID="lbPorcentaje" runat="server" Text="" CssClass="h1"></asp:Label></td>
+                                </tr>
+                            </table>
                             <ajaxToolkit:Rating ID="Rating1" runat="server"
                                 StarCssClass="starRating"
                                 FilledStarCssClass="FilledStars"
                                 EmptyStarCssClass="EmptyStars"
                                 WaitingStarCssClass="WatingStars">
                             </ajaxToolkit:Rating>
-                            <asp:Button ID="btnCalificar" runat="server" Text="Button" CssClass="btn btn-warning" OnClick="btnCalificar_Click" />
+                            <asp:Button ID="btnCalificar" runat="server" Text="Calificar" CssClass="btn btn-danger" OnClick="btnCalificar_Click" />                            
+                            <br />
                             <asp:Label ID="lbCalificacion" runat="server" Text=""></asp:Label>
                             <div class="scrolling"></div>
                         </ContentTemplate>

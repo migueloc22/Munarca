@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BaseDatos;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Negocio
 {
@@ -58,35 +59,37 @@ namespace Negocio
             }
         }
 
-        public Boolean CrearUsuario(csUsuario usuario) {
+        public Boolean CrearUsuario(csUsuario usuario,string opcion) {
         Boolean retorno = false;
         cnn = Conexion.AbrirCnn();
         try
         {
-            command = new SqlCommand("insert into usuario(nombre_1,nombre_2, apellido_1,apellido_2,fk_id_tipo_doc,contraseña,num_documento,fk_id_ciudad, direccion,correo,foto,telefono,fecha_nacimiento) values(@nombre_1,@nombre_2, @apellido_1, @apellido_2, @fk_id_tipo_doc, @contraseña, @num_documento, @fk_id_ciudad, @direccion, @correo, @foto, @telefono, @fecha_nacimiento)",cnn);
-            command.Parameters.AddWithValue("@nombre_1",usuario.nombre1);
-            command.Parameters.AddWithValue("@nombre_2",usuario.nombre2);
-            command.Parameters.AddWithValue("@apellido_1",usuario.apellido1);
-            command.Parameters.AddWithValue("@apellido_2",usuario.apellido2);
-            command.Parameters.AddWithValue("@fk_id_tipo_doc",usuario.fk_id_tipo_doc);
-            command.Parameters.AddWithValue("@contraseña",usuario.contraseña);
-            command.Parameters.AddWithValue("@num_documento",usuario.num_documento);
-            command.Parameters.AddWithValue("@fk_id_ciudad",usuario.fk_id_ciudad);
-            command.Parameters.AddWithValue("@direccion",usuario.direccion);
-            command.Parameters.AddWithValue("@correo",usuario.correo);
-            command.Parameters.AddWithValue("@foto",usuario.foto);
-            command.Parameters.AddWithValue("@telefono",usuario.telefono);
-            command.Parameters.AddWithValue("@fecha_nacimiento",usuario.fecha_nacimiento);
+            command = new SqlCommand("[CrearUsuario]", cnn);
+            command.CommandType = CommandType.StoredProcedure;
+            //@fk_id_negocio, @id_usuario, @comentario
+            command.Parameters.AddWithValue("@nombre1", usuario.nombre1);
+            command.Parameters.AddWithValue("@nombre_2", usuario.nombre2);
+            command.Parameters.AddWithValue("@apellido_1", usuario.apellido1);
+            command.Parameters.AddWithValue("@apellido_2", usuario.apellido2);
+            command.Parameters.AddWithValue("@fk_id_tipo_doc", usuario.fk_id_tipo_doc);
+            command.Parameters.AddWithValue("@contraseña", usuario.contraseña);
+            command.Parameters.AddWithValue("@num_documento", usuario.num_documento);
+            command.Parameters.AddWithValue("@fk_id_ciudad", usuario.fk_id_ciudad);
+            command.Parameters.AddWithValue("@direccion", usuario.direccion);
+            command.Parameters.AddWithValue("@correo", usuario.correo);
+            command.Parameters.AddWithValue("@foto", usuario.foto);
+            command.Parameters.AddWithValue("@telefono", usuario.telefono);            
+            command.Parameters.AddWithValue("@fecha_nacimiento", usuario.fecha_nacimiento);
+            command.Parameters.AddWithValue("@opcion",opcion);
             command.ExecuteNonQuery();
             Conexion.CerrarCnn(cnn);
-            return true;
-           
+            retorno = true;
         }
         catch (Exception ex)
         {
+
             rta = ex.ToString();
-            
-        } 
+        }
 
 
         return retorno;

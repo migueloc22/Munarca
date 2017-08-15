@@ -9,10 +9,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/estilos.css" rel="stylesheet" />
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/JavaScript.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/locationpicker.jquery.js"></script>
     <script src="js/jquery.MultiFile.js"></script>
+    <script src="js/JavaScript.js"></script>
     <style>
         .fondo {
             background-color: black;
@@ -23,11 +22,12 @@
     </style>
 </head>
 <body>
-
-    <div id="encabezaso"></div>
-    <div id="Contenedor">
-        <img src="img/logoFinal.png" id="logo" />
-        <form id="form1" runat="server">
+    <form id="form1" runat="server">
+        <div id="encabezaso"></div>
+        <div id="Contenedor">
+            <img src="img/logoFinal.png" id="logo" />
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <div id="cajaLogin">
@@ -40,10 +40,10 @@
                         </div>
                         <br />
                         <div class="form-group">
-                            <asp:TextBox ID="txtEMail" runat="server" CssClass="form-control form-group-lg" placeholder="email" required="" TextMode="Email" MaxLength="20"></asp:TextBox>
+                            <asp:TextBox ID="txtEMail" runat="server" CssClass="form-control form-group-lg" placeholder="email"  TextMode="Email" MaxLength="20"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtPass" runat="server" CssClass="form-control form-group-lg" required="" placeholder="Contraseña" TextMode="Password" MaxLength="15"></asp:TextBox>
+                            <asp:TextBox ID="txtPass" runat="server" CssClass="form-control form-group-lg"  placeholder="Contraseña" TextMode="Password" MaxLength="15"></asp:TextBox>
                         </div>
                         <div class="form-group">
 
@@ -58,85 +58,85 @@
                             <input type="reset" class="btn btn-default" />
                         </div>
                     </div>
-                    <%-- Inicio Modal --%>
-                    <asp:Panel ID="PanelRegistro" runat="server" Style="display: none; background-color: white; width: 600px; height: auto;">
-                        <div class="modal-header">
-
-                            <button id="exit" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Registro de Usuario</h4>
-
-                        </div>
-                        <div class="scrolling">
-                            <div class="modal-body">
-
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <asp:DropDownList ID="dlTipoUsuario" runat="server" CssClass="form-control"></asp:DropDownList>
-                                    </div>
-                                    <asp:TextBox ID="txtNom1" runat="server" CssClass="form-control" placeholder="Primer Nombre"></asp:TextBox>
-                                </div>
-                                <div class="form-group">
-                                    <asp:TextBox ID="txtNom2" runat="server" CssClass="form-control" placeholder="Segundo Nombre"></asp:TextBox>
-                                </div>
-
-                                <div class="form-group">
-                                    <asp:TextBox ID="txtApe1" runat="server" CssClass="form-control" placeholder="Primer Apellido"></asp:TextBox>
-                                </div>
-
-                                <div class="form-group">
-                                    <asp:TextBox ID="txtApe2" runat="server" CssClass="form-control" placeholder="Segundo Apellido"></asp:TextBox>
-                                </div>
-
-                                <div class="form-group">
-                                    <asp:DropDownList ID="dlTipoDoc" runat="server" CssClass="form-control"></asp:DropDownList>
-                                </div>
-
-                                <div class="form-group">
-                                    <asp:TextBox ID="txtNumDoc" runat="server" CssClass="form-control" placeholder="Numero Documento"></asp:TextBox>
-                                </div>
-                                <div class="form-group">
-                                    <asp:DropDownList ID="dlDpto" runat="server" CssClass="form-control" OnSelectedIndexChanged="dlDpto_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
-                                </div>
-                                <div class="form-group">
-                                    <asp:DropDownList ID="dlCiudad" runat="server" CssClass="form-control"></asp:DropDownList>
-                                </div>
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" placeholder="Correo"></asp:TextBox>
-                                    </div>
-                                    <div class="form-group">
-                                        <asp:TextBox ID="txtContraseña" runat="server" CssClass="form-control" placeholder="contraseña" TextMode="Password"></asp:TextBox>
-                                    </div>
-                                    <div class="form-group">
-                                        <asp:TextBox ID="txtConfContraseña" TextMode="Password" runat="server" CssClass="form-control" placeholder="Confirmar contraseña"></asp:TextBox>
-                                    </div>
-                                    <div class="form-group">
-                                        <asp:TextBox ID="txtDir" runat="server" CssClass="form-control" placeholder="Direccion"></asp:TextBox>
-                                    </div>
-                                    <div class="form-group">
-                                        <asp:TextBox ID="txtFechaNac" runat="server" TextMode="Date" CssClass="form-control"></asp:TextBox>
-                                        <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtFechaNac_CalendarExtender" TargetControlID="txtFechaNac" ID="txtFechaNac_CalendarExtender"></ajaxToolkit:CalendarExtender>
-                                    </div>
-                                    <div class="form-group">
-                                        <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" placeholder="Telefono"></asp:TextBox>
-                                    </div>
-
-                                    <asp:FileUpload ID="FileUpload1" runat="server" accept="gif|jpg|png" class="multi" maxlength="1" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <asp:Button ID="btnRegistro" runat="server" Text="Agregar" CssClass="btn btn-primary btn-block" CausesValidation="False" OnClick="btnRegistro_Click" />
-                            <asp:ScriptManager ID="ScriptManager1" runat="server">
-                            </asp:ScriptManager>
-                        </div>
-
-                    </asp:Panel>
-                    <%-- Panel Modal --%>
                 </ContentTemplate>
             </asp:UpdatePanel>
-        </form>
-    </div>
+        </div>
+        <%-- Inicio Modal --%>
+        <asp:Panel ID="PanelRegistro" runat="server" Style="display: none; background-color: white; width: 600px; height: auto;">
+            <div class="modal-header">
+
+                <button id="exit" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Registro de Usuario</h4>
+
+            </div>
+            <div class="scrolling">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <div class="form-group">
+                            <asp:DropDownList ID="dlTipoUsuario" runat="server" CssClass="form-control"></asp:DropDownList>
+                        </div>
+                        <asp:TextBox ID="txtNom1" runat="server" CssClass="form-control" placeholder="Primer Nombre"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtNom2" runat="server" CssClass="form-control" placeholder="Segundo Nombre"></asp:TextBox>
+                    </div>
+
+                    <div class="form-group">
+                        <asp:TextBox ID="txtApe1" runat="server" CssClass="form-control" placeholder="Primer Apellido"></asp:TextBox>
+                    </div>
+
+                    <div class="form-group">
+                        <asp:TextBox ID="txtApe2" runat="server" CssClass="form-control" placeholder="Segundo Apellido"></asp:TextBox>
+                    </div>
+
+                    <div class="form-group">
+                        <asp:DropDownList ID="dlTipoDoc" runat="server" CssClass="form-control"></asp:DropDownList>
+                    </div>
+
+                    <div class="form-group">
+                        <asp:TextBox ID="txtNumDoc" runat="server" CssClass="form-control" placeholder="Numero Documento"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <asp:DropDownList ID="dlDpto" runat="server" CssClass="form-control" OnSelectedIndexChanged="dlDpto_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                    </div>
+                    <div class="form-group">
+                        <asp:DropDownList ID="dlCiudad" runat="server" CssClass="form-control"></asp:DropDownList>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" placeholder="Correo"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="txtContraseña" runat="server" CssClass="form-control" placeholder="contraseña" TextMode="Password"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="txtConfContraseña" TextMode="Password" runat="server" CssClass="form-control" placeholder="Confirmar contraseña"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="txtDir" runat="server" CssClass="form-control" placeholder="Direccion"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="txtFechaNac" runat="server" CssClass="form-control"></asp:TextBox>
+                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtFechaNac_CalendarExtender" TargetControlID="txtFechaNac" ID="txtFechaNac_CalendarExtender" Format="yyyy/M/d"></ajaxToolkit:CalendarExtender>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" placeholder="Telefono"></asp:TextBox>
+                        </div>
+
+                        <asp:FileUpload ID="FileUpload1" runat="server" accept="gif|jpg|png" class="multi" maxlength="1" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <asp:Button ID="btnRegistro" runat="server" Text="Agregar" CssClass="btn btn-primary btn-block" CausesValidation="False" OnClick="btnRegistro_Click" />
+
+            </div>
+
+        </asp:Panel>
+        <%-- Panel Modal --%>
+    </form>
+
     <div id="pie">
         <div id="sudpie1"></div>
         <div id="sudpie2"></div>

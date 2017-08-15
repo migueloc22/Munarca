@@ -8,23 +8,38 @@
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-              ['Year', 'Sales', 'Expenses'],
-              ['2013', 1000, 400],
-              ['2014', 1170, 460],
-              ['2015', 660, 1120],
-              ['2016', 1030, 540]
-            ]);
+            var data =new google.visualization.DataTable();
+            data.addColumn('date', 'año');
+            data.addColumn('number', 'java');
+            data.addColumn('number', 'python');
+            data.addColumn('number', 'c#');
+            data.addRows([
+                [new Date(2015, 5, 6), 15, 2.8, 5.7],
+                [new Date(2016, 1, 2), 21, 4.4, 5.4],
+                [new Date(2017, 4, 6), 14.6, 3.5, 3.6],
 
+            ]);
             var options = {
-                title: 'Company Performance',
-                hAxis: { title: 'Year', titleTextStyle: { color: '#333' } },
-                vAxis: { minValue: 0 }
+                title: 'Grafica de visitas',
+                "fontSize": 12,
+                "legend":{
+                    "position":"right",
+                    "textStyle":{
+                        "color":"#000000",
+                        "fontSize":14
+                    }
+                },
+                hAxis: { title: 'Fecha', titleTextStyle: { color: '#333' } },
+                vAxis: { title: "popularidad", minValue: 0, minValue: 21, format:'##,##%' }
             };
 
-            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            var formato = new google.visualization.NumberFormat({ pattern: '##,##%' });
+             formato.format(data, 1);
             chart.draw(data, options);
+
         }
+
     </script>
     <div class="well">
         <div class="panel">
