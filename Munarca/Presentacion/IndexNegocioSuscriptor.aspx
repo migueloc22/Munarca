@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioSuscriptor.master" AutoEventWireup="true" CodeBehind="IndexNegocioSuscriptor.aspx.cs" Inherits="Presentacion.IndexNegocioSuscriptor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="well">
         <div class="panel">
             <div class="panel-primary">
                 <div class="panel-body">
@@ -44,5 +43,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </asp:Content>

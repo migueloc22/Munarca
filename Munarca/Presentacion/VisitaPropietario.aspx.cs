@@ -14,27 +14,20 @@ namespace Presentacion
         csNegocio negocio;
         #region metodos
         public String datosGrafica() {
-            DataTable datos = new DataTable();
-            datos.Columns.Add(new DataColumn("Año", typeof(string)));
-            datos.Columns.Add(new DataColumn("Java", typeof(string)));
-            datos.Columns.Add(new DataColumn("phyton", typeof(string)));
-            datos.Columns.Add(new DataColumn("c#", typeof(string)));
-           
-
-            datos.Rows.Add(new object[] { "new Date(2015, 5, 6)", 15, 2.8, 5.7 });
-            datos.Rows.Add(new object[] { "new Date(2016, 1, 2)", 21, 4.4, 5.4 });
-            datos.Rows.Add(new object[] { "new Date(2017, 4, 6)", 14.6, 3.5, 3.6 });
+            negocio = (csNegocio)Session["Negocio"];
+            LogicaVisita lgVisita = new LogicaVisita();
+            DataTable datos = lgVisita.LineaTeiempoVisita(negocio.id_negocio);
 
             string strDatos;
             strDatos = "[";
-            foreach (DataRow dr in datos.Rows) {
+           
+            foreach (DataRow dr in datos.Rows)
+            {
                 strDatos = strDatos + "[";
                 strDatos = strDatos + "" + dr[0] + "" + "," +
-                    dr[1].ToString().Replace(",", ".") + "," +
-                    dr[2].ToString().Replace(",", ".") + "," +
-                    dr[3].ToString().Replace(",", ".");
+                dr[1].ToString().Replace(",", ".");
                 strDatos = strDatos + "],";
-            
+
             }
             strDatos = strDatos + "]";
             return strDatos;
@@ -44,35 +37,20 @@ namespace Presentacion
         {
             if (Session["Negocio"] != null)
             {
+                LogicaPath lgPath = new LogicaPath();
                 negocio = (csNegocio)Session["Negocio"];
+                Repeater1.DataSource = lgPath.DataTbPath(negocio.id_negocio); ;
+                Repeater1.DataBind();
                 lbNombre.Text = negocio.nombre;
                 lbDescrip.Text = negocio.descripcion;
+                lbTelefono.Text = negocio.telefono.ToString();
+                lbUbicacion.Text = negocio.ubicacion;
             }
             else
             {
                 Response.Redirect("IndexPropietario.aspx");
             }
         }
-        protected string obtenerDatos() {
-            DataTable datos = new DataTable();
-            datos.Columns.Add(new DataColumn("tareas", typeof(string)));
-            datos.Columns.Add(new DataColumn("Hours per Day", typeof(string)));
-            datos.Rows.Add(new object[]{"work",11});
-            datos.Rows.Add(new object[] { "eat", 2 });
-            datos.Rows.Add(new object[] { "comunete", 2 });
-            datos.Rows.Add(new object[] { "slep", 7});
-            datos.Rows.Add(new object[] { "watch tv", 2 });
-
-            string strDatos = "[['Task', 'Hours per Day'],";
-
-            foreach (DataRow dr in datos.Rows) {
-                strDatos = strDatos + "[";
-                strDatos = strDatos + "'"+dr[0]+"'"+","+dr[1];
-                strDatos = strDatos + "],";
-            }
-            strDatos = strDatos +"]";
-        return strDatos;
-
-        }
+       
     }
 }

@@ -11,7 +11,7 @@
             <asp:LinkButton ID="btnCerrarSession" runat="server" OnClick="btnCerrarSession_Click"  data-toggle="tooltip"  data-placement="right"  title="Cerrar Sesion"><span class="glyphicon glyphicon-off btn-lg"></span></asp:LinkButton>
         </div>
     
-    <div class="derecha">
+    <div class="container">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </div>

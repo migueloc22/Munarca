@@ -1,43 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioPropietario.master" AutoEventWireup="true" CodeBehind="VisitaPropietario.aspx.cs" Inherits="Presentacion.VisitaPropietario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioPropietario.master" AutoEventWireup="true" CodeBehind="AlbumNegocioPropietario.aspx.cs" Inherits="Presentacion.AlbumNegocioPropietario" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-
-    <script type="text/javascript">
-        google.charts.load('current', { 'packages': ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = new google.visualization.DataTable();
-            data.addRows(<%=this.datosGrafica()%>);
-            var options = {
-                title: 'Grafica de visitas',
-                "fontSize": 12,
-                "legend": {
-                    "position": "right",
-                    "textStyle": {
-                        "color": "#000000",
-                        "fontSize": 14
-                    }
-                },
-                hAxis: { title: 'Fecha', titleTextStyle: { color: '#333' } },
-                vAxis: { title: "popularidad", minValue: 0, minValue: 21, format: '##,##%' }
-            };
-
-            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-            var formato = new google.visualization.NumberFormat({ pattern: '##,##%' });
-            formato.format(data, 1);
-            chart.draw(data, options);
-
-        }
-
-    </script>
-    <div class="well">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">    
         <div class="panel">
             <div class="panel-primary">
                 <div class="panel-body">
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">                      
+                        
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
@@ -80,7 +48,6 @@
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 <asp:Label ID="lbNombre" runat="server" Text="" CssClass="h1"></asp:Label>
                                 <span class="glyphicon glyphicon-chevron-down"></span>
-
                             </a>
                         </h4>
                     </div>
@@ -107,24 +74,33 @@
                                                 <label class="h4">Descripción :</label></td>
                                             <td>
                                                 <asp:Label ID="lbDescrip" runat="server" Text="Label" CssClass="control-label"></asp:Label></td>
-                                        </tr>
+                                        </tr>                                       
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="btn-group btn-group-justified btn-group-lg">
-                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger " NavigateUrl="~/IndexServicioPropietario.aspx"> <span class="glyphicon glyphicon-fire"></span> Servicios</asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink2" runat="server" CssClass="btn btn-danger active"><span class="glyphicon glyphicon-stats"></span> Visitas</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger " NavigateUrl="~/IndexServicioPropietario.aspx"><span class="glyphicon glyphicon-fire"></span> Servicios</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink2" runat="server" CssClass="btn btn-danger" NavigateUrl="~/VisitaPropietario.aspx"><span class="glyphicon glyphicon-stats"></span> Visitas</asp:HyperLink>
                         <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-danger" NavigateUrl="~/ComentarioPropietario.aspx"><span class="glyphicon glyphicon-comment"></span> Comentario</asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink4" runat="server" CssClass="btn btn-danger" NavigateUrl="~/AlbumNegocioPropietario.aspx"><span class="glyphicon glyphicon-picture"></span> Album</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink4" runat="server" CssClass="btn btn-danger active"><span class="glyphicon glyphicon-picture"></span> Album</asp:HyperLink>
                     </div>
                     <br />
                     <br />
-                    <div id="chart_div" style="width: 900px; height: 500px;"></div>
-                    <div class="scrolling"></div>
+                    <div class="scrolling">
+                        <asp:DataList ID="dlPath" runat="server" RepeatColumns="2" ShowFooter="False" ShowHeader="False" CellSpacing="20" >                           
+                            <ItemTemplate>
+                                        <div class="thumbnail">
+                                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("media") %>' CssClass="img-responsive" Width="250px" Height="250px"/>
+                                            <div class="caption">
+                                                <asp:Button ID="idEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger"/>
+                                            </div>
+                                        </div>                                    
+                            </ItemTemplate>
+                        </asp:DataList>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </asp:Content>

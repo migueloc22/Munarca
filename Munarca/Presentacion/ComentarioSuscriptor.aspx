@@ -1,9 +1,8 @@
-﻿
+﻿ 
 
 <%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioSuscriptor.master" AutoEventWireup="true" CodeBehind="ComentarioSuscriptor.aspx.cs" Inherits="Presentacion.ComentarioSuscriptor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="well">
         <div class="panel">
             <div class="panel-primary">
                 <div class="panel-body">
@@ -94,7 +93,8 @@
                                     </div>
                                     <div class="form-group">
                                         <asp:TextBox ID="txtComentario" runat="server" CssClass="form-control" Rows="7" placeholder="Comentario" requiere="" TextMode="MultiLine" MaxLength="150 "></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo vacio" ControlToValidate="txtComentario" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="El campo esta vacio o no esta selecionando un comentario para modidficar" ControlToValidate="txtComentario" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:Label ID="lbVdComentario" runat="server" Text="" ForeColor="red"></asp:Label>
                                         <div class="col-lg-offset-9">
                                             <asp:LinkButton ID="btnComentario" runat="server" CssClass="btn btn-danger" OnClick="btnComentario_Click"><span class="glyphicon glyphicon-send"> Enviar</span></asp:LinkButton>
                                         </div>
@@ -108,5 +108,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </asp:Content>

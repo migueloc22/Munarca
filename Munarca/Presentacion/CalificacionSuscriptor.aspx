@@ -31,7 +31,6 @@
             width: 20px;
         }
     </style>
-    <div class="well">
         <div class="panel">
             <div class="panel-primary">
                 <div class="panel-body">
@@ -77,11 +76,7 @@
                         </ContentTemplate>
                     </asp:UpdatePanel>
 
-
                 </div>
-
             </div>
         </div>
-
-    </div>
 </asp:Content>

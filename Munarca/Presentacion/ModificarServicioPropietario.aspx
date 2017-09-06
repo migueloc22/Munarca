@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioPropietario.master" AutoEventWireup="true" CodeBehind="ModificarServicioPropietario.aspx.cs" Inherits="Presentacion.ModificarServicioPropietario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="well">
         <div class="panel">
             <div class="panel-primary">
                 <div class="panel-heading">Agregar Servicio</div>
@@ -37,7 +36,6 @@
                 </div>
             </div>
         </div>
-    </div>
     <asp:Button ID="Button2" runat="server" Text="Button" Style="display: none;" />
     <ajaxToolkit:ModalPopupExtender ID="Button2_ModalPopupExtender" runat="server" BehaviorID="Button2_ModalPopupExtender" TargetControlID="Button2" PopupControlID="pnModal" BackgroundCssClass="fondo">
     </ajaxToolkit:ModalPopupExtender>

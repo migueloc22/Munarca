@@ -20,7 +20,7 @@ namespace Negocio
              cnn = Conexion.AbrirCnn();
              try
              {
-                  cmd = new SqlCommand("Select * from tipo_usuario", cnn);
+                 cmd = new SqlCommand("Select * from tipo_usuario where id_tipo_usuario!=3", cnn);
                   read = cmd.ExecuteReader();
                   tabla.Load(read);
              }

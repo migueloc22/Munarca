@@ -37,7 +37,7 @@ namespace Negocio
                     string foto=reader["foto"].ToString() ;
                     string direccion= reader["direccion"].ToString();
                     string fecha_nacimiento=reader["fecha_nacimiento"].ToString() ;
-                    int telefono=int.Parse(reader["telefono"].ToString()) ;
+                    string telefono = reader["telefono"].ToString();
                     int num_documento=int.Parse(reader["num_documento"].ToString());
                     int fk_id_tipo_doc=int.Parse(reader["fk_id_tipo_doc"].ToString());
                     int fk_id_ciudad = int.Parse(reader["fk_id_ciudad"].ToString());

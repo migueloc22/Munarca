@@ -35,15 +35,15 @@
                 <h2><span class="glyphicon glyphicon-log-in"></span> Login</h2>
                 </center>
                         <div class="btn-group btn-group-justified">
-                            <asp:LinkButton ID="btnAtivador1" runat="server" ForeColor="White" OnClick="btnAtivador1_Click" CssClass="btn btn-danger btn-lg"><span class="glyphicon glyphicon-user"></span> Suscriptor </asp:LinkButton>
-                            <asp:LinkButton ID="btnAtivador2" runat="server" ForeColor="Gray" OnClick="btnAtivador2_Click" CssClass="btn btn-link btn-lg"><span class="glyphicon glyphicon-flag"></span> Propietario </asp:LinkButton>
+                            <asp:LinkButton ID="btnAtivador1" runat="server" ForeColor="White" OnClick="btnAtivador1_Click" CssClass="btn btn-danger btn-lg" CausesValidation="false"><span class="glyphicon glyphicon-user"></span> Suscriptor </asp:LinkButton>
+                            <asp:LinkButton ID="btnAtivador2" runat="server" ForeColor="Gray" OnClick="btnAtivador2_Click" CssClass="btn btn-link btn-lg" CausesValidation="false"><span class="glyphicon glyphicon-flag"></span> Propietario </asp:LinkButton>
                         </div>
                         <br />
                         <div class="form-group">
-                            <asp:TextBox ID="txtEMail" runat="server" CssClass="form-control form-group-lg" placeholder="email"  TextMode="Email" MaxLength="20"></asp:TextBox>
+                            <asp:TextBox ID="txtEMail" runat="server" CssClass="form-control form-group-lg" placeholder="email" TextMode="Email" MaxLength="20"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtPass" runat="server" CssClass="form-control form-group-lg"  placeholder="Contraseña" TextMode="Password" MaxLength="15"></asp:TextBox>
+                            <asp:TextBox ID="txtPass" runat="server" CssClass="form-control form-group-lg" placeholder="Contraseña" TextMode="Password" MaxLength="15"></asp:TextBox>
                         </div>
                         <div class="form-group">
 
@@ -51,10 +51,11 @@
 
                             <ajaxToolkit:ModalPopupExtender ID="HyperLink3_ModalPopupExtender" runat="server" BehaviorID="HyperLink3_ModalPopupExtender" TargetControlID="HyperLink3" PopupControlID="PanelRegistro" CancelControlID="exit" BackgroundCssClass="fondo">
                             </ajaxToolkit:ModalPopupExtender>
-
+                            <br />
+                            <asp:Label ID="lbValidacionUser" runat="server" Text="" ForeColor="red"></asp:Label>
                         </div>
                         <div class="form-group">
-                            <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-danger" OnClick="btnEntrar_Click" />
+                            <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-danger" OnClick="btnEntrar_Click" CausesValidation="false" />
                             <input type="reset" class="btn btn-default" />
                         </div>
                     </div>
@@ -71,65 +72,84 @@
             </div>
             <div class="scrolling">
                 <div class="modal-body">
-
-                    <div class="form-group">
-                        <div class="form-group">
-                            <asp:DropDownList ID="dlTipoUsuario" runat="server" CssClass="form-control"></asp:DropDownList>
-                        </div>
-                        <asp:TextBox ID="txtNom1" runat="server" CssClass="form-control" placeholder="Primer Nombre"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <asp:TextBox ID="txtNom2" runat="server" CssClass="form-control" placeholder="Segundo Nombre"></asp:TextBox>
-                    </div>
-
-                    <div class="form-group">
-                        <asp:TextBox ID="txtApe1" runat="server" CssClass="form-control" placeholder="Primer Apellido"></asp:TextBox>
-                    </div>
-
-                    <div class="form-group">
-                        <asp:TextBox ID="txtApe2" runat="server" CssClass="form-control" placeholder="Segundo Apellido"></asp:TextBox>
-                    </div>
-
-                    <div class="form-group">
-                        <asp:DropDownList ID="dlTipoDoc" runat="server" CssClass="form-control"></asp:DropDownList>
-                    </div>
-
-                    <div class="form-group">
-                        <asp:TextBox ID="txtNumDoc" runat="server" CssClass="form-control" placeholder="Numero Documento"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <asp:DropDownList ID="dlDpto" runat="server" CssClass="form-control" OnSelectedIndexChanged="dlDpto_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
-                    </div>
-                    <div class="form-group">
-                        <asp:DropDownList ID="dlCiudad" runat="server" CssClass="form-control"></asp:DropDownList>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-group">
-                            <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" placeholder="Correo"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <asp:TextBox ID="txtContraseña" runat="server" CssClass="form-control" placeholder="contraseña" TextMode="Password"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <asp:TextBox ID="txtConfContraseña" TextMode="Password" runat="server" CssClass="form-control" placeholder="Confirmar contraseña"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <asp:TextBox ID="txtDir" runat="server" CssClass="form-control" placeholder="Direccion"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <asp:TextBox ID="txtFechaNac" runat="server" CssClass="form-control"></asp:TextBox>
-                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtFechaNac_CalendarExtender" TargetControlID="txtFechaNac" ID="txtFechaNac_CalendarExtender" Format="yyyy/M/d"></ajaxToolkit:CalendarExtender>
-                        </div>
-                        <div class="form-group">
-                            <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" placeholder="Telefono"></asp:TextBox>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <asp:TextBox ID="txtNom1" runat="server" CssClass="form-control" placeholder="Primer Nombre"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNom1" ForeColor="Red">*</asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group">
+                                <asp:TextBox ID="txtApe1" runat="server" CssClass="form-control" placeholder="Primer Apellido"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtApe1" ForeColor="Red">*</asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group">
+                                <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" placeholder="Telefono"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtTelefono" ForeColor="Red">*</asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group">
+                                <asp:TextBox ID="txtContraseña" runat="server" CssClass="form-control" placeholder="contraseña" TextMode="Password"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtContraseña" ForeColor="Red">*</asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group">
+                                <asp:DropDownList ID="dlDpto" runat="server" CssClass="form-control" OnSelectedIndexChanged="dlDpto_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                            </div>
+                            <div class="form-group">                                
+                                <label class="label">Tipo de Usuario</label>
+                                <asp:DropDownList ID="dlTipoUsuario" runat="server" CssClass="form-control"></asp:DropDownList>
+                            </div>
+                            <div class="form-group">
+                                <br />
+                                <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" placeholder="Correo"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtCorreo" ForeColor="Red">*</asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-control">
+                                <asp:FileUpload ID="FileUpload1" runat="server" accept="gif|jpg|png" class="multi" maxlength="1" />
+                            </div>
                         </div>
 
-                        <asp:FileUpload ID="FileUpload1" runat="server" accept="gif|jpg|png" class="multi" maxlength="1" />
-                    </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <asp:TextBox ID="txtNom2" runat="server" CssClass="form-control" placeholder="Segundo Nombre"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNom2" ForeColor="Red">*</asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group">
+                                <asp:TextBox ID="txtApe2" runat="server" CssClass="form-control" placeholder="Segundo Apellido"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtApe2" ForeColor="Red">*</asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group">
+                                <asp:TextBox ID="txtNumDoc" runat="server" CssClass="form-control" placeholder="Numero Documento"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNumDoc" ForeColor="Red">*</asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group">
+                                <asp:TextBox ID="txtConfContraseña" TextMode="Password" runat="server" CssClass="form-control" placeholder="Confirmar contraseña"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtConfContraseña" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Contaseña invalidad" ControlToCompare="txtContraseña" ForeColor="Red" ControlToValidate="txtConfContraseña">*</asp:CompareValidator>
+                            </div>
+                            <div class="form-group">
+                                <asp:DropDownList ID="dlCiudad" runat="server" CssClass="form-control"></asp:DropDownList>
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Tipo de Usuario</label>
+                                <asp:DropDownList ID="dlTipoDoc" runat="server" CssClass="form-control"></asp:DropDownList>
+                            </div>
+                            <div class="form-group">
+                                 <br />
+                                <asp:TextBox ID="txtDir" runat="server" CssClass="form-control" placeholder="Direccion"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtDir" ForeColor="Red">*</asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group">
+                                <asp:TextBox ID="txtFechaNac" runat="server" CssClass="form-control" placeholder="Fecha de Nacimiento"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtFechaNac" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtFechaNac_CalendarExtender" TargetControlID="txtFechaNac" ID="txtFechaNac_CalendarExtender" Format="yyyy/M/d"></ajaxToolkit:CalendarExtender>
+                            </div>
+                        </div>
+
+                    </div>                    
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
                 </div>
             </div>
             <div class="modal-footer">
-                <asp:Button ID="btnRegistro" runat="server" Text="Agregar" CssClass="btn btn-primary btn-block" CausesValidation="False" OnClick="btnRegistro_Click" />
+                <asp:Button ID="btnRegistro" runat="server" Text="Agregar" CssClass="btn btn-danger btn-block" CausesValidation="true" OnClick="btnRegistro_Click" />
 
             </div>
 

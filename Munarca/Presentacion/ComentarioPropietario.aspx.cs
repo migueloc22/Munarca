@@ -15,9 +15,14 @@ namespace Presentacion
         {
             if (Session["Negocio"] != null)
             {
+                LogicaPath lgPath = new LogicaPath();
                 negocio = (csNegocio)Session["Negocio"];
+                Repeater1.DataSource = lgPath.DataTbPath(negocio.id_negocio); ;
+                Repeater1.DataBind();
                 lbNombre.Text = negocio.nombre;
                 lbDescrip.Text = negocio.descripcion;
+                lbTelefono.Text = negocio.telefono.ToString();
+                lbUbicacion.Text = negocio.ubicacion;
             }
             else
             {

@@ -18,7 +18,7 @@ namespace Presentacion
             if (!IsPostBack)
             {
                 try
-                {
+            {
                     lgComentario = new LogicaComentario();
                     usuario = (csUsuario)Session["Usuario"];
                     negocio = (csNegocio)Session["SessionNegocio"];
@@ -57,16 +57,24 @@ namespace Presentacion
             else
             {
                 int idComentario = int.Parse(ViewState["idComentario"].ToString());
-                csComentario comentario = new csComentario(idComentario, txtComentario.Text, "", "", usuario.id_usuario, negocio.id_negocio);
-                lgComentario.ModificarComentario(comentario);
-                dtComentario.DataSource = lgComentario.DataComentario(negocio.id_negocio);
-                dtComentario.DataBind();
-                txtComentario.Text = "";
-                ViewState["opcion"] = 1;
-                dlComentario.SelectedValue="1";
-                dtComentarioMod.Visible = false;
-                dtComentario.Visible = true;
+                if (idComentario!=0)
+                {
+                    lbVdComentario.Text = "";
+                    csComentario comentario = new csComentario(idComentario, txtComentario.Text, "", "", usuario.id_usuario, negocio.id_negocio);
+                    lgComentario.ModificarComentario(comentario);
+                    dtComentario.DataSource = lgComentario.DataComentario(negocio.id_negocio);
+                    dtComentario.DataBind();
+                    txtComentario.Text = "";
+                    ViewState["opcion"] = 1;
+                    dlComentario.SelectedValue = "1";
+                    dtComentarioMod.Visible = false;
+                    dtComentario.Visible = true;
+                }
 
+                else
+                {
+                    lbVdComentario.Text = "Seleccione un comentario...";
+                }
             }
         }
 
@@ -106,5 +114,7 @@ namespace Presentacion
             ViewState["idComentario"] = lb.Text;
             
         }
+
+        
     }
 }

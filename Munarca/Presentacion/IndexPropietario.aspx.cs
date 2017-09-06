@@ -11,19 +11,14 @@ namespace Presentacion
 {
     public partial class IndexPropietario : System.Web.UI.Page
     {
+        
         #region metodos
-        protected string obtenerDatos()
-        {
-            LogicaVisita lgVisita=new LogicaVisita();
-            DataTable datos = lgVisita.DataVisita();
-            //datos.Columns.Add(new DataColumn("Negocio", typeof(string)));
-            //datos.Columns.Add(new DataColumn("Visita", typeof(string)));
-            //datos.Rows.Add(new object[] { "work", 11 });
-            //datos.Rows.Add(new object[] { "eat", 2 });
-            //datos.Rows.Add(new object[] { "comunete", 2 });
-            //datos.Rows.Add(new object[] { "slep", 7 });
-            //datos.Rows.Add(new object[] { "watch tv", 2 });
+        protected string obtenerDatos()       {
 
+            csUsuario user = (csUsuario)Session["Usuario"];
+             LogicaVisita lgVisita=new LogicaVisita();
+            DataTable datos = lgVisita.DataVisita(user.id_usuario);
+            
             string strDatos = "[['Negocio', 'Visita'],";
 
             foreach (DataRow dr in datos.Rows)
@@ -40,6 +35,13 @@ namespace Presentacion
         LogicaNegocio lgNegocio;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Negocio"] != null)           {
+
+
+                Session["Negocio"] = null;
+                
+            }
+            
             csUsuario user = (csUsuario)Session["Usuario"];
             if (!IsPostBack)
             {

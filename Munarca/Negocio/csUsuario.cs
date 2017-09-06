@@ -19,12 +19,12 @@ namespace Negocio
         public string foto { get; set; }
         public string direccion { get; set; }
         public string fecha_nacimiento { get; set; }
-        public int telefono { get; set; }
+        public string telefono { get; set; }
         public int num_documento { get; set; }
         public int fk_id_tipo_doc { get; set; }
         public int fk_id_ciudad { get; set; }
         #endregion
-         public csUsuario( int id_usuario,string nombre1,string nombre2 ,string apellido1 ,string apellido2 ,  string correo, string foto , string direccion , string fecha_nacimiento , int telefono ,int num_documento,int fk_id_tipo_doc ,int fk_id_ciudad,string contraseña ) 
+        public csUsuario(int id_usuario, string nombre1, string nombre2, string apellido1, string apellido2, string correo, string foto, string direccion, string fecha_nacimiento, string telefono, int num_documento, int fk_id_tipo_doc, int fk_id_ciudad, string contraseña) 
          {
              this.apellido1 = apellido1;
              this.apellido2 = apellido2;

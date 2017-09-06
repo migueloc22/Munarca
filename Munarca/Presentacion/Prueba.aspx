@@ -6,39 +6,27 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <style>
-        .starRating {
-            width: 70px;
-            height: 70px;
-            cursor: pointer;
-            background-repeat: no-repeat;
-            display: block;
-        }
-
-        .FilledStars {
-            background-image: url("../img/star_rojo.png");
-        }
-
-        .WatingStars {
-            background-image: url("../img/star_amarrillo.png");
-        }
-
-        .EmptyStars {
-            background-image: url("../img/star_Plateado.png");
-        }
-    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src='https://maps.google.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyDlXrVL8twvDWaQKozKt01QloVH7CV1eYk'></script>
+    <script src="js/locationpicker.jquery.js"></script>
+    <script src="js/jquery.gmaps.js"></script>
+    <script>
+        map.drawRoute({
+            origin: [-12.044012922866312, -77.02470665341184],
+            destination: [-12.090814532191756, -77.02271108990476],
+            travelMode: 'driving',
+            strokeColor: '#131540',
+            strokeOpacity: 0.6,
+            strokeWeight: 6
+        });
+    </script>
+    
+    
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>
-                    <ajaxToolkit:Rating ID="Rating1" runat="server" StarCssClass="starRating" WaitingStarCssClass="WatingStars" EmptyStarCssClass="EmptyStars" FilledStarCssClass="FilledStars"></ajaxToolkit:Rating>
-                </ContentTemplate>
-            </asp:UpdatePanel>
-
-        </div>
+        <div id="map" style=""></div>
     </form>
 </body>
 </html>

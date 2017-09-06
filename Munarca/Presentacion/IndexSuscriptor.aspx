@@ -1,11 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioSuscriptor.master" AutoEventWireup="true" CodeBehind="IndexSuscriptor.aspx.cs" Inherits="Presentacion.IndexSuscriptor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="well">
         <div class="panel">
             <div class=" panel-primary ">
-                <div class=" panel-heading">
-                    <h3>Bienvenido querido Usuario</h3>
+                <div class="jumbotron">
+                    <h1>Bienvenido querido Usuario...</h1>
                 </div>
                 <div class="panel-body">
                     <div class="scrolling">
@@ -24,6 +23,4 @@
                 </div>
             </div>
         </div>
-    </div>
-
 </asp:Content>

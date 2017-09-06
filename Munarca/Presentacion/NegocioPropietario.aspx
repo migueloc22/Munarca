@@ -1,16 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioPropietario.master" AutoEventWireup="true" CodeBehind="NegocioPropietario.aspx.cs" Inherits="Presentacion.NegocioPropietario" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="well">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">    
         <div class="panel">
             <div class="panel-primary">
-                <div class="panel-heading">
-                    <h4>Negocio</h4>
+                <div class="jumbotron">
+                    <h1>Negocio</h1>
                 </div>
                 <div class="panel-body">
                     <center>
-                    <div class="scrolling">
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/CrearNegocioPropietario.aspx" CssClass="btn btn-danger"><span class="glyphicon glyphicon-plus btn-md">Agregar</span></asp:HyperLink>
+
+                    <div class="scrolling">
                     <br />
                     <br />
                     <asp:GridView ID="gvNegocio" runat="server" AutoGenerateColumns="False" CssClass="table table-hover table-responsive "   DataKeyNames="id_negocio" OnRowDeleting="gvNegocio_RowDeleting1" OnSelectedIndexChanged="gvNegocio_SelectedIndexChanged" GridLines="None">
@@ -18,6 +18,7 @@
                             <asp:BoundField DataField="id_negocio" ReadOnly="True" SortExpression="id_negocio" Visible="false"/>
                             <asp:BoundField DataField="nombre" HeaderText="Nombre Negocio" />
                             <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
+                            <asp:BoundField DataField="ubicacion" HeaderText="Ubicación" />
                             <asp:BoundField DataField="telefono" HeaderText="telefono" />
                             <asp:ButtonField ButtonType="Button" CommandName="Delete" ControlStyle-CssClass="btn btn-danger" HeaderText="Eliminar" ShowHeader="True" Text="Eliminar" >
 
@@ -38,7 +39,6 @@
                 </div>
             </div>
         </div>
-    </div>
     <%-- Inicio Modal --%>
     <asp:Panel ID="PanelModal" runat="server" Style="display: none; background-color: white; width: auto; height: auto;">
 
