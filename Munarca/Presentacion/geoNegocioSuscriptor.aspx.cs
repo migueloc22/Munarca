@@ -10,7 +10,7 @@ namespace Presentacion
 {
     public partial class geoNegocioSuscriptor : System.Web.UI.Page
     {
-        
+        LogicaNegocio lgNEgocio;
         protected void Page_Load(object sender, EventArgs e)
         {
             //if (!IsPostBack)
@@ -21,15 +21,19 @@ namespace Presentacion
             //    dtUbicaion.DataBind();
             //}
             rpUbicacion.ItemCommand += rpUbicacion_ItemCommand;
-            
+
         }
 
         void rpUbicacion_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            lgNEgocio = new LogicaNegocio();
+            csNegocio negocio;
             if (e.CommandName == "btnUbicacion")
             {
                 String id_negocio = ((LinkButton)e.CommandSource).CommandArgument;
-                txtlon2.Text = id_negocio;
+                negocio= lgNEgocio.SessionNegocio(int.Parse( id_negocio));
+                txtLan2.Text=negocio.latitud;
+                txtlon2.Text=negocio.longitud;
             }
         }
 
@@ -47,7 +51,7 @@ namespace Presentacion
         {
             try
             {
-                LogicaNegocio lgNEgocio = new LogicaNegocio();
+                lgNEgocio = new LogicaNegocio();
                 List<csNegocio> listUbicacion = lgNEgocio.listarUbicacion(double.Parse(txtLat.Text.ToString()), double.Parse(txtLon.Text.ToString()));
                 //List<csUbicacion> listUbicacion = lgNEgocio.ListarUbicacion(4.69982544, -74.0550546);
                 rpUbicacion.DataSource = listUbicacion.OrderBy(v => v.distancia);
@@ -55,12 +59,12 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                
+
                 throw ex;
             }
-            
+
         }
 
-        
+
     }
 }

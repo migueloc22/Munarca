@@ -22,12 +22,13 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <div id="cabecera">
-        <center>
-            <img src="img/logoFinal.png" alt="Munarca" class="logo"/>
-        </center>
+    <div id="cabecera">     
+            
+        
         <div class="container">
             <asp:Label ID="lbTipoUser" runat="server" Text="Label" Font-Size="XX-Large" CssClass="h1"></asp:Label>
+            <img src="img/logoFinal.png" alt="Munarca" id="logo" class="logo"/>
+            <asp:Image ID="imgUser" runat="server" ImageUrl="~/img/imageUser.jpg" />
         </div>
     </div>
     <div>

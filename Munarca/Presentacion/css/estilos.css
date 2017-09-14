@@ -27,11 +27,10 @@ body {
     position: absolute;
     width: 500px;
     height: auto;
-    top: 350px;
+    top: 120px;
     bottom: auto;
     right: 10%;
-    left: 5%;
-
+    left: 5%;    
 }
 
 #cajaLogin {
@@ -40,19 +39,19 @@ body {
     width: 300px;
     height: auto;
     position: absolute;
-    top: 350px;
+    top: 120px;
     right: 10%;
     left:auto;
     padding: 10px;
     border-radius: 15px;
-    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 0px 0px 19px #e90f35;
     opacity: 0.95;
     float:right;
 }
 
 #pie {
     position: absolute;
-    top: 1050px;
+    top: 720px;
     bottom: 0px;
     left: 0px;
     right: 0px;
