@@ -105,6 +105,7 @@ namespace Presentacion
 
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
+            //manejo de session Pirmera parte
             string Opcion;
             Usuario = LgUsuario.Login(txtPass.Text, txtEMail.Text);
             if (Usuario != null)

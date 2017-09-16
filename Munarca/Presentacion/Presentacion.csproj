@@ -110,6 +110,7 @@
     <Content Include="UsuarioPropietario.master" />
     <Content Include="UsuarioSuscriptor.master" />
     <Content Include="VisitaPropietario.aspx" />
+    <Content Include="vivis.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -272,6 +273,13 @@
     </Compile>
     <Compile Include="VisitaPropietario.aspx.designer.cs">
       <DependentUpon>VisitaPropietario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vivis.aspx.cs">
+      <DependentUpon>vivis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vivis.aspx.designer.cs">
+      <DependentUpon>vivis.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
