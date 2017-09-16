@@ -16,7 +16,12 @@ namespace Presentacion
         csUsuario usuario;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                lgCalificacion = new LogicaCalificacion();
+                negocio = (csNegocio)Session["SessionNegocio"];
+                lbPorcentaje.Text =  lgCalificacion.PromedioCalificacion(negocio.id_negocio).ToString();
+            }
         }
 
         protected void btnCalificar_Click(object sender, EventArgs e)
@@ -33,6 +38,7 @@ namespace Presentacion
                 calificacion = new csCalificacion(0, int.Parse(Rating1.CurrentRating.ToString()), fecha, hora, negocio.id_negocio, usuario.id_usuario);
                 lgCalificacion.CrearCalificacion(calificacion);
                 lbCalificacion.Text = Rating1.CurrentRating.ToString();
+                lbPorcentaje.Text = lgCalificacion.PromedioCalificacion(negocio.id_negocio).ToString(); ;
             }
             catch (Exception ex)
             {

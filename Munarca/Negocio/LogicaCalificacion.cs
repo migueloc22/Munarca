@@ -37,5 +37,27 @@ namespace Negocio
             }
             return retorno;
         }
+        public double PromedioCalificacion(int codNegocio)
+        {
+            double retorno =0;
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                cmd = new SqlCommand("select CONVERT(decimal(18,2),AVG(calificacion.calificacion)) as Promedio from calificacion where fk_id_negocio=@fk_id_negocio;", cnn);
+                cmd.Parameters.AddWithValue("@fk_id_negocio", codNegocio);
+                read = cmd.ExecuteReader();
+                if (read.Read())
+                {
+                    retorno = double.Parse( read["Promedio"].ToString());
+                }
+                Conexion.CerrarCnn(cnn);
+            }
+            catch (Exception ex)
+            {
+
+                rta = ex.ToString();
+            }
+            return retorno;
+        }
     }
 }

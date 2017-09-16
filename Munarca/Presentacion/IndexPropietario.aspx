@@ -15,12 +15,11 @@
           var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
           chart.draw(data, options);
       }
-    </script>
-    <div class="well">
+    </script>    
         <div class="panel">
             <div class="panel-primary">
-                <div class="panel-heading">
-                    <h4>¡Bienvenido!...</h4>
+                <div class="jumbotron">
+                    <h1>¡Bienvenido!...</h1>
                 </div>
                 <div class="panel-body">
                     <div id="donutchart" style="width: 900px; height: 500px;"></div>
@@ -60,6 +59,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div>    
 </asp:Content>

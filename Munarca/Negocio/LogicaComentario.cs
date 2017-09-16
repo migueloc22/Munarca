@@ -27,6 +27,7 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@id_usuario",comentario.fk_id_usuario);                
                 cmd.Parameters.AddWithValue("@comentario",comentario.comentario);
                 cmd.ExecuteNonQuery();
+                Conexion.CerrarCnn(cnn);
             }
             catch (Exception ex)
             {
@@ -96,6 +97,8 @@ namespace Negocio
             return tabla;
 
         }
+        
+         
         
     }
 }

@@ -1,17 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioPropietario.master" AutoEventWireup="true" CodeBehind="IndexServicioPropietario.aspx.cs" Inherits="Presentacion.IndexServicioPropietario" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="well">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">    
         <div class="panel">
             <div class="panel-primary">
                 <div class="panel-body">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <%--<ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>--%>
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
@@ -30,7 +23,7 @@
                             <asp:Repeater ID="Repeater1" runat="server">
                                 <ItemTemplate>
                                     <div class="item ">
-                                        <img src='<%# Eval("media") %>' alt="<%# Eval("media") %>" >
+                                        <img src='<%# Eval("media") %>' alt="<%# Eval("media") %>" width="300px" height="300px">
                                         <div class="carousel-caption">
                                             ...
                                         </div>
@@ -53,23 +46,50 @@
                     <div class="panel-heading" role="tab" id="headingTwo">
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <asp:Label ID="lbNombre" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="lbNombre" runat="server" Text="" CssClass="h1"></asp:Label>
+                                <span class="glyphicon glyphicon-chevron-down"></span>
                             </a>
                         </h4>
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                         <div class="panel-body">
-                            <asp:Label ID="lbDescrip" runat="server" Text="Label"></asp:Label>
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-8">
+                                    <table aling="left" class="nav-justified">
+                                        <tr>
+                                            <td>
+                                                <label class="h4">Ubicación :</label></td>
+                                            <td>
+                                                <asp:Label ID="lbUbicacion" runat="server" Text="Label" CssClass="control-label"></asp:Label></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label class="h4">Telefono :</label></td>
+                                            <td>
+                                                <asp:Label ID="lbTelefono" runat="server" Text="Label" CssClass="control-label"></asp:Label></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label class="h4">Descripción :</label></td>
+                                            <td>
+                                                <asp:Label ID="lbDescrip" runat="server" Text="Label" CssClass="control-label"></asp:Label></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="btn-group btn-group-justified btn-group-lg">
-                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger active"><span class="glyphicon glyphicon-fire"></span> Servicios</asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink2" runat="server" CssClass="btn btn-danger" NavigateUrl="~/VisitaPropietario.aspx"><span class="glyphicon glyphicon-stats"></span> Visitas</asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-danger" NavigateUrl="~/ComentarioPropietario.aspx"><span class="glyphicon glyphicon-comment"></span> Comentario</asp:HyperLink>
-                    </div>
-                    <br />
-                    <br />
-                    <center>
+                </div>
+                <div class="btn-group btn-group-justified btn-group-lg">
+                    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger active"><span class="glyphicon glyphicon-fire"></span> Servicios</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" CssClass="btn btn-danger" NavigateUrl="~/VisitaPropietario.aspx"><span class="glyphicon glyphicon-stats"></span> Visitas</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-danger" NavigateUrl="~/ComentarioPropietario.aspx"><span class="glyphicon glyphicon-comment"></span> Comentario</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink4" runat="server" CssClass="btn btn-danger" NavigateUrl="~/AlbumNegocioPropietario.aspx"><span class="glyphicon glyphicon-picture"></span> Album</asp:HyperLink>
+                </div>
+                <br />
+                <br />
+                <center>
                 
                 <asp:HyperLink ID="btnAgregarSv" runat="server" CssClass="btn btn-danger " NavigateUrl="~/CrearServicioPropietario.aspx"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Agregar Sercicio</asp:HyperLink>
                 <br />
@@ -101,8 +121,6 @@
                 </div>
               </div>
             </center>
-                </div>
             </div>
         </div>
-    </div>
 </asp:Content>
