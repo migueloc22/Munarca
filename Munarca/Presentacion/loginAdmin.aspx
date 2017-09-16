@@ -11,12 +11,14 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtCorreo" runat="server" TextMode="Email"></asp:TextBox>
         <br />
-        <asp:TextBox ID="txtPass" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtPass" runat="server" TextMode="Password"></asp:TextBox>
     
         <br />
-        <asp:Button ID="btnEntrar" runat="server" OnClick="Button1_Click" Text="Ingresar" />
+        <asp:Button ID="btnEntrar" runat="server" Text="Ingresar" OnClick="btnEntrar_Click" />
+    
+        <asp:Label ID="lbValidar" runat="server" ForeColor="#CC0000"></asp:Label>
     
     </div>
     </form>
