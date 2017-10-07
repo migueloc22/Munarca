@@ -12,16 +12,7 @@ namespace Presentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            csUsuario usuario;
-            usuario = (csUsuario)Session["Usuario"];
-            if (usuario != null)
-            {
-                lbMensaje.Text = usuario.nombre1 + " " + usuario.contraseña;
-            }
-            else
-            {
-                Response.Redirect("LoginAdmin.aspx");
-            }
+            
         }
     }
 }

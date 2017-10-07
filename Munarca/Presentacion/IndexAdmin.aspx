@@ -4,6 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:Label ID="lbMensaje" runat="server" Style="display:none"></asp:Label>
-
+    <div class="panel-primary">
+        <div class="panel-heading">
+            <h1>hola viviiiiiiiiiiiiiiiiiiiiiiiii</h1>
+        </div>
+        <div class="panel-body"></div>
+    </div>
+    
 </asp:Content>
