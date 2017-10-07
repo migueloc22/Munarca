@@ -76,6 +76,7 @@
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\estiloAdmin.css" />
     <Content Include="css\estilos.css" />
     <Content Include="css\estilos2.css" />
     <Content Include="css\jquery.gmaps.css" />
@@ -89,6 +90,7 @@
     <Content Include="img\star_rojo.png" />
     <Content Include="img\tecnico.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="IndexAdmin.aspx" />
     <Content Include="IndexNegocioSuscriptor.aspx" />
     <Content Include="IndexPropietario.aspx" />
     <Content Include="IndexServicioPropietario.aspx" />
@@ -118,6 +120,7 @@
     <Content Include="VisitaPropietario.aspx" />
     <Content Include="vivis.aspx" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="UsuarioAdmin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -202,6 +205,13 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IndexAdmin.aspx.cs">
+      <DependentUpon>IndexAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexAdmin.aspx.designer.cs">
+      <DependentUpon>IndexAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="IndexNegocioSuscriptor.aspx.cs">
       <DependentUpon>IndexNegocioSuscriptor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -272,6 +282,13 @@
     </Compile>
     <Compile Include="Prueba.aspx.designer.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioAdmin.Master.cs">
+      <DependentUpon>UsuarioAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsuarioAdmin.Master.designer.cs">
+      <DependentUpon>UsuarioAdmin.Master</DependentUpon>
     </Compile>
     <Compile Include="UsuarioPropietario.master.cs">
       <DependentUpon>UsuarioPropietario.master</DependentUpon>
