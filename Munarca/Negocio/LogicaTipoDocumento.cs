@@ -32,5 +32,24 @@ namespace Negocio
             Conexion.CerrarCnn(cnn);
             return tabla;
         }
+        public DataTable DataTableTpDoc(int id_tipo_doc)
+        {
+            DataTable tabla = new DataTable();
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                cmd = new SqlCommand("Select * from tipo_documento where id_tipo_doc=@id_tipo_doc", cnn);
+                cmd.Parameters.AddWithValue("@id_tipo_doc", id_tipo_doc);
+                read = cmd.ExecuteReader();
+                tabla.Load(read);
+            }
+            catch (Exception ex)
+            {
+
+                rta = ex.ToString();
+            }
+            Conexion.CerrarCnn(cnn);
+            return tabla;
+        }
     }
 }

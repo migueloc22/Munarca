@@ -81,10 +81,10 @@
                         </div>
                     </div>
                     <div class="btn-group btn-group-justified btn-group-lg">
-                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger " NavigateUrl="~/IndexServicioPropietario.aspx"><span class="glyphicon glyphicon-fire"></span> Servicios</asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink2" runat="server" CssClass="btn btn-danger" NavigateUrl="~/VisitaPropietario.aspx"><span class="glyphicon glyphicon-stats"></span> Visitas</asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-danger" NavigateUrl="~/ComentarioPropietario.aspx"><span class="glyphicon glyphicon-comment"></span> Comentario</asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink4" runat="server" CssClass="btn btn-danger active"><span class="glyphicon glyphicon-picture"></span> Album</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger " NavigateUrl="~/IndexServicioPropietario.aspx"><span class="glyphicon glyphicon-fire"></span><br /> Servicios</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink2" runat="server" CssClass="btn btn-danger" NavigateUrl="~/VisitaPropietario.aspx"><span class="glyphicon glyphicon-stats"></span><br /> Visitas</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-danger" NavigateUrl="~/ComentarioPropietario.aspx"><span class="glyphicon glyphicon-comment"></span><br /> Comentario</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink4" runat="server" CssClass="btn btn-danger active"><span class="glyphicon glyphicon-picture"></span><br /> <br />Album</asp:HyperLink>
                     </div>
                     <br />
                     <br />

@@ -34,6 +34,26 @@ namespace Negocio
              Conexion.CerrarCnn(cnn);
              return tabla;
          }
+         public DataTable DataTableDpto(int id_departamento)
+         {
+             DataTable tabla = new DataTable();
+
+             cnn = Conexion.AbrirCnn();
+             try
+             {
+                 cmd = new SqlCommand("Select * from departamento where id_departamento=@id_departamento", cnn);
+                 cmd.Parameters.AddWithValue("@id_departamento", id_departamento);
+                 read = cmd.ExecuteReader();
+                 tabla.Load(read);
+             }
+             catch (Exception ex)
+             {
+                 rta = ex.ToString();
+
+             }
+             Conexion.CerrarCnn(cnn);
+             return tabla;
+         }
     }
 
 

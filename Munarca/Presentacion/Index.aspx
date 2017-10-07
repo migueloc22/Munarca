@@ -40,19 +40,20 @@
                         </div>
                         <br />
                         <div class="form-group">
-                            <asp:TextBox ID="txtEMail" runat="server" CssClass="form-control form-group-lg" placeholder="email" TextMode="Email" MaxLength="20"></asp:TextBox>
+                            <asp:TextBox ID="txtEMail" runat="server" CssClass="form-control form-group-lg" placeholder="email" TextMode="Email" MaxLength="25"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <asp:TextBox ID="txtPass" runat="server" CssClass="form-control form-group-lg" placeholder="Contraseña" TextMode="Password" MaxLength="15"></asp:TextBox>
                         </div>
                         <div class="form-group">
 
-                            <asp:HyperLink ID="HyperLink3" runat="server">Registrarse</asp:HyperLink>
-
+                            <asp:HyperLink ID="HyperLink3" runat="server">Registrarse</asp:HyperLink><br />
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/recuperarPass.aspx">Recuperar Contraseña</asp:HyperLink>
                             <ajaxToolkit:ModalPopupExtender ID="HyperLink3_ModalPopupExtender" runat="server" BehaviorID="HyperLink3_ModalPopupExtender" TargetControlID="HyperLink3" PopupControlID="PanelRegistro" CancelControlID="exit" BackgroundCssClass="fondo">
                             </ajaxToolkit:ModalPopupExtender>
                             <br />
                             <asp:Label ID="lbValidacionUser" runat="server" Text="" ForeColor="red"></asp:Label>
+                            
                         </div>
                         <div class="form-group">
                             <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-danger" OnClick="btnEntrar_Click" CausesValidation="false" />
@@ -63,103 +64,109 @@
             </asp:UpdatePanel>
         </div>
         <%-- Inicio Modal --%>
+
         <asp:Panel ID="PanelRegistro" runat="server" Style="display: none; background-color: white; width: 600px; height: auto;">
-            <div class="modal-header">
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>
+                    <div class="modal-header">
 
-                <button id="exit" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Registro de Usuario</h4>
+                        <button id="exit" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Registro de Usuario</h4>
 
-            </div>
-            <div class="scrolling">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <asp:TextBox ID="txtNom1" runat="server" CssClass="form-control" placeholder="Primer Nombre"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNom1" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    </div>
+                    <div class="scrolling">
+
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <asp:TextBox ID="txtNom1" runat="server" CssClass="form-control" placeholder="Primer Nombre"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNom1" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:TextBox ID="txtApe1" runat="server" CssClass="form-control" placeholder="Primer Apellido"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtApe1" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" placeholder="Telefono"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtTelefono" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:DropDownList ID="dlDpto" runat="server" CssClass="form-control" OnSelectedIndexChanged="dlDpto_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="label">Tipo de Usuario</label>
+                                        <asp:DropDownList ID="dlTipoUsuario" runat="server" CssClass="form-control"></asp:DropDownList>
+                                    </div>
+                                    <div class="form-group">
+                                        <br />
+                                        <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" placeholder="Correo"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtCorreo" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:TextBox ID="txtFechaNac" runat="server" CssClass="form-control" placeholder="Fecha de Nacimiento"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtFechaNac" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                        <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtFechaNac_CalendarExtender" TargetControlID="txtFechaNac" ID="txtFechaNac_CalendarExtender" Format="yyyy/M/d"></ajaxToolkit:CalendarExtender>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <asp:TextBox ID="txtNom2" runat="server" CssClass="form-control" placeholder="Segundo Nombre"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNom2" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:TextBox ID="txtApe2" runat="server" CssClass="form-control" placeholder="Segundo Apellido"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtApe2" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:TextBox ID="txtNumDoc" runat="server" CssClass="form-control" placeholder="Numero Documento"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNumDoc" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <asp:DropDownList ID="dlCiudad" runat="server" CssClass="form-control"></asp:DropDownList>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="label">Tipo de Usuario</label>
+                                        <asp:DropDownList ID="dlTipoDoc" runat="server" CssClass="form-control"></asp:DropDownList>
+                                    </div>
+                                    <div class="form-group">
+                                        <br />
+                                        <asp:TextBox ID="txtDir" runat="server" CssClass="form-control" placeholder="Direccion"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtDir" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    </div>
+
+                                </div>
+
                             </div>
-                            <div class="form-group">
-                                <asp:TextBox ID="txtApe1" runat="server" CssClass="form-control" placeholder="Primer Apellido"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtApe1" ForeColor="Red">*</asp:RequiredFieldValidator>
+                            <div class="alert alert-success">
+                                <strong>Informacion</strong> Su contraseña sera enviada a su correo electronio.
                             </div>
-                            <div class="form-group">
-                                <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" placeholder="Telefono"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtTelefono" ForeColor="Red">*</asp:RequiredFieldValidator>
-                            </div>
-                            <div class="form-group">
-                                <asp:TextBox ID="txtContraseña" runat="server" CssClass="form-control" placeholder="contraseña" TextMode="Password"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtContraseña" ForeColor="Red">*</asp:RequiredFieldValidator>
-                            </div>
-                            <div class="form-group">
-                                <asp:DropDownList ID="dlDpto" runat="server" CssClass="form-control" OnSelectedIndexChanged="dlDpto_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
-                            </div>
-                            <div class="form-group">                                
-                                <label class="label">Tipo de Usuario</label>
-                                <asp:DropDownList ID="dlTipoUsuario" runat="server" CssClass="form-control"></asp:DropDownList>
-                            </div>
-                            <div class="form-group">
-                                <br />
-                                <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" placeholder="Correo"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtCorreo" ForeColor="Red">*</asp:RequiredFieldValidator>
-                            </div>
-                            <div class="form-control">
-                                <asp:FileUpload ID="FileUpload1" runat="server" accept="gif|jpg|png" class="multi" maxlength="1" />
-                            </div>
+                            <asp:Literal ID="ltMensaje" runat="server"></asp:Literal>
+                            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <asp:TextBox ID="txtNom2" runat="server" CssClass="form-control" placeholder="Segundo Nombre"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNom2" ForeColor="Red">*</asp:RequiredFieldValidator>
-                            </div>
-                            <div class="form-group">
-                                <asp:TextBox ID="txtApe2" runat="server" CssClass="form-control" placeholder="Segundo Apellido"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtApe2" ForeColor="Red">*</asp:RequiredFieldValidator>
-                            </div>
-                            <div class="form-group">
-                                <asp:TextBox ID="txtNumDoc" runat="server" CssClass="form-control" placeholder="Numero Documento"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNumDoc" ForeColor="Red">*</asp:RequiredFieldValidator>
-                            </div>
-                            <div class="form-group">
-                                <asp:TextBox ID="txtConfContraseña" TextMode="Password" runat="server" CssClass="form-control" placeholder="Confirmar contraseña"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtConfContraseña" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Contaseña invalidad" ControlToCompare="txtContraseña" ForeColor="Red" ControlToValidate="txtConfContraseña">*</asp:CompareValidator>
-                            </div>
-                            <div class="form-group">
-                                <asp:DropDownList ID="dlCiudad" runat="server" CssClass="form-control"></asp:DropDownList>
-                            </div>
-                            <div class="form-group">
-                                <label class="label">Tipo de Usuario</label>
-                                <asp:DropDownList ID="dlTipoDoc" runat="server" CssClass="form-control"></asp:DropDownList>
-                            </div>
-                            <div class="form-group">
-                                 <br />
-                                <asp:TextBox ID="txtDir" runat="server" CssClass="form-control" placeholder="Direccion"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtDir" ForeColor="Red">*</asp:RequiredFieldValidator>
-                            </div>
-                            <div class="form-group">
-                                <asp:TextBox ID="txtFechaNac" runat="server" CssClass="form-control" placeholder="Fecha de Nacimiento"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtFechaNac" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtFechaNac_CalendarExtender" TargetControlID="txtFechaNac" ID="txtFechaNac_CalendarExtender" Format="yyyy/M/d"></ajaxToolkit:CalendarExtender>
-                            </div>
-                        </div>
 
-                    </div>                    
-                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
-                </div>
-            </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
             <div class="modal-footer">
                 <asp:Button ID="btnRegistro" runat="server" Text="Agregar" CssClass="btn btn-danger btn-block" CausesValidation="true" OnClick="btnRegistro_Click" />
 
             </div>
 
         </asp:Panel>
+
         <%-- Panel Modal --%>
     </form>
 
     <div id="pie">
-        <div id="sudpie1"></div>
-        <div id="sudpie2"></div>
+        <div class="row">
+        <div id="sudpie1" class="col-xs-12"></div>
+        <div id="sudpie2"class="col-xs-12"></div>
+        </div>
+        
     </div>
 </body>
 </html>

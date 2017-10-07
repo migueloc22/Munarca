@@ -113,6 +113,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="MasterPage.Master" />
     <Content Include="Prueba.aspx" />
+    <Content Include="recuperarPass.aspx" />
     <Content Include="UsuarioPropietario.master" />
     <Content Include="UsuarioSuscriptor.master" />
     <Content Include="VisitaPropietario.aspx" />
@@ -272,6 +273,13 @@
     </Compile>
     <Compile Include="Prueba.aspx.designer.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recuperarPass.aspx.cs">
+      <DependentUpon>recuperarPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recuperarPass.aspx.designer.cs">
+      <DependentUpon>recuperarPass.aspx</DependentUpon>
     </Compile>
     <Compile Include="UsuarioPropietario.master.cs">
       <DependentUpon>UsuarioPropietario.master</DependentUpon>

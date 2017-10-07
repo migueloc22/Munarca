@@ -15,10 +15,10 @@ namespace Presentacion
             {
                 switch (Session["TipoUsuario"].ToString())
                 {
-                    case "1":
+                    case "2":
                         Response.Redirect("IndexSuscriptor.aspx");
                         break;
-                    case "2":
+                    case "1":
 
                         break;
                     default:

@@ -22,7 +22,8 @@ namespace Negocio
                 command = new SqlCommand("select * from estado_usuario where fk_id_usuario=@codUser and fk_id_tipo_usuario=@tipoUser", cnn);
                 command.Parameters.AddWithValue("@codUser", codUser);
                 command.Parameters.AddWithValue("@tipoUser", tipoUser);
-                if (command.ExecuteNonQuery() != 0)
+                reader=command.ExecuteReader();
+                if (reader.Read())
                 {
                     Salida = true;
                 }

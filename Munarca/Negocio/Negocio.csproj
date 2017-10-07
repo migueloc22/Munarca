@@ -48,6 +48,7 @@
     <Compile Include="csServicio.cs" />
     <Compile Include="csUbicacion.cs" />
     <Compile Include="csUsuario.cs" />
+    <Compile Include="csUtilidades.cs" />
     <Compile Include="csVisita.cs" />
     <Compile Include="LogicaCalificacion.cs" />
     <Compile Include="LogicaCategoria.cs" />

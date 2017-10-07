@@ -22,10 +22,10 @@ namespace Presentacion
                 switch (Session["TipoUsuario"].ToString())
                 {
                     case "1":
-                        lbTipoUser.Text = "Suscriptor";
+                        lbTipoUser.Text = "Propietario";
                         break;
                     case "2":
-                        lbTipoUser.Text = "Propietario";
+                        lbTipoUser.Text = "Suscriptor";
                         break;
                     default:
                         break;

@@ -15,9 +15,9 @@ namespace Presentacion
             {
                 switch (Session["TipoUsuario"].ToString())
                 {
-                    case "1":
-                        break;
                     case "2":
+                        break;
+                    case "1":
                         Response.Redirect("IndexPropietario.aspx"); ;
                         break;
                     default:

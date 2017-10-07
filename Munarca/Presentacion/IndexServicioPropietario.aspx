@@ -1,94 +1,39 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioPropietario.master" AutoEventWireup="true" CodeBehind="IndexServicioPropietario.aspx.cs" Inherits="Presentacion.IndexServicioPropietario" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">    
-        <div class="panel">
-            <div class="panel-primary">
-                <div class="panel-body">
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img src="img/logoFinal.png" alt="...">
-                                <div class="carousel-caption">
-                                    ...
-                                </div>
-                            </div>
-                            <%-- <div class="item">
-                        <img src="img/tecnico.jpg" alt="...">
-                        <div class="carousel-caption">
-                            ...
-                        </div>
-                    </div>--%>
-                            <asp:Repeater ID="Repeater1" runat="server">
-                                <ItemTemplate>
-                                    <div class="item ">
-                                        <img src='<%# Eval("media") %>' alt="<%# Eval("media") %>" width="300px" height="300px">
-                                        <div class="carousel-caption">
-                                            ...
-                                        </div>
-                                    </div>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                            ...
-                        </div>
-
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="panel">
+        <div class="panel-primary">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <section class="caja1">
+                            <img src="img/tecnico.jpg" class="img-responsive">
+                        </section>
                     </div>
-                    <div class="panel-heading" role="tab" id="headingTwo">
-                        <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <asp:Label ID="lbNombre" runat="server" Text="" CssClass="h1"></asp:Label>
-                                <span class="glyphicon glyphicon-chevron-down"></span>
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                        <div class="panel-body">
+                    <div class="col-xs-12">
+                        <section class="caja2">
                             <div class="row">
-                                <div class="col-md-4"></div>
-                                <div class="col-md-8">
-                                    <table aling="left" class="nav-justified">
-                                        <tr>
-                                            <td>
-                                                <label class="h4">Ubicación :</label></td>
-                                            <td>
-                                                <asp:Label ID="lbUbicacion" runat="server" Text="Label" CssClass="control-label"></asp:Label></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="h4">Telefono :</label></td>
-                                            <td>
-                                                <asp:Label ID="lbTelefono" runat="server" Text="Label" CssClass="control-label"></asp:Label></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="h4">Descripción :</label></td>
-                                            <td>
-                                                <asp:Label ID="lbDescrip" runat="server" Text="Label" CssClass="control-label"></asp:Label></td>
-                                        </tr>
-                                    </table>
+
+                                <div class="col-xs-6">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254508.5164108755!2d-74.24789547304529!3d4.648283717013187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2zQm9nb3TDoQ!5e0!3m2!1ses!2sco!4v1506105571690" frameborder="0" style="border: 0; height: auto; width: 100%;" allowfullscreen id="mapaNeg"></iframe>
                                 </div>
+                                <div class="col-xs-6">
+                                    <ul>
+                                        <li><span class="glyphicon glyphicon-alert" style="width:30px;"></span></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+
                             </div>
-                        </div>
+                        </section>
+                    </div>
+                    <div class="col-xs-12">
+                        <section class="caja3"></section>
                     </div>
                 </div>
-                <div class="btn-group btn-group-justified btn-group-lg">
-                    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger active"><span class="glyphicon glyphicon-fire"></span> Servicios</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink2" runat="server" CssClass="btn btn-danger" NavigateUrl="~/VisitaPropietario.aspx"><span class="glyphicon glyphicon-stats"></span> Visitas</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-danger" NavigateUrl="~/ComentarioPropietario.aspx"><span class="glyphicon glyphicon-comment"></span> Comentario</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink4" runat="server" CssClass="btn btn-danger" NavigateUrl="~/AlbumNegocioPropietario.aspx"><span class="glyphicon glyphicon-picture"></span> Album</asp:HyperLink>
-                </div>
-                <br />
-                <br />
+
                 <center>
                 
                 <asp:HyperLink ID="btnAgregarSv" runat="server" CssClass="btn btn-danger " NavigateUrl="~/CrearServicioPropietario.aspx"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Agregar Sercicio</asp:HyperLink>
@@ -123,4 +68,5 @@
             </center>
             </div>
         </div>
+    </div>
 </asp:Content>
