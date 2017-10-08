@@ -58,12 +58,7 @@
                         </ul>
                     </li>
                     <li><a href='pawning.php'>Cerrar sesion</a></li>
-                    <li class='has-sub'><a href='contact.php'></a>
-                        <ul>
-                            <li><a href='local-diamond-buyer.php'>Local Diamond Buyer</a></li>
-                            <li><a href='place-that-buy-diamond.php'>Place that buy diamonds</a></li>
-                        </ul>
-                    </li>
+                   
                 </ul>
             </nav>
             <div class="col-lg-offset-2 container">
