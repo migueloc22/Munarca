@@ -6,7 +6,8 @@
 
     <div class="panel-primary">
         <div class="panel-heading">
-            <h1>hola viviiiiiiiiiiiiiiiiiiiiiiiii</h1>
+            <%-- Colocamos un griview  --%>
+            <asp:GridView ID="gvUsuarios" runat="server"></asp:GridView>
         </div>
         <div class="panel-body"></div>
     </div>
