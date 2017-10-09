@@ -37,31 +37,27 @@
                     </li>
                     <li class='has-sub'><a href='diamond-education.php'>Usuarios</a>
                         <ul>
-                            <li><a href='diamond-shape.php'>Diamond Shapes</a></li>
+                            <li><a href='diamond-shape.php'>Suscrptores</a></li>
+                            <li><a href='diamond-shape.php'>Propietarios</a></li>
                         </ul>
                     </li>
+                    
                     <li class='has-sub'><a href='how-it-work.php'>Reportes</a>
                         <ul>
-                            <li><a href='where-to-sell.php'>Where To Sell My Engagement Ring</a></li>
+                            <li><a href='where-to-sell.php'>Negocios</a></li>
+                            <li><a href='where-to-sell.php'>Usuarios</a></li>
+                            <li><a href='where-to-sell.php'>Suscriptores</a></li>
                         </ul>
                     </li>
                     <li class='has-sub'><a href='#'>Configuración</a>
-                        <ul>
-                            <li><a href='certified.php'>Certified</a></li>
-                            <li><a href='metal-jewelry-making.php'>Metals in Jewelry Making</a></li>
-                            <li class='has-sub'><a href='precious-metal-platinum.php'>Precious Metal Platinum</a>
-                                <ul>
-                                    <li><a href='where-to-sell.php'>Where To Sell My Engagement Ring</a></li>
-                                </ul>
-                            </li>
-                            <li><a href='precious-metal-silver.php'>Precious Metal Silver</a></li>
-                        </ul>
+                       
                     </li>
-                    <li><a href='pawning.php'>Cerrar sesion</a></li>
+                   
                    
                 </ul>
+                <asp:Button ID="btnCerrar" runat="server" Text="Cerrar Sesion" CssClass="btn btn-lg btn-danger btn-block" OnClick="btnCerrar_Click"/>
             </nav>
-            <div class="col-lg-offset-2 container">
+            <div class="col-lg-offsset-2 container">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>

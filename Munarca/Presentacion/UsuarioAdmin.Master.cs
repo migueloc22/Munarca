@@ -23,5 +23,12 @@ namespace Presentacion
                 Response.Redirect("LoginAdmin.aspx");
             }
         }
+
+        protected void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Application.Clear();
+            Response.Redirect("loginAdmin.aspx");
+        }
     }
 }
