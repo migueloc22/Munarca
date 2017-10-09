@@ -15,7 +15,28 @@ namespace Negocio
         SqlDataReader reader;
         SqlConnection cnn;
         csUsuario csUsuario;
+        //Metodo de recueperar da tos de usuario con dadtable
+        public DataTable DataUser() {
+            DataTable table=new DataTable();
+            //bamos  llamar la conexion como la conexion es estactica no se nesecita distanciar;
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                //colocamos primero  la consulta y luego la conecion
+                command = new SqlCommand("select * from usuario",cnn);
+                //recuperarmos los datos con reader 
+                reader = command.ExecuteReader();
+                //los datos recuperados se va guardar en datablae que creamos
+                table.Load(reader);
 
+            }
+            catch (Exception ex)
+            {
+                
+                throw;
+            }
+            return table;
+        }
         public csUsuario Login(string contraseña, string correo)
         {
             cnn = Conexion.AbrirCnn();

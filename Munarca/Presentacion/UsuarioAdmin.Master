@@ -15,72 +15,67 @@
 </head>
 <body style="background: none">
     <header>
+
+        <section class="container">
+            <img src="img/logoFinal.png" class="img-responsive" width="190" />
+        </section>
     </header>
     <form id="form1" runat="server">
-        <div class="container">
-            <div class="row">
-                <nav class="menu" id="cssmenu">
-                    <ul>
-                        <li class="active"><a><asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/img/imageUser.jpg" CssClass="img-circle img-responsive"  Width="60px"/>
-                            <asp:Label ID="lbNombre" runat="server" Text="heyyyy"  CssClass="h4"></asp:Label>
-                                           </a>
-                            
 
-                        </li>
-                        <li class='has-sub'><a href='what-we-buy.php'>What We Buy</a>
-                            <ul>
-                                <li><a href='cash-for-diamond.php'>Cash For Diamonds</a></li>
-                                <li><a href='sell-my-diamond.php'>Sell My Diamond</a></li>
-                                <li><a href='sell-diamond-ring.php'>Sell Diamond Ring</a></li>
-                                <li><a href='diamond-appraisal-nyc.php'>Diamond appraisal NYC</a></li>
-                                <li><a href='jewelry-appraisal-nyc.php'>Jewelry Appraisal NYC</a></li>
-                                <li><a href='cash-for-engagement-ring.php'>Cash for Engagement Ring</a></li>
-                                <li><a href='engagement-ring-buyer.php'>Engagement Ring Buyer</a></li>
-                                <li><a href='wedding-ring-buyer.php'>Wedding Ring Buyer</a></li>
-                                <li><a href='diamond-buyer.php'>Diamond Buyer</a></li>
-                            </ul>
-                        </li>
-                        <li class='has-sub'><a href='diamond-education.php'>Diamond Education</a>
-                            <ul>
-                                <li><a href='diamond-shape.php'>Diamond Shapes</a></li>
-                            </ul>
-                        </li>
-                        <li class='has-sub'><a href='how-it-work.php'>How it Works?</a>
-                            <ul>
-                                <li><a href='where-to-sell.php'>Where To Sell My Engagement Ring</a></li>
-                            </ul>
-                        </li>
-                        <li class='has-sub'><a href='#'>Precious Metal Education</a>
-                            <ul>
-                                <li><a href='certified.php'>Certified</a></li>
-                                <li><a href='metal-jewelry-making.php'>Metals in Jewelry Making</a></li>
-                                <li class='has-sub'><a href='precious-metal-platinum.php'>Precious Metal Platinum</a>
-                                    <ul>
-                                        <li><a href='where-to-sell.php'>Where To Sell My Engagement Ring</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href='precious-metal-silver.php'>Precious Metal Silver</a></li>
-                            </ul>
-                        </li>
-                        <li><a href='pawning.php'>Pawning</a></li>
-                        <li class='has-sub'><a href='contact.php'>Contact us</a>
-                            <ul>
-                                <li><a href='local-diamond-buyer.php'>Local Diamond Buyer</a></li>
-                                <li><a href='place-that-buy-diamond.php'>Place that buy diamonds</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+        <div class="row">
+            <nav class="menu" id="cssmenu">
+                <ul>
+                    <li class="active"><a>
+                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/img/imageUser.jpg" CssClass="img-circle img-responsive" Width="60px" />
+                        <asp:Label ID="lbNombre" runat="server" CssClass="h4"></asp:Label>
+                    </a>
+
+
+                    </li>
+                    <li class='has-sub'><a href='what-we-buy.php'>Home</a>
+
+                    </li>
+                    <li class='has-sub'><a href='diamond-education.php'>Usuarios</a>
+                        <ul>
+                            <li><a href='diamond-shape.php'>Suscrptores</a></li>
+                            <li><a href='diamond-shape.php'>Propietarios</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class='has-sub'><a href='how-it-work.php'>Reportes</a>
+                        <ul>
+                            <li><a href='where-to-sell.php'>Negocios</a></li>
+                            <li><a href='where-to-sell.php'>Usuarios</a></li>
+                            <li><a href='where-to-sell.php'>Suscriptores</a></li>
+                        </ul>
+                    </li>
+                    <li class='has-sub'><a href='#'>Configuración</a>
+                       
+                    </li>
+                   
+                   
+                </ul>
+                <asp:Button ID="btnCerrar" runat="server" Text="Cerrar Sesion" CssClass="btn btn-lg btn-danger btn-block" OnClick="btnCerrar_Click"/>
+            </nav>
+            <div class="col-lg-offsset-2 container">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
         </div>
 
 
 
 
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+
+
     </form>
+
+    <section>
+    </section>
+
+
+
+
+
 </body>
 </html>
