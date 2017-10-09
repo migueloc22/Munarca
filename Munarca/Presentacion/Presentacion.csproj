@@ -73,6 +73,9 @@
     <Content Include="ConfigSuscriptor.aspx" />
     <Content Include="CrearNegocioPropietario.aspx" />
     <Content Include="CrearServicioPropietario.aspx" />
+    <Content Include="css\bootstrap-datepicker.min.css" />
+    <Content Include="css\bootstrap-datepicker3.min.css" />
+    <Content Include="css\bootstrap-datepicker3.standalone.min.css" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -95,6 +98,7 @@
     <Content Include="IndexPropietario.aspx" />
     <Content Include="IndexServicioPropietario.aspx" />
     <Content Include="IndexSuscriptor.aspx" />
+    <Content Include="js\bootstrap-datepicker.es.min.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\Gmaps.js" />
     <Content Include="js\JavaScript.js" />
@@ -105,6 +109,7 @@
     <Content Include="js\locationpicker.jquery.js" />
     <Content Include="js\npm.js" />
     <Content Include="loginAdmin.aspx" />
+    <Content Include="media\img\user.png" />
     <Content Include="ModificarNegocioPropietario.aspx" />
     <Content Include="ModificarServicioPropietario.aspx" />
     <Content Include="NegocioPropietario.aspx" />
@@ -326,9 +331,7 @@
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="media\img\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

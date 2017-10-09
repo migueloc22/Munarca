@@ -122,6 +122,64 @@ namespace Negocio
             }
             return retorno;
         }
+        public Boolean CambiarPass(string contraseña, int codUser)
+        {
+            Boolean retorno = false;
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                command = new SqlCommand("update usuario set contraseña=@contraseña where id_usuario=@id_usuario", cnn);
+                command.Parameters.AddWithValue("@contraseña", contraseña);
+                command.Parameters.AddWithValue("@id_usuario", codUser);
+                int num = command.ExecuteNonQuery();
+                if (num != 0)
+                {
+                    retorno = true;
+                }
+                Conexion.CerrarCnn(cnn);
+
+            }
+            catch (Exception ex)
+            {
+
+                rta = ex.ToString();
+            }
+            return retorno;
+        }
+        public Boolean ActulizarDatos(csUsuario user)
+        {
+            Boolean retorno = false;
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                command = new SqlCommand("update usuario set nombre_1=@nombre_1,nombre_2=@nombre_2,apellido_1=@apellido_1,apellido_2=@apellido_2,fk_id_tipo_doc=@fk_id_tipo_doc,num_documento=@num_documento,fk_id_ciudad=@fk_id_ciudad,direccion=@direccion,telefono=@telefono,fecha_nacimiento=@fecha_nacimiento where id_usuario=@id_usuario", cnn);
+                command.Parameters.AddWithValue("@nombre_1", user.nombre1);
+                command.Parameters.AddWithValue("@nombre_2", user.nombre2);
+                command.Parameters.AddWithValue("@apellido_1", user.apellido1);
+                command.Parameters.AddWithValue("@apellido_2", user.apellido2);
+                command.Parameters.AddWithValue("@fk_id_tipo_doc", user.fk_id_tipo_doc);
+                command.Parameters.AddWithValue("@num_documento", user.num_documento);
+                command.Parameters.AddWithValue("@fk_id_ciudad", user.fk_id_ciudad);
+                command.Parameters.AddWithValue("@direccion", user.direccion);
+                command.Parameters.AddWithValue("@telefono", user.telefono);
+                command.Parameters.AddWithValue("@fecha_nacimiento", user.fecha_nacimiento);
+                command.Parameters.AddWithValue("@id_usuario", user.codUser);
+
+                int num = command.ExecuteNonQuery();
+                if (num != 0)
+                {
+                    retorno = true;
+                }
+                Conexion.CerrarCnn(cnn);
+
+            }
+            catch (Exception ex)
+            {
+
+                rta = ex.ToString();
+            }
+            return retorno;
+        }
 
         public Boolean CrearUsuario(csUsuario usuario,string opcion) {
         Boolean retorno = false;
