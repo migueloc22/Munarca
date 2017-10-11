@@ -87,6 +87,7 @@
     <Content Include="geoNegocioSuscriptor.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\imageUser.jpg" />
+    <Content Include="img\logoBlanco.png" />
     <Content Include="img\logoFinal.png" />
     <Content Include="img\star_amarrillo.png" />
     <Content Include="img\star_Plateado.png" />
@@ -99,10 +100,11 @@
     <Content Include="IndexServicioPropietario.aspx" />
     <Content Include="IndexSuscriptor.aspx" />
     <Content Include="js\bootstrap-datepicker.es.min.js" />
+    <Content Include="js\bootstrap-datepicker.min.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\Gmaps.js" />
     <Content Include="js\JavaScript.js" />
-    <Content Include="js\jquery-3.2.1.min.js" />
+    <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery-ui.js" />
     <Content Include="js\jquery.gmaps.js" />
     <Content Include="js\jquery.MultiFile.js" />
