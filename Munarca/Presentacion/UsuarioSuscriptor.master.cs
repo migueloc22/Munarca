@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
 
 namespace Presentacion
 {
@@ -13,6 +14,9 @@ namespace Presentacion
         {
             if (Session["Usuario"] != null && Session["TipoUsuario"] != null)
             {
+                csUsuario user = (csUsuario)Session["Usuario"];
+                imgUer.ImageUrl = user.foto;
+                lbNombre.Text = user.nombre1;
                 switch (Session["TipoUsuario"].ToString())
                 {
                     case "2":

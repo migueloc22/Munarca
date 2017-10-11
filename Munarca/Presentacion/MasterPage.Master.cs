@@ -14,7 +14,7 @@ namespace Presentacion
         csUsuario User;
         protected void Page_Load(object sender, EventArgs e)
         {
-            lbTipoUser.Text = "hola";
+            //lbTipoUser.Text = "hola";
             if (Session["Usuario"] != null && Session["TipoUsuario"] != null)
             {
                   //User= (csUsuario)Session["Usuario"];
@@ -22,10 +22,10 @@ namespace Presentacion
                 switch (Session["TipoUsuario"].ToString())
                 {
                     case "1":
-                        lbTipoUser.Text = "Propietario";
+                        //lbTipoUser.Text = "Propietario";
                         break;
                     case "2":
-                        lbTipoUser.Text = "Suscriptor";
+                        //lbTipoUser.Text = "Suscriptor";
                         break;
                     default:
                         break;

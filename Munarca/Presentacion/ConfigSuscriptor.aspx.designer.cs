@@ -202,6 +202,15 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.DropDownList dtCiudad;
         
         /// <summary>
+        /// Control ltDatos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltDatos;
+        
+        /// <summary>
         /// Control imgUser.
         /// </summary>
         /// <remarks>

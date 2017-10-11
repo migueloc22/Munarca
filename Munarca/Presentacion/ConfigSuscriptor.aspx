@@ -75,6 +75,9 @@
                                             <label>Ciudad</label>
                                             <asp:DropDownList ID="dtCiudad" runat="server" CssClass="form-control"></asp:DropDownList>
                                         </div>
+                                        <div class="form-group">
+                                            <asp:Literal ID="ltDatos" runat="server"></asp:Literal>  
+                                        </div>
                                     </div>
                                 </asp:Panel>
                             </ContentTemplate>

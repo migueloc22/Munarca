@@ -12,12 +12,17 @@ namespace BaseDatos
        
       
         public static SqlConnection AbrirCnn(){
-            SqlConnection conexion = new SqlConnection("server=DESKTOP-BU4GL9O ; database=MunarcaDB ; integrated security = true");
+            //Conexion  de Viviana
+            //SqlConnection conexion = new SqlConnection("server=DESKTOP-BU4GL9O ; database=MunarcaDB ; integrated security = true");
+            //Conexion de Miguel
+            SqlConnection conexion = new SqlConnection(@"server=DESKTOP-157HBSM\SQLEXPRESS; database=MunarcaDB ; integrated security = true");
             try
-            {
-                conexion.Open();
-                return conexion;
+            {          
+                    conexion.Open();
+                    return conexion;
+                    
             }
+
             catch (Exception ex)
             {
                 conexion.Close();

@@ -2,8 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="panel">
-            <div class=" panel-primary ">
-                <div class="jumbotron">
+            <div class=" panel-danger ">
+                <div class="panel-heading">
                     <h1>Bienvenido querido Usuario...</h1>
                 </div>
                 <div class="panel-body">

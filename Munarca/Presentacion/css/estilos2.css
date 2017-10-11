@@ -10,10 +10,7 @@
     z-index: 10000;
 }
 
-body {
-    width: 100%;
-    position: relative;
-}
+
 
 .panelModal {
     display: none;
@@ -38,23 +35,17 @@ body {
     color: white;
     width: 100%;
     height: auto;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231 */
-    background: rgb(69,72,77); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+    background: #818181;
 }
 
     #cabecera #logo {
-        height: 60px;
+        width: 120px;
         position: relative;
     }
 
     #cabecera img {
-        height: 40px;
         position: relative;
-        float: right;
+        float: left;
     }
 
 
@@ -94,7 +85,7 @@ body {
     bottom: auto;
     left: auto;
     right: auto;
-    z-index:3;
+    z-index: 3;
 }
 
     .vertical-menu a {
@@ -156,17 +147,16 @@ body {
         text-shadow: 0px 1px #fff;
     }
 
-footer {
+/*footer {
     width: 80%;
     margin: 0 auto;
-    height: 120px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231 */
-    background: rgb(69,72,77); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
-}
+    height: 120px;   
+    background: rgb(69,72,77); 
+    background: -moz-linear-gradient(top, rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); 
+    background: -webkit-linear-gradient(top, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); 
+    background: linear-gradient(to bottom, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); 
+}*/
 
 .HeaderNegocio {
     position: relative;
@@ -190,82 +180,91 @@ footer {
 
 .menuNegocio {
     width: 1000px;
-    position:relative;
-    background-color:#c9302c;
-    height:150px;
+    position: relative;
+    background-color: #c9302c;
+    height: 150px;
     margin: 0px auto;
-    
 }
-.menuNegocio #mapaNeg{
-    width: 450px;
-    position:relative;
-    height:150px;
-    border:0px;
-    float:left;
-}
-.menuNegocio div{
-    width: 450px;
-    position:relative;
-    height:50px;
-    border:0px;
-    margin:20px auto;
-    float:right;
-    right:35px;
-    
-}
+
+    .menuNegocio #mapaNeg {
+        width: 450px;
+        position: relative;
+        height: 150px;
+        border: 0px;
+        float: left;
+    }
+
+    .menuNegocio div {
+        width: 450px;
+        position: relative;
+        height: 50px;
+        border: 0px;
+        margin: 20px auto;
+        float: right;
+        right: 35px;
+    }
+
 .infor {
     width: 1000px;
-    position:relative;
-    background-color:rgb(69,72,77);
-    height:150px;
+    position: relative;
+    background-color: rgb(69,72,77);
+    height: 150px;
     margin: 0px auto;
-    
 }
-.infor #NegoInfor{
-    width: 550px;
-    position:relative;
-    border-style: none;
-    height:150px;
-    border-right:  2px solid white;
-    margin:auto auto;
-    color:white;
-    left:5px;
-    float:left;
-    
-}
+
+    .infor #NegoInfor {
+        width: 550px;
+        position: relative;
+        border-style: none;
+        height: 150px;
+        border-right: 2px solid white;
+        margin: auto auto;
+        color: white;
+        left: 5px;
+        float: left;
+    }
+
 .caja1 {
-    background-color:rgb(219, 192, 192);   
-
+    background-color: rgb(219, 192, 192);
 }
-.caja1 img{
-    width:100%;
-    height:150px;
 
-}
+    .caja1 img {
+        width: 100%;
+        height: 150px;
+    }
+
 .caja2 {
-    background-color:rgb(244, 67, 54);
-    height:auto;
-    
-
+    background-color: rgb(244, 67, 54);
+    height: auto;
 }
-.caja2 ul{
-    list-style-type: none;
-    margin: 40px auto;
-    padding: 0;
-    background-color: #333;
-    width:100%;
 
-}
-.caja2 ul li{
-    margin:0 25px;
-    float: left;  
-    width:80px;
-    height:80px;
-    border:solid 2px white;
+    .caja2 ul {
+        list-style-type: none;
+        margin: 40px auto;
+        padding: 0;
+        background-color: #333;
+        width: 100%;
+    }
 
-}
+        .caja2 ul li {
+            margin: 0 25px;
+            float: left;
+            width: 80px;
+            height: 80px;
+            border: solid 2px white;
+        }
+
 .caja3 {
-    background-color:rgb(69,72,77);
-    height:150px;
-
+    background-color: rgb(69,72,77);
+    height: 150px;
 }
+
+.navbar-inverse {
+    background-color: #a30000;
+    border-color: #960505;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+/*inicio footer*/
+/*fin footer*/

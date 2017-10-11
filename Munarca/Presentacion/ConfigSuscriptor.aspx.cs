@@ -108,6 +108,15 @@ namespace Presentacion
         protected void btnDatos_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                lgUsuario = new LogicaUsuario();
+            }
+            catch (Exception ex)
+            {
+
+                ltDatos.Text = ex.Message; 
+            }
         }
 
         protected void btnGuardarPass_Click(object sender, EventArgs e)
