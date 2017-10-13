@@ -18,14 +18,14 @@ namespace Negocio
         }
 
         /// Esta función desencripta la cadena que le envíamos en el parámentro de entrada.
-        //public static string DesEncriptar(this string _cadenaAdesencriptar)
-        //{
-        //    string result = string.Empty;
-        //    byte[] decryted = Convert.FromBase64String(_cadenaAdesencriptar);
-        //    //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
-        //    result = System.Text.Encoding.Unicode.GetString(decryted);
-        //    return result;
-        //}
+        public string desencriptar(string  _cadenaadesencriptar)
+        {
+            string result = string.Empty;
+            byte[] decryted = Convert.FromBase64String(_cadenaadesencriptar);
+            result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decryted);
+            return result;
+        }
         public string CrearPassword(int longitud)
         {
             string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";

@@ -16,6 +16,9 @@ namespace Presentacion
             {
                 csUsuario user = (csUsuario)Session["Usuario"];
                 imgUer.ImageUrl = user.foto;
+                imgUser2.ImageUrl = user.foto;
+                lbEmail.Text = user.correo;
+                lbNombre2.Text = user.nombre1 + " " + user.apellido1;
                 lbNombre.Text = user.nombre1;
                 switch (Session["TipoUsuario"].ToString())
                 {
@@ -25,16 +28,19 @@ namespace Presentacion
                         Response.Redirect("IndexPropietario.aspx"); ;
                         break;
                     default:
+                        Response.Redirect("IndexAdmin.aspx");
                         break;
                 }
             }
         }
 
-        protected void btnCerrarSession_Click(object sender, EventArgs e)
+        protected void btnCerrarSession_Click1(object sender, EventArgs e)
         {
             Session.Clear();
             Response.Redirect("Index.aspx");
         }
+
+        
 
         //protected void LinkButton1_Click(object sender, EventArgs e)
         //{

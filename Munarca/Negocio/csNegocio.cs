@@ -46,6 +46,11 @@ namespace Negocio
             this.distancia = distancia;
         }
 
+        public csNegocio()
+        {
+            // TODO: Complete member initialization
+        }
+
 
     }
 }

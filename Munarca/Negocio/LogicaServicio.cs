@@ -111,7 +111,7 @@ namespace Negocio
         public DataTable ListarSErvicio() {
             DataTable tabla = new DataTable();
             cnn = Conexion.AbrirCnn();
-            cmd = new SqlCommand("select id_servicio,nombre_servicio,fk_id_negocio,descripcion,fecha,hora,valor,CONCAT('/media/img/',image) as imagen from servicio", cnn);
+            cmd = new SqlCommand("select top 30 id_servicio,nombre_servicio,fk_id_negocio,descripcion,fecha,hora,valor,CONCAT('/media/img/',image) as imagen from servicio order by fecha desc ,hora desc, nombre_servicio", cnn);
             read = cmd.ExecuteReader();
             tabla.Load(read);
             Conexion.CerrarCnn(cnn);
@@ -123,10 +123,50 @@ namespace Negocio
         {
             DataTable tabla = new DataTable();
             cnn = Conexion.AbrirCnn();
-            cmd = new SqlCommand("select id_servicio,nombre_servicio,descripcion,fecha,hora,valor,CONCAT('/media/img/',image) as imagen from servicio where fk_id_negocio=@fk_id_negocio", cnn);
+            cmd = new SqlCommand("select  id_servicio,nombre_servicio,descripcion,fecha,hora,valor,CONCAT('/media/img/',image) as imagen from servicio where fk_id_negocio=@fk_id_negocio order by fecha desc ,hora desc, nombre_servicio", cnn);
             cmd.Parameters.AddWithValue("@fk_id_negocio", codNegocio);
             read = cmd.ExecuteReader();
             tabla.Load(read);
+            Conexion.CerrarCnn(cnn);
+            return tabla;
+
+
+        }
+        public DataTable ListarRango(string rangoMin, string rangoMax, string ordenar)
+        {
+            DataTable tabla = new DataTable();
+            cnn = Conexion.AbrirCnn();
+            cmd = new SqlCommand("select top 30 id_servicio,nombre_servicio,descripcion,fecha,hora,valor,CONCAT('/media/img/',image) as imagen from servicio where valor BETWEEN @rangoMin AND @rangoMax order by  valor "+ordenar+" , nombre_servicio ", cnn);
+            cmd.Parameters.AddWithValue("@rangoMin", rangoMin);
+            cmd.Parameters.AddWithValue("@rangoMax", rangoMax);
+            read = cmd.ExecuteReader();
+            tabla.Load(read);
+            Conexion.CerrarCnn(cnn);
+            return tabla;
+
+
+        }
+        public DataTable ListarRango(string rangoMin, string rangoMax, string nombre_servicio, string ordenar)
+        {
+           
+            DataTable tabla = new DataTable();
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                cmd = new SqlCommand("select top 30 id_servicio,nombre_servicio,descripcion,fecha,hora,valor,CONCAT('/media/img/',image) as imagen  from servicio where nombre_servicio like @nombre_servicio AND valor BETWEEN @rangoMin and @rangoMax order by  valor " + ordenar + " , nombre_servicio ", cnn);
+                cmd.Parameters.AddWithValue("@rangoMin", rangoMin);
+                cmd.Parameters.AddWithValue("@rangoMax", rangoMax);
+                cmd.Parameters.AddWithValue("@nombre_servicio", "%"+nombre_servicio+"%");
+                read = cmd.ExecuteReader();
+                tabla.Load(read);
+            }
+            catch (Exception ex)
+            {
+
+                rta = ex.Message;
+            }
+            
+           
             Conexion.CerrarCnn(cnn);
             return tabla;
 

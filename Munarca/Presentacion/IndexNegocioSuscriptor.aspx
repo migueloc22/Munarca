@@ -1,46 +1,48 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioSuscriptor.master" AutoEventWireup="true" CodeBehind="IndexNegocioSuscriptor.aspx.cs" Inherits="Presentacion.IndexNegocioSuscriptor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="panel">
-            <div class="panel-primary">
-                <div class="panel-body">
-                    <div class="panel-heading" role="tab" id="headingTwo">
-                        <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <asp:Label ID="lbNombre" runat="server" Text=""></asp:Label>
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                        <div class="panel-body">
-                            <asp:Label ID="lbDescrip" runat="server" Text="Label"></asp:Label>
-                        </div>
-                    </div>
-                    <div class="btn-group btn-group-justified btn-group-lg">
-                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger active"><span class="glyphicon glyphicon-fire"></span> Servicios</asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink2" runat="server" CssClass="btn btn-danger" NavigateUrl="~/CalificacionSuscriptor.aspx"><span class="glyphicon glyphicon-check"></span> Calificar</asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-danger" NavigateUrl="~/ComentarioSuscriptor.aspx"><span class="glyphicon glyphicon-comment"></span> Comentario</asp:HyperLink>
-                    </div>
-                    <br />
-                    <br />
-                    <center>
-                <br />
-                <br />
-               <div class="scrolling">
-                <asp:GridView ID="gvServicio" runat="server" AutoGenerateColumns="False" DataKeyNames="id_servicio" CssClass="table table-hover" GridLines="None">
-                    <Columns>
-                        <asp:ImageField DataImageUrlField="imagen" ControlStyle-Height="75px" ControlStyle-Width="75px">
-                        <ControlStyle Height="75px" Width="75px"></ControlStyle>
-                        </asp:ImageField>
-                        <asp:BoundField DataField="nombre_servicio" />
-                        <asp:BoundField DataField="valor" />
-                        <asp:BoundField DataField="descripcion" />
-                    </Columns>
-                </asp:GridView>   
-              </div>             
-            </center>
 
+    <div class="row" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+        <%--  --%>
+        <nav class="col-sm-3" id="myScrollspy">
+            <ul class="nav  nav-pills nav-stacked" style="top: 20px; position:static">
+                <li><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="#section3">Section 2</a></li>
+                <li><a href="#section4">Section 2</a></li>
+            </ul>
+        </nav>
+        <%--  --%>
+        <div class="col-xs-9">
+            <div class="panel">
+                <div class="panel-default">
+                    <div class="panel-body">
+                        <asp:Literal ID="ltError" runat="server"></asp:Literal>
+                        <asp:Panel ID="pnContenido" runat="server">
+                            <section id="section1" style="height: 250px;font-size: 28px;">
+                                <h1>Section 1</h1>
+                                <p>Try to scroll this page and look at the navigation list while scrolling!</p>
+                            </section>
+                            <section id="section2" style="height: 250px;font-size: 28px;">
+                                <h1>Section 1</h1>
+                                <p>Try to scroll this page and look at the navigation list while scrolling!</p>
+                            </section>
+                            <section id="section3" style="height: 250px;font-size: 28px;">
+                                <h1>Section 1</h1>
+                                <p>Try to scroll this page and look at the navigation list while scrolling!</p>
+                            </section>
+                            <section id="section4" style="height: 250px;font-size: 28px;">
+                                <h1>Section 1</h1>
+                                <p>Try to scroll this page and look at the navigation list while scrolling!</p>
+                            </section>
+                        </asp:Panel>
+                    </div>
                 </div>
             </div>
         </div>
+
+    </div>
+
+
+
 </asp:Content>

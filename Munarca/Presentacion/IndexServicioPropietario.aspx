@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="panel">
-        <div class="panel-primary">
+        <div class="panel-default">
             <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-12">

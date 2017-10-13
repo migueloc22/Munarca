@@ -12,28 +12,61 @@ namespace Presentacion
     {
         csNegocio negocio;
         LogicaServicio lgServicio;
+        LogicaNegocio lgNegocio;
         #region metodos
         private void CargarGrid(csNegocio negocio)
         {
-            lgServicio = new LogicaServicio();
-            gvServicio.DataSource = lgServicio.ListarSErvicio(negocio.id_negocio);
-            gvServicio.DataBind();
+            //lgServicio = new LogicaServicio();
+            //gvServicio.DataSource = lgServicio.ListarSErvicio(negocio.id_negocio);
+            //gvServicio.DataBind();
         }
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["SessionNegocio"] != null)
+            try
             {
+                if (Request.Params["show"] != null)
+                {
+                    //int codUser = int.Parse(Request.Params["show"].ToString());
+                    if (Request.Params["show"].Length > 0)
+                    {
+                        csUtilidades util = new csUtilidades();
+                        lgNegocio = new LogicaNegocio();
+                        int codNegocio = int.Parse(util.desencriptar(Request.Params["show"]));
+                        negocio = new csNegocio();
+                        negocio = lgNegocio.SessionNegocio(codNegocio);
+                        if (negocio != null)
+                        {                            
+                            Application["negocio"] = negocio;
+                            ltError.Text = negocio.telefono;
+                            
+                        }
+                        else
+                        {
+                            
+                            pnContenido.Visible = false;
+                            ltError.Text = "hola";
+                        }
 
-                negocio = (csNegocio)Session["SessionNegocio"];
-                lbNombre.Text = negocio.nombre;
-                lbDescrip.Text = negocio.descripcion;
-                CargarGrid(negocio);
+
+                    }
+                    else
+                    {
+                        Response.Redirect("IndexSuscriptor.aspx");
+                    }
+
+                }
+                else
+                {
+                    Response.Redirect("IndexSuscriptor.aspx");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Response.Redirect("IndexSuscriptor.aspx");
+                pnContenido.Visible = false;
+                ltError.Text = ex.Message;
             }
+
         }
     }
 }
