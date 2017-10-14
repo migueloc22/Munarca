@@ -24,7 +24,7 @@
                 <div class="panel-body">
 
                     <div class="form-group">
-                        <asp:TextBox ID="txtCorreo" CssClass="form-control input-lg" MaxLength="20"  placeholder="Correo" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtCorreo" CssClass="form-control input-lg" MaxLength="35"  placeholder="Correo" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo Vacio" ControlToValidate="txtCorreo" ForeColor="Red"></asp:RequiredFieldValidator><br />
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Escriba Un Correo" ControlToValidate="txtCorreo" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                         
