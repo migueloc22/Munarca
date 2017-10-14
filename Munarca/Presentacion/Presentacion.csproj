@@ -94,7 +94,6 @@
     <Content Include="img\star_rojo.png" />
     <Content Include="img\tecnico.jpg" />
     <Content Include="Index.aspx" />
-    <Content Include="IndexAdmin.aspx" />
     <Content Include="IndexNegocioSuscriptor.aspx" />
     <Content Include="IndexPropietario.aspx" />
     <Content Include="IndexServicioPropietario.aspx" />
@@ -110,7 +109,6 @@
     <Content Include="js\jquery.MultiFile.js" />
     <Content Include="js\locationpicker.jquery.js" />
     <Content Include="js\npm.js" />
-    <Content Include="loginAdmin.aspx" />
     <Content Include="media\img\user.png" />
     <Content Include="ModificarNegocioPropietario.aspx" />
     <Content Include="ModificarServicioPropietario.aspx" />
@@ -125,10 +123,10 @@
     <Content Include="recuperarPass.aspx" />
     <Content Include="UsuarioPropietario.master" />
     <Content Include="UsuarioSuscriptor.master" />
+    <Content Include="UsusarioAdminn.master" />
     <Content Include="VisitaPropietario.aspx" />
     <Content Include="vivis.aspx" />
     <Content Include="WebForm1.aspx" />
-    <Content Include="UsuarioAdmin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -213,13 +211,6 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IndexAdmin.aspx.cs">
-      <DependentUpon>IndexAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="IndexAdmin.aspx.designer.cs">
-      <DependentUpon>IndexAdmin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="IndexNegocioSuscriptor.aspx.cs">
       <DependentUpon>IndexNegocioSuscriptor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -247,13 +238,6 @@
     </Compile>
     <Compile Include="IndexSuscriptor.aspx.designer.cs">
       <DependentUpon>IndexSuscriptor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="loginAdmin.aspx.cs">
-      <DependentUpon>loginAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="loginAdmin.aspx.designer.cs">
-      <DependentUpon>loginAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -304,6 +288,13 @@
     </Compile>
     <Compile Include="UsuarioSuscriptor.master.designer.cs">
       <DependentUpon>UsuarioSuscriptor.master</DependentUpon>
+    </Compile>
+    <Compile Include="UsusarioAdminn.master.cs">
+      <DependentUpon>UsusarioAdminn.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsusarioAdminn.master.designer.cs">
+      <DependentUpon>UsusarioAdminn.master</DependentUpon>
     </Compile>
     <Compile Include="VisitaPropietario.aspx.cs">
       <DependentUpon>VisitaPropietario.aspx</DependentUpon>
