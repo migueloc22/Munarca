@@ -295,6 +295,13 @@
     <Compile Include="Prueba.aspx.designer.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="recuperarPass.aspx.cs">
+      <DependentUpon>recuperarPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recuperarPass.aspx.designer.cs">
+      <DependentUpon>recuperarPass.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioPropietario.master.cs">
       <DependentUpon>UsuarioPropietario.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
