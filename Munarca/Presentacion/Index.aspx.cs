@@ -303,7 +303,7 @@ namespace Presentacion
                                 break;
                             case "3":
                                 Session["TipoUsuario"] = "3";
-                                Response.Redirect("IndexAdmin.aspx");
+                                Response.Redirect("indexAdminn.aspx");
                                 break;
                             default:
                                 break;
@@ -316,7 +316,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    lbValidacionUser.Text = "El usuario o la contraseña invalido";
+                    lbValidacionUser.Text = "Usuario o contraseña incorrecto";
                 }
             }
             catch (Exception ex)
