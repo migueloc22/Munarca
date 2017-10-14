@@ -2,10 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="panel">
-        <div class="  panel-primary">
-            <div class="jumbotron">
-                <h1>Configuarción de Usuario</h1>
-            </div>
+        <div class="  panel-primary">            
             <div class="panel-body">
                 <fieldset>
                     <legend>
@@ -87,9 +84,9 @@
                         <%-- Fin tercera columna --%>
                         <div class="col-xs-4">
                             <div class="row">
-                                <div class="col-xs-6 col-xs-offset-4 well">
+                                <div class="col-xs-7 col-xs-offset-4 well">
                                     <div class="form-group">
-                                        <asp:Image ID="imgUser" CssClass="img-responsive img-circle" Width="100%" ImageUrl="media/img/user.png" runat="server" />
+                                        <asp:Image ID="imgUser" CssClass="img-responsive img-circle" Width="170" Height="170" ImageUrl="media/img/user.png" runat="server" />
                                     </div>
 
                                     <div class="form-group">
