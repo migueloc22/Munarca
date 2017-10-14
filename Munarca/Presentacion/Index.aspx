@@ -34,11 +34,14 @@
                         <center>
                 <h2><span class="glyphicon glyphicon-log-in"></span> Login</h2>
                 </center>
-                        <div class="btn-group btn-group-justified">
+                        <div class="form-group"><asp:DropDownList ID="drListUsu" CssClass="form-control" runat="server"></asp:DropDownList></div>
+                        
+                        <%--<div class="btn-group btn-group-justified">
                             <asp:LinkButton ID="btnAtivador1" runat="server" ForeColor="White" OnClick="btnAtivador1_Click" CssClass="btn btn-danger btn-lg" CausesValidation="false"><span class="glyphicon glyphicon-user"></span> Suscriptor </asp:LinkButton>
                             <asp:LinkButton ID="btnAtivador2" runat="server" ForeColor="Gray" OnClick="btnAtivador2_Click" CssClass="btn btn-link btn-lg" CausesValidation="false"><span class="glyphicon glyphicon-flag"></span> Propietario </asp:LinkButton>
-                        </div>
-                        <br />
+                            <asp:LinkButton ID="LinkButton1" runat="server" ForeColor="Gray" OnClick="btnAtivador2_Click" CssClass="btn btn-link btn-lg" CausesValidation="false"><span class="glyphicon glyphicon-flag"></span> Administrador </asp:LinkButton>
+                        </div>--%>
+                       
                         <div class="form-group">
                             <asp:TextBox ID="txtEMail" runat="server" CssClass="form-control form-group-lg" placeholder="email" TextMode="Email" MaxLength="25"></asp:TextBox>
                         </div>
@@ -56,7 +59,7 @@
                             
                         </div>
                         <div class="form-group">
-                            <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-danger" OnClick="btnEntrar_Click" CausesValidation="false" />
+                            <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-danger" CausesValidation="false" OnClick="btnEntrar_Click" />
                             <input type="reset" class="btn btn-default" />
                         </div>
                     </div>
