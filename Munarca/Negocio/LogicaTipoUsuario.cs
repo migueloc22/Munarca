@@ -33,6 +33,25 @@ namespace Negocio
             Conexion.CerrarCnn(cnn);
             return tabla;
         }
+        public DataTable DtTipoUsu()
+        {
+            DataTable tabla = new DataTable();
+
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                cmd = new SqlCommand("Select * from tipo_usuario", cnn);
+                read = cmd.ExecuteReader();
+                tabla.Load(read);
+            }
+            catch (Exception ex)
+            {
+                rta = ex.ToString();
+
+            }
+            Conexion.CerrarCnn(cnn);
+            return tabla;
+        }
         public bool validarRol(int rol,int cod)
         {
             bool retorno = false;

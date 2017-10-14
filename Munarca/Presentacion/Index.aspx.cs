@@ -17,6 +17,19 @@ namespace Presentacion
         csUsuario Usuario;
         csUtilidades util;
         #region Metodos
+
+
+        //metodo para cargar datos a la lista
+        private void cargarTipoUsu()
+        {
+            LogicaTipoUsuario lgUsu = new LogicaTipoUsuario();
+            drListUsu.DataSource = lgUsu.DtTipoUsu();
+            drListUsu.DataTextField = "tipo";
+            drListUsu.DataValueField = "id_tipo_usuario";
+            drListUsu.DataBind();
+
+
+        }
         public void EnviarCorreo(string pass, string correo)
         {
             /*-------------------------MENSAJE DE CORREO----------------------*/
@@ -100,6 +113,7 @@ namespace Presentacion
                 }
                 else
                 {
+                    cargarTipoUsu();
                     LogicaTipoDocumento lgTpDoc = new LogicaTipoDocumento();
                     dlTipoDoc.DataSource = lgTpDoc.DataTableTpDoc();
                     dlTipoDoc.DataTextField = "tipo_doc";
@@ -135,90 +149,90 @@ namespace Presentacion
 
 
         }
-        protected void btnAtivador1_Click(object sender, EventArgs e)
-        {
+        //protected void btnAtivador1_Click(object sender, EventArgs e)
+        //{
 
-            if (IsPostBack)
-            {
-                ViewState["opciones"] = "2";
-                btnAtivador1.CssClass = "btn btn-danger btn-lg ";
-                btnAtivador2.CssClass = "btn btn-link btn-lg ";
-                btnAtivador1.ForeColor = Color.White;
-                btnAtivador2.ForeColor = Color.Gray;
+        //    if (IsPostBack)
+        //    {
+        //        ViewState["opciones"] = "2";
+        //        btnAtivador1.CssClass = "btn btn-danger btn-lg ";
+        //        btnAtivador2.CssClass = "btn btn-link btn-lg ";
+        //        btnAtivador1.ForeColor = Color.White;
+        //        btnAtivador2.ForeColor = Color.Gray;
 
-            }
-
-
-        }
-
-        protected void btnAtivador2_Click(object sender, EventArgs e)
-        {
-            if (IsPostBack)
-            {
-                ViewState["opciones"] = "1";
-                btnAtivador1.CssClass = "btn btn-link btn-lg ";
-                btnAtivador2.CssClass = "btn btn-danger btn-lg ";
-                btnAtivador2.ForeColor = Color.White;
-                btnAtivador1.ForeColor = Color.Gray;
-
-            }
+        //    }
 
 
-        }
+        //}
 
-        protected void btnEntrar_Click(object sender, EventArgs e)
-        {
-            //manejo de session Pirmera parte
-            util = new csUtilidades();
-            string Opcion;
-            Usuario = LgUsuario.Login(util.Encriptar(txtPass.Text), txtEMail.Text);
-            if (Usuario != null)
-            {
-                Session["Usuario"] = Usuario;
-                if (ViewState["opciones"] == null)
-                {
-                    Opcion = "2";
-                }
-                else
-                {
-                    Opcion = ViewState["opciones"].ToString();
-                }
-                if (estadoUser.Validar(Usuario.id_usuario,int.Parse(Opcion)))
-                {
-                        switch (Opcion)
-                        {
-                        case "2":
-                            Session["TipoUsuario"] = "2";
-                            Response.Redirect("IndexSuscriptor.aspx");
-                            break;
-                        case "1":
-                            ViewState["opciones"] = "1";
-                            btnAtivador1.CssClass = "btn btn-link btn-lg ";
-                            btnAtivador2.CssClass = "btn btn-danger btn-lg ";
-                            btnAtivador2.ForeColor = Color.White;
-                            btnAtivador1.ForeColor = Color.Gray;
-                            Session["TipoUsuario"] = "1";
-                            Response.Redirect("IndexPropietario.aspx");
-                            break;
-                        default:
-                            btnEntrar.Text = "1";
-                            break;
+        //protected void btnAtivador2_Click(object sender, EventArgs e)
+        //{
+        //    if (IsPostBack)
+        //    {
+        //        ViewState["opciones"] = "1";
+        //        btnAtivador1.CssClass = "btn btn-link btn-lg ";
+        //        btnAtivador2.CssClass = "btn btn-danger btn-lg ";
+        //        btnAtivador2.ForeColor = Color.White;
+        //        btnAtivador1.ForeColor = Color.Gray;
 
-                    }
-                }
-                 else
-                {
-                    lbValidacionUser.Text = "EL tipo de usuario no valido";
-                }
-                
-            }
-            else
-            {
-                lbValidacionUser.Text = "usuario o contraseña incorecta.";
-            }
+        //    }
 
 
-        }
+        //}
+
+        //protected void btnEntrar_Click(object sender, EventArgs e)
+        //{
+        //    //manejo de session Pirmera parte
+        //    util = new csUtilidades();
+        //    string Opcion;
+        //    Usuario = LgUsuario.Login(util.Encriptar(txtPass.Text), txtEMail.Text);
+        //    if (Usuario != null)
+        //    {
+        //        Session["Usuario"] = Usuario;
+        //        if (ViewState["opciones"] == null)
+        //        {
+        //            Opcion = "2";
+        //        }
+        //        else
+        //        {
+        //            Opcion = ViewState["opciones"].ToString();
+        //        }
+        //if (estadoUser.Validar(Usuario.id_usuario,int.Parse(Opcion)))
+        //{
+        //        switch (Opcion)
+        //        {
+        //        case "2":
+        //            Session["TipoUsuario"] = "2";
+        //            Response.Redirect("IndexSuscriptor.aspx");
+        //            break;
+        //        case "1":
+        //            ViewState["opciones"] = "1";
+        //            btnAtivador1.CssClass = "btn btn-link btn-lg ";
+        //            btnAtivador2.CssClass = "btn btn-danger btn-lg ";
+        //            btnAtivador2.ForeColor = Color.White;
+        //            btnAtivador1.ForeColor = Color.Gray;
+        //            Session["TipoUsuario"] = "1";
+        //            Response.Redirect("IndexPropietario.aspx");
+        //            break;
+        //        default:
+        //            btnEntrar.Text = "1";
+        //            break;
+
+        //    }
+        //    }
+        //     else
+        //    {
+        //        lbValidacionUser.Text = "EL tipo de usuario no valido";
+        //    }
+
+        //}
+        //else
+        //{
+        //    lbValidacionUser.Text = "usuario o contraseña incorecta.";
+        //}
+
+
+        //}
 
 
 
@@ -263,5 +277,55 @@ namespace Presentacion
             }
 
         }
+
+        protected void btnEntrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                util = new csUtilidades();
+                LgUsuario = new LogicaUsuario();
+                Usuario = LgUsuario.Login(util.Encriptar(txtPass.Text), txtEMail.Text);
+                if (Usuario != null)
+                {
+                    if (estadoUser.Validar(Usuario.id_usuario, int.Parse(drListUsu.SelectedValue.ToString())))
+                    {
+                        Session["Usuario"] = Usuario;
+                        switch (drListUsu.SelectedValue.ToString())
+                        {
+
+                            case "1":
+                                Session["TipoUsuario"] = "1";
+                                Response.Redirect("IndexPropietario.aspx");
+                                break;
+                            case "2":
+                                Session["TipoUsuario"] = "2";
+                                Response.Redirect("IndexSuscriptor.aspx");
+                                break;
+                            case "3":
+                                Session["TipoUsuario"] = "3";
+                                Response.Redirect("IndexAdmin.aspx");
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        lbValidacionUser.Text = "Tipo de usuario invalido";
+                    }
+                }
+                else
+                {
+                    lbValidacionUser.Text = "El usuario o la contraseña invalido";
+                }
+            }
+            catch (Exception ex)
+            {
+
+               lbValidacionUser.Text=(ex.Message);
+            }
+
+        }
+
     }
 }
