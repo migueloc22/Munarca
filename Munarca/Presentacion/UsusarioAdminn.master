@@ -18,21 +18,21 @@
                             <a class="navbar-brand">
                                 <img alt="Munarca" src="img/logoBlanco.png" width="120" height="30">
                             </a>
-                            <a class="navbar-brand" href="./ORqmj">Suscriptor</a>
+                            <a class="navbar-brand" href="./ORqmj">Administrador</a>
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <%-- <div class="vertical-menu">
-            <asp:HyperLink ID="LnkHome" runat="server" NavigateUrl="~/IndexSuscriptor.aspx"><span class="glyphicon glyphicon-home btn-lg" data-toggle="tooltip"  data-placement="right"  title="Home" ></span></asp:HyperLink>
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/geoNegocioSuscriptor.aspx"><span class="glyphicon  glyphicon-map-marker btn-lg" data-toggle="tooltip"  data-placement="right"  title="Buscar Negocios"></span></asp:HyperLink>
-            <asp:HyperLink ID="HyperLink3" runat="server" data-toggle="tooltip"  data-placement="right"  title="Configuación" NavigateUrl="~/ConfigSuscriptor.aspx" ><span class="glyphicon glyphicon-cog btn-lg"></span></asp:HyperLink>
-            <asp:LinkButton ID="btnCerrarSession" runat="server" OnClick="btnCerrarSession_Click"  data-toggle="tooltip"  data-placement="right"  title="Cerrar Sesion"><span class="glyphicon glyphicon-off btn-lg"></span></asp:LinkButton>
-        </div>--%>
+                                
                                 <li>
-                                    <asp:HyperLink ID="LnkHome" runat="server" NavigateUrl="~/IndexSuscriptor.aspx">Home</asp:HyperLink></li>
+                                    <asp:HyperLink ID="LnkHome" runat="server" NavigateUrl="~/IndexAdminn.aspx">Home</asp:HyperLink></li>
                                 <li>
-                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/geoNegocioSuscriptor.aspx">Buscar Negocio</asp:HyperLink></li>
-
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~">Usuarios</asp:HyperLink></li>
+                                <li>
+                                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~">Categorias</asp:HyperLink></li>
+                                <li>
+                                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~">Negocios</asp:HyperLink></li>
+                                <li>
+                                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~">Mapa</asp:HyperLink></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -76,7 +76,7 @@
                                                 <div class="navbar-footer-content">
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <%--                                                            <a href="#" class="btn btn-default btn-sm"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Change Passowrd</a>--%>
+                                                            <%--  <a href="#" class="btn btn-default btn-sm"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Change Passowrd</a>--%>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <%-- Boton de cerrar Session --%>
@@ -97,8 +97,8 @@
         </div>
     </div>
 
-    <%-- Inicio Carousel --%>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<%--<%--<%--    <%-- Inicio Carousel --%>
+    <%--<div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -142,7 +142,7 @@
             <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div>
+    </div>--%>
     <%-- Fin Carousel --%>
 
     <%--<div class="container" style="margin-top: 40px">--%>
