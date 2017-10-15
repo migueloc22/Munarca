@@ -24,6 +24,7 @@ namespace Negocio
         public int fk_id_tipo_doc { get; set; }
         public int fk_id_ciudad { get; set; }
         public int codUser { get; set; }
+       
         #endregion
         public csUsuario(int id_usuario, string nombre1, string nombre2, string apellido1, string apellido2, string correo, string foto, string direccion, string fecha_nacimiento, string telefono, int num_documento, int fk_id_tipo_doc, int fk_id_ciudad, string contraseña) 
          {
