@@ -11,6 +11,7 @@ namespace Negocio
 {
     public class LogicaUsuario : csRespuesta
     {
+
         SqlCommand command;
         SqlDataReader reader;
         SqlConnection cnn;
@@ -238,6 +239,46 @@ namespace Negocio
         return retorno;
         }
 
+        //METODO PARA BUSCAR USUARIOS EN ADMIN
+        //executenonquery para eliminar agregar y insertar
+        public DataTable BuscarUsu(String buscar) {
+            cnn = Conexion.AbrirCnn();
+            DataTable ListaUsuario = new DataTable();
+            try
+            {
+                command = new SqlCommand("select * from usuario where nombre_1 like @buscar or apellido_1 like @buscar or num_documento like @buscar", cnn);
+                command.Parameters.AddWithValue("@buscar","%"+buscar+"%");
+                reader = command.ExecuteReader();
+                ListaUsuario.Load(reader);
+
+
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            return ListaUsuario;
+        }
+        public DataTable BuscarUsu()
+        {
+            cnn = Conexion.AbrirCnn();
+            DataTable ListaUsuario = new DataTable();
+            try
+            {
+                command = new SqlCommand("select * from usuario order by nombre_1  ,  apellido_1 ", cnn);
+                reader = command.ExecuteReader();
+                ListaUsuario.Load(reader);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return ListaUsuario;
+        }
 
 
 
