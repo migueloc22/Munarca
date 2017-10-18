@@ -87,10 +87,16 @@
     <Content Include="css\estilos.css" />
     <Content Include="css\estilos2.css" />
     <Content Include="css\jquery.gmaps.css" />
+    <Content Include="css\jquery.rondell.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="geoNegocioSuscriptor.aspx" />
     <Content Include="GestionCategorias.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\arrows.png" />
+    <Content Include="images\arrows_dark.png" />
+    <Content Include="images\buttons.png" />
+    <Content Include="images\item-loader.gif" />
+    <Content Include="images\loader.gif" />
     <Content Include="img\Banne1.jpg" />
     <Content Include="img\Banner1.jpg" />
     <Content Include="img\imageUser.jpg" />
@@ -115,6 +121,7 @@
     <Content Include="js\jquery.gmaps.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.MultiFile.js" />
+    <Content Include="js\jquery.rondell.min.js" />
     <Content Include="js\locationpicker.jquery.js" />
     <Content Include="js\npm.js" />
     <Content Include="media\img\user.png" />

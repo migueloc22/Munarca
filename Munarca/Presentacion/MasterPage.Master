@@ -9,6 +9,7 @@
     <%-- estilos --%>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/estilos2.css" rel="stylesheet" />
+    <link href="css/jquery.rondell.min.css" rel="stylesheet" />
     <link href="css/bootstrap-datepicker.min.css" rel="stylesheet" />
     <link href="css/bootstrap-datepicker3.min.css" rel="stylesheet" />
     <link href="css/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" />
@@ -22,6 +23,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/bootstrap-datepicker.es.min.js"></script>
+    <script src="js/jquery.rondell.min.js"></script>
     <script src="js/JavaScript.js"></script>
 
 

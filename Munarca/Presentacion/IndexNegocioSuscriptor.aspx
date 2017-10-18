@@ -1,47 +1,34 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioSuscriptor.master" AutoEventWireup="true" CodeBehind="IndexNegocioSuscriptor.aspx.cs" Inherits="Presentacion.IndexNegocioSuscriptor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="panel">
+        <div class="panel-default">
+            <div class="panel-body">
+                <asp:Literal ID="ltError" runat="server"></asp:Literal>
+                <asp:Panel ID="pnContenido" runat="server">
+                    <div class="row">
+                        <%-- primera fila --%>
+                        <div class="col-xs-8">
+                            <fieldset>
+                                <legend>Fotos</legend>
 
-    <div class="row" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
-        <%--  --%>
-        <nav class="col-sm-3" id="myScrollspy">
-            <ul class="nav  nav-pills nav-stacked" style="top: 20px; position:static">
-                <li><a href="#section1">Section 1</a></li>
-                <li><a href="#section2">Section 2</a></li>
-                <li><a href="#section3">Section 2</a></li>
-                <li><a href="#section4">Section 2</a></li>
-            </ul>
-        </nav>
-        <%--  --%>
-        <div class="col-xs-9">
-            <div class="panel">
-                <div class="panel-default">
-                    <div class="panel-body">
-                        <asp:Literal ID="ltError" runat="server"></asp:Literal>
-                        <asp:Panel ID="pnContenido" runat="server">
-                            <section id="section1" style="height: 250px;font-size: 28px;">
-                                <h1>Section 1</h1>
-                                <p>Try to scroll this page and look at the navigation list while scrolling!</p>
-                            </section>
-                            <section id="section2" style="height: 250px;font-size: 28px;">
-                                <h1>Section 1</h1>
-                                <p>Try to scroll this page and look at the navigation list while scrolling!</p>
-                            </section>
-                            <section id="section3" style="height: 250px;font-size: 28px;">
-                                <h1>Section 1</h1>
-                                <p>Try to scroll this page and look at the navigation list while scrolling!</p>
-                            </section>
-                            <section id="section4" style="height: 250px;font-size: 28px;">
-                                <h1>Section 1</h1>
-                                <p>Try to scroll this page and look at the navigation list while scrolling!</p>
-                            </section>
-                        </asp:Panel>
+
+                                 
+                            </fieldset>
+                        </div>
+                        <div class="col-xs-4">
+                            <fieldset>
+                                <legend>Infomacion</legend>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum non lorem vel commodo. Pellentesque laoreet purus non sodales lacinia. Sed justo turpis, hendrerit eget imperdiet sed, lobortis at neque. Aenean ornare elit et nibh viverra, rhoncus maximus mi blandit. Nam scelerisque sollicitudin tortor non accumsan. Maecenas tristique tristique orci fringilla imperdiet. Mauris in pretium sem. Nulla euismod diam vitae mattis gravida. Nam pharetra lorem ex, ut finibus turpis fermentum a. Vivamus consectetur laoreet fringilla. Aenean nisi leo, semper nec fermentum ut, bibendum nec erat. Praesent nec nulla sed mi tempor ullamcorper. Aenean ac volutpat ligula. Nunc tincidunt luctus maximus.
+                                <legend></legend>
+                            </fieldset>
+                        </div>
                     </div>
-                </div>
+                </asp:Panel>
             </div>
         </div>
-
     </div>
+
 
 
 
