@@ -264,7 +264,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    ltMensaje.Text = @"<div class='alert alert-danger'>
+                    ltMensaje.Text =  @"<div class='alert alert-danger'>
                                 <strong>No se registro La usuario</strong> Su contraseña sera enviada a su correo electronio.
                             </div>";
                 }

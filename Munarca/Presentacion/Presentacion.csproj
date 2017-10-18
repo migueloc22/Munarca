@@ -68,9 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AlbumNegocioPropietario.aspx" />
+    <Content Include="BuscarUsuarioaspx.aspx" />
     <Content Include="CalificacionSuscriptor.aspx" />
     <Content Include="ComentarioPropietario.aspx" />
     <Content Include="ComentarioSuscriptor.aspx" />
+    <Content Include="ConfigAdmin.aspx" />
     <Content Include="ConfigPropietario.aspx" />
     <Content Include="ConfigSuscriptor.aspx" />
     <Content Include="CrearNegocioPropietario.aspx" />
@@ -87,6 +89,7 @@
     <Content Include="css\jquery.gmaps.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="geoNegocioSuscriptor.aspx" />
+    <Content Include="GestionCategorias.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\Banne1.jpg" />
     <Content Include="img\Banner1.jpg" />
@@ -98,6 +101,7 @@
     <Content Include="img\star_rojo.png" />
     <Content Include="img\tecnico.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="indexAdminn.aspx" />
     <Content Include="IndexNegocioSuscriptor.aspx" />
     <Content Include="IndexPropietario.aspx" />
     <Content Include="IndexServicioPropietario.aspx" />
@@ -149,6 +153,13 @@
     <Compile Include="AlbumNegocioPropietario.aspx.designer.cs">
       <DependentUpon>AlbumNegocioPropietario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BuscarUsuarioaspx.aspx.cs">
+      <DependentUpon>BuscarUsuarioaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuscarUsuarioaspx.aspx.designer.cs">
+      <DependentUpon>BuscarUsuarioaspx.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CalificacionSuscriptor.aspx.cs">
       <DependentUpon>CalificacionSuscriptor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -169,6 +180,13 @@
     </Compile>
     <Compile Include="ComentarioSuscriptor.aspx.designer.cs">
       <DependentUpon>ComentarioSuscriptor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigAdmin.aspx.cs">
+      <DependentUpon>ConfigAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigAdmin.aspx.designer.cs">
+      <DependentUpon>ConfigAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfigPropietario.aspx.cs">
       <DependentUpon>ConfigPropietario.aspx</DependentUpon>
@@ -205,6 +223,13 @@
     <Compile Include="geoNegocioSuscriptor.aspx.designer.cs">
       <DependentUpon>geoNegocioSuscriptor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GestionCategorias.aspx.cs">
+      <DependentUpon>GestionCategorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionCategorias.aspx.designer.cs">
+      <DependentUpon>GestionCategorias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -214,6 +239,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="indexAdminn.aspx.cs">
+      <DependentUpon>indexAdminn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indexAdminn.aspx.designer.cs">
+      <DependentUpon>indexAdminn.aspx</DependentUpon>
     </Compile>
     <Compile Include="IndexNegocioSuscriptor.aspx.cs">
       <DependentUpon>IndexNegocioSuscriptor.aspx</DependentUpon>

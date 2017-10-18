@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="vivis.aspx.cs" Inherits="Presentacion.vivis" %>
+﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="vivis.aspx.cs" Inherits="Presentacion.vivis" %>--%>
 
 <!DOCTYPE html>
 

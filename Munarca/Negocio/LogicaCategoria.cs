@@ -15,6 +15,8 @@ namespace Negocio
         SqlCommand comman;
         SqlDataReader read;
         DataTable tabla;
+
+
         public DataTable Listar()
         {
 
@@ -22,7 +24,7 @@ namespace Negocio
             SqlConnection cnn = Conexion.AbrirCnn();
             try
             {
-                comman = new SqlCommand("select * from categoria", cnn);
+                comman = new SqlCommand("select * from categoria order by id_categoria  ,  categoria", cnn);
                 read = comman.ExecuteReader();
                 tabla.Load(read);
                 return tabla;
@@ -63,6 +65,10 @@ namespace Negocio
                  
             
         }
+//metodo para eliminar categoria
+
+
+
 
     }
 }
