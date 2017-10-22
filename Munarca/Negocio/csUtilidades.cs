@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class csUtilidades
+    public class csUtilidades : csRespuesta
     {
         /// Encripta una cadena
         public  string Encriptar( string _cadenaAencriptar)
@@ -26,6 +26,26 @@ namespace Negocio
             result = System.Text.Encoding.Unicode.GetString(decryted);
             return result;
         }
+        private static double Radians(double valor)
+        {
+            return Convert.ToSingle(Math.PI / 180) * valor;
+        }
+
+        public static double CalcularDistancia(double lon1, double lat1, double lon2, double lat2)
+        {
+            double R = 6371; // km
+            double dLat = Radians(lat2 - lat1);
+            double dLon = Radians(lon2 - lon1);
+            lat1 = Radians(lat1);
+            lat2 = Radians(lat2);
+
+            double a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) + Math.Sin(dLon / 2) * Math.Sin(dLon / 2) * Math.Cos(lat1) * Math.Cos(lat2);
+            double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+            double d = R * c;
+
+            return d;
+        }
+    
         public string CrearPassword(int longitud)
         {
             string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";

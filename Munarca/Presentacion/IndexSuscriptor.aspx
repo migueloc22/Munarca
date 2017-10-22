@@ -53,7 +53,7 @@
                                         <ItemTemplate>
                                             <div class="media">
                                                 <div class="media-left media-middle">
-                                                    <asp:Label ID="lbIdServicio" runat="server" Text='<%# Eval("id_servicio") %>' Visible="false"></asp:Label>
+                                                    <asp:Label ID="lbIdServicio" runat="server" Text='<%# Eval("fk_id_negocio") %>' Visible="false"></asp:Label>
                                                     <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("imagen") %>' Width="220" OnClick="ImageButton1_Click" />
                                                 </div>
                                                 <div class="media-body">

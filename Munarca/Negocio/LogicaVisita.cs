@@ -14,6 +14,24 @@ namespace Negocio
         SqlConnection cnn;
         SqlCommand cmd;
         SqlDataReader read;
+        public void CrearVisita(int codNegocio)
+        {
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                cmd = new SqlCommand("[CrearVisita]", cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //@fk_id_negocio, @id_usuario, @comentario
+                cmd.Parameters.AddWithValue("@idNegocio", codNegocio);
+                cmd.ExecuteNonQuery();
+                Conexion.CerrarCnn(cnn);
+            }
+            catch (Exception ex)
+            {
+
+                rta = ex.ToString();
+            }
+        }
         public DataTable DataVisita()
         {
             DataTable data = new DataTable();

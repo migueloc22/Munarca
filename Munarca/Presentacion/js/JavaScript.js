@@ -5,8 +5,14 @@ $('#ContentPlaceHolder1_ContentPlaceHolder1_txtFechaNac').datepicker({
 });
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
-})
+});
 
 $(function () {
     $('[data-toggle="popover"]').popover()
-})
+});
+$(function () {
+    $("#rondellCarousel").rondell({
+        preset: "slider",
+    });
+
+});

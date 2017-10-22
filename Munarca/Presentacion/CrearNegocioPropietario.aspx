@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group">
                         <asp:Label ID="Label3" runat="server" Text="Descripción :"></asp:Label>
-                        <asp:TextBox ID="txtDesccrip" runat="server" CssClass="form-control" MaxLength="250" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                        <asp:TextBox ID="txtDesccrip" runat="server" CssClass="form-control" MaxLength="250" minlength=20 TextMode="MultiLine" Rows="3"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtDesccrip" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </div>
 

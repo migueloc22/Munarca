@@ -21,7 +21,7 @@
         }
     </style>
 </head>
-<body>
+<body >
     <form id="form1" runat="server">
         <div id="encabezaso"></div>
         <div id="Contenedor">
@@ -60,7 +60,7 @@
                         </div>
                         <div class="form-group">
                             <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-danger" CausesValidation="false" OnClick="btnEntrar_Click" />
-                            <input type="reset" class="btn btn-default" />
+                            <input type="reset" class="btn " />
                         </div>
                     </div>
                 </ContentTemplate>
