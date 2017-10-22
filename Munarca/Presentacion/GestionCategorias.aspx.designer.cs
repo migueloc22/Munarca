@@ -10,60 +10,51 @@
 namespace Presentacion {
     
     
-    public partial class NegocioPropietario {
+    public partial class GestionCategorias {
         
         /// <summary>
-        /// HyperLink1 control.
+        /// txtNomCategoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.TextBox txtNomCategoria;
         
         /// <summary>
-        /// gvNegocio control.
+        /// btnAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvNegocio;
+        protected global::System.Web.UI.WebControls.LinkButton btnAgregar;
         
         /// <summary>
-        /// btnModal control.
+        /// ltRespuesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModal;
+        protected global::System.Web.UI.WebControls.Literal ltRespuesta;
         
         /// <summary>
-        /// btnModal_ModalPopupExtender control.
+        /// gvCategorias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender btnModal_ModalPopupExtender;
+        protected global::System.Web.UI.WebControls.GridView gvCategorias;
         
         /// <summary>
-        /// PanelModal control.
+        /// lbMensaje control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelModal;
-        
-        /// <summary>
-        /// btnEliminar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        protected global::System.Web.UI.WebControls.Label lbMensaje;
     }
 }
