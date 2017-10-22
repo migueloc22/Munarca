@@ -60,7 +60,7 @@ namespace Negocio
             cnn = Conexion.AbrirCnn();
             try
             {
-                cmd = new SqlCommand("select * from  comentario inner join usuario on comentario.id_usuario=usuario.id_usuario where fk_id_negocio=@codNegocio order by fecha , hora ", cnn);
+                cmd = new SqlCommand("select  CONCAT('media/img/',usuario.foto) as avatar,comentario.comentario as comentario,CONCAT(usuario.nombre_1,' ',usuario.apellido_1) as nombre,fecha ,hora  from  comentario inner join usuario on comentario.id_usuario=usuario.id_usuario where fk_id_negocio=@codNegocio order by fecha desc , hora desc", cnn);
                 cmd.Parameters.AddWithValue("@codNegocio", codNegocio);
                 read = cmd.ExecuteReader();
                 tabla.Load(read);

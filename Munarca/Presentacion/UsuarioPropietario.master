@@ -1,15 +1,152 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="UsuarioPropietario.master.cs" Inherits="Presentacion.UsuarioPropietario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="vertical-menu">
-        <asp:HyperLink ID="LnkHome" runat="server" NavigateUrl="~/IndexPropietario.aspx" data-toggle="tooltip" data-placement="right" title="Home"><span class="glyphicon glyphicon-home btn-lg "></span></asp:HyperLink>
-        <asp:HyperLink ID="lnkNegocio" runat="server" NavigateUrl="~/NegocioPropietario.aspx" data-toggle="tooltip" data-placement="right" title="Negocio"><span class="glyphicon  glyphicon-flag btn-lg" ></span></asp:HyperLink>
-        <asp:HyperLink ID="lnkConfig" runat="server" NavigateUrl="~/ConfigPropietario.aspx" data-toggle="tooltip" data-placement="right" title="Configuración"><span class="glyphicon glyphicon-cog btn-lg"></span></asp:HyperLink>
-        <asp:LinkButton ID="bntCerrarSession" runat="server" OnClick="bntCerrarSession_Click" data-toggle="tooltip" data-placement="right" title="Cerrar Sesion"><span class="glyphicon glyphicon-off btn-lg"></span></asp:LinkButton>
+    <div class="row">
+        <div class="navbar-wrapper">
+            <div class="container-fluid">
+                <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                                    class="icon-bar"></span><span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand">
+                                <img alt="Munarca" src="img/logoBlanco.png" width="120" height="30">
+                            </a>
+                            <a class="navbar-brand" href="./ORqmj">Suscriptor</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <%-- <div class="vertical-menu">
+            <asp:HyperLink ID="LnkHome" runat="server" NavigateUrl="~/IndexSuscriptor.aspx"><span class="glyphicon glyphicon-home btn-lg" data-toggle="tooltip"  data-placement="right"  title="Home" ></span></asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/geoNegocioSuscriptor.aspx"><span class="glyphicon  glyphicon-map-marker btn-lg" data-toggle="tooltip"  data-placement="right"  title="Buscar Negocios"></span></asp:HyperLink>
+            <asp:HyperLink ID="HyperLink3" runat="server" data-toggle="tooltip"  data-placement="right"  title="Configuación" NavigateUrl="~/ConfigSuscriptor.aspx" ><span class="glyphicon glyphicon-cog btn-lg"></span></asp:HyperLink>
+            <asp:LinkButton ID="btnCerrarSession" runat="server" OnClick="btnCerrarSession_Click"  data-toggle="tooltip"  data-placement="right"  title="Cerrar Sesion"><span class="glyphicon glyphicon-off btn-lg"></span></asp:LinkButton>
+        </div>--%>
+                                <li>
+                                    <asp:HyperLink ID="LnkHome" runat="server" NavigateUrl="~/IndexPropietario.aspx">Home</asp:HyperLink></li>
+                                <li>
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/NegocioPropietario.aspx">Gestión Negocio</asp:HyperLink></li>
+
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="user-avatar pull-left" style="margin-right: 8px; margin-top: -5px;">
+                                        <%-- Imagen1 de perfil --%>
+                                        <asp:Image ID="imgUer" runat="server" Width="30" Height="30" CssClass="img-circle " />
+                                    </span>
+                                    <span class="user-name">
+                                        <%-- Nombre de perfil --%>
+                                        <asp:Label ID="lbNombre" runat="server" Text="Label" Style="text-transform: uppercase"></asp:Label>
+                                    </span>
+                                    <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="navbar-content ">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <%-- imgegen 2 de perfil --%>
+                                                        <asp:Image ID="imgUser2" runat="server" Width="120" Height="120" CssClass="img-responsive " />
+                                                        <p class="text-center small">
+                                                            <%--<a href="./3X6zm">Change Photo</a>--%>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <span>
+                                                            <asp:Label ID="lbNombre2" runat="server" Text="" Style="text-transform: uppercase"></asp:Label></span>
+                                                        <p class="text-muted small">
+                                                            <asp:Label ID="lbEmail" runat="server" Text=""></asp:Label>
+                                                        </p>
+                                                        <div class="divider">
+                                                        </div>
+                                                        <asp:HyperLink ID="HyperLink3" runat="server" data-toggle="tooltip" data-placement="right" title="Configuación" NavigateUrl="~/ConfigSuscriptor.aspx" CssClass="btn btn-default btn-xs">Configuración</asp:HyperLink>
+                                                        <%--<a href="./56ExR" class="btn btn-default btn-xs"><i class="fa fa-user-o" aria-hidden="true"></i>Profile</a>
+                                                        <a href="#" class="btn btn-default btn-xs"><i class="fa fa-address-card-o" aria-hidden="true"></i>Contacts</a>
+                                                        <a href="#" class="btn btn-default btn-xs"><i class="fa fa-cogs" aria-hidden="true"></i>Settings</a>
+                                                        <a href="#" class="btn btn-default btn-xs"><i class="fa fa-question-circle-o" aria-hidden="true"></i>Help!</a>--%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="navbar-footer">
+                                                <div class="navbar-footer-content">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <%--                                                            <a href="#" class="btn btn-default btn-sm"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Change Passowrd</a>--%>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <%-- Boton de cerrar Session --%>
+                                                            <asp:Button ID="btnCerrarSession" CssClass="btn btn-default btn-sm pull-right" runat="server" Text="Salir" OnClick="btnCerrarSession_Click1" />
+                                                            <%--<a href="#" class="btn btn-default btn-sm pull-right"><i class="fa fa-power-off" aria-hidden="true"></i>Sign Out</a>--%>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container">
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+
+    <%-- Inicio Carousel --%>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="img/Banne1.jpg" alt="Chania">
+                <div class="carousel-caption">
+                    <h3>Los Angeles</h3>
+                    <p>LA is always so much fun!</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="img/Banne1.jpg" alt="Chicago" >
+                <div class="carousel-caption">
+                    <h3>Chicago</h3>
+                    <p>Thank you, Chicago!</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="img/Banne1.jpg" alt="New York" >
+                <div class="carousel-caption">
+                    <h3>New York</h3>
+                    <p>We love the Big Apple!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <%-- Fin Carousel --%>
+
+    <%--<div class="container" style="margin-top: 40px">--%>
+    <div class="container" style="margin-top: 40px">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
     </div>
 </asp:Content>

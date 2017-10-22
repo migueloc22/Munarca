@@ -99,7 +99,7 @@ namespace Negocio
         }
         public csNegocio SessionNegocio(int codNegocio)
         {
-            csNegocio negocio;
+            csNegocio negocio=null;
             cnn = Conexion.AbrirCnn();
             try
             {
@@ -119,16 +119,18 @@ namespace Negocio
                     int codUsuario = int.Parse(read["fk_id_propietario"].ToString());
                     int codCategoria = int.Parse(read["fk_id_categoria"].ToString());
                     negocio = new csNegocio(cod, nombre, descrip, telefono, codUsuario, codCategoria, longitud, ubicacion, latitud);
-                    return negocio;
+
                 }
-                return negocio = null;
+
 
             }
-            catch (Exception)
+
+            catch (Exception ex)
             {
-                return negocio = null;
-                throw;
+                rta = ex.Message;
             }
+            finally { Conexion.CerrarCnn(cnn); }
+            return negocio;
 
         }
         public Boolean eliminarNeocio(int cod)
@@ -210,7 +212,7 @@ namespace Negocio
                     telefono = read["telefono"].ToString();
                     fk_id_usuario = int.Parse(read["fk_id_propietario"].ToString());
                     fk_id_categoria = int.Parse(read["fk_id_categoria"].ToString());
-                    distancia = Math.Sqrt(Math.Pow((longitud + lon), 2) + Math.Pow((latitud + lat), 2));
+                    distancia = csUtilidades.CalcularDistancia(lon, lat, latitud, longitud);
                     negocio = new csNegocio(id_negocio, nombre, descripcion, telefono, fk_id_usuario, fk_id_categoria, longitud.ToString(), ubicacion, latitud.ToString(), distancia);
                     lista.Add(negocio);
                     

@@ -49,6 +49,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Device" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -115,7 +116,7 @@
     <Content Include="js\bootstrap-datepicker.es.min.js" />
     <Content Include="js\bootstrap-datepicker.min.js" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\Gmaps.js" />
+    <Content Include="js\gmaps.js" />
     <Content Include="js\JavaScript.js" />
     <Content Include="js\jquery-ui.js" />
     <Content Include="js\jquery.gmaps.js" />
@@ -123,6 +124,7 @@
     <Content Include="js\jquery.MultiFile.js" />
     <Content Include="js\jquery.rondell.min.js" />
     <Content Include="js\locationpicker.jquery.js" />
+    <Content Include="js\modernizr-2.0.6.min.js" />
     <Content Include="js\npm.js" />
     <Content Include="media\img\user.png" />
     <Content Include="ModificarNegocioPropietario.aspx" />
@@ -140,8 +142,6 @@
     <Content Include="UsuarioSuscriptor.master" />
     <Content Include="UsusarioAdminn.master" />
     <Content Include="VisitaPropietario.aspx" />
-    <Content Include="vivis.aspx" />
-    <Content Include="WebForm1.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -162,7 +162,6 @@
     </Compile>
     <Compile Include="BuscarUsuarioaspx.aspx.cs">
       <DependentUpon>BuscarUsuarioaspx.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="BuscarUsuarioaspx.aspx.designer.cs">
       <DependentUpon>BuscarUsuarioaspx.aspx</DependentUpon>
@@ -190,7 +189,6 @@
     </Compile>
     <Compile Include="ConfigAdmin.aspx.cs">
       <DependentUpon>ConfigAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConfigAdmin.aspx.designer.cs">
       <DependentUpon>ConfigAdmin.aspx</DependentUpon>
@@ -232,7 +230,6 @@
     </Compile>
     <Compile Include="GestionCategorias.aspx.cs">
       <DependentUpon>GestionCategorias.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GestionCategorias.aspx.designer.cs">
       <DependentUpon>GestionCategorias.aspx</DependentUpon>
@@ -249,7 +246,6 @@
     </Compile>
     <Compile Include="indexAdminn.aspx.cs">
       <DependentUpon>indexAdminn.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="indexAdminn.aspx.designer.cs">
       <DependentUpon>indexAdminn.aspx</DependentUpon>
@@ -352,20 +348,6 @@
     </Compile>
     <Compile Include="VisitaPropietario.aspx.designer.cs">
       <DependentUpon>VisitaPropietario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="vivis.aspx.cs">
-      <DependentUpon>vivis.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vivis.aspx.designer.cs">
-      <DependentUpon>vivis.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
