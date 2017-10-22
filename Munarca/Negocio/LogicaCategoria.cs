@@ -66,7 +66,8 @@ namespace Negocio
             
         }
 //metodo para eliminar categoria
-
+        public bool EliminarCategoria(string) { 
+        }
 
 
 
