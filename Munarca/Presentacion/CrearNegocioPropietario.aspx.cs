@@ -104,7 +104,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    lbValidacion.Text = "No se ha cargado archivos";
+                    lbValidacion.Text = "No se han cargado archivos";
                 }
             
             

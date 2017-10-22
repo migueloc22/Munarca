@@ -26,9 +26,9 @@
                                 <li>
                                     <asp:HyperLink ID="LnkHome" runat="server" NavigateUrl="~/IndexAdminn.aspx">Home</asp:HyperLink></li>
                                 <li>
-                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~">Usuarios</asp:HyperLink></li>
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/BuscarUsuarioaspx.aspx">Usuarios</asp:HyperLink></li>
                                 <li>
-                                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~">Categorias</asp:HyperLink></li>
+                                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/GestionCategorias.aspx">Categorias</asp:HyperLink></li>
                                 <li>
                                     <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~">Negocios</asp:HyperLink></li>
                                 <li>
@@ -64,7 +64,7 @@
                                                         </p>
                                                         <div class="divider">
                                                         </div>
-                                                        <asp:HyperLink ID="HyperLink3" runat="server" data-toggle="tooltip" data-placement="right" title="Configuación" NavigateUrl="~/ConfigSuscriptor.aspx" CssClass="btn btn-default btn-xs">Configuración</asp:HyperLink>
+                                                        <asp:HyperLink ID="HyperLink3" runat="server" data-toggle="tooltip" data-placement="right" title="Configuación" NavigateUrl="~/ConfigAdmin.aspx" CssClass="btn btn-default btn-xs">Configuración</asp:HyperLink>
                                                         <%--<a href="./56ExR" class="btn btn-default btn-xs"><i class="fa fa-user-o" aria-hidden="true"></i>Profile</a>
                                                         <a href="#" class="btn btn-default btn-xs"><i class="fa fa-address-card-o" aria-hidden="true"></i>Contacts</a>
                                                         <a href="#" class="btn btn-default btn-xs"><i class="fa fa-cogs" aria-hidden="true"></i>Settings</a>
