@@ -66,10 +66,47 @@ namespace Negocio
             
         }
 //metodo para eliminar categoria
-        public bool EliminarCategoria(string) { 
+        public bool EliminarCategoria(string idCategoria) {
+            Boolean retorno = false;
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+
+                comman = new SqlCommand("delete from categoria where id_categoria=@codCategoria", cnn);
+                comman.Parameters.AddWithValue("@codCategoria", idCategoria);
+                comman.ExecuteNonQuery();
+                Conexion.CerrarCnn(cnn);
+                retorno = true; 
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            return retorno;
+        }
+//metodo para modificar categoria
+        public bool ModificarCategoria(csCategoria categoria) {
+            Boolean retorno = false;
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                comman = new SqlCommand("update categoria set  categoria=@Categoria where id_categoria=@codCategoria ", cnn);
+                comman.Parameters.AddWithValue("@codCategoria",categoria.idCategoria);
+                comman.Parameters.AddWithValue("@Categoria",categoria.categoria);
+                comman.ExecuteNonQuery();
+                Conexion.CerrarCnn(cnn);
+                retorno = true;            
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            return retorno;
         }
 
-
+        
 
     }
 }
