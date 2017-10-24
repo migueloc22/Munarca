@@ -116,9 +116,11 @@ namespace Negocio
                     string ubicacion = read["ubicacion"].ToString();
                     string latitud = read["latitud"].ToString();
                     string telefono = read["telefono"].ToString();
+                    string direccion = read["direccion"].ToString();
+                    string foto_negocio = "media/img/" + read["foto_neg"].ToString();
                     int codUsuario = int.Parse(read["fk_id_propietario"].ToString());
                     int codCategoria = int.Parse(read["fk_id_categoria"].ToString());
-                    negocio = new csNegocio(cod, nombre, descrip, telefono, codUsuario, codCategoria, longitud, ubicacion, latitud);
+                    negocio = new csNegocio(cod, nombre, descrip, telefono, codUsuario, codCategoria,  direccion,  foto_negocio, longitud, ubicacion, latitud);
 
                 }
 
@@ -193,6 +195,8 @@ namespace Negocio
             string telefono;
             int fk_id_usuario;
             int fk_id_categoria;
+            string direccion = read["direccion"].ToString();
+            string foto_negocio = "media/img/" + read["foto_neg"].ToString();
             double distancia;
             csNegocio negocio;
             List<csNegocio> lista = new List<csNegocio>();
@@ -213,7 +217,7 @@ namespace Negocio
                     fk_id_usuario = int.Parse(read["fk_id_propietario"].ToString());
                     fk_id_categoria = int.Parse(read["fk_id_categoria"].ToString());
                     distancia = csUtilidades.CalcularDistancia(lon, lat, latitud, longitud);
-                    negocio = new csNegocio(id_negocio, nombre, descripcion, telefono, fk_id_usuario, fk_id_categoria, longitud.ToString(), ubicacion, latitud.ToString(), distancia);
+                    negocio = new csNegocio(id_negocio, nombre, descripcion, telefono, fk_id_usuario, fk_id_categoria, direccion, foto_negocio, longitud.ToString(), ubicacion, latitud.ToString(), distancia);
                     lista.Add(negocio);
                     
                 }
