@@ -91,20 +91,20 @@ namespace Presentacion
                 String[] nombres = new String[file.Count - 1];
                 if (nombres.LongLength >= 0)
                 {
-                    csNegocio negocio = new csNegocio(0, txtNombre.Text, txtDesccrip.Text, txtTelefono.Text, usuario.id_usuario, int.Parse(dpCategoria.SelectedValue.ToString()), txtLon.Text, txtUbicacion.Text, txtLat.Text);
-                    int codNegoc = int.Parse(lgNegocio.CrearNegocio(negocio));
-                    for (int i = 0; i <= file.Count - 1; i++)
-                    {
-                        HttpPostedFile postefile = file[i];
-                        postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
-                        path = new csPath(0, postefile.FileName, codNegoc);
-                        lgPath.CrearPath(path);
-                    }
+                    //csNegocio negocio = new csNegocio(0, txtNombre.Text, txtDesccrip.Text, txtTelefono.Text, usuario.id_usuario, int.Parse(dpCategoria.SelectedValue.ToString()), txtLon.Text, txtUbicacion.Text, txtLat.Text);
+                    //int codNegoc = int.Parse(lgNegocio.CrearNegocio(negocio));
+                    //for (int i = 0; i <= file.Count - 1; i++)
+                    //{
+                    //    HttpPostedFile postefile = file[i];
+                    //    postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
+                    //    path = new csPath(0, postefile.FileName, codNegoc);
+                    //    lgPath.CrearPath(path);
+                    //}
                     Button2_ModalPopupExtender.Show();
                 }
                 else
                 {
-                    lbValidacion.Text = "No se han cargado archivos";
+                    //lbValidacion.Text = "No se han cargado archivos";
                 }
             
             

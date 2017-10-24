@@ -1,103 +1,104 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioPropietario.master" AutoEventWireup="true" CodeBehind="CrearNegocioPropietario.aspx.cs" Inherits="Presentacion.CrearNegocioPropietario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="panel">
-        <div class="panel-primary">
-            <div class="jumbotron">
-                <h1>Crear negocio</h1>
-            </div>
-            <div class="panel-body">
-                    <div class="row">
-                        <%--Inicio columna--%>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <asp:Label ID="Label1" runat="server" Text="Nombre Negocio :"></asp:Label>
-                                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="15"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNombre" ForeColor="Red">*</asp:RequiredFieldValidator>
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+            <div class="panel">
+                <div class="panel-primary">
+                    <div class="panel-body">
+                        <h1 class="h1">Crear negocio</h1>
+                        <hr />
+                        <div class="row">
+                            <%--Inicio columna--%>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <asp:FileUpload ID="uploadFile1" runat="server" accept="image/*" class="file" multiple data-show-upload="false" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Agregue una foto" ControlToValidate="uploadFile1" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    <%--<input id="input-id" type="file" class="file" data-preview-file-type="text" >--%>
+                                    <script>
+                                        $("#ContentPlaceHolder1_ContentPlaceHolder1_uploadFile1").fileinput({
+                                            language: "es",
+                                            uploadUrl: "/file-upload-batch/2",
+                                            allowedFileExtensions: ["jpg", "png", "gif"]
+
+                                        });
+                                    </script>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label4" runat="server" Text="Categoria :"></asp:Label>
-                                <asp:DropDownList ID="dpCategoria" runat="server" CssClass="form-control dropdown"></asp:DropDownList>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <asp:Label ID="Label1" runat="server" Text="Nombre Negocio :"></asp:Label>
+                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="15"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNombre" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                </div>
+                                <div class="form-group">
+                                    <asp:Label ID="Label4" runat="server" Text="Categoria :"></asp:Label>
+                                    <asp:DropDownList ID="dpCategoria" runat="server" CssClass="form-control dropdown"></asp:DropDownList>
+                                </div>
+                                <div class="form-group">
+                                    <asp:Label ID="Label5" runat="server" Text="Dirección :"></asp:Label>
+                                    <asp:TextBox ID="txtDir" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtDir" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                </div>
+                                <div class="form-group">
+                                    <asp:Label ID="Label2" runat="server" Text="Telefono :"></asp:Label>
+                                    <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Solo Numero" ControlToValidate="txtTelefono" ForeColor="Red" ValidationExpression="([0-9]|-)*">*</asp:RegularExpressionValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtTelefono" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                </div>
+                                <div class="form-group">
+                                    <asp:Label ID="Label6" runat="server" Text="Descripción :"></asp:Label>
+                                    <asp:TextBox ID="txtDescdrip" TextMode="MultiLine" row="3" runat="server" CssClass="form-control" MaxLength="250"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtDescdrip" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                </div>
+
+
                             </div>
                         </div>
-                        <%--Final columna--%>
-                        <%--Inicio columna--%>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <asp:Label ID="Label2" runat="server" Text="Telefono :"></asp:Label>
-                                <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Solo Numero" ControlToValidate="txtTelefono" ForeColor="Red" ValidationExpression="([0-9]|-)*">*</asp:RegularExpressionValidator>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtTelefono" ForeColor="Red">*</asp:RequiredFieldValidator>
-                            </div>
-                            <div class="form-control">
-                                <asp:FileUpload ID="uploadFile1" runat="server" accept="gif|jpg|png" class="multi" maxlength="3" />
-                            </div>                            
+                        <div class="form-group">
+                            <asp:Label ID="Label3" runat="server" Text="Ubicación :"></asp:Label>
+                            <asp:TextBox ID="txtUbicacion" runat="server" CssClass="form-control" MaxLength="35"></asp:TextBox>
+                            <span class="help-block">Digite la dirección de su negocio o arrastre el pin para ubicarlo en el mapa</span>  
                         </div>
-                        <%--Final columna--%>
-                    </div>
-                    <div class="form-group">
-                        <asp:Label ID="Label3" runat="server" Text="Descripción :"></asp:Label>
-                        <asp:TextBox ID="txtDesccrip" runat="server" CssClass="form-control" MaxLength="250" minlength=20 TextMode="MultiLine" Rows="3"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtDesccrip" ForeColor="Red">*</asp:RequiredFieldValidator>
-                    </div>
-
-                    <%-- Inicio modal --%>
-
-
-                    <div class="form-group">
-                        <asp:Label ID="Label5" runat="server" Text="Ubicación :"></asp:Label>
-                        <asp:TextBox ID="txtUbicacion" runat="server" CssClass="form-control" Text="Bogota"></asp:TextBox>
-                    </div>
-                    <div id="ModalMapPreview" style="width: 100%; height: 400px;"></div>
-                    <div class="clearfix">&nbsp;</div>
-                    <div class="m-t-small">
-                        <label class="p-r-small col-sm-1 control-label">Lat.:</label>
-                        <div class="col-sm-3">
-                            <asp:TextBox ID="txtLat" runat="server" CssClass="form-control" Text="4.710988599999999"></asp:TextBox>
+                        <div class="form-group">
+                            <div id="mapaFilter" style="width: 100%; height: 300px"></div>
                         </div>
-                        <label class="p-r-small col-sm-2 control-label">Long.:</label>
+                        <div class="form-group">
+                            <asp:HiddenField ID="hdLatFt" Value="4.710988599999999" runat="server" />
+                            <asp:HiddenField ID="hdLonft" Value="-74.072092" runat="server" />
+                            <%-- Inicio de scrips --%>
+                            <script>
+                                $('#mapaFilter').locationpicker({
+                                    radius: 0,
+                                    zoom: 16,
+                                    location: {
+                                        latitude: $('#<%=hdLatFt.ClientID%>').val(),
+                                        longitude: $('#<%=hdLonft.ClientID%>').val()
+                                    },
+                                    inputBinding: {
+                                        latitudeInput: $('#<%=hdLatFt.ClientID%>'),
+                                        longitudeInput: $('#<%=hdLonft.ClientID%>'),
+                                        locationNameInput: $('#<%=txtUbicacion.ClientID%>')
+                                    },
+                                    enableAutocomplete: true,
+                                });
 
-                        <div class="col-sm-3">
-                            <asp:TextBox ID="txtLon" runat="server" CssClass="form-control" Text="-74.072092"></asp:TextBox>
+                            </script>
+
+                            <%-- Fin de scrips --%>
                         </div>
 
-                    </div>
-                    <div class="clearfix"></div>
-                    <script>
-                        $('#ModalMapPreview').locationpicker({
-                            radius: 0,
-                            location: {
-                                latitude: $('#<%=txtLat.ClientID%>').val(),
-                                longitude: $('#<%=txtLon.ClientID%>').val()
-                            },
-                            inputBinding: {
-                                latitudeInput: $('#<%=txtLat.ClientID%>'),
-                                longitudeInput: $('#<%=txtLon.ClientID%>'),
-                                locationNameInput: $('#<%=txtUbicacion.ClientID%>')
-                            },
-                            enableAutocomplete: true,
-                            onchanged: function (currentLocation, radius, isMarkerDropped) {
-                                $('#ubicacion').html($('#txtUbicacion').val());
-                            }
-                        });
-                        $('#ModalMap').on('shown.bs.modal', function () {
-                            $('#ModalMapPreview').locationpicker('autosize');
-                        });
-                        enableAutocomplete: true;
-                    </script>
-                    <%-- Inicio Final --%>
 
-                    <div class="form-group">                        
-                        <asp:Label ID="lbValidacion" runat="server" ForeColor="Red"></asp:Label>
-                    </div>
-                    <div class="form-group">
-                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
-                    </div>
-                    <div class="form-group">
-                        <asp:Button ID="btnAgregarNegocio" runat="server" Text="Agregar" CssClass="btn btn-danger" OnClick="btnAgregarNegocio_Click" />
-                    </div>
 
+                        <div class="form-group">
+                            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
+                        </div>
+                        <div class="form-group">
+                            <asp:Button ID="btnAgregarNegocio" runat="server" Text="Agregar" CssClass="btn btn-danger" OnClick="btnAgregarNegocio_Click" />
+                        </div>
+                    </div>
                 </div>
+            </div>
         </div>
     </div>
     <asp:Button ID="Button2" runat="server" Text="Button" Style="display: none;" />

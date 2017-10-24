@@ -25,6 +25,8 @@ namespace Negocio
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nomNegoc", negocio.nombre);
                 cmd.Parameters.AddWithValue("@descrip", negocio.descripcion);
+                cmd.Parameters.AddWithValue("@foto_neg", negocio.foto_negocio);
+                cmd.Parameters.AddWithValue("@direccion", negocio.descripcion);
                 cmd.Parameters.AddWithValue("@longitud", negocio.descripcion);
                 cmd.Parameters.AddWithValue("@ubicacion", negocio.descripcion);
                 cmd.Parameters.AddWithValue("@latitud", negocio.descripcion);
