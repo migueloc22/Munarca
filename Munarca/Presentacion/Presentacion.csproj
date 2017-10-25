@@ -98,8 +98,8 @@
     <Content Include="images\buttons.png" />
     <Content Include="images\item-loader.gif" />
     <Content Include="images\loader.gif" />
-    <Content Include="img\Banne1.jpg" />
-    <Content Include="img\Banner1.jpg" />
+    <Content Include="img\banner1.jpg" />
+    <Content Include="img\banner2.jpeg" />
     <Content Include="img\imageUser.jpg" />
     <Content Include="img\logoBlanco.png" />
     <Content Include="img\logoFinal.png" />
