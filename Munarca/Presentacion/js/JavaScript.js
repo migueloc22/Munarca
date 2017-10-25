@@ -16,3 +16,5 @@ $(function () {
     });
 
 });
+$("#ContentPlaceHolder1_ContentPlaceHolder1_uploadFile1").fileinput({ language: "es",uploadUrl: "/file-upload-batch/2",
+    allowedFileExtensions: ["jpg", "png", "gif"], showCaption: false });
