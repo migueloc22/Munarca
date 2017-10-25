@@ -13,7 +13,7 @@
                             <div class="input-group">
 
                                 <asp:TextBox ID="txtBuscador" runat="server" CssClass="form-control" placeholder="Search"></asp:TextBox>
-
+                                <%-- ds --%>
                                 <div class="input-group-btn">
                                     <asp:LinkButton ID="btnBuscar" CssClass="btn btn-default " runat="server" OnClick="btnBuscar_Click"><i class="glyphicon glyphicon-search"></i></asp:LinkButton>
 

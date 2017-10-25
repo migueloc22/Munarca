@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AlbumNegocioPropietario.aspx" />
+    <Content Include="BuscarUsuarioaspx.aspx" />
     <Content Include="CalificacionSuscriptor.aspx" />
     <Content Include="ComentarioPropietario.aspx" />
     <Content Include="ComentarioSuscriptor.aspx" />
@@ -100,6 +101,7 @@
     <Content Include="images\loader.gif" />
     <Content Include="img\banner1.jpg" />
     <Content Include="img\banner2.jpeg" />
+    <Content Include="img\bogota.jpg" />
     <Content Include="img\imageUser.jpg" />
     <Content Include="img\logoBlanco.png" />
     <Content Include="img\logoFinal.png" />
@@ -161,6 +163,13 @@
     </Compile>
     <Compile Include="AlbumNegocioPropietario.aspx.designer.cs">
       <DependentUpon>AlbumNegocioPropietario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarUsuarioaspx.aspx.cs">
+      <DependentUpon>BuscarUsuarioaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuscarUsuarioaspx.aspx.designer.cs">
+      <DependentUpon>BuscarUsuarioaspx.aspx</DependentUpon>
     </Compile>
     <Compile Include="CalificacionSuscriptor.aspx.cs">
       <DependentUpon>CalificacionSuscriptor.aspx</DependentUpon>
