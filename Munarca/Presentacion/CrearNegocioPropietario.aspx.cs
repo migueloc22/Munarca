@@ -82,16 +82,13 @@ namespace Presentacion
         {
 
             LogicaNegocio lgNegocio = new LogicaNegocio();
-            lgPath = new LogicaPath();
-            
-            
-            HttpFileCollection file = Request.Files;
+            lgPath = new LogicaPath();        
             csUsuario usuario = (csUsuario)Session["Usuario"];
-                
-                String[] nombres = new String[file.Count - 1];
-                if (nombres.LongLength >= 0)
+
+
+            if ((uploadFile1.PostedFile != null) && (uploadFile1.PostedFile.ContentLength > 0))
                 {
-                    //csNegocio negocio = new csNegocio(0, txtNombre.Text, txtDesccrip.Text, txtTelefono.Text, usuario.id_usuario, int.Parse(dpCategoria.SelectedValue.ToString()), txtLon.Text, txtUbicacion.Text, txtLat.Text);
+                    csNegocio negocio = new csNegocio(0,txtNombre.Text,txtDescdrip.Text,txtTelefono.Text,usuario.id_usuario,int.Parse(dpCategoria.SelectedValue.ToString()),txtDir.Text,uploadFile1.FileName,hdLonft.Value,txtUbicacion.Text,hdLatFt.Value);
                     //int codNegoc = int.Parse(lgNegocio.CrearNegocio(negocio));
                     //for (int i = 0; i <= file.Count - 1; i++)
                     //{
@@ -104,7 +101,9 @@ namespace Presentacion
                 }
                 else
                 {
-                    //lbValidacion.Text = "No se han cargado archivos";
+                    ltRepuesta.Text = @"<div class='alert alert-danger'>
+                    <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+                    </div>";
                 }
             
             

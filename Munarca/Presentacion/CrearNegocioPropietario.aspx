@@ -92,6 +92,7 @@
 
                         <div class="form-group">
                             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
+                            <asp:Literal ID="ltRepuesta" runat="server"></asp:Literal>
                         </div>
                         <div class="form-group">
                             <asp:Button ID="btnAgregarNegocio" runat="server" Text="Agregar" CssClass="btn btn-danger" OnClick="btnAgregarNegocio_Click" />

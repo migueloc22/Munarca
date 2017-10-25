@@ -186,6 +186,9 @@
     <Compile Include="ConfigAdmin.aspx.cs">
       <DependentUpon>ConfigAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConfigAdmin.aspx.designer.cs">
+      <DependentUpon>ConfigAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConfigPropietario.aspx.cs">
       <DependentUpon>ConfigPropietario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
