@@ -69,7 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AlbumNegocioPropietario.aspx" />
-    <Content Include="BuscarUsuarioaspx.aspx" />
     <Content Include="CalificacionSuscriptor.aspx" />
     <Content Include="ComentarioPropietario.aspx" />
     <Content Include="ComentarioSuscriptor.aspx" />
@@ -87,6 +86,7 @@
     <Content Include="css\estiloAdmin.css" />
     <Content Include="css\estilos.css" />
     <Content Include="css\estilos2.css" />
+    <Content Include="css\fileinput.min.css" />
     <Content Include="css\jquery.gmaps.css" />
     <Content Include="css\jquery.rondell.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -116,6 +116,8 @@
     <Content Include="js\bootstrap-datepicker.es.min.js" />
     <Content Include="js\bootstrap-datepicker.min.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\es.js" />
+    <Content Include="js\fileinput.min.js" />
     <Content Include="js\gmaps.js" />
     <Content Include="js\JavaScript.js" />
     <Content Include="js\jquery-ui.js" />
@@ -160,12 +162,6 @@
     <Compile Include="AlbumNegocioPropietario.aspx.designer.cs">
       <DependentUpon>AlbumNegocioPropietario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BuscarUsuarioaspx.aspx.cs">
-      <DependentUpon>BuscarUsuarioaspx.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BuscarUsuarioaspx.aspx.designer.cs">
-      <DependentUpon>BuscarUsuarioaspx.aspx</DependentUpon>
-    </Compile>
     <Compile Include="CalificacionSuscriptor.aspx.cs">
       <DependentUpon>CalificacionSuscriptor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -188,9 +184,6 @@
       <DependentUpon>ComentarioSuscriptor.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfigAdmin.aspx.cs">
-      <DependentUpon>ConfigAdmin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ConfigAdmin.aspx.designer.cs">
       <DependentUpon>ConfigAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfigPropietario.aspx.cs">
@@ -230,6 +223,7 @@
     </Compile>
     <Compile Include="GestionCategorias.aspx.cs">
       <DependentUpon>GestionCategorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GestionCategorias.aspx.designer.cs">
       <DependentUpon>GestionCategorias.aspx</DependentUpon>
@@ -246,6 +240,7 @@
     </Compile>
     <Compile Include="indexAdminn.aspx.cs">
       <DependentUpon>indexAdminn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="indexAdminn.aspx.designer.cs">
       <DependentUpon>indexAdminn.aspx</DependentUpon>

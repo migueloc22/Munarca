@@ -48,13 +48,13 @@ namespace Presentacion
         {
             try
             {
-                lgNegocio=new LogicaNegocio();
-                negocio = new csNegocio(int.Parse(lbId_negocio.Text), txtNombre.Text, txtDesccrip.Text, txtTelefono.Text, 0, int.Parse(dpCategoria.SelectedValue.ToString()), txtLon.Text, txtUbicacion.Text, txtLat.Text);
-                if (lgNegocio.ModificarNegocio(negocio))
-                {
-                    Button2_ModalPopupExtender.Show();
-                }
-                else { }
+                //lgNegocio=new LogicaNegocio();
+                //negocio = new csNegocio(int.Parse(lbId_negocio.Text), txtNombre.Text, txtDesccrip.Text, txtTelefono.Text, 0, int.Parse(dpCategoria.SelectedValue.ToString()), txtLon.Text, txtUbicacion.Text, txtLat.Text);
+                //if (lgNegocio.ModificarNegocio(negocio))
+                //{
+                //    Button2_ModalPopupExtender.Show();
+                //}
+                //else { }
             }
             catch (Exception ex)
             {
