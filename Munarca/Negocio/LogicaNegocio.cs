@@ -60,7 +60,20 @@ namespace Negocio
             cnn = Conexion.AbrirCnn();
             try
             {
-                cmd = new SqlCommand("select * from  negocio where estado=1", cnn);
+                cmd = new SqlCommand(@"select 
+                   id_negocio
+                  ,nombre
+                  ,descripcion
+                  ,estado
+                  ,longitud
+                  ,direccion
+                  ,concat('~/media/img/',foto_neg) as foto
+                  ,ubicacion
+                  ,latitud
+                  ,telefono
+                  ,fk_id_propietario
+                  ,fk_id_categoria
+                   from  negocio where estado=1 order by nombre", cnn);
                 //cmd.CommandText = "select * from  negocio";
                 //cmd.Connection = cnn;
                 read = cmd.ExecuteReader();
@@ -82,7 +95,20 @@ namespace Negocio
             cnn = Conexion.AbrirCnn();
             try
             {
-                cmd = new SqlCommand("select * from  negocio where fk_id_propietario = @cod and estado=1", cnn);
+                cmd = new SqlCommand(@"select 
+                   id_negocio
+                  ,nombre
+                  ,descripcion
+                  ,estado
+                  ,longitud
+                  ,direccion
+                  ,concat('~/media/img/',foto_neg) as foto
+                  ,ubicacion
+                  ,latitud
+                  ,telefono
+                  ,fk_id_propietario
+                  ,fk_id_categoria
+                   from  negocio where fk_id_propietario=@cod and estado=1 order by nombre", cnn);
                 //cmd.CommandText = "select * from  negocio";
                 //cmd.Connection = cnn;
                 cmd.Parameters.AddWithValue("@cod", cod);
@@ -171,6 +197,8 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@ubicacion", negocio.ubicacion);
                 cmd.Parameters.AddWithValue("@latitud", negocio.latitud);
                 cmd.Parameters.AddWithValue("@telefono", negocio.telefono);
+                cmd.Parameters.AddWithValue("@foto_neg", negocio.foto_negocio);
+                cmd.Parameters.AddWithValue("@direccion", negocio.descripcion);
                 cmd.Parameters.AddWithValue("@fk_id_categoria", negocio.fk_id_categoria);
                 cmd.Parameters.AddWithValue("@id_negocio", negocio.id_negocio);
                 cmd.ExecuteNonQuery();

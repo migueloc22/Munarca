@@ -45,7 +45,7 @@
             <h1>Servicio Fuel Modificado</h1>
         </div>
         <div class="modal-footer">
-            <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger" NavigateUrl="~/IndexServicioPropietario.aspx">Regresar a Negocio</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger" NavigateUrl="~/IndexNegocioPropietario.aspx">Regresar a Negocio</asp:HyperLink>
         </div>
 
     </asp:Panel>

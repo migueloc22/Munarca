@@ -30,6 +30,59 @@ namespace Presentacion
 
 
         }
+        private void cargarTpDoc()
+        {
+            LogicaTipoDocumento lgTpDoc = new LogicaTipoDocumento();
+            dlTipoUsuario.DataSource = lgTpDoc.DataTableTpDoc();
+            dlTipoUsuario.DataTextField = "tipo_doc";
+            dlTipoUsuario.DataValueField = "id_tipo_doc";
+            dlTipoUsuario.DataBind();
+        }
+        private void cargarTpUsu()
+        {
+            LogicaTipoUsuario lgUsu = new LogicaTipoUsuario();
+            dlTipoDoc.DataSource = lgUsu.DtTipoUsu();
+            dlTipoDoc.DataTextField = "tipo";
+            dlTipoDoc.DataValueField = "id_tipo_usuario";
+            dlTipoDoc.DataBind();
+
+
+        }
+        private void cargarCiudad()
+        {
+            LogicaCiudad lgCiu = new LogicaCiudad();
+            int cod = int.Parse(dlDpto.SelectedValue.ToString());
+            dlCiudad.DataSource = lgCiu.DataTableCiudad(cod);
+            dlCiudad.DataTextField = "ciudad";
+            dlCiudad.DataValueField = "id_ciudad";
+            dlCiudad.DataBind();
+        }
+        private void cargarDepartamento()
+        {
+            LogicaDepartamento lgDpto = new LogicaDepartamento();
+            dlDpto.DataSource = lgDpto.DataTableDpto();
+            dlDpto.DataTextField = "departamento";
+            dlDpto.DataValueField = "id_departamento";
+            dlDpto.DataBind();
+        }
+        private void limpiarRegistro()
+        {
+            txtNom1.Text = "";
+            txtNom2.Text = "";
+            txtApe1.Text = ""; txtApe2.Text = "";
+            txtCorreo.Text = "";
+            txtDir.Text = "";
+            txtFechaNac.Text = "";
+            txtTelefono.Text = "";
+            txtNumDoc.Text = "";
+            cargarTipoUsu();
+            cargarTpUsu();
+            cargarDepartamento();
+            cargarCiudad();
+            cargarTpDoc();
+
+
+        }
         public void EnviarCorreo(string pass, string correo)
         {
             /*-------------------------MENSAJE DE CORREO----------------------*/
@@ -47,7 +100,7 @@ namespace Presentacion
             mmsg.SubjectEncoding = System.Text.Encoding.UTF8;
 
             //Direccion de correo electronico que queremos que reciba una copia del mensaje
-            //mmsg.Bcc.Add("migueloc22@gmail.com"); //Opcional
+            mmsg.Bcc.Add("munarca1@gmail.com"); //Opcional
 
             //Cuerpo del Mensaje
             mmsg.Body = "Hola nuevo Usuario su contraseña es :(" + pass + ") Podra cambia contraseña y la foto de perfil en configuraciones";
@@ -113,128 +166,26 @@ namespace Presentacion
                 }
                 else
                 {
-                    cargarTipoUsu();
-                    LogicaTipoDocumento lgTpDoc = new LogicaTipoDocumento();
-                    dlTipoDoc.DataSource = lgTpDoc.DataTableTpDoc();
-                    dlTipoDoc.DataTextField = "tipo_doc";
-                    dlTipoDoc.DataValueField = "id_tipo_doc";
-                    dlTipoDoc.DataBind();
-                    Session.Clear();
-                    //recuperarar id
-                    //int.Parse(dlTipoDoc.SelectedValue.ToString())
-
-
-
-                    LogicaDepartamento lgDpto = new LogicaDepartamento();
-                    dlDpto.DataSource = lgDpto.DataTableDpto();
-                    dlDpto.DataTextField = "departamento";
-                    dlDpto.DataValueField = "id_departamento";
-                    dlDpto.DataBind();
-                    Session.Clear();
-
-                    LogicaTipoUsuario lgTipoUsu = new LogicaTipoUsuario();
-                    dlTipoUsuario.DataSource = lgTipoUsu.DataTableTipoUsu();
-                    dlTipoUsuario.DataTextField = "tipo";
-                    dlTipoUsuario.DataValueField = "id_tipo_usuario";
-                    dlTipoUsuario.DataBind();
-                    Session.Clear();
-                    LogicaCiudad lgCiu = new LogicaCiudad();
-                    int cod = int.Parse(dlDpto.SelectedValue.ToString());
-                    dlCiudad.DataSource = lgCiu.DataTableCiudad(cod);
-                    dlCiudad.DataTextField = "ciudad";
-                    dlCiudad.DataValueField = "id_ciudad";
-                    dlCiudad.DataBind();
+                    try
+                    {
+                        cargarTpUsu();
+                        cargarTpDoc();
+                        cargarTipoUsu();
+                        cargarDepartamento();
+                        cargarCiudad();
+                        Session.Clear();
+                    }
+                    catch (Exception ex)
+                    {
+                        
+                        lbValidacionUser.Text=ex.Message;
+                    }
+                    
                 }
             }
 
 
         }
-        //protected void btnAtivador1_Click(object sender, EventArgs e)
-        //{
-
-        //    if (IsPostBack)
-        //    {
-        //        ViewState["opciones"] = "2";
-        //        btnAtivador1.CssClass = "btn btn-danger btn-lg ";
-        //        btnAtivador2.CssClass = "btn btn-link btn-lg ";
-        //        btnAtivador1.ForeColor = Color.White;
-        //        btnAtivador2.ForeColor = Color.Gray;
-
-        //    }
-
-
-        //}
-
-        //protected void btnAtivador2_Click(object sender, EventArgs e)
-        //{
-        //    if (IsPostBack)
-        //    {
-        //        ViewState["opciones"] = "1";
-        //        btnAtivador1.CssClass = "btn btn-link btn-lg ";
-        //        btnAtivador2.CssClass = "btn btn-danger btn-lg ";
-        //        btnAtivador2.ForeColor = Color.White;
-        //        btnAtivador1.ForeColor = Color.Gray;
-
-        //    }
-
-
-        //}
-
-        //protected void btnEntrar_Click(object sender, EventArgs e)
-        //{
-        //    //manejo de session Pirmera parte
-        //    util = new csUtilidades();
-        //    string Opcion;
-        //    Usuario = LgUsuario.Login(util.Encriptar(txtPass.Text), txtEMail.Text);
-        //    if (Usuario != null)
-        //    {
-        //        Session["Usuario"] = Usuario;
-        //        if (ViewState["opciones"] == null)
-        //        {
-        //            Opcion = "2";
-        //        }
-        //        else
-        //        {
-        //            Opcion = ViewState["opciones"].ToString();
-        //        }
-        //if (estadoUser.Validar(Usuario.id_usuario,int.Parse(Opcion)))
-        //{
-        //        switch (Opcion)
-        //        {
-        //        case "2":
-        //            Session["TipoUsuario"] = "2";
-        //            Response.Redirect("IndexSuscriptor.aspx");
-        //            break;
-        //        case "1":
-        //            ViewState["opciones"] = "1";
-        //            btnAtivador1.CssClass = "btn btn-link btn-lg ";
-        //            btnAtivador2.CssClass = "btn btn-danger btn-lg ";
-        //            btnAtivador2.ForeColor = Color.White;
-        //            btnAtivador1.ForeColor = Color.Gray;
-        //            Session["TipoUsuario"] = "1";
-        //            Response.Redirect("IndexPropietario.aspx");
-        //            break;
-        //        default:
-        //            btnEntrar.Text = "1";
-        //            break;
-
-        //    }
-        //    }
-        //     else
-        //    {
-        //        lbValidacionUser.Text = "EL tipo de usuario no valido";
-        //    }
-
-        //}
-        //else
-        //{
-        //    lbValidacionUser.Text = "usuario o contraseña incorecta.";
-        //}
-
-
-        //}
-
-
 
         protected void dlDpto_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -261,10 +212,12 @@ namespace Presentacion
                 if (resultado)
                 {
                     EnviarCorreo(pass, txtCorreo.Text);
+                    limpiarRegistro();
+                    Button1_ModalPopupExtender.Show();
                 }
                 else
                 {
-                    ltMensaje.Text =  @"<div class='alert alert-danger'>
+                    ltMensaje.Text = @"<div class='alert alert-danger'>
                                 <strong>No se registro La usuario</strong> Su contraseña sera enviada a su correo electronio.
                             </div>";
                 }
@@ -322,7 +275,7 @@ namespace Presentacion
             catch (Exception ex)
             {
 
-               lbValidacionUser.Text=(ex.Message);
+                lbValidacionUser.Text = (ex.Message);
             }
 
         }

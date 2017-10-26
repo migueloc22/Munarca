@@ -41,10 +41,10 @@
     <asp:Panel ID="pnModal" runat="server" Style="display: none; background-color: white; width: auto; height: auto;">
 
         <div class="modal-body">
-            <h1>Servicio Fuel Agregado</h1>
+            <h1>Servicio  Agregado</h1>
         </div>
         <div class="modal-footer">
-            <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger" NavigateUrl="~/IndexServicioPropietario.aspx">Regresar a Negocio</asp:HyperLink>
+            <asp:HyperLink ID="bntRegresar" runat="server" CssClass="btn btn-danger" NavigateUrl="~/IndexNegocioPropietario.aspx">Regresar a Negocio</asp:HyperLink>
         </div>
 
     </asp:Panel>

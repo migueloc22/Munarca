@@ -10,52 +10,88 @@
 namespace Presentacion {
     
     
-    public partial class ComentarioSuscriptor {
+    public partial class IndexNegocioPropietario {
         
         /// <summary>
-        /// Control lbNombre.
+        /// Control ltError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbNombre;
+        protected global::System.Web.UI.WebControls.Literal ltError;
         
         /// <summary>
-        /// Control lbDescrip.
+        /// Control pnContenido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbDescrip;
+        protected global::System.Web.UI.WebControls.Panel pnContenido;
         
         /// <summary>
-        /// Control HyperLink1.
+        /// Control rpGaleria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.Repeater rpGaleria;
         
         /// <summary>
-        /// Control HyperLink2.
+        /// Control btnAgregarSv.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+        protected global::System.Web.UI.WebControls.HyperLink btnAgregarSv;
         
         /// <summary>
-        /// Control HyperLink3.
+        /// Control gvServicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
+        protected global::System.Web.UI.WebControls.GridView gvServicio;
+        
+        /// <summary>
+        /// Control btnNodal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNodal;
+        
+        /// <summary>
+        /// Control btnNodal_ModalPopupExtender.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender btnNodal_ModalPopupExtender;
+        
+        /// <summary>
+        /// Control pnModal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnModal;
+        
+        /// <summary>
+        /// Control btnAceptar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAceptar;
         
         /// <summary>
         /// Control UpdatePanel1.
@@ -67,66 +103,66 @@ namespace Presentacion {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Control dtComentario.
+        /// Control dtListComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dtComentario;
+        protected global::System.Web.UI.WebControls.DataList dtListComentario;
         
         /// <summary>
-        /// Control dtComentarioMod.
+        /// Control lbNombreNeg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dtComentarioMod;
+        protected global::System.Web.UI.WebControls.Label lbNombreNeg;
         
         /// <summary>
-        /// Control dlComentario.
+        /// Control lbDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dlComentario;
+        protected global::System.Web.UI.WebControls.Literal lbDescripcion;
         
         /// <summary>
-        /// Control txtComentario.
+        /// Control lbRating.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtComentario;
+        protected global::System.Web.UI.WebControls.Literal lbRating;
         
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control Rating1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::AjaxControlToolkit.Rating Rating1;
         
         /// <summary>
-        /// Control lbVdComentario.
+        /// Control hdLat.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVdComentario;
+        protected global::System.Web.UI.WebControls.HiddenField hdLat;
         
         /// <summary>
-        /// Control btnComentario.
+        /// Control hdLong.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnComentario;
+        protected global::System.Web.UI.WebControls.HiddenField hdLong;
     }
 }

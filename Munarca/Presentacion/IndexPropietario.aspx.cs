@@ -75,6 +75,16 @@ namespace Presentacion
 
         }
 
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            csUtilidades util = new csUtilidades();
+            ImageButton btn = (ImageButton)sender;
+            DataListItem item=(DataListItem)btn.NamingContainer;
+            Label lb = (Label)item.FindControl("Label2");
+            Response.Redirect("IndexNegocioPropietario.aspx?show=" + util.Encriptar(lb.Text));
+
+        }
+
 
          
 

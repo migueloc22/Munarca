@@ -13,10 +13,18 @@ namespace Presentacion
     public partial class CrearServicioPropietario : System.Web.UI.Page
     {
         LogicaServicio lgServicio;
+        csUtilidades util;
         csServicio servicio;
         csNegocio negocio;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.Params["show"] == null)
+            {
+                Response.Redirect("IndexPropietario.aspx");
+            }
+            else {
+                bntRegresar.NavigateUrl = "IndexPropietario.aspx?show=" + Request.Params["show"];
+            }
             
         }
 
@@ -24,7 +32,9 @@ namespace Presentacion
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            negocio = (csNegocio)Session["Negocio"];
+
+            util = new csUtilidades();
+            int codnegocio = int.Parse(util.desencriptar(Request.Params["show"]));
             lgServicio = new LogicaServicio();            
             DateTime time= DateTime.Now;
             string fecha = time.Date.ToString("yyyy-MM-dd");
@@ -40,7 +50,7 @@ namespace Presentacion
                 {
                     
                     postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
-                    servicio = new csServicio(0, txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), fecha, hora, int.Parse(txtValor.Text), negocio.id_negocio);
+                    servicio = new csServicio(0, txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), fecha, hora, int.Parse(txtValor.Text), codnegocio);
                     if (lgServicio.CrearServicio(servicio))
                     {
                         Button2_ModalPopupExtender.Show();

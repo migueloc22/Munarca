@@ -88,28 +88,40 @@ namespace Presentacion
 
             if ((uploadFile1.PostedFile != null) && (uploadFile1.PostedFile.ContentLength > 0))
                 {
-                    csNegocio negocio = new csNegocio(0,txtNombre.Text,txtDescdrip.Text,txtTelefono.Text,usuario.id_usuario,int.Parse(dpCategoria.SelectedValue.ToString()),txtDir.Text,uploadFile1.FileName,hdLonft.Value,txtUbicacion.Text,hdLatFt.Value);
-                    //int codNegoc = int.Parse(lgNegocio.CrearNegocio(negocio));
-                    //for (int i = 0; i <= file.Count - 1; i++)
-                    //{
-                    //    HttpPostedFile postefile = file[i];
-                    //    postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
-                    //    path = new csPath(0, postefile.FileName, codNegoc);
-                    //    lgPath.CrearPath(path);
-                    //}
-                    Button2_ModalPopupExtender.Show();
+                    try
+                    {
+                        
+                        string fn = System.IO.Path.GetFileName(uploadFile1.PostedFile.FileName);
+                        string SaveLocation = Server.MapPath("media\\img")+"\\"+ fn;
+                        csNegocio negocio = new csNegocio(0, txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario, int.Parse(dpCategoria.SelectedValue.ToString()), txtDir.Text, uploadFile1.FileName, hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
+                        int codNegoc = int.Parse(lgNegocio.CrearNegocio(negocio));
+                        if (codNegoc>0)
+                        {
+                            uploadFile1.PostedFile.SaveAs(SaveLocation);
+                            Button2_ModalPopupExtender.Show();
+                        }
+                        else
+                        {
+                            ltRepuesta.Text = @"<div class='alert alert-danger'>
+                             <strong>Danger!</strong> no guardor el registro.
+                             </div>";
+                        }
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        ltRepuesta.Text = @"<div class='alert alert-danger'>
+                    <strong>Advertencia</strong> "+ex.Message+"</div>";
+                        
+                    }
+                    
                 }
                 else
                 {
                     ltRepuesta.Text = @"<div class='alert alert-danger'>
-                    <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+                    <strong>Danger!</strong> No cargo la Foto.
                     </div>";
-                }
-            
-            
-
-
-
+                }          
         }
 
         //protected void btnAgregarNegocio_Click(object sender, EventArgs e)
