@@ -16,6 +16,18 @@ namespace Presentacion
         csUtilidades util;
         csServicio servicio;
         csNegocio negocio;
+        LogicaTipoServicio lgTpServicios;
+        #region Metodos
+        private void CargarList()
+        {
+            lgTpServicios = new LogicaTipoServicio();
+            dpListServicios.DataSource = lgTpServicios.dtTpServicio();
+            dpListServicios.DataTextField = "tipo_servicio";
+            dpListServicios.DataValueField = "id_tipo_servicio";
+            dpListServicios.DataBind();
+        
+        }
+        #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.Params["show"] == null)
@@ -23,7 +35,10 @@ namespace Presentacion
                 Response.Redirect("IndexPropietario.aspx");
             }
             else {
-                bntRegresar.NavigateUrl = "IndexPropietario.aspx?show=" + Request.Params["show"];
+                bntRegresar.NavigateUrl = "IndexNegocioPropietario.aspx?show=" + Request.Params["show"];
+                bntRegresar2.NavigateUrl = "IndexNegocioPropietario.aspx?show=" + Request.Params["show"];
+                
+                CargarList();
             }
             
         }
@@ -50,7 +65,7 @@ namespace Presentacion
                 {
                     
                     postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
-                    servicio = new csServicio(0, txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), fecha, hora, int.Parse(txtValor.Text), codnegocio);
+                    servicio = new csServicio(0, txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), fecha, hora, int.Parse(txtValor.Text), codnegocio,int.Parse(dpListServicios.SelectedValue.ToString()));
                     if (lgServicio.CrearServicio(servicio))
                     {
                         Button2_ModalPopupExtender.Show();

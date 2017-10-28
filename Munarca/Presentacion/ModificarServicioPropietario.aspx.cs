@@ -18,49 +18,49 @@ namespace Presentacion
             if (!IsPostBack)
             {
                 servicio = (csServicio)Application["SessionServicio"];
-                txtNombre.Text = servicio.nombre;
-                txtDescripcion.Text = servicio.descripcion;
-                txtValor.Text = servicio.valor.ToString();
-                lbImagen.Text = servicio.imagen;
-                ViewState["codServicio"] = servicio.id_servicio;
+                //txtNombre.Text = servicio.nombre;
+                //txtDescripcion.Text = servicio.descripcion;
+                //txtValor.Text = servicio.valor.ToString();
+                //lbImagen.Text = servicio.imagen;
+                //ViewState["codServicio"] = servicio.id_servicio;
             }
             
         }
 
         
 
-        protected void btnAgregar_Click(object sender, EventArgs e)
-        {
-            lgServicio = new LogicaServicio();
-            HttpFileCollection file = Request.Files;
-            for (int i = 0; i <= file.Count - 1; i++)
-            {
+        //protected void btnAgregar_Click(object sender, EventArgs e)
+        //{
+        //    lgServicio = new LogicaServicio();
+        //    HttpFileCollection file = Request.Files;
+        //    for (int i = 0; i <= file.Count - 1; i++)
+        //    {
 
-                HttpPostedFile postefile = file[i];
-                String[] nombres = new String[file.Count - 1];
-                if (postefile.ContentLength > 0)
-                {
+        //        HttpPostedFile postefile = file[i];
+        //        String[] nombres = new String[file.Count - 1];
+        //        if (postefile.ContentLength > 0)
+        //        {
 
-                    postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
-                    servicio = new csServicio(int.Parse(ViewState["codServicio"].ToString()), txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), null, null, int.Parse(txtValor.Text), 0);
-                    if (lgServicio.ModificarServicio2(servicio))
-                    {
-                        Button2_ModalPopupExtender.Show();
-                    }
+        //            postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
+        //            servicio = new csServicio(int.Parse(ViewState["codServicio"].ToString()), txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), null, null, int.Parse(txtValor.Text), 0);
+        //            if (lgServicio.ModificarServicio2(servicio))
+        //            {
+        //                Button2_ModalPopupExtender.Show();
+        //            }
 
-                }
-                else
-                {
+        //        }
+        //        else
+        //        {
 
 
-                    servicio = new csServicio(int.Parse(ViewState["codServicio"].ToString()), txtNombre.Text, txtDescripcion.Text, lbImagen.Text, null, null, int.Parse(txtValor.Text), 0);
-                    if (lgServicio.ModificarServicio2(servicio))
-                    {
-                        Button2_ModalPopupExtender.Show();
-                    }
+        //            servicio = new csServicio(int.Parse(ViewState["codServicio"].ToString()), txtNombre.Text, txtDescripcion.Text, lbImagen.Text, null, null, int.Parse(txtValor.Text),0);
+        //            if (lgServicio.ModificarServicio2(servicio))
+        //            {
+        //                Button2_ModalPopupExtender.Show();
+        //            }
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
     }
 }

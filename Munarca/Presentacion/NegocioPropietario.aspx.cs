@@ -51,23 +51,24 @@ namespace Presentacion
             }
         }
 
-        protected void gvNegocio_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        //protected void gvNegocio_SelectedIndexChanged(object sender, EventArgs e)
+        //{
 
-            try
-            {
-                lgNegocio = new LogicaNegocio();
-                int cod = int.Parse(gvNegocio.SelectedDataKey.Values[0].ToString());
-                negocio = lgNegocio.SessionNegocio(cod);
-                Application["SessionNegocio"] = negocio;
-                Response.Redirect("ModificarNegocioPropietario.aspx");
-            }
-            catch (Exception ex)
-            {
+        //    try
+        //    {
+        //        //lgNegocio = new LogicaNegocio();
+        //        string cod = gvNegocio.SelectedDataKey.Values[0].ToString();
+        //        //negocio = lgNegocio.SessionNegocio(cod);
+        //        //Application["SessionNegocio"] = negocio;
+        //        Response.Redirect("ModificarNegocioPropietario.aspx?negocio="+cod);
+        //        Response.Redirect("ModificarNegocioPropietario.aspx");
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                Response.Write(ex.ToString());
-            }
-        }
+        //        Response.Write(ex.ToString());
+        //    }
+        //}
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -75,6 +76,24 @@ namespace Presentacion
             int cod = int.Parse(ViewState["codEliminar"].ToString());
             lgNegocio.eliminarNeocio(cod);
             CargarTabla();
+        }
+
+        protected void gvNegocio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                string cod = gvNegocio.SelectedDataKey.Values[0].ToString();
+                Response.Redirect("ModificarNegocioPropietario.aspx?negocio=" + cod, false);
+            }
+            catch (Exception ex)
+            {
+                
+                Response.Write( ex.Message);
+            }
+                
+                //Response.Redirect("ModificarNegocioPropietario.aspx");
+            
         }
     }
 }

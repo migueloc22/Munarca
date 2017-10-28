@@ -70,9 +70,6 @@
   <ItemGroup>
     <Content Include="AlbumNegocioPropietario.aspx" />
     <Content Include="BuscarUsuarioaspx.aspx" />
-    <Content Include="CalificacionSuscriptor.aspx" />
-    <Content Include="ComentarioPropietario.aspx" />
-    <Content Include="ComentarioSuscriptor.aspx" />
     <Content Include="ConfigAdmin.aspx" />
     <Content Include="ConfigPropietario.aspx" />
     <Content Include="ConfigSuscriptor.aspx" />
@@ -111,6 +108,7 @@
     <Content Include="img\tecnico.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="indexAdminn.aspx" />
+    <Content Include="IndexNegocioPropietario.aspx" />
     <Content Include="IndexNegocioSuscriptor.aspx" />
     <Content Include="IndexPropietario.aspx" />
     <Content Include="IndexServicioPropietario.aspx" />
@@ -130,6 +128,7 @@
     <Content Include="js\locationpicker.jquery.js" />
     <Content Include="js\modernizr-2.0.6.min.js" />
     <Content Include="js\npm.js" />
+    <Content Include="media\img\local.jpg" />
     <Content Include="media\img\user.png" />
     <Content Include="ModificarNegocioPropietario.aspx" />
     <Content Include="ModificarServicioPropietario.aspx" />
@@ -171,29 +170,9 @@
     <Compile Include="BuscarUsuarioaspx.aspx.designer.cs">
       <DependentUpon>BuscarUsuarioaspx.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CalificacionSuscriptor.aspx.cs">
-      <DependentUpon>CalificacionSuscriptor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CalificacionSuscriptor.aspx.designer.cs">
-      <DependentUpon>CalificacionSuscriptor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ComentarioPropietario.aspx.cs">
-      <DependentUpon>ComentarioPropietario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ComentarioPropietario.aspx.designer.cs">
-      <DependentUpon>ComentarioPropietario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ComentarioSuscriptor.aspx.cs">
-      <DependentUpon>ComentarioSuscriptor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ComentarioSuscriptor.aspx.designer.cs">
-      <DependentUpon>ComentarioSuscriptor.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ConfigAdmin.aspx.cs">
       <DependentUpon>ConfigAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConfigAdmin.aspx.designer.cs">
       <DependentUpon>ConfigAdmin.aspx</DependentUpon>
@@ -256,6 +235,13 @@
     </Compile>
     <Compile Include="indexAdminn.aspx.designer.cs">
       <DependentUpon>indexAdminn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndexNegocioPropietario.aspx.cs">
+      <DependentUpon>IndexNegocioPropietario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexNegocioPropietario.aspx.designer.cs">
+      <DependentUpon>IndexNegocioPropietario.aspx</DependentUpon>
     </Compile>
     <Compile Include="IndexNegocioSuscriptor.aspx.cs">
       <DependentUpon>IndexNegocioSuscriptor.aspx</DependentUpon>

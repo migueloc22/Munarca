@@ -13,6 +13,24 @@ namespace Presentacion {
     public partial class ModificarNegocioPropietario {
         
         /// <summary>
+        /// Control hdCodNegocio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdCodNegocio;
+        
+        /// <summary>
+        /// Control hdImag.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdImag;
+        
+        /// <summary>
         /// Control uploadFile1.
         /// </summary>
         /// <remarks>
@@ -20,15 +38,6 @@ namespace Presentacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload uploadFile1;
-        
-        /// <summary>
-        /// Control RequiredFieldValidator3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
         /// Control Label1.
@@ -220,13 +229,13 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.Literal ltRepuesta;
         
         /// <summary>
-        /// Control btnModificar.
+        /// Control btnAgregarNegocio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModificar;
+        protected global::System.Web.UI.WebControls.Button btnAgregarNegocio;
         
         /// <summary>
         /// Control Button2.

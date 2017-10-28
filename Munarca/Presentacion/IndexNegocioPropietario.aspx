@@ -52,13 +52,13 @@
                             </fieldset>
                             <hr />
                             <fieldset>
-                                <h1 class="text-muted">Srrvicios</h1>
+                                <h1 class="text-muted">Servicios</h1>
                                 <hr />
                                 <asp:HyperLink ID="btnAgregarSv" runat="server" CssClass="btn btn-danger "><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Agregar Sercicio</asp:HyperLink>
                                 <br />
                                 <br />
                                 <div class="scrolling">
-                                    <asp:GridView ID="gvServicio" runat="server" AutoGenerateColumns="False" DataKeyNames="id_servicio" OnRowDeleting="gvServicio_RowDeleting" OnSelectedIndexChanged="gvServicio_SelectedIndexChanged" CssClass="table table-hover" GridLines="none">
+                                    <asp:GridView ID="gvServicio" runat="server" AutoGenerateColumns="False" DataKeyNames="id_servicio" OnRowDeleting="gvServicio_RowDeleting" OnSelectedIndexChanged="gvServicio_SelectedIndexChanged" CssClass="table table-hover table-bordered table-responsive" GridLines="none">
                                         <Columns>
                                             <asp:ImageField DataImageUrlField="imagen" ControlStyle-Height="75px" ControlStyle-Width="95px" ControlStyle-CssClass="img-thumbnail img-rounded" HeaderText="Imagen">
                                             </asp:ImageField>

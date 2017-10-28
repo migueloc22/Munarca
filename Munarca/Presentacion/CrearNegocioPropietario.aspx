@@ -28,7 +28,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:Label ID="Label1" runat="server" Text="Nombre Negocio :"></asp:Label>
-                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="15"></asp:TextBox>
+                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="35"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNombre" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">

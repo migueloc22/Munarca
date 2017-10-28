@@ -6,14 +6,18 @@
             <div class="panel">
                 <div class="panel-primary">
                     <div class="panel-body">
-                        <h1 class="h1">Crear negocio</h1>
+                        <h1 class="h1">Modificar Negocio</h1>
                         <hr />
                         <div class="row">
                             <%--Inicio columna--%>
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <asp:HiddenField ID="hdCodNegocio" runat="server" />
+                                    <asp:HiddenField ID="hdImag" runat="server" />
                                     <asp:FileUpload ID="uploadFile1" runat="server" accept="image/*" class="file" multiple data-show-upload="false" />
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Agregue una foto" ControlToValidate="uploadFile1" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    <div class="alert alert-info">
+                                        <strong>Info!</strong> EL cambio de la foto es opcional .
+                                    </div>
                                     <%--<input id="input-id" type="file" class="file" data-preview-file-type="text" >--%>
                                     <script>
                                         $("#ContentPlaceHolder1_ContentPlaceHolder1_uploadFile1").fileinput({
@@ -95,7 +99,7 @@
                             <asp:Literal ID="ltRepuesta" runat="server"></asp:Literal>
                         </div>
                         <div class="form-group">
-                            <asp:Button ID="btnModificar" runat="server" Text="Modificar" CssClass="btn btn-danger" OnClick="btnModificar_Click" />
+                            <asp:Button ID="btnAgregarNegocio" runat="server" Text="Modificar" CssClass="btn btn-danger" OnClick="btnModificar_Click" />
                         </div>
                     </div>
                 </div>
@@ -108,7 +112,7 @@
     <asp:Panel ID="pnModal" runat="server" Style="display: none; background-color: white; width: auto; height: auto;">
 
         <div class="modal-body">
-            <h1>Negocio Modificado...</h1>
+            <h1>Negocio Actulizado..</h1>
         </div>
         <div class="modal-footer">
             <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger" NavigateUrl="~/NegocioPropietario.aspx">Regresar a Negocio</asp:HyperLink>

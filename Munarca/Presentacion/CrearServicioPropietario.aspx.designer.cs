@@ -13,13 +13,22 @@ namespace Presentacion {
     public partial class CrearServicioPropietario {
         
         /// <summary>
-        /// Control HyperLink2.
+        /// Control FileUpload1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        
+        /// <summary>
+        /// Control RequiredFieldValidator4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
         /// Control txtNombre.
@@ -85,13 +94,13 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// Control FileUpload1.
+        /// Control dpListServicios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.DropDownList dpListServicios;
         
         /// <summary>
         /// Control ValidationSummary1.
@@ -110,6 +119,15 @@ namespace Presentacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregar;
+        
+        /// <summary>
+        /// Control bntRegresar2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink bntRegresar2;
         
         /// <summary>
         /// Control Button2.

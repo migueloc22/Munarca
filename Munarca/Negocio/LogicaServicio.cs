@@ -20,7 +20,7 @@ namespace Negocio
             try
             {
                 cnn = Conexion.AbrirCnn();
-                cmd = new SqlCommand("insert into servicio(nombre_servicio,descripcion,fecha,hora,image,fk_id_negocio,valor) values(@nombre_servicio,@descripcion,@fecha,@hora,@image,@fk_id_negocio,@valor)", cnn);
+                cmd = new SqlCommand("insert into servicio(nombre_servicio,descripcion,fecha,hora,image,fk_id_negocio,valor,fk_id_tp_servicio) values(@nombre_servicio,@descripcion,@fecha,@hora,@image,@fk_id_negocio,@valor,@fk_id_tp_servicio)", cnn);
                 cmd.Parameters.AddWithValue("@nombre_servicio", servico.nombre);
                 cmd.Parameters.AddWithValue("@descripcion", servico.descripcion);
                 cmd.Parameters.AddWithValue("@fecha", servico.fecha);
@@ -28,6 +28,7 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@image", servico.imagen);
                 cmd.Parameters.AddWithValue("@valor", servico.valor);
                 cmd.Parameters.AddWithValue("@fk_id_negocio", servico.fk_id_negocio);
+                cmd.Parameters.AddWithValue("@fk_id_tp_servicio", servico.fk_id_tpServicios);
                 cmd.ExecuteNonQuery();
                 Conexion.CerrarCnn(cnn);
                 retorno = true;
@@ -72,12 +73,13 @@ namespace Negocio
             try
             {
                 cnn = Conexion.AbrirCnn();
-                cmd = new SqlCommand("update servicio set nombre_servicio=@nombre_servicio , descripcion=@descripcion,image=@image,valor=@valor where id_servicio =@id_sevicio", cnn);
+                cmd = new SqlCommand("update servicio set nombre_servicio=@nombre_servicio , descripcion=@descripcion,image=@image,valor=@valor,fk_id_tp_servicio=@fk_id_tp_servicio where id_servicio =@id_sevicio", cnn);
                 cmd.Parameters.AddWithValue("@nombre_servicio", servico.nombre);
                 cmd.Parameters.AddWithValue("@descripcion", servico.descripcion);
                 cmd.Parameters.AddWithValue("@image", servico.imagen);
                 cmd.Parameters.AddWithValue("@valor", servico.valor);
                 cmd.Parameters.AddWithValue("@id_sevicio", servico.id_servicio);
+                cmd.Parameters.AddWithValue("@fk_id_negocio", servico.fk_id_negocio);
                 cmd.ExecuteNonQuery();
                 Conexion.CerrarCnn(cnn);
                 retorno = true;
@@ -199,7 +201,7 @@ namespace Negocio
                     hora = read["hora"].ToString();
                     valor = int.Parse(read["valor"].ToString());
                     fk_id_negocio = int.Parse(read["fk_id_negocio"].ToString());
-                    servicio = new csServicio(id_servicio, nombre, descripcion, imagen, fecha, hora, valor, fk_id_negocio);
+                    servicio = new csServicio(id_servicio, nombre, descripcion, imagen, fecha, hora, valor, fk_id_negocio,0);
                     Conexion.CerrarCnn(cnn);
                     return servicio; 
                 }
