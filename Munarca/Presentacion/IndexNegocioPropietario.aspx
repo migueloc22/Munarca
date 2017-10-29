@@ -58,7 +58,7 @@
                                 <br />
                                 <br />
                                 <div class="scrolling">
-                                    <asp:GridView ID="gvServicio" runat="server" AutoGenerateColumns="False" DataKeyNames="id_servicio" OnRowDeleting="gvServicio_RowDeleting" OnSelectedIndexChanged="gvServicio_SelectedIndexChanged" CssClass="table table-hover table-bordered table-responsive" GridLines="none">
+                                    <asp:GridView ID="gvServicio" runat="server" AutoGenerateColumns="False" DataKeyNames="id_servicio" OnRowDeleting="gvServicio_RowDeleting" OnSelectedIndexChanged="gvServicio_SelectedIndexChanged" CssClass="table table-striped table-bordered table-hover table-condensed" GridLines="none">
                                         <Columns>
                                             <asp:ImageField DataImageUrlField="imagen" ControlStyle-Height="75px" ControlStyle-Width="95px" ControlStyle-CssClass="img-thumbnail img-rounded" HeaderText="Imagen">
                                             </asp:ImageField>
@@ -116,7 +116,8 @@
                             <div class="media">
                                 <div class="media-body">
                                     <h1 class="media-heading">
-                                        <asp:Label ID="lbNombreNeg" CssClass="h1 text-danger" runat="server" Text="Label"></asp:Label>
+                                        <asp:Label ID="lbNombreNeg" CssClass="h1 text-danger text-center center-block" runat="server" Text="Label"></asp:Label>
+                                        <asp:Image ID="foto_Negocio" runat="server" CssClass="img-rounded img-responsive center-block" Height="300" />
                                     </h1>
                                     <p>
                                         <asp:Literal ID="lbDescripcion" runat="server"></asp:Literal>

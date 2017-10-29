@@ -13,54 +13,119 @@ namespace Presentacion
     {
         csServicio servicio;
         LogicaServicio lgServicio;
+        LogicaTipoServicio lgTpServicios;
+        csUtilidades util;
+        #region Metodos
+        private void CargarList()
+        {
+            lgTpServicios = new LogicaTipoServicio();
+            dpListServicios.DataSource = lgTpServicios.dtTpServicio();
+            dpListServicios.DataTextField = "tipo_servicio";
+            dpListServicios.DataValueField = "id_tipo_servicio";
+            dpListServicios.DataBind();
+
+        }
+        #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                servicio = (csServicio)Application["SessionServicio"];
-                //txtNombre.Text = servicio.nombre;
-                //txtDescripcion.Text = servicio.descripcion;
-                //txtValor.Text = servicio.valor.ToString();
-                //lbImagen.Text = servicio.imagen;
-                //ViewState["codServicio"] = servicio.id_servicio;
+                if (Request.Params["show"] == null)
+                {
+                    Response.Redirect("IndexPropietario.aspx");
+                }
+                else
+                {
+                    try
+                    {
+                        util = new csUtilidades();
+                        lgServicio = new LogicaServicio();                        
+                        servicio= lgServicio.SessionServicio(int.Parse(Request.Params["service"].ToString()));
+                        bntRegresar.NavigateUrl = "IndexNegocioPropietario.aspx?show=" + Request.Params["show"];
+                        bntRegresar2.NavigateUrl = "IndexNegocioPropietario.aspx?show=" + Request.Params["show"];
+                        CargarList();
+                        txtNombre.Text = servicio.nombre;
+                        txtDescripcion.Text = servicio.descripcion;
+                        txtValor.Text = servicio.valor.ToString();
+                        lbImagen.Text = servicio.imagen;
+                        dpListServicios.SelectedValue = servicio.fk_id_tpServicios.ToString();
+                        ViewState["codServicio"] = servicio.id_servicio;
+                    }
+                    catch (Exception ex)
+                    {
+
+                        ltError.Text = @"<div class='alert alert-danger'><strong>Error!</strong> " + ex.Message + ".</div>";
+                    }
+
+                }
+
+
+            }
+
+        }
+
+
+
+
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lgServicio = new LogicaServicio();
+                HttpFileCollection file = Request.Files;
+                util = new csUtilidades();
+                for (int i = 0; i <= file.Count - 1; i++)
+                {
+
+                    HttpPostedFile postefile = file[i];
+                    String[] nombres = new String[file.Count - 1];
+                    if (postefile.ContentLength > 0)
+                    {
+                        int codService = int.Parse(ViewState["codServicio"].ToString());
+                        int codNegocio=int.Parse(util.desencriptar(Request.Params["show"].ToString()));
+                        postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
+                        servicio = new csServicio(codService, txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), "", "", int.Parse(txtValor.Text),codNegocio, int.Parse(dpListServicios.SelectedValue.ToString()));
+                        if (lgServicio.ModificarServicio(servicio))
+                        {
+                            Button2_ModalPopupExtender.Show();
+
+                        }
+                        else
+                        {
+                            ltError.Text = @"<div class='alert alert-danger'>
+                          <strong>Error!</strong> " + "Servicio Modificado" + ".</div>";
+                        }
+
+                    }
+                    else
+                    {
+
+
+                        int codService = int.Parse(ViewState["codServicio"].ToString());
+                        int codNegocio = int.Parse(util.desencriptar(Request.Params["show"].ToString()));
+                        servicio = new csServicio(codService, txtNombre.Text, txtDescripcion.Text, "", "", "", int.Parse(txtValor.Text), codNegocio, int.Parse(dpListServicios.SelectedValue.ToString()));
+                        if (lgServicio.ModificarServicio2(servicio))
+                        {
+                            Button2_ModalPopupExtender.Show();
+
+                        }
+                        else
+                        {
+                            ltError.Text = @"<div class='alert alert-danger'>
+                          <strong>Error!</strong> " + "Servicio Modificado" + ".</div>";
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                ltError.Text = @"<div class='alert alert-danger'>
+                          <strong>Error!</strong> " + ex.Message + ".</div>";
             }
             
         }
-
-        
-
-        //protected void btnAgregar_Click(object sender, EventArgs e)
-        //{
-        //    lgServicio = new LogicaServicio();
-        //    HttpFileCollection file = Request.Files;
-        //    for (int i = 0; i <= file.Count - 1; i++)
-        //    {
-
-        //        HttpPostedFile postefile = file[i];
-        //        String[] nombres = new String[file.Count - 1];
-        //        if (postefile.ContentLength > 0)
-        //        {
-
-        //            postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
-        //            servicio = new csServicio(int.Parse(ViewState["codServicio"].ToString()), txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), null, null, int.Parse(txtValor.Text), 0);
-        //            if (lgServicio.ModificarServicio2(servicio))
-        //            {
-        //                Button2_ModalPopupExtender.Show();
-        //            }
-
-        //        }
-        //        else
-        //        {
-
-
-        //            servicio = new csServicio(int.Parse(ViewState["codServicio"].ToString()), txtNombre.Text, txtDescripcion.Text, lbImagen.Text, null, null, int.Parse(txtValor.Text),0);
-        //            if (lgServicio.ModificarServicio2(servicio))
-        //            {
-        //                Button2_ModalPopupExtender.Show();
-        //            }
-
-        //        }
-        //    }
-        //}
     }
 }

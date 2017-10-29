@@ -48,32 +48,47 @@ namespace Presentacion
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            util = new csUtilidades();
-            int codnegocio = int.Parse(util.desencriptar(Request.Params["show"]));
-            lgServicio = new LogicaServicio();            
-            DateTime time= DateTime.Now;
-            string fecha = time.Date.ToString("yyyy-MM-dd");
-            //string hora = time.TimeOfDay.ToString("HH:mm");
-            string hora = "14:05:12";
-            HttpFileCollection file = Request.Files;
-            for (int i = 0; i <= file.Count - 1; i++)
+            try
+            {
+                util = new csUtilidades();
+                int codnegocio = int.Parse(util.desencriptar(Request.Params["show"]));
+                lgServicio = new LogicaServicio();
+                DateTime time = DateTime.Now;
+                string fecha = time.Date.ToString("yyyy-MM-dd");
+                //string hora = time.TimeOfDay.ToString("HH:mm");
+                string hora = "14:05:12";
+                HttpFileCollection file = Request.Files;
+                for (int i = 0; i <= file.Count - 1; i++)
+                {
+
+                    HttpPostedFile postefile = file[i];
+                    String[] nombres = new String[file.Count - 1];
+                    if (postefile.ContentLength > 0)
+                    {
+
+                        postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
+                        servicio = new csServicio(0, txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), fecha, hora, int.Parse(txtValor.Text), codnegocio, int.Parse(dpListServicios.SelectedValue.ToString()));
+                        if (lgServicio.CrearServicio(servicio))
+                        {
+                            Button2_ModalPopupExtender.Show();
+                        }
+                        else
+                        {
+                            ltError.Text = @"<div class='alert alert-danger'>
+                          <strong>Error!</strong> " + "Servicio no creado" + ".</div>";
+                        }
+
+                    }
+                }
+            
+            }
+            catch (Exception ex)
             {
 
-                HttpPostedFile postefile = file[i];
-                String[] nombres = new String[file.Count - 1];
-                if (postefile.ContentLength > 0)
-                {
-                    
-                    postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
-                    servicio = new csServicio(0, txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), fecha, hora, int.Parse(txtValor.Text), codnegocio,int.Parse(dpListServicios.SelectedValue.ToString()));
-                    if (lgServicio.CrearServicio(servicio))
-                    {
-                        Button2_ModalPopupExtender.Show();
-                    }
-                    
-                }
+                ltError.Text = @"<div class='alert alert-danger'>
+                          <strong>Error!</strong> " + ex.Message + ".</div>";
             }
-            
+           
             
             
         }

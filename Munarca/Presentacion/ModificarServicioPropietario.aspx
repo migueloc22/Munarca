@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioPropietario.master" AutoEventWireup="true" CodeBehind="ModificarServicioPropietario.aspx.cs" Inherits="Presentacion.ModificarServicioPropietario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="row">
+    <div class="row">
         <div class="col-xs-10 col-xs-offset-1">
             <div class="panel">
                 <div class="panel-primary">
@@ -13,8 +13,9 @@
                                     <asp:Label ID="lbImagen" runat="server" Visible="false" Text="Label"></asp:Label>
                                     <label>Imagen de Servicio</label>
                                     <asp:FileUpload ID="FileUpload1" runat="server" accept="gif|jpg|png" maxlength="1" />
-
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Cargue una imagen" ControlToValidate="FileUpload1" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    <div class="alert alert-info">
+                                        <strong>Info!</strong> EL cambio de la imagen es opcional .
+                                    </div>
                                     <script>
                                         $("#ContentPlaceHolder1_ContentPlaceHolder1_FileUpload1").fileinput({
                                             language: "es",
@@ -54,8 +55,10 @@
                         </div>
 
 
+                        <asp:Literal ID="ltError" runat="server"></asp:Literal>                        
+
                         <div class="form-group btn-group btn-group-lg">
-                            <asp:Button ID="btnAgregar" runat="server" Text="Agregar Servicio" CssClass="btn btn-danger"  /><input type="reset" class="btn btn-default" />
+                            <asp:Button ID="btnAgregar" runat="server" Text="Agregar Servicio" CssClass="btn btn-danger" OnClick="btnAgregar_Click" /><input type="reset" class="btn btn-default" />
                             <asp:HyperLink ID="bntRegresar2" runat="server" CssClass="btn btn-default" NavigateUrl="~/IndexNegocioPropietario.aspx">Regresar a Negocio</asp:HyperLink>
                         </div>
                     </div>
@@ -72,7 +75,7 @@
             <h1>Negocio Modificado...</h1>
         </div>
         <div class="modal-footer">
-            <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger" NavigateUrl="~/NegocioPropietario.aspx">Regresar a Negocio</asp:HyperLink>
+            <asp:HyperLink ID="bntRegresar" runat="server" CssClass="btn btn-danger" NavigateUrl="~/NegocioPropietario.aspx">Regresar a Negocio</asp:HyperLink>
         </div>
 
     </asp:Panel>

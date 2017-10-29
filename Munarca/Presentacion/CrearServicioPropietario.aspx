@@ -51,7 +51,7 @@
                          <div class="form-group">
                             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
                         </div>
-                        
+                        <asp:Literal ID="ltError" runat="server"></asp:Literal>  
 
                         <div class="form-group btn-group btn-group-lg">
                             <asp:Button ID="btnAgregar" runat="server" Text="Agregar Servicio" CssClass="btn btn-danger" OnClick="btnAgregar_Click" /><input type="reset" class="btn btn-default" />

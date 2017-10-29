@@ -121,6 +121,15 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.Label lbNombreNeg;
         
         /// <summary>
+        /// Control foto_Negocio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image foto_Negocio;
+        
+        /// <summary>
         /// Control lbDescripcion.
         /// </summary>
         /// <remarks>

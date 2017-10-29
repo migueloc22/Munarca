@@ -47,14 +47,14 @@ namespace Negocio
             try
             {
                 cnn = Conexion.AbrirCnn();
-                cmd = new SqlCommand("update servicio set nombre_servicio=@nombre_servicio , descripcion=@descripcion,fecha=@fecha,hora=@hora,image=@image,fk_id_negocio=@fk_id_negocio,valor=@valor", cnn);
+                cmd = new SqlCommand("update servicio set nombre_servicio=@nombre_servicio , descripcion=@descripcion,image=@image,fk_id_negocio=@fk_id_negocio,valor=@valor,fk_id_tp_servicio=@fk_id_tp_servicio where id_servicio=@id_sevicio", cnn);
                 cmd.Parameters.AddWithValue("@nombre_servicio", servico.nombre);
                 cmd.Parameters.AddWithValue("@descripcion", servico.descripcion);
-                cmd.Parameters.AddWithValue("@fecha", servico.fecha);
-                cmd.Parameters.AddWithValue("@hora", servico.hora);
                 cmd.Parameters.AddWithValue("@image", servico.imagen);
+                cmd.Parameters.AddWithValue("@id_sevicio", servico.id_servicio);
                 cmd.Parameters.AddWithValue("@valor", servico.valor);
                 cmd.Parameters.AddWithValue("@fk_id_negocio", servico.fk_id_negocio);
+                cmd.Parameters.AddWithValue("@fk_id_tp_servicio", servico.fk_id_tpServicios);
                 cmd.ExecuteNonQuery();
                 Conexion.CerrarCnn(cnn);
                 retorno = true;
@@ -62,7 +62,7 @@ namespace Negocio
             catch (SqlException ex)
             {
 
-                throw;
+                rta=ex.Message;
             }
             return retorno;
         }
@@ -73,13 +73,13 @@ namespace Negocio
             try
             {
                 cnn = Conexion.AbrirCnn();
-                cmd = new SqlCommand("update servicio set nombre_servicio=@nombre_servicio , descripcion=@descripcion,image=@image,valor=@valor,fk_id_tp_servicio=@fk_id_tp_servicio where id_servicio =@id_sevicio", cnn);
+                cmd = new SqlCommand("update servicio set nombre_servicio=@nombre_servicio ,fk_id_negocio=@fk_id_negocio,descripcion=@descripcion,valor=@valor,fk_id_tp_servicio=@fk_id_tp_servicio where id_servicio=@id_sevicio", cnn);
                 cmd.Parameters.AddWithValue("@nombre_servicio", servico.nombre);
                 cmd.Parameters.AddWithValue("@descripcion", servico.descripcion);
-                cmd.Parameters.AddWithValue("@image", servico.imagen);
                 cmd.Parameters.AddWithValue("@valor", servico.valor);
                 cmd.Parameters.AddWithValue("@id_sevicio", servico.id_servicio);
                 cmd.Parameters.AddWithValue("@fk_id_negocio", servico.fk_id_negocio);
+                cmd.Parameters.AddWithValue("@fk_id_tp_servicio", servico.fk_id_tpServicios);
                 cmd.ExecuteNonQuery();
                 Conexion.CerrarCnn(cnn);
                 retorno = true;
@@ -183,8 +183,9 @@ namespace Negocio
             string fecha;
             string hora; 
             int valor;
+            String fk_id_tpServicios;
             int fk_id_negocio;
-            csServicio servicio;
+            csServicio servicio=null;
             cnn = Conexion.AbrirCnn();
             try
             {
@@ -201,27 +202,24 @@ namespace Negocio
                     hora = read["hora"].ToString();
                     valor = int.Parse(read["valor"].ToString());
                     fk_id_negocio = int.Parse(read["fk_id_negocio"].ToString());
-                    servicio = new csServicio(id_servicio, nombre, descripcion, imagen, fecha, hora, valor, fk_id_negocio,0);
+                    fk_id_tpServicios = read["fk_id_tp_servicio"].ToString();
+                    servicio = new csServicio(id_servicio, nombre, descripcion, imagen, fecha, hora, valor, fk_id_negocio, int.Parse(fk_id_tpServicios));
                     Conexion.CerrarCnn(cnn);
-                    return servicio; 
+                    
                 }
-                else
-                {
-                    servicio = null;
-                    return servicio; 
-                }
+               
                 
             }
             catch (SqlException ex)
             {
 
                 rta = ex.ToString();
-                servicio = null;
-                return servicio;
+                
+                
             }
-           
-               
-            
+
+
+            return servicio;
 
             
             
