@@ -58,7 +58,7 @@
                             </ajaxToolkit:ModalPopupExtender>
                             <br />
                             <asp:Label ID="lbValidacionUser" runat="server" Text="" ForeColor="red"></asp:Label>
-                            <asp:Button ID="Button1" runat="server" Text="Button" style="display:none" />
+                            <asp:Button ID="Button1" runat="server" Text="Button" Enabled="false" style="display:none" />
 
                             <ajaxToolkit:ModalPopupExtender runat="server" BehaviorID="Button1_ModalPopupExtender" TargetControlID="Button1" ID="Button1_ModalPopupExtender" PopupControlID="pnResultado" CancelControlID="cerrar" BackgroundCssClass="fondo"></ajaxToolkit:ModalPopupExtender>
 
@@ -66,7 +66,7 @@
                         </div>
                         <div class="form-group">
                             <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-danger" CausesValidation="false" OnClick="btnEntrar_Click" />
-                            <input type="reset" class="btn " />
+                            <input type="reset" class="btn default" />
                         </div>
                     </div>
                 </ContentTemplate>

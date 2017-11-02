@@ -45,7 +45,7 @@ namespace Negocio
             {
                 codigo = "OkLogin";
                 rta = "401";
-                command = new SqlCommand("Select * from usuario where contraseña=@pass and correo=@correo", cnn);
+                command = new SqlCommand("Select * from usuario where contraseña=@pass and correo=@correo and estado=1", cnn);
                 command.Parameters.AddWithValue("@pass", contraseña);
                 command.Parameters.AddWithValue("@correo", correo);
                 reader = command.ExecuteReader();
@@ -58,12 +58,12 @@ namespace Negocio
                     string apellido2= reader["apellido_2"].ToString();                    
                     string foto="media/img/"+reader["foto"].ToString() ;
                     string direccion= reader["direccion"].ToString();
-                    string fecha_nacimiento=reader["fecha_nacimiento"].ToString() ;
+                    DateTime fecha_nacimiento = DateTime.Parse(reader["fecha_nacimiento"].ToString());
                     string telefono = reader["telefono"].ToString();
                     int num_documento=int.Parse(reader["num_documento"].ToString());
                     int fk_id_tipo_doc=int.Parse(reader["fk_id_tipo_doc"].ToString());
                     int fk_id_ciudad = int.Parse(reader["fk_id_ciudad"].ToString());
-                    csUsuario = new csUsuario(  id_usuario, nombre1, nombre2 , apellido1 , apellido2 ,   correo,  foto ,  direccion ,  fecha_nacimiento ,  telefono , num_documento, fk_id_tipo_doc , fk_id_ciudad, contraseña ) ;
+                    csUsuario = new csUsuario(id_usuario, nombre1, nombre2, apellido1, apellido2, correo, foto, direccion, fecha_nacimiento.ToString("yyyy/MM/dd"), telefono, num_documento, fk_id_tipo_doc, fk_id_ciudad, contraseña);
                     Conexion.CerrarCnn(cnn);
                     return csUsuario;
                     
@@ -168,6 +168,29 @@ namespace Negocio
             }
             return retorno;
         }
+        public Boolean Validar(String correo)
+        {
+            Boolean retorno = false;
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                command = new SqlCommand("select count(*) usuario  where correo=@correo", cnn);
+                command.Parameters.AddWithValue("@correo", correo);
+                int num = command.ExecuteNonQuery();
+                if (num == 0)
+                {
+                    retorno = true;
+                }
+                Conexion.CerrarCnn(cnn);
+
+            }
+            catch (Exception ex)
+            {
+
+                rta = ex.ToString();
+            }
+            return retorno;
+        }
         public Boolean ActulizarDatos(csUsuario user)
         {
             Boolean retorno = false;
@@ -185,10 +208,10 @@ namespace Negocio
                 command.Parameters.AddWithValue("@direccion", user.direccion);
                 command.Parameters.AddWithValue("@telefono", user.telefono);
                 command.Parameters.AddWithValue("@fecha_nacimiento", user.fecha_nacimiento);
-                command.Parameters.AddWithValue("@id_usuario", user.codUser);
+                command.Parameters.AddWithValue("@id_usuario", user.id_usuario);
 
                 int num = command.ExecuteNonQuery();
-                if (num != 0)
+                if (num > 0)
                 {
                     retorno = true;
                 }
@@ -291,7 +314,7 @@ namespace Negocio
             {
                 codigo = "OkLogin";
                 rta = "401";
-                command = new SqlCommand("Select * from usuario where  id_usuario=@id_usuario", cnn);
+                command = new SqlCommand("Select * from usuario where  id_usuario=@id_usuario and estado=1", cnn);
                 command.Parameters.AddWithValue("@id_usuario", p);
                 reader = command.ExecuteReader();
                 if (reader.Read())
