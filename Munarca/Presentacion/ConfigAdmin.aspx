@@ -152,7 +152,7 @@
                                 <div class="col-xs-4">
                                     <div class="form-group">
                                         <label>Contaseña</label>
-                                        <asp:TextBox ID="txtPass1" runat="server" CssClass="form-control" TextMode="Password" placeholder="Contaseña" minlength="8" MaxLength="20"></asp:TextBox>
+                                        <asp:TextBox ID="txtPass1" runat="server" CssClass="form-control check-seguridad" TextMode="Password" placeholder="Contaseña" minlength="8" MaxLength="20"></asp:TextBox>
                                         <asp:RequiredFieldValidator ControlToValidate="txtPass1" ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo vacio" ValidationGroup="Panel2" ForeColor="Red">*</asp:RequiredFieldValidator>
 
                                     </div>

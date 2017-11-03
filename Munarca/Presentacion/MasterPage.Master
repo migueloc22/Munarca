@@ -13,6 +13,7 @@
     <link href="css/bootstrap-datepicker.min.css" rel="stylesheet" />
     <link href="css/bootstrap-datepicker3.min.css" rel="stylesheet" />
     <link href="css/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" />
+    <link href="css/strength.css" rel="stylesheet" />
     <link href="css/estilos2.css" rel="stylesheet" />
     <%-- JavaScrip --%>
     <script src="js/jquery.min.js"></script>    
@@ -30,6 +31,8 @@
     <script src="js/bootstrap-datepicker.es.min.js"></script>
     <script src="js/modernizr-2.0.6.min.js"></script>
     <script src="js/jquery.rondell.min.js"></script>
+    <script src="js/password_strength.js"></script>
+    <script src="js/jquery-strength.js"></script>
     <script src="js/JavaScript.js"></script>
 
 
