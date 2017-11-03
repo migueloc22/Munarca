@@ -87,6 +87,7 @@
     <Content Include="css\fileinput.min.css" />
     <Content Include="css\jquery.gmaps.css" />
     <Content Include="css\jquery.rondell.min.css" />
+    <Content Include="css\strength.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="geoNegocioSuscriptor.aspx" />
     <Content Include="GestionCategorias.aspx" />
@@ -119,6 +120,7 @@
     <Content Include="js\fileinput.min.js" />
     <Content Include="js\gmaps.js" />
     <Content Include="js\JavaScript.js" />
+    <Content Include="js\jquery-strength.js" />
     <Content Include="js\jquery-ui.js" />
     <Content Include="js\jquery.gmaps.js" />
     <Content Include="js\jquery.min.js" />
@@ -127,6 +129,7 @@
     <Content Include="js\locationpicker.jquery.js" />
     <Content Include="js\modernizr-2.0.6.min.js" />
     <Content Include="js\npm.js" />
+    <Content Include="js\password_strength.js" />
     <Content Include="media\img\user.png" />
     <Content Include="ModificarNegocioPropietario.aspx" />
     <Content Include="ModificarServicioPropietario.aspx" />
