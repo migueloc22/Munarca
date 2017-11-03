@@ -174,21 +174,18 @@
     </Compile>
     <Compile Include="CalificacionSuscriptor.aspx.cs">
       <DependentUpon>CalificacionSuscriptor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CalificacionSuscriptor.aspx.designer.cs">
       <DependentUpon>CalificacionSuscriptor.aspx</DependentUpon>
     </Compile>
     <Compile Include="ComentarioPropietario.aspx.cs">
       <DependentUpon>ComentarioPropietario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ComentarioPropietario.aspx.designer.cs">
       <DependentUpon>ComentarioPropietario.aspx</DependentUpon>
     </Compile>
     <Compile Include="ComentarioSuscriptor.aspx.cs">
       <DependentUpon>ComentarioSuscriptor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ComentarioSuscriptor.aspx.designer.cs">
       <DependentUpon>ComentarioSuscriptor.aspx</DependentUpon>

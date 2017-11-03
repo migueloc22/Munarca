@@ -25,22 +25,24 @@
                         <hr />
                         <%-- <div id="donutchart" style="width: 900px; height: 500px;"></div>--%>
                         <div class="scrolling container-fluid">
-                            <div class="row">
+                            <div class="row well">
                                 <asp:DataList ID="dtlisNegocio" runat="server" RepeatLayout="Flow" ShowFooter="False" ShowHeader="False" RepeatDirection="Horizontal">
                                     <ItemTemplate>
                                         <div class="col-sm-4">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("id_negocio") %>' Visible="False"></asp:Label>
-                                                    <asp:Label ID="Label1" runat="server" CssClass="h4" Text='<%# Eval("nombre") %>'></asp:Label>
-                                                </div>
+                                            <div class="thumbnail">
+                                                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("foto") %>' Width="100%" Height="300" CssClass="img-thumbnail img-responsive" OnClick="ImageButton1_Click" />
 
-                                                <div class="panel-body">
-                                                    <asp:Label ID="lbDescripcion" runat="server" Text='<%# Eval("descripcion") %>'></asp:Label>
-                                                </div>
+                                                <div class="caption">
+                                                    <p>
+                                                        <strong>
+                                                            <asp:Label ID="Label2" runat="server" CssClass="text-center" Text='<%# Eval("id_negocio") %>' Visible="False"></asp:Label>
+                                                            <asp:Label ID="Label1" runat="server" CssClass="h2 text-center" Text='<%# Eval("nombre") %>'></asp:Label>
+                                                        </strong>
+                                                    </p>
+                                                    <p>
+                                                        <asp:Label ID="lbDescripcion" runat="server" Text='<%# Eval("descripcion") %>'></asp:Label>
+                                                    </p>
 
-                                                <div class="panel-footer">
-                                                    <asp:LinkButton ID="btnIrGeocio" runat="server" OnClick="btnIrGeocio_Click">Ir</asp:LinkButton>
                                                 </div>
                                             </div>
                                         </div>

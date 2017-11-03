@@ -60,20 +60,25 @@
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
                                         <asp:Panel ID="pnComentar" runat="server">
+                                            <div class="form-group btn-group btn-group-lg">
+                                                <asp:Button ID="btnCommen" CssClass="btn btn-danger" OnClick="btnCommen_Click" runat="server" Text="Comentarios" /><asp:Button ID="btnMisComm" CssClass="btn btn-default" OnClick="btnMisComm_Click" runat="server" Text="Mis Comentarios" />
+                                            </div>
                                             <div class="well">
 
                                                 <div class="form-group">
                                                     <asp:TextBox ID="txtComment" runat="server" CssClass="form-control" Rows="3" MaxLength="150" TextMode="MultiLine" placeholder="Comentar"></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo vacio" ControlToValidate="txtComment" ForeColor="Red" ValidationGroup="pnComentar"></asp:RequiredFieldValidator>
                                                 </div>
+                                                <asp:Literal ID="ltMsnComment" runat="server"></asp:Literal>
                                                 <asp:LinkButton ID="btnComment" CssClass="btn btn-danger col-xs-offset-10" runat="server" OnClick="btnComment_Click" ValidationGroup="pnComentar"><span class="glyphicon glyphicon-share" ></span> Comentar</asp:LinkButton>
+                                                <asp:Button ID="btnModificarCmm" CssClass="btn btn-danger col-xs-offset-10" OnClick="btnModificarCmm_Click" ValidationGroup="pnComentar" runat="server" Text="Modificar" Visible="false" />
                                             </div>
                                         </asp:Panel>
                                         <br />
                                         <br />
                                         <asp:DataList ID="dtListComentario" runat="server">
                                             <ItemTemplate>
-                                                <div class="media well">
+                                                <div class="media">
                                                     <div class="media-left media-middle">
                                                         <asp:Image ID="Image1" runat="server" Width="60" Height="60" CssClass="img-rounded" ImageUrl='<%# Eval("avatar") %>' />
                                                     </div>
@@ -87,7 +92,44 @@
                                                         <asp:Literal ID="Literal1" runat="server" Text='<%# Eval("comentario") %>'></asp:Literal>
                                                     </div>
                                                 </div>
-                                                
+                                                 <hr />
+                                            </ItemTemplate>
+                                        </asp:DataList>
+                                        <asp:DataList ID="dtListComentario2" runat="server" Visible="false">
+                                            <ItemTemplate>                                              
+                                                <div class="media">
+                                                    <div class="media-left media-middle">
+                                                        <asp:Image ID="Image1" runat="server" Width="60" Height="60" CssClass="img-rounded" ImageUrl='<%# Eval("avatar") %>' />
+                                                        <asp:Label ID="lbid_comentario" runat="server" Text=' <%# Eval("id_comentario") %>' Visible="false"></asp:Label>
+                                                    </div>
+                                                    <div class="media-body ">
+                                                        <h4 class="media-heading">
+                                                            <asp:Literal ID="Literal2" runat="server" Text='<%# Eval("nombre") %>'></asp:Literal>
+                                                            <small><i></i>
+                                                                <asp:Label ID="lbFecha" runat="server" Text='<%# Eval("fecha", "{0:D}") %>'></asp:Label>
+                                                                <asp:Label ID="Label1" runat="server" Text=' <%# Eval("hora") %>'></asp:Label>
+                                                            </small></h4>
+                                                        <p><asp:Literal ID="ltComentario" runat="server" Text='<%# Eval("comentario") %>'></asp:Literal></p>
+                                                        
+                                                    </div>
+                                                    <div class="media-right">
+                                                        <div class="dropdown" >
+                                                            <button class="btn btn-default dropdown-toggle" style="outline: none;" type="button" id="menu1" data-toggle="dropdown">       
+                                                                                                                 
+                                                                <span class="glyphicon glyphicon-option-vertical"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu" style="position:static;" role="menu" aria-labelledby="menu1">
+                                                                <li role="presentation">
+                                                                    <asp:LinkButton ID="btnModCmm" runat="server" OnClick ="btnModCmm_Click">Modificar</asp:LinkButton></li>
+                                                                <li role="presentation">
+                                                                    <asp:LinkButton ID="btnELiCmm" runat="server" OnClick="btnELiCmm_Click">Eliminar</asp:LinkButton>
+                                                                </li>                                                                
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <hr />
                                             </ItemTemplate>
                                         </asp:DataList>
                                     </ContentTemplate>
@@ -100,7 +142,8 @@
                             <div class="media">
                                 <div class="media-body">
                                     <h1 class="media-heading">
-                                        <asp:Label ID="lbNombreNeg" CssClass="h1 text-danger" runat="server" Text="Label"></asp:Label>
+                                        <asp:Label ID="lbNombreNeg" CssClass="h1 text-danger text-center center-block" runat="server" Text="Label"></asp:Label>
+                                        <asp:Image ID="foto_Negocio" runat="server" CssClass="img-rounded img-responsive center-block" Height="300" />
                                     </h1>
                                     <p>
                                         <asp:Literal ID="lbDescripcion" runat="server"></asp:Literal>
@@ -111,27 +154,31 @@
                             <hr>
                             <div class="media">
                                 <div class="media-body">
-                                    <h2 class="media-heading">Rating
-                                    </h2>
-                                    <h3>
-                                        <asp:Literal ID="lbRating" runat="server"></asp:Literal>/5
-                                    </h3>
-                                    <div class="form-group">
+                                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                        <ContentTemplate>
+                                            <h2 class="media-heading">Rating
+                                            </h2>
+                                            <h3>
+                                                <asp:Literal ID="lbRating" runat="server"></asp:Literal>/5
+                                            </h3>
+                                            <div class="form-group">
 
-                                        <ajaxToolkit:Rating ID="Rating1" runat="server"
-                                            StarCssClass="starRating"
-                                            FilledStarCssClass="FilledStars"
-                                            EmptyStarCssClass="EmptyStars"
-                                            WaitingStarCssClass="WatingStars">
-                                        </ajaxToolkit:Rating>
-                                        <p>
-                                        </p>
-                                        <br />
-                                        <div class="form-group">
-                                            <asp:Button ID="btnCalificacion" runat="server" CssClass="btn btn-default" OnClick="btnCalificacion_Click" Text="Calificar" />
-                                        </div>
-                                        <asp:Literal ID="lbCalificacion" runat="server"></asp:Literal>
-                                    </div>
+                                                <ajaxToolkit:Rating ID="Rating1" runat="server"
+                                                    StarCssClass="starRating"
+                                                    FilledStarCssClass="FilledStars"
+                                                    EmptyStarCssClass="EmptyStars"
+                                                    WaitingStarCssClass="WatingStars">
+                                                </ajaxToolkit:Rating>
+                                                <p>
+                                                </p>
+                                                <br />
+                                                <div class="form-group">
+                                                    <asp:Button ID="btnCalificacion" runat="server" CssClass="btn btn-default" OnClick="btnCalificacion_Click" Text="Calificar" />
+                                                </div>
+                                                <asp:Literal ID="lbCalificacion" runat="server"></asp:Literal>
+                                            </div>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
                                 </div>
                                 <hr />
                             </div>

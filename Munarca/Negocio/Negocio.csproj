@@ -61,6 +61,7 @@
     <Compile Include="LogicaPath.cs" />
     <Compile Include="LogicaServicio.cs" />
     <Compile Include="LogicaTipoDocumento.cs" />
+    <Compile Include="LogicaTipoServicio.cs" />
     <Compile Include="LogicaTipoUsuario.cs" />
     <Compile Include="LogicaUbicacion.cs" />
     <Compile Include="LogicaUsuario.cs" />

@@ -58,6 +58,24 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.Panel pnComentar;
         
         /// <summary>
+        /// Control btnCommen.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCommen;
+        
+        /// <summary>
+        /// Control btnMisComm.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMisComm;
+        
+        /// <summary>
         /// Control txtComment.
         /// </summary>
         /// <remarks>
@@ -76,6 +94,15 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
+        /// Control ltMsnComment.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltMsnComment;
+        
+        /// <summary>
         /// Control btnComment.
         /// </summary>
         /// <remarks>
@@ -83,6 +110,15 @@ namespace Presentacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnComment;
+        
+        /// <summary>
+        /// Control btnModificarCmm.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModificarCmm;
         
         /// <summary>
         /// Control dtListComentario.
@@ -94,6 +130,15 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.DataList dtListComentario;
         
         /// <summary>
+        /// Control dtListComentario2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList dtListComentario2;
+        
+        /// <summary>
         /// Control lbNombreNeg.
         /// </summary>
         /// <remarks>
@@ -103,6 +148,15 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.Label lbNombreNeg;
         
         /// <summary>
+        /// Control foto_Negocio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image foto_Negocio;
+        
+        /// <summary>
         /// Control lbDescripcion.
         /// </summary>
         /// <remarks>
@@ -110,6 +164,15 @@ namespace Presentacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lbDescripcion;
+        
+        /// <summary>
+        /// Control UpdatePanel2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
         
         /// <summary>
         /// Control lbRating.
