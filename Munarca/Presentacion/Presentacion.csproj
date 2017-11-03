@@ -133,6 +133,7 @@
     <Content Include="media\img\user.png" />
     <Content Include="ModificarNegocioPropietario.aspx" />
     <Content Include="ModificarServicioPropietario.aspx" />
+    <Content Include="ModificarUsuAdmin.aspx" />
     <Content Include="NegocioPropietario.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -194,6 +195,7 @@
     </Compile>
     <Compile Include="ConfigAdmin.aspx.cs">
       <DependentUpon>ConfigAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConfigAdmin.aspx.designer.cs">
       <DependentUpon>ConfigAdmin.aspx</DependentUpon>
@@ -305,6 +307,13 @@
     </Compile>
     <Compile Include="ModificarServicioPropietario.aspx.designer.cs">
       <DependentUpon>ModificarServicioPropietario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarUsuAdmin.aspx.cs">
+      <DependentUpon>ModificarUsuAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarUsuAdmin.aspx.designer.cs">
+      <DependentUpon>ModificarUsuAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="NegocioPropietario.aspx.cs">
       <DependentUpon>NegocioPropietario.aspx</DependentUpon>
