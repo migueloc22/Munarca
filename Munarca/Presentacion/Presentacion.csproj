@@ -108,7 +108,6 @@
     <Content Include="img\tecnico.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="indexAdminn.aspx" />
-    <Content Include="IndexNegocioPropietario.aspx" />
     <Content Include="IndexNegocioSuscriptor.aspx" />
     <Content Include="IndexPropietario.aspx" />
     <Content Include="IndexServicioPropietario.aspx" />
@@ -128,10 +127,10 @@
     <Content Include="js\locationpicker.jquery.js" />
     <Content Include="js\modernizr-2.0.6.min.js" />
     <Content Include="js\npm.js" />
-    <Content Include="media\img\local.jpg" />
     <Content Include="media\img\user.png" />
     <Content Include="ModificarNegocioPropietario.aspx" />
     <Content Include="ModificarServicioPropietario.aspx" />
+    <Content Include="ModificarUsuAdmin.aspx" />
     <Content Include="NegocioPropietario.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -236,13 +235,6 @@
     <Compile Include="indexAdminn.aspx.designer.cs">
       <DependentUpon>indexAdminn.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IndexNegocioPropietario.aspx.cs">
-      <DependentUpon>IndexNegocioPropietario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="IndexNegocioPropietario.aspx.designer.cs">
-      <DependentUpon>IndexNegocioPropietario.aspx</DependentUpon>
-    </Compile>
     <Compile Include="IndexNegocioSuscriptor.aspx.cs">
       <DependentUpon>IndexNegocioSuscriptor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -291,6 +283,13 @@
     </Compile>
     <Compile Include="ModificarServicioPropietario.aspx.designer.cs">
       <DependentUpon>ModificarServicioPropietario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarUsuAdmin.aspx.cs">
+      <DependentUpon>ModificarUsuAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarUsuAdmin.aspx.designer.cs">
+      <DependentUpon>ModificarUsuAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="NegocioPropietario.aspx.cs">
       <DependentUpon>NegocioPropietario.aspx</DependentUpon>
