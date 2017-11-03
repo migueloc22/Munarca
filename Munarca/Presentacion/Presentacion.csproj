@@ -70,9 +70,6 @@
   <ItemGroup>
     <Content Include="AlbumNegocioPropietario.aspx" />
     <Content Include="BuscarUsuarioaspx.aspx" />
-    <Content Include="CalificacionSuscriptor.aspx" />
-    <Content Include="ComentarioPropietario.aspx" />
-    <Content Include="ComentarioSuscriptor.aspx" />
     <Content Include="ConfigAdmin.aspx" />
     <Content Include="ConfigPropietario.aspx" />
     <Content Include="ConfigSuscriptor.aspx" />
@@ -171,24 +168,6 @@
     </Compile>
     <Compile Include="BuscarUsuarioaspx.aspx.designer.cs">
       <DependentUpon>BuscarUsuarioaspx.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CalificacionSuscriptor.aspx.cs">
-      <DependentUpon>CalificacionSuscriptor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CalificacionSuscriptor.aspx.designer.cs">
-      <DependentUpon>CalificacionSuscriptor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ComentarioPropietario.aspx.cs">
-      <DependentUpon>ComentarioPropietario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ComentarioPropietario.aspx.designer.cs">
-      <DependentUpon>ComentarioPropietario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ComentarioSuscriptor.aspx.cs">
-      <DependentUpon>ComentarioSuscriptor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ComentarioSuscriptor.aspx.designer.cs">
-      <DependentUpon>ComentarioSuscriptor.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfigAdmin.aspx.cs">
       <DependentUpon>ConfigAdmin.aspx</DependentUpon>
