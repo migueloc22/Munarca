@@ -26,6 +26,14 @@
                         <%-- <div id="donutchart" style="width: 900px; height: 500px;"></div>--%>
                         <div class="scrolling container-fluid">
                             <div class="row well">
+                                <asp:Panel ID="pnData" CssClass="col-xs-4 col-xs-offset-4" runat="server" Visible="false">
+                                    <span class="glyphicon glyphicon-alert text-muted center-block text-center" style="font-size: 120px;"></span>
+                                    <br />
+                                    <div class="alert alert-info">
+                                        <strong>¡Informacion!</strong> Sin Registro <a href="NegocioPropietario.aspx" class="alert-link">Ingrese Negocios</a>.
+                                    </div>
+
+                                </asp:Panel>
                                 <asp:DataList ID="dtlisNegocio" runat="server" RepeatLayout="Flow" ShowFooter="False" ShowHeader="False" RepeatDirection="Horizontal">
                                     <ItemTemplate>
                                         <div class="col-sm-4">

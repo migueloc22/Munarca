@@ -66,17 +66,28 @@
                         <asp:DataList ID="dtNegosios" runat="server">
                             <ItemTemplate>
                                 <div class="media">
+                                    <div class="media-left"> 
+                                        <asp:ImageButton ID="imgNegocio" CssClass="media-object" OnClick="imgNegocio_Click" runat="server" Width="150px" Height="150px" ImageUrl='<%# Eval("foto_negocio") %>' />
+                                    </div>
                                     <div class="media-body">
                                         <h2 class="media-heading ">
-                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("nombre") %>'></asp:Label>
+                                            <asp:LinkButton ID="btnNombre" OnClick="btnNombre_Click" CssClass="text-info" runat="server" Text='<%# Eval("nombre") %>'></asp:LinkButton>                                            
                                         </h2>
                                         <h3 class="text-muted">
+                                            
                                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("distancia","{0:0.00}") %>'></asp:Label>/KM</h3>
                                         <p>
                                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("descripcion") %>'></asp:Label>
                                         </p>
                                     </div>
+                                    <div class="media-right media-middle">
+                                        <div class="panel">
+                                            <h3 class="media-heading text-muted text-center" style="width:120px; font-size:45px"><span  class="glyphicon glyphicon-star-empty"><strong style="font-size:60px;">4.0</strong></span></h3>
+                                            <small class="text-center text-muted center-block">1233232.23<span class="glyphicon glyphicon-user"></span></small>
+                                        </div>                                        
+                                    </div>
                                 </div>
+                                <hr />
                             </ItemTemplate>
                         </asp:DataList>
 

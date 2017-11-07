@@ -35,20 +35,26 @@ namespace Presentacion
         LogicaNegocio lgNegocio;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Negocio"] != null)           {
-
-
-                Session["Negocio"] = null;
-                
-            }
+            
             
             csUsuario user = (csUsuario)Session["Usuario"];
             if (!IsPostBack)
             {
+                
                 lgNegocio = new LogicaNegocio();
                 dtlisNegocio.DataSource = lgNegocio.listarNegocio(user.id_usuario);
                 dtlisNegocio.DataBind();
-                Session["Negocio"] = null;
+                if (dtlisNegocio.Items.Count>0)
+                {
+                    
+                }
+                else
+                {
+                    
+                    pnData.Visible = true;
+                }
+                
+                
             }
 
 

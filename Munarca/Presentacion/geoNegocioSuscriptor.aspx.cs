@@ -83,12 +83,31 @@ namespace Presentacion
 
         protected void btnBuscar_Click1(object sender, EventArgs e)
         {
-            lgNEgocio = new LogicaNegocio();
-            double latptitup = double.Parse(hdLatFt.Value);
-            double longitup=double.Parse(hdLonft.Value);
-            List<csNegocio> listaUbicaion = lgNEgocio.listarUbicacion(latptitup,longitup);
-            dtNegosios.DataSource = listaUbicaion.OrderBy(v => v.distancia);
-            dtNegosios.DataBind();
+            try
+            {
+                lgNEgocio = new LogicaNegocio();
+                double latptitup = double.Parse(hdLatFt.Value);
+                double longitup = double.Parse(hdLonft.Value);
+                List<csNegocio> listaUbicaion = lgNEgocio.listarUbicacion(latptitup, longitup);
+                dtNegosios.DataSource = listaUbicaion.OrderBy(v => v.distancia);
+                dtNegosios.DataBind();
+            }
+            catch (Exception ex)
+            {
+                
+                throw;
+            }
+            
+        }
+
+        protected void btnNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void imgNegocio_Click(object sender, ImageClickEventArgs e)
+        {
+
         }
 
 
