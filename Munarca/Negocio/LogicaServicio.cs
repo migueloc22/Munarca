@@ -121,6 +121,28 @@ namespace Negocio
         
         
         }
+        public DataTable FiltroSErvicio(String Filter)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                cnn = Conexion.AbrirCnn();
+                cmd = new SqlCommand("select top 30 id_servicio,nombre_servicio,fk_id_negocio,descripcion,fecha,hora,valor,CONCAT('/media/img/',image) as imagen from servicio " + Filter, cnn);
+                read = cmd.ExecuteReader();
+                tabla.Load(read);
+            }
+            catch (Exception ex)
+            {
+
+                rta = ex.Message;
+            }
+            finally { Conexion.CerrarCnn(cnn); }
+            
+            
+            return tabla;
+
+
+        }
         public DataTable ListarSErvicio(int codNegocio)
         {
             DataTable tabla = new DataTable();

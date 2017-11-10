@@ -119,6 +119,7 @@
                                     <div class="form-group">
                                         <label for="usr">Correo:</label>
                                         <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" placeholder="Correo"></asp:TextBox>
+                                        <asp:Label ID="lbRepuesta" runat="server" Text="" ForeColor="Red"></asp:Label>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtCorreo" ForeColor="Red">*</asp:RequiredFieldValidator>
                                     </div>
                                 </div>
@@ -214,6 +215,7 @@
         <asp:Panel ID="pnResultado" runat="server" Style="display: none; background-color: white; width: 400px; height: auto; border-radius:5px;">
 
             <div class="modal-body">
+                <span class="center-block text-center glyphicon glyphicon-ok-circle" style="font-size:150px;color:#0094ff"></span>
                 <div class="alert alert-info">
                     <strong>Info!</strong> El Usuario Registrado...
                 </div>

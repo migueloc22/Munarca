@@ -110,6 +110,7 @@ namespace Presentacion
                         lgCalificacion = new LogicaCalificacion();
                         ////lgVisita = new LogicaVisita();
                         int codNegocio = int.Parse(util.desencriptar(Request.Params["show"]));
+                        linkMulmedia.NavigateUrl = "AlbumNegocioPropietario.aspx?show=" + Request.Params["show"].ToString();
                         negocio = new csNegocio();
                         negocio = lgNegocio.SessionNegocio(codNegocio);
                         if (negocio != null)

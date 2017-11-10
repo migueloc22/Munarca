@@ -50,6 +50,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Device" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -100,15 +101,23 @@
     <Content Include="img\banner1.jpg" />
     <Content Include="img\banner2.jpeg" />
     <Content Include="img\bogota.jpg" />
+    <Content Include="img\icon_close.svg" />
+    <Content Include="img\icon_shop.svg" />
+    <Content Include="img\icon_TagShow.svg" />
     <Content Include="img\imageUser.jpg" />
     <Content Include="img\logoBlanco.png" />
     <Content Include="img\logoFinal.png" />
+    <Content Include="img\logo_1.png" />
+    <Content Include="img\logo_2.png" />
+    <Content Include="img\logo_blanco.png" />
+    <Content Include="img\logo_blanco2.png" />
     <Content Include="img\star_amarrillo.png" />
     <Content Include="img\star_Plateado.png" />
     <Content Include="img\star_rojo.png" />
     <Content Include="img\tecnico.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="indexAdminn.aspx" />
+    <Content Include="IndexNegocioPropietario.aspx" />
     <Content Include="IndexNegocioSuscriptor.aspx" />
     <Content Include="IndexPropietario.aspx" />
     <Content Include="IndexServicioPropietario.aspx" />
@@ -237,6 +246,13 @@
     </Compile>
     <Compile Include="indexAdminn.aspx.designer.cs">
       <DependentUpon>indexAdminn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndexNegocioPropietario.aspx.cs">
+      <DependentUpon>IndexNegocioPropietario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexNegocioPropietario.aspx.designer.cs">
+      <DependentUpon>IndexNegocioPropietario.aspx</DependentUpon>
     </Compile>
     <Compile Include="IndexNegocioSuscriptor.aspx.cs">
       <DependentUpon>IndexNegocioSuscriptor.aspx</DependentUpon>

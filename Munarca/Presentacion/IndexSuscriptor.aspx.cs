@@ -21,18 +21,16 @@ namespace Presentacion
             dtServicio.DataSource = lgServicio.ListarSErvicio();
             dtServicio.DataBind();
         }
-        private void FiltroGrid1()
+        private void FilterGrid1()
         {
             LogicaServicio lgServicio = new LogicaServicio();
-            dtServicio.DataSource = lgServicio.ListarRango(txtMin.Text, txtMax.Text, rdListOrdenar.SelectedValue.ToString());
+            string filter = "";
+            filter = "where nombre_servicio LIKE '" + txtBuscar.Text + "%'  order by  valor " + rdListOrdenar.SelectedValue.ToString();
+            //dtServicio.DataSource = lgServicio.FiltroSErvicio(txtMin.Text, txtMax.Text, rdListOrdenar.SelectedValue.ToString());
+            dtServicio.DataSource = lgServicio.FiltroSErvicio(filter);
             dtServicio.DataBind();
         }
-        private void FiltroGrid2()
-        {
-            LogicaServicio lgServicio = new LogicaServicio();
-            dtServicio.DataSource = lgServicio.ListarRango(txtMin.Text, txtMax.Text, txtBuscar.Text, rdListOrdenar.SelectedValue.ToString());
-            dtServicio.DataBind();
-        }
+       
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -46,13 +44,10 @@ namespace Presentacion
 
         protected void btnFiltrol_Click(object sender, EventArgs e)
         {
-            FiltroGrid1();
+            FilterGrid1();
         }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            FiltroGrid2();
-        }
+        
 
         protected void btnReset_Click(object sender, EventArgs e)
         {

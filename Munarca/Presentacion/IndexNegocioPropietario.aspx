@@ -41,7 +41,7 @@
                         <%-- primera fila --%>
                         <div class="col-xs-8">
                             <fieldset>
-                                <div id="rondellCarousel" style="width: 100%; height: 500px;" class="rondell-container rondell-theme-light rondell-instance-1">
+                                <div id="rondellCarousel" style="width: 100%; height: 500px; margin:0 auto;" class="rondell-container rondell-theme-light rondell-instance-1">
 
                                     <asp:Repeater ID="rpGaleria" runat="server">
                                         <ItemTemplate>
@@ -51,7 +51,11 @@
                                         </ItemTemplate>
                                     </asp:Repeater>
                                 </div>
-                            </fieldset>
+                                <br />
+                                <asp:HyperLink ID="linkMulmedia" CssClass="btn btn-default btn-lg btn-block" runat="server"><span class="glyphicon glyphicon-picture"></span> Galeria</asp:HyperLink>
+                                
+                            </fieldset> 
+                            <br />
                             <fieldset>
                                 <script type="text/javascript">
                                     google.charts.load("current", { packages: ["corechart"] });
@@ -98,7 +102,7 @@
                                 <asp:HyperLink ID="btnAgregarSv" runat="server" CssClass="btn btn-danger "><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Agregar Sercicio</asp:HyperLink>
                                 <br />
                                 <br />
-                                <div class="scrolling" style="overflow: auto">
+                                <div  style="overflow: auto ;width:100%" >
                                     <asp:GridView ID="gvServicio" runat="server" AutoGenerateColumns="False" DataKeyNames="id_servicio" OnRowDeleting="gvServicio_RowDeleting" OnSelectedIndexChanged="gvServicio_SelectedIndexChanged" CssClass="table table-striped table-bordered table-hover table-condensed" GridLines="none">
                                         <Columns>
                                             <asp:ImageField DataImageUrlField="imagen" ControlStyle-Height="75px" ControlStyle-Width="95px" ControlStyle-CssClass="img-thumbnail img-rounded" HeaderText="Imagen">

@@ -12,6 +12,7 @@ namespace Presentacion
     public partial class geoNegocioSuscriptor : System.Web.UI.Page
     {
         LogicaNegocio lgNEgocio;
+        csUtilidades util;
        
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -85,6 +86,7 @@ namespace Presentacion
         {
             try
             {
+                Panel1.Visible = false;
                 lgNEgocio = new LogicaNegocio();
                 double latptitup = double.Parse(hdLatFt.Value);
                 double longitup = double.Parse(hdLonft.Value);
@@ -102,12 +104,20 @@ namespace Presentacion
 
         protected void btnNombre_Click(object sender, EventArgs e)
         {
-
+            util = new csUtilidades();
+            LinkButton btn = (LinkButton)sender;
+            DataListItem item = (DataListItem)btn.NamingContainer;
+            Label lb = (Label)item.FindControl("lbIdNegocio");
+            Response.Redirect("IndexNegocioSuscriptor.aspx?show=" + util.Encriptar(lb.Text));
         }
 
         protected void imgNegocio_Click(object sender, ImageClickEventArgs e)
         {
-
+            util = new csUtilidades();
+            ImageButton btn = (ImageButton)sender;
+            DataListItem item = (DataListItem)btn.NamingContainer;
+            Label lb = (Label)item.FindControl("lbIdNegocio");
+            Response.Redirect("IndexNegocioSuscriptor.aspx?show=" + util.Encriptar(lb.Text));
         }
 
 

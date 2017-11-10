@@ -47,7 +47,9 @@
         <div class="col-xs-8">
             <div class="panel">
                 <div class="panel-default">
-                    <div class="panel-heading"><h4>Lista de Negocios</h4></div>
+                    <div class="panel-heading">
+                        <h4>Lista de Negocios</h4>
+                    </div>
                     <div class="panel-body ">
                         <%--<asp:DataList runat="server">
                             <ItemTemplate>
@@ -62,19 +64,34 @@
                 <asp:Label Text='<%# Eval("Status").ToString() == "A" ? "Absent" : "Present" %>'
                     runat="server" />
             </ItemTemplate>
-                            --%>
+                        --%>
+                        <asp:Panel ID="Panel1" runat="server" Height="500">
+                            
+
+                            <div class="jumbotron">
+                                <div style="height: 40px"></div>
+                                <span class="center-block text-center glyphicon glyphicon-map-marker" style="font-size: 150px; color: #808080"></span>
+                                <br />
+                                <h1>Bootstrap Tutorial</h1>
+                                <p>
+                                    Bootstrap is the most popular HTML, CSS, and JS framework for developing
+                                    responsive, mobile-first projects on the web.
+                                </p>
+                            </div>
+                        </asp:Panel>
+
                         <asp:DataList ID="dtNegosios" runat="server">
                             <ItemTemplate>
                                 <div class="media">
-                                    <div class="media-left"> 
+                                    <div class="media-left">
                                         <asp:ImageButton ID="imgNegocio" CssClass="media-object" OnClick="imgNegocio_Click" runat="server" Width="150px" Height="150px" ImageUrl='<%# Eval("foto_negocio") %>' />
                                     </div>
                                     <div class="media-body">
                                         <h2 class="media-heading ">
-                                            <asp:LinkButton ID="btnNombre" OnClick="btnNombre_Click" CssClass="text-info" runat="server" Text='<%# Eval("nombre") %>'></asp:LinkButton>                                            
+                                            <asp:LinkButton ID="btnNombre" OnClick="btnNombre_Click" CssClass="text-info" runat="server" Text='<%# Eval("nombre") %>'></asp:LinkButton>
                                         </h2>
                                         <h3 class="text-muted">
-                                            
+                                            <asp:Label ID="lbIdNegocio" Visible="false" runat="server" Text='<%# Eval("id_negocio") %>'></asp:Label>
                                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("distancia","{0:0.00}") %>'></asp:Label>/KM</h3>
                                         <p>
                                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("descripcion") %>'></asp:Label>
@@ -82,9 +99,9 @@
                                     </div>
                                     <div class="media-right media-middle">
                                         <div class="panel">
-                                            <h3 class="media-heading text-muted text-center" style="width:120px; font-size:45px"><span  class="glyphicon glyphicon-star-empty"><strong style="font-size:60px;">4.0</strong></span></h3>
+                                            <h3 class="media-heading text-muted text-center" style="width: 120px; font-size: 45px"><span class="glyphicon glyphicon-star-empty"><strong style="font-size: 60px;">4.0</strong></span></h3>
                                             <small class="text-center text-muted center-block">1233232.23<span class="glyphicon glyphicon-user"></span></small>
-                                        </div>                                        
+                                        </div>
                                     </div>
                                 </div>
                                 <hr />
