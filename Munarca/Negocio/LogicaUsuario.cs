@@ -281,6 +281,8 @@ namespace Negocio
         }
 
 
+        ////METODO PARA CAMBIAR EL ESTADO DE UN USUARIO
+        //public Boolean EliminarporEstado() { }
 
 
 
