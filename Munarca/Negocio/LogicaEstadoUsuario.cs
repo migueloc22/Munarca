@@ -28,15 +28,43 @@ namespace Negocio
                     Salida = true;
                 }
                 Conexion.CerrarCnn(cnn);
-                return Salida;
+               
             }
             catch (Exception ex)
             {
-                return Salida;
+               
                 codigo = ex.ToString();
             }
             finally { Conexion.CerrarCnn(cnn); }
+            return Salida;
         
+        }
+        public bool CrearTipoUser(int codUser, int tipoUser)
+        {
+            bool Salida = false;
+            try
+            {
+                codigo = "OkValidar";
+                cnn = Conexion.AbrirCnn();
+                command = new SqlCommand("insert into estado_usuario(fk_id_usuario,fk_id_tipo_usuario ) values(@fk_id_usuario,@fk_id_tipo_usuario)", cnn);
+                command.Parameters.AddWithValue("@fk_id_usuario", codUser);
+                command.Parameters.AddWithValue("@fk_id_tipo_usuario", tipoUser);
+                 
+                 if (command.ExecuteNonQuery()>0)
+                {
+                    Salida = true;
+                }             
+
+
+            }
+            catch (Exception ex)
+            {
+
+                codigo = ex.ToString();
+            }
+            finally { Conexion.CerrarCnn(cnn); }
+            return Salida;
+
         }
     }
 }

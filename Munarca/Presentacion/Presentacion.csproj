@@ -50,6 +50,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Device" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -87,6 +88,7 @@
     <Content Include="css\fileinput.min.css" />
     <Content Include="css\jquery.gmaps.css" />
     <Content Include="css\jquery.rondell.min.css" />
+    <Content Include="css\strength.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="geoNegocioSuscriptor.aspx" />
     <Content Include="GestionCategorias.aspx" />
@@ -99,9 +101,16 @@
     <Content Include="img\banner1.jpg" />
     <Content Include="img\banner2.jpeg" />
     <Content Include="img\bogota.jpg" />
+    <Content Include="img\icon_close.svg" />
+    <Content Include="img\icon_shop.svg" />
+    <Content Include="img\icon_TagShow.svg" />
     <Content Include="img\imageUser.jpg" />
     <Content Include="img\logoBlanco.png" />
     <Content Include="img\logoFinal.png" />
+    <Content Include="img\logo_1.png" />
+    <Content Include="img\logo_2.png" />
+    <Content Include="img\logo_blanco.png" />
+    <Content Include="img\logo_blanco2.png" />
     <Content Include="img\star_amarrillo.png" />
     <Content Include="img\star_Plateado.png" />
     <Content Include="img\star_rojo.png" />
@@ -120,6 +129,7 @@
     <Content Include="js\fileinput.min.js" />
     <Content Include="js\gmaps.js" />
     <Content Include="js\JavaScript.js" />
+    <Content Include="js\jquery-strength.js" />
     <Content Include="js\jquery-ui.js" />
     <Content Include="js\jquery.gmaps.js" />
     <Content Include="js\jquery.min.js" />
@@ -128,6 +138,7 @@
     <Content Include="js\locationpicker.jquery.js" />
     <Content Include="js\modernizr-2.0.6.min.js" />
     <Content Include="js\npm.js" />
+    <Content Include="js\password_strength.js" />
     <Content Include="media\img\user.png" />
     <Content Include="ModificarNegocioPropietario.aspx" />
     <Content Include="ModificarServicioPropietario.aspx" />
@@ -235,9 +246,6 @@
     </Compile>
     <Compile Include="indexAdminn.aspx.designer.cs">
       <DependentUpon>indexAdminn.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="IndexNegocioPropietario.aspx.designer.cs">
-      <DependentUpon>IndexNegocioPropietario.aspx</DependentUpon>
     </Compile>
     <Compile Include="IndexNegocioSuscriptor.aspx.cs">
       <DependentUpon>IndexNegocioSuscriptor.aspx</DependentUpon>

@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioPropietario.master" AutoEventWireup="true" CodeBehind="IndexNegocioPropietario.aspx.cs" Inherits="Presentacion.IndexNegocioPropietario" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <style>
@@ -39,7 +41,7 @@
                         <%-- primera fila --%>
                         <div class="col-xs-8">
                             <fieldset>
-                                <div id="rondellCarousel" style="width: 100%; height: 500px;" class="rondell-container rondell-theme-light rondell-instance-1">
+                                <div id="rondellCarousel" style="width: 100%; height: 500px; margin:0 auto;" class="rondell-container rondell-theme-light rondell-instance-1">
 
                                     <asp:Repeater ID="rpGaleria" runat="server">
                                         <ItemTemplate>
@@ -49,6 +51,49 @@
                                         </ItemTemplate>
                                     </asp:Repeater>
                                 </div>
+                                <br />
+                                <asp:HyperLink ID="linkMulmedia" CssClass="btn btn-default btn-lg btn-block" runat="server"><span class="glyphicon glyphicon-picture"></span> Galeria</asp:HyperLink>
+                                
+                            </fieldset> 
+                            <br />
+                            <fieldset>
+                                <script type="text/javascript">
+                                    google.charts.load("current", { packages: ["corechart"] });
+                                    google.charts.setOnLoadCallback(drawChart);
+                                    function drawChart() {
+                                        var data =new google.visualization.DataTable();
+                                        //data.addColumn('date', 'Año');
+                                        //data.addColumn('number', 'java');
+                                        //data.addColumn('number', 'c#');
+                                        //data.addColumn('number', 'phyton');
+                                        //data.addColumn('number', 'javascript');
+                                        data.addColumn('date', 'Año');
+                                        data.addColumn('number', 'tu negocio');
+                                        data.addRows(<%=this.obtenerDatos()%>);
+
+
+                                        var options = {
+                                            title: 'Grafico de visitas',
+                                            hAxis:{
+                                                title:'Fecha'
+                                            },
+                                            VAxis: {
+                                                title: 'Popularidad',
+                                                minValue: 0,
+                                                maxValue: 100,
+                                                format:'##,##%'
+                                            },
+                                        };
+
+                                        var chart = new google.visualization.LineChart(document.getElementById('donutchart'));
+                                        var formato = new google.visualization.NumberFormat({ patern: '##,##%' });
+                                        formato.format(data,1);
+                                        chart.draw(data, options);
+                                    }
+                                </script>
+                                <legend>Reportes De Visita</legend>
+                                 <div id="donutchart" style="width: auto; height: 500px;"></div>                            
+
                             </fieldset>
                             <hr />
                             <fieldset>
@@ -57,7 +102,7 @@
                                 <asp:HyperLink ID="btnAgregarSv" runat="server" CssClass="btn btn-danger "><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Agregar Sercicio</asp:HyperLink>
                                 <br />
                                 <br />
-                                <div class="scrolling">
+                                <div  style="overflow: auto ;width:100%" >
                                     <asp:GridView ID="gvServicio" runat="server" AutoGenerateColumns="False" DataKeyNames="id_servicio" OnRowDeleting="gvServicio_RowDeleting" OnSelectedIndexChanged="gvServicio_SelectedIndexChanged" CssClass="table table-striped table-bordered table-hover table-condensed" GridLines="none">
                                         <Columns>
                                             <asp:ImageField DataImageUrlField="imagen" ControlStyle-Height="75px" ControlStyle-Width="95px" ControlStyle-CssClass="img-thumbnail img-rounded" HeaderText="Imagen">

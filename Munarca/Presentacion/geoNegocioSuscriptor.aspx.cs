@@ -12,6 +12,7 @@ namespace Presentacion
     public partial class geoNegocioSuscriptor : System.Web.UI.Page
     {
         LogicaNegocio lgNEgocio;
+        csUtilidades util;
        
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -83,12 +84,40 @@ namespace Presentacion
 
         protected void btnBuscar_Click1(object sender, EventArgs e)
         {
-            lgNEgocio = new LogicaNegocio();
-            double latptitup = double.Parse(hdLatFt.Value);
-            double longitup=double.Parse(hdLonft.Value);
-            List<csNegocio> listaUbicaion = lgNEgocio.listarUbicacion(latptitup,longitup);
-            dtNegosios.DataSource = listaUbicaion.OrderBy(v => v.distancia);
-            dtNegosios.DataBind();
+            try
+            {
+                Panel1.Visible = false;
+                lgNEgocio = new LogicaNegocio();
+                double latptitup = double.Parse(hdLatFt.Value);
+                double longitup = double.Parse(hdLonft.Value);
+                List<csNegocio> listaUbicaion = lgNEgocio.listarUbicacion(latptitup, longitup);
+                dtNegosios.DataSource = listaUbicaion.OrderBy(v => v.distancia);
+                dtNegosios.DataBind();
+            }
+            catch (Exception ex)
+            {
+                
+                throw;
+            }
+            
+        }
+
+        protected void btnNombre_Click(object sender, EventArgs e)
+        {
+            util = new csUtilidades();
+            LinkButton btn = (LinkButton)sender;
+            DataListItem item = (DataListItem)btn.NamingContainer;
+            Label lb = (Label)item.FindControl("lbIdNegocio");
+            Response.Redirect("IndexNegocioSuscriptor.aspx?show=" + util.Encriptar(lb.Text));
+        }
+
+        protected void imgNegocio_Click(object sender, ImageClickEventArgs e)
+        {
+            util = new csUtilidades();
+            ImageButton btn = (ImageButton)sender;
+            DataListItem item = (DataListItem)btn.NamingContainer;
+            Label lb = (Label)item.FindControl("lbIdNegocio");
+            Response.Redirect("IndexNegocioSuscriptor.aspx?show=" + util.Encriptar(lb.Text));
         }
 
 

@@ -61,7 +61,11 @@ namespace Negocio
                 cmd = new SqlCommand("select concat ('new Date(',YEAR(convert(datetime, tiempo, 105)),',',MONTH(convert(datetime, tiempo, 105)),',',DAY(convert(datetime, tiempo, 105)),')') as Tiempo, count(tiempo) as numero from Visita where fk_id_negocio=@id_negocio group by tiempo", cnn);
                 cmd.Parameters.AddWithValue("@id_negocio", idNegocio);
                 read = cmd.ExecuteReader();
-                data.Load(read);
+                if (read.Read())
+                {
+                   data.Load(read); 
+                }
+                
 
 
             }

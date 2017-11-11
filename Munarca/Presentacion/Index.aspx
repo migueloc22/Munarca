@@ -58,7 +58,7 @@
                             </ajaxToolkit:ModalPopupExtender>
                             <br />
                             <asp:Label ID="lbValidacionUser" runat="server" Text="" ForeColor="red"></asp:Label>
-                            <asp:Button ID="Button1" runat="server" Text="Button" style="display:none" />
+                            <asp:Button ID="Button1" runat="server" Text="Button" Enabled="false" style="display:none" />
 
                             <ajaxToolkit:ModalPopupExtender runat="server" BehaviorID="Button1_ModalPopupExtender" TargetControlID="Button1" ID="Button1_ModalPopupExtender" PopupControlID="pnResultado" CancelControlID="cerrar" BackgroundCssClass="fondo"></ajaxToolkit:ModalPopupExtender>
 
@@ -66,7 +66,7 @@
                         </div>
                         <div class="form-group">
                             <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-danger" CausesValidation="false" OnClick="btnEntrar_Click" />
-                            <input type="reset" class="btn " />
+                            <input type="reset" class="btn default" />
                         </div>
                     </div>
                 </ContentTemplate>
@@ -119,6 +119,7 @@
                                     <div class="form-group">
                                         <label for="usr">Correo:</label>
                                         <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" placeholder="Correo"></asp:TextBox>
+                                        <asp:Label ID="lbRepuesta" runat="server" Text="" ForeColor="Red"></asp:Label>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtCorreo" ForeColor="Red">*</asp:RequiredFieldValidator>
                                     </div>
                                 </div>
@@ -214,6 +215,7 @@
         <asp:Panel ID="pnResultado" runat="server" Style="display: none; background-color: white; width: 400px; height: auto; border-radius:5px;">
 
             <div class="modal-body">
+                <span class="center-block text-center glyphicon glyphicon-ok-circle" style="font-size:150px;color:#0094ff"></span>
                 <div class="alert alert-info">
                     <strong>Info!</strong> El Usuario Registrado...
                 </div>

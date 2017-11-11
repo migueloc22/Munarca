@@ -41,7 +41,7 @@ namespace Presentacion
         private void cargarTpUsu()
         {
             LogicaTipoUsuario lgUsu = new LogicaTipoUsuario();
-            dlTipoDoc.DataSource = lgUsu.DtTipoUsu();
+            dlTipoDoc.DataSource = lgUsu.DataTableTipoUsu();
             dlTipoDoc.DataTextField = "tipo";
             dlTipoDoc.DataValueField = "id_tipo_usuario";
             dlTipoDoc.DataBind();
@@ -75,6 +75,7 @@ namespace Presentacion
             txtFechaNac.Text = "";
             txtTelefono.Text = "";
             txtNumDoc.Text = "";
+            lbRepuesta.Text = "";
             cargarTipoUsu();
             cargarTpUsu();
             cargarDepartamento();
@@ -205,22 +206,31 @@ namespace Presentacion
             {
                 util = new csUtilidades();
                 LogicaUsuario lgusuario = new LogicaUsuario();
-                String pass = util.CrearPassword(10);
-                String pass2 = util.Encriptar(pass);
-                csUsuario user = new csUsuario(0, txtNom1.Text, txtNom2.Text, txtApe1.Text, txtApe2.Text, txtCorreo.Text, "user.png", txtDir.Text, txtFechaNac.Text, txtTelefono.Text, int.Parse(txtNumDoc.Text), int.Parse(dlTipoDoc.SelectedValue.ToString()), int.Parse(dlCiudad.SelectedValue.ToString()), pass2);
-                Boolean resultado = lgusuario.CrearUsuario(user, dlTipoUsuario.SelectedValue.ToString());
-                if (resultado)
+                if (lgusuario.validarCorreo(txtCorreo.Text))
                 {
-                    EnviarCorreo(pass, txtCorreo.Text);
-                    limpiarRegistro();
-                    Button1_ModalPopupExtender.Show();
+                    String pass = util.CrearPassword(10);
+                    String pass2 = util.Encriptar(pass);
+                    csUsuario user = new csUsuario(0, txtNom1.Text, txtNom2.Text, txtApe1.Text, txtApe2.Text, txtCorreo.Text, "user.png", txtDir.Text, txtFechaNac.Text, txtTelefono.Text, int.Parse(txtNumDoc.Text), int.Parse(dlTipoDoc.SelectedValue.ToString()), int.Parse(dlCiudad.SelectedValue.ToString()), pass2);
+                    Boolean resultado = lgusuario.CrearUsuario(user, dlTipoUsuario.SelectedValue.ToString());
+                    if (resultado)
+                    {
+                        EnviarCorreo(pass, txtCorreo.Text);
+                        limpiarRegistro();
+                        Button1_ModalPopupExtender.Show();
+                    }
+                    else
+                    {
+                        ltMensaje.Text = @"<div class='alert alert-danger'>
+                                <strong>No se registro La usuario</strong> Su contraseña sera enviada a su correo electronio.
+                            </div>";
+                    }
                 }
                 else
                 {
-                    ltMensaje.Text = @"<div class='alert alert-danger'>
-                                <strong>No se registro La usuario</strong> Su contraseña sera enviada a su correo electronio.
-                            </div>";
+                    HyperLink3_ModalPopupExtender.Show();
+                    lbRepuesta.Text = "Correo ya existe";
                 }
+                
 
             }
             catch (Exception ex)

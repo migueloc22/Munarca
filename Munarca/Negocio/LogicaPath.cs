@@ -20,9 +20,29 @@ namespace Negocio
             Boolean retorno = false;
             try
             {
-                cmd = new SqlCommand("insert into path (path,fk_id_negocio) values(@path,@idNegocio)", cnn);
+                cmd = new SqlCommand("INSERT INTO path (path,fk_id_negocio) VALUES (@path,@idNegocio)", cnn);
                 cmd.Parameters.AddWithValue("@path", path.path);
                 cmd.Parameters.AddWithValue("@idNegocio", path.fk_id_negocio);
+                cmd.ExecuteNonQuery();
+                retorno = true;
+                Conexion.CerrarCnn(cnn);
+            }
+            catch (Exception ex)
+            {
+                Conexion.CerrarCnn(cnn);
+                rta = ex.ToString();
+            }
+            return retorno;
+
+        }
+        public Boolean EliminarPath(int idpath)
+        {
+            cnn = Conexion.AbrirCnn();
+            Boolean retorno = false;
+            try
+            {
+                cmd = new SqlCommand("delete from path where id_path= @idpath", cnn);
+                cmd.Parameters.AddWithValue("@idpath", idpath);
                 cmd.ExecuteNonQuery();
                 retorno = true;
                 Conexion.CerrarCnn(cnn);
@@ -68,7 +88,7 @@ namespace Negocio
             
             try
             {
-                cmd = new SqlCommand("select CONCAT('/media/img/',path) as media from path where fk_id_negocio=@fk_id_negocio", cnn);
+                cmd = new SqlCommand("select CONCAT('/media/img/',path) as media , id_path from path where fk_id_negocio=@fk_id_negocio", cnn);
                 cmd.Parameters.AddWithValue("@fk_id_negocio", codNegocio);
                 read = cmd.ExecuteReader();            
                 lista.Load(read);

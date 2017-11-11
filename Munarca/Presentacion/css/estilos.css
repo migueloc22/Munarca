@@ -13,6 +13,7 @@ body {
     -o-background-size:cover;
     -ms-background-size:cover;    
     width: 100%;
+    filter: blur(5px);
     
     
 }

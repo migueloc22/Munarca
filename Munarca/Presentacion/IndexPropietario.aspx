@@ -25,12 +25,21 @@
                         <hr />
                         <%-- <div id="donutchart" style="width: 900px; height: 500px;"></div>--%>
                         <div class="scrolling container-fluid">
-                            <div class="row well">
+                            <div class="row">
+                                <asp:Panel ID="pnData" CssClass="col-xs-4 col-xs-offset-4" runat="server" Visible="false">
+                                    <img src="img/icon_close.svg" />
+                                    <br />
+                                    <br />
+                                    <div class="alert alert-info">
+                                        <strong>¡Informacion!</strong> Sin Registro <a href="NegocioPropietario.aspx" class="alert-link">Ingrese Negocios</a>.
+                                    </div>
+
+                                </asp:Panel>
                                 <asp:DataList ID="dtlisNegocio" runat="server" RepeatLayout="Flow" ShowFooter="False" ShowHeader="False" RepeatDirection="Horizontal">
                                     <ItemTemplate>
                                         <div class="col-sm-4">
-                                            <div class="thumbnail">
-                                                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("foto") %>' Width="100%" Height="300" CssClass="img-thumbnail img-responsive" OnClick="ImageButton1_Click" />
+                                            <div class="thumbnail" style="box-shadow: 3px 3px 5px #888888;">
+                                                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("foto") %>' Width="100%" Height="200" CssClass="img-responsive" OnClick="ImageButton1_Click" />
 
                                                 <div class="caption">
                                                     <p>
@@ -39,9 +48,9 @@
                                                             <asp:Label ID="Label1" runat="server" CssClass="h2 text-center" Text='<%# Eval("nombre") %>'></asp:Label>
                                                         </strong>
                                                     </p>
-                                                    <p>
+                                                    <%--<p>
                                                         <asp:Label ID="lbDescripcion" runat="server" Text='<%# Eval("descripcion") %>'></asp:Label>
-                                                    </p>
+                                                    </p>--%>
 
                                                 </div>
                                             </div>

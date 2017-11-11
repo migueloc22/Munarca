@@ -16,31 +16,32 @@
                         </asp:RadioButtonList>
                     </fieldset>
                     <fieldset>
-                        <legend>Rango de precios</legend>                        
-                        <div class="range range-danger">
-                            <asp:TextBox ID="txtMin" value="0" runat="server" TextMode="Range"  MaxLength="10" min="0" max="2000000" step="50000" onchange="rangeMin.value=value"></asp:TextBox>
-                            <output id="rangeMin">0</output>
-                        </div>
-                        <div class="range range-danger">
-                            <asp:TextBox ID="txtMax"  value="3000000" runat="server" TextMode="Range"  MaxLength="10" min="0" max="3000000" step="50000" onchange="rangeMax.value=value"></asp:TextBox>
-                            <output id="rangeMax">3000000</output>
+                        <legend>Rango de precios</legend>
+                        <div class="form-group">
+                            <div class="col-xs-6">
+                                <asp:TextBox ID="txtMin" runat="server" CssClass="form-control " TextMode="Number" placeholder="min" MaxLength="10" min="0" max="2000000"></asp:TextBox>
+                            </div>
+                            <div class="col-xs-6">
+                                <asp:TextBox ID="txtMax" runat="server" CssClass="form-control col-xs-2" TextMode="Number" placeholder="max" MaxLength="10" min="0" max="3000000"></asp:TextBox>
+                            </div>
                         </div>
 
-                    </fieldset>
-                    <fieldset>
-                        <legend>Filtrar</legend>
-                        <asp:Button ID="btnFiltrol" runat="server" Text="filtrol" CssClass="btn btn-danger" OnClick="btnFiltrol_Click"/>
-                        <asp:Button ID="btnReset" runat="server" Text="Restablecer" CssClass="btn btn-default" OnClick="btnReset_Click" />
                     </fieldset>
                     <fieldset>
                         <legend>
                             <h3>Buscar por Nombre</h3>
                         </legend>
                         <div class="input-group">
-                            <asp:TextBox ID="txtBuscar" runat="server" CssClass="form-control" placeholder="Buscar"></asp:TextBox>
-                            <asp:LinkButton ID="btnBuscar" runat="server" CssClass="input-group-addon bg-danger" OnClick="btnBuscar_Click"><span class="glyphicon glyphicon-search"></span></asp:LinkButton>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                            <asp:TextBox ID="txtBuscar" runat="server" CssClass="form-control" placeholder="Buscar por nombre"></asp:TextBox>
                         </div>
                     </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>Filtrar</legend>
+                        <asp:Button ID="btnFiltrol" runat="server" Text="filtrol" CssClass="btn btn-danger" OnClick="btnFiltrol_Click" />
+                        <asp:Button ID="btnReset" runat="server" Text="Restablecer" CssClass="btn btn-default" OnClick="btnReset_Click" />
+                    </fieldset>                    
                 </div>
 
 
