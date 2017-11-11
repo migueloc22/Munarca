@@ -9,9 +9,9 @@
                     <ContentTemplate>
                         <h1 class="col-xs-offset-4">Gestión de Usuarios</h1>
                         <br />
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ModificarUsuAdmin.aspx" CssClass="btn btn-danger"><span class="glyphicon glyphicon-plus btn-md">Agregar Usuario</span></asp:HyperLink>
                         <div class="col-lg-8 col-lg-offset-2">
-                            <div class="input-group">
-                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ModificarUsuAdmin.aspx" CssClass="btn btn-danger"><span class="glyphicon glyphicon-plus btn-md">Agregar Usuario</span></asp:HyperLink>
+                            <div class="input-group">                            
 
                                 <asp:TextBox ID="txtBuscador" runat="server" CssClass="form-control" placeholder="Search"></asp:TextBox>
                                 
