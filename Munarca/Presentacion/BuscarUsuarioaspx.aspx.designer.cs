@@ -49,7 +49,16 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.LinkButton btnBuscar;
         
         /// <summary>
-        /// Control GvUsuario.
+        /// lbMensaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbMensaje;
+        
+        /// <summary>
+        /// GvUsuario control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
