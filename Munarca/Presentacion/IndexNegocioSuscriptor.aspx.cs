@@ -124,8 +124,17 @@ namespace Presentacion
                 String fecha = tiempo.Date.ToString("yyyy-MM-dd");
                 String hora = "14:07:07";
                 calificacion = new csCalificacion(0, int.Parse(Rating1.CurrentRating.ToString()), fecha, hora, negocio.id_negocio, usuario.id_usuario);
-                lgCalificacion.CrearCalificacion(calificacion);
-                lbCalificacion.Text = "Tu Calificacion es: " + Rating1.CurrentRating.ToString();
+                if (lgCalificacion.ValidacionCalificacion(usuario.id_usuario))
+                {
+                    lgCalificacion.CrearCalificacion(calificacion);
+                    lbCalificacion.Text = "Tu Calificacion es: " + Rating1.CurrentRating.ToString();
+                }
+                else
+                {
+                    lgCalificacion.ModificarCalificacion(calificacion);
+                    lbCalificacion.Text = "Tu Calificacion es: " + Rating1.CurrentRating.ToString();
+                }
+                
             }
             catch (Exception ex)
             {

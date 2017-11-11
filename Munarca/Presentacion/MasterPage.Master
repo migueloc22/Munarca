@@ -33,6 +33,7 @@
     <script src="js/jquery.rondell.min.js"></script>
     <script src="js/password_strength.js"></script>
     <script src="js/jquery-strength.js"></script>
+    <script src="js/jspdf.min.js"></script>
     <script src="js/JavaScript.js"></script>
 
 
