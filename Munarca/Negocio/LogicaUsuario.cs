@@ -269,7 +269,7 @@ namespace Negocio
             DataTable ListaUsuario = new DataTable();
             try
             {
-                command = new SqlCommand("select * from usuario where nombre_1 like @buscar or apellido_1 like @buscar or num_documento like @buscar", cnn);
+                command = new SqlCommand("select * from usuario where estado=1 and nombre_1 like @buscar or apellido_1 like @buscar or num_documento like @buscar", cnn);
                 command.Parameters.AddWithValue("@buscar","%"+buscar+"%");
                 reader = command.ExecuteReader();
                 ListaUsuario.Load(reader);
@@ -289,7 +289,7 @@ namespace Negocio
             DataTable ListaUsuario = new DataTable();
             try
             {
-                command = new SqlCommand("select * from usuario order by nombre_1  ,  apellido_1 ", cnn);
+                command = new SqlCommand("select * from usuario where estado=1 order by nombre_1  ,  apellido_1 ", cnn);
                 reader = command.ExecuteReader();
                 ListaUsuario.Load(reader);
 
@@ -305,7 +305,28 @@ namespace Negocio
 
 
         ////METODO PARA CAMBIAR EL ESTADO DE UN USUARIO
-        //public Boolean EliminarporEstado() { }
+        public Boolean EliminarUsu(int idUsuario) {
+         Boolean retorno = false;
+         try
+         {
+             cnn = Conexion.AbrirCnn();
+             command = new SqlCommand("[EliminarUsuario]", cnn);
+             command.CommandType = CommandType.StoredProcedure;
+             command.Parameters.AddWithValue("@codUsu",idUsuario);
+             command.ExecuteNonQuery();
+             Conexion.CerrarCnn(cnn);
+             retorno = true;
+         
+         }  
+             catch (Exception ex)
+        {
+
+            rta = ex.ToString();
+        }
+
+
+        return retorno;
+        }
 
 
 
