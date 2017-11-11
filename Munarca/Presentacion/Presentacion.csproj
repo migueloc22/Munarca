@@ -108,6 +108,7 @@
     <Content Include="img\tecnico.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="indexAdminn.aspx" />
+    <Content Include="IndexNegocioPropietario.aspx" />
     <Content Include="IndexNegocioSuscriptor.aspx" />
     <Content Include="IndexPropietario.aspx" />
     <Content Include="IndexServicioPropietario.aspx" />
@@ -234,6 +235,9 @@
     </Compile>
     <Compile Include="indexAdminn.aspx.designer.cs">
       <DependentUpon>indexAdminn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndexNegocioPropietario.aspx.designer.cs">
+      <DependentUpon>IndexNegocioPropietario.aspx</DependentUpon>
     </Compile>
     <Compile Include="IndexNegocioSuscriptor.aspx.cs">
       <DependentUpon>IndexNegocioSuscriptor.aspx</DependentUpon>
