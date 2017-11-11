@@ -32,5 +32,32 @@ namespace Presentacion
         {
             filter();
         }
+
+       
+
+        protected void GvUsuario_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int cod = Int32.Parse(GvUsuario.DataKeys[e.RowIndex].Value.ToString());
+            LogicaUsuario lgUsuario = new LogicaUsuario();
+            if (lgUsuario.EliminarUsu(cod))
+            {
+                lbMensaje.Text = "Eliminado!!!";
+                LogicaUsuario lgUsu = new LogicaUsuario();
+                GvUsuario.DataSource = lgUsu.BuscarUsu();
+                DataBind();
+
+
+            }
+            else {
+                lbMensaje.Text = "NO Eliminado!!!";
+            }
+        }
+
+        protected void GvUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int cod = int.Parse(GvUsuario.SelectedDataKey.Values[0].ToString());
+            lbMensaje.Text = cod.ToString();
+
+        }
     }
 }
