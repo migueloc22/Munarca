@@ -11,10 +11,7 @@ body {
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
-    -ms-background-size:cover;    
-    width: 100%;
-    filter: blur(5px);
-    
+    -ms-background-size:cover;       
     
 }
 
@@ -64,7 +61,7 @@ body {
     }
 
    .scrolling {
-    height: 550px;
+    height: 450px;
     overflow-y: scroll;
     overflow-x: hidden;
 }

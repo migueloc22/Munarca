@@ -145,6 +145,7 @@
     <Content Include="ModificarServicioPropietario.aspx" />
     <Content Include="ModificarUsuAdmin.aspx" />
     <Content Include="NegocioPropietario.aspx" />
+    <Content Include="NegociosAdmin.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -153,7 +154,9 @@
     <Content Include="MasterPage.Master" />
     <Content Include="Prueba.aspx" />
     <Content Include="recuperarPass.aspx" />
+    <Content Include="ReportesAdmin.aspx" />
     <Content Include="ReportesAdminn.aspx" />
+    <Content Include="TiposNegocioAdmin.aspx" />
     <Content Include="UsuarioPropietario.master" />
     <Content Include="UsuarioSuscriptor.master" />
     <Content Include="UsusarioAdminn.master" />
@@ -249,6 +252,13 @@
     <Compile Include="indexAdminn.aspx.designer.cs">
       <DependentUpon>indexAdminn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IndexNegocioPropietario.aspx.cs">
+      <DependentUpon>IndexNegocioPropietario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexNegocioPropietario.aspx.designer.cs">
+      <DependentUpon>IndexNegocioPropietario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="IndexNegocioSuscriptor.aspx.cs">
       <DependentUpon>IndexNegocioSuscriptor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -312,6 +322,13 @@
     <Compile Include="NegocioPropietario.aspx.designer.cs">
       <DependentUpon>NegocioPropietario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NegociosAdmin.aspx.cs">
+      <DependentUpon>NegociosAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NegociosAdmin.aspx.designer.cs">
+      <DependentUpon>NegociosAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prueba.aspx.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>
@@ -327,12 +344,26 @@
     <Compile Include="recuperarPass.aspx.designer.cs">
       <DependentUpon>recuperarPass.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReportesAdmin.aspx.cs">
+      <DependentUpon>ReportesAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesAdmin.aspx.designer.cs">
+      <DependentUpon>ReportesAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReportesAdminn.aspx.cs">
       <DependentUpon>ReportesAdminn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ReportesAdminn.aspx.designer.cs">
       <DependentUpon>ReportesAdminn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TiposNegocioAdmin.aspx.cs">
+      <DependentUpon>TiposNegocioAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TiposNegocioAdmin.aspx.designer.cs">
+      <DependentUpon>TiposNegocioAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="UsuarioPropietario.master.cs">
       <DependentUpon>UsuarioPropietario.master</DependentUpon>

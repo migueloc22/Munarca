@@ -7,9 +7,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Munarca</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-datepicker.min.css" rel="stylesheet" />
     <link href="css/estilos.css" rel="stylesheet" />
     <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>    
+    <script src="js/bootstrap-datepicker.es.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/jquery.MultiFile.js"></script>
     <script src="js/JavaScript.js"></script>
     <style>
@@ -20,6 +23,7 @@
             z-index: 10000;
         }
     </style>
+    
 </head>
 <body>
     <form id="form1" runat="server">
@@ -45,10 +49,10 @@
                         </div>--%>
 
                         <div class="form-group">
-                            <asp:TextBox ID="txtEMail" runat="server" CssClass="form-control form-group-lg" placeholder="email" TextMode="Email" MaxLength="25"></asp:TextBox>
+                            <asp:TextBox ID="txtEMail" runat="server" CssClass="form-control form-group-lg" placeholder="email" TextMode="Email" MaxLength="35"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtPass" runat="server" CssClass="form-control form-group-lg" placeholder="Contraseña" TextMode="Password" MaxLength="15"></asp:TextBox>
+                            <asp:TextBox ID="txtPass" runat="server" CssClass="form-control form-group-lg" placeholder="Contraseña" TextMode="Password" MaxLength="30"></asp:TextBox>
                         </div>
                         <div class="form-group">
 
@@ -58,7 +62,7 @@
                             </ajaxToolkit:ModalPopupExtender>
                             <br />
                             <asp:Label ID="lbValidacionUser" runat="server" Text="" ForeColor="red"></asp:Label>
-                            <asp:Button ID="Button1" runat="server" Text="Button" Enabled="false" style="display:none" />
+                            <asp:Button ID="Button1" runat="server" Text="Button" Enabled="false" Style="display: none" />
 
                             <ajaxToolkit:ModalPopupExtender runat="server" BehaviorID="Button1_ModalPopupExtender" TargetControlID="Button1" ID="Button1_ModalPopupExtender" PopupControlID="pnResultado" CancelControlID="cerrar" BackgroundCssClass="fondo"></ajaxToolkit:ModalPopupExtender>
 
@@ -74,7 +78,7 @@
         </div>
         <%-- Inicio Modal --%>
 
-        <asp:Panel ID="PanelRegistro" runat="server" Style="display: none; background-color: white; width: 600px; height: auto;border-radius:5px;">
+        <asp:Panel ID="PanelRegistro" runat="server" Style="display: none; background-color: white; width: auto; height: auto; border-radius: 5px; margin-top:1%">
             <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                 <ContentTemplate>
                     <div class="modal-header">
@@ -120,6 +124,7 @@
                                         <label for="usr">Correo:</label>
                                         <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" placeholder="Correo"></asp:TextBox>
                                         <asp:Label ID="lbRepuesta" runat="server" Text="" ForeColor="Red"></asp:Label>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="txtCorreo" runat="server" ForeColor="red" ErrorMessage="Correo Invalido" ValidationExpression="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$">*</asp:RegularExpressionValidator>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtCorreo" ForeColor="Red">*</asp:RequiredFieldValidator>
                                     </div>
                                 </div>
@@ -136,10 +141,24 @@
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtApe2" ForeColor="Red">*</asp:RequiredFieldValidator>
                                     </div>
                                     <div class="form-group">
-                                        <label for="usr">Fecha De Nacimiento:</label>
-                                        <asp:TextBox ID="txtFechaNac" runat="server" CssClass="form-control" placeholder="Fecha de Nacimiento"></asp:TextBox>
+                                        <label for="usr">Fecha De Nacimiento:</label>                                        
+                                        <div class="input-group date" data-provide="datepicker">
+                                            <%--<input type="text" class="form-control">--%>
+                                            <asp:TextBox ID="txtFechaNac" runat="server"  CssClass="form-control " placeholder="Fecha de Nacimiento"></asp:TextBox>
+                                            <div class="input-group-addon">
+                                                <span class="glyphicon glyphicon-th"></span>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            $('.datepicker').datepicker({
+                                                //language: "es",
+                                                //format: 'mm/dd/yyyy',                 
+                                                format: 'mm-dd-yyyy'
+
+                                            });
+    </script>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtFechaNac" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                        <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtFechaNac_CalendarExtender" TargetControlID="txtFechaNac" ID="txtFechaNac_CalendarExtender" Format="yyyy/M/d"></ajaxToolkit:CalendarExtender>
+                                        <%--<ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtFechaNac_CalendarExtender" TargetControlID="txtFechaNac" ID="txtFechaNac_CalendarExtender" Format="yyyy/M/d"></ajaxToolkit:CalendarExtender>--%>
                                     </div>
 
                                     <div class="form-group">
@@ -212,10 +231,10 @@
 
         <%-- Panel Modal --%>
         <%-- modal 2 --%>
-        <asp:Panel ID="pnResultado" runat="server" Style="display: none; background-color: white; width: 400px; height: auto; border-radius:5px;">
+        <asp:Panel ID="pnResultado" runat="server" Style="display: none; background-color: white; width: 400px; height: auto; border-radius: 5px;">
 
             <div class="modal-body">
-                <span class="center-block text-center glyphicon glyphicon-ok-circle" style="font-size:150px;color:#0094ff"></span>
+                <span class="center-block text-center glyphicon glyphicon-ok-circle" style="font-size: 150px; color: #0094ff"></span>
                 <div class="alert alert-info">
                     <strong>Info!</strong> El Usuario Registrado...
                 </div>

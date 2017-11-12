@@ -83,6 +83,7 @@ namespace Negocio
         public bool ValidacionCalificacion(int codNegocio)
         {
             bool retorno = true;
+            cnn = Conexion.AbrirCnn();
             try
             {
                 cmd = new SqlCommand("select count(*) Promedio from calificacion where fk_id_usuario=@fk_id_negocio;", cnn);

@@ -72,11 +72,11 @@
                                 <div style="height: 40px"></div>
                                 <span class="center-block text-center glyphicon glyphicon-map-marker" style="font-size: 150px; color: #808080"></span>
                                 <br />
-                                <h1>Bootstrap Tutorial</h1>
-                                <p>
+                                <h1>Busque el negocio mas cercanos</h1>
+                               <%-- <p>
                                     Bootstrap is the most popular HTML, CSS, and JS framework for developing
                                     responsive, mobile-first projects on the web.
-                                </p>
+                                </p>--%>
                             </div>
                         </asp:Panel>
 

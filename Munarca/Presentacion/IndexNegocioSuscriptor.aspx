@@ -173,7 +173,7 @@
                                                 </p>
                                                 <br />
                                                 <div class="form-group">
-                                                    <asp:Button ID="btnCalificacion" runat="server" CssClass="btn btn-default" OnClick="btnCalificacion_Click" Text="Calificar" />
+                                                    <asp:Button ID="btnCalificacion" runat="server" CssClass="btn btn-default"  OnClick="btnCalificacion_Click" Text="Calificar" />
                                                 </div>
                                                 <asp:Literal ID="lbCalificacion" runat="server"></asp:Literal>
                                             </div>

@@ -26,7 +26,7 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@nomNegoc", negocio.nombre);
                 cmd.Parameters.AddWithValue("@descrip", negocio.descripcion);
                 cmd.Parameters.AddWithValue("@foto_neg", negocio.foto_negocio);
-                cmd.Parameters.AddWithValue("@direccion", negocio.descripcion);
+                cmd.Parameters.AddWithValue("@direccion", negocio.direccion);
                 cmd.Parameters.AddWithValue("@longitud", negocio.descripcion);
                 cmd.Parameters.AddWithValue("@ubicacion", negocio.descripcion);
                 cmd.Parameters.AddWithValue("@latitud", negocio.descripcion);
@@ -198,7 +198,7 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@latitud", negocio.latitud);
                 cmd.Parameters.AddWithValue("@telefono", negocio.telefono);
                 cmd.Parameters.AddWithValue("@foto_neg", negocio.foto_negocio);
-                cmd.Parameters.AddWithValue("@direccion", negocio.descripcion);
+                cmd.Parameters.AddWithValue("@direccion", negocio.direccion);
                 cmd.Parameters.AddWithValue("@fk_id_categoria", negocio.fk_id_categoria);
                 cmd.Parameters.AddWithValue("@id_negocio", negocio.id_negocio);
                 cmd.ExecuteNonQuery();
@@ -228,7 +228,7 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@ubicacion", negocio.ubicacion);
                 cmd.Parameters.AddWithValue("@latitud", negocio.latitud);
                 cmd.Parameters.AddWithValue("@telefono", negocio.telefono);
-                cmd.Parameters.AddWithValue("@direccion", negocio.descripcion);
+                cmd.Parameters.AddWithValue("@direccion", negocio.direccion);
                 cmd.Parameters.AddWithValue("@fk_id_categoria", negocio.fk_id_categoria);
                 cmd.Parameters.AddWithValue("@id_negocio", negocio.id_negocio);
                 cmd.ExecuteNonQuery();
