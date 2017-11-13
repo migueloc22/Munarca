@@ -13,13 +13,20 @@
                         <asp:Button ID="btnVisita" CssClass="btn btn-default" OnClick="btnVisita_Click" runat="server" Text="Visita" />
 
                     </div>
+
                     <div class="scrolling" id="Reporte">
                         <asp:GridView ID="gvCalificaion" runat="server" GridLines="None" CssClass="table table-bordered table-responsive table-hover"></asp:GridView>
                         <asp:GridView ID="gvVisita" runat="server" Visible="false" GridLines="None" CssClass="table table-bordered table-responsive table-hover"></asp:GridView>
                     </div>
-                    <button type="button" class="btn btn-danger btn-sm" onclick="DescargarPDF('Reporte','ReporteCliente')" value="Decargar Reporte">
+                    <div class="btn-group btn-group-lg">
+                    <button type="button" class="btn btn-danger btn-lg" onclick="DescargarPDF('Reporte','ReporteCliente')" value="Decargar Reporte">
                         <span class="glyphicon glyphicon-save-file" ></span>PDF
                     </button>
+                        <%--<asp:LinkButton ID="btnExcel" CssClass="btn btn-success btn-sm" runat="server" OnClick="btnExcel_Click"><span class="glyphicon glyphicon-save-file" ></span>Excel</asp:LinkButton>--%>
+                        <button type="button" class="btn btn-success btn-lg" onclick="tableToExcel('Reporte', 'W3C Example Table')" value="Decargar Reporte">
+                        <span class="glyphicon glyphicon-save-file" ></span>EXCEL
+                    </button>
+                    </div>
                     <script>
                         function DescargarPDF(ContenidoID, nombre) {
                             var pdf = new jsPDF('p', 'pt', 'letter');

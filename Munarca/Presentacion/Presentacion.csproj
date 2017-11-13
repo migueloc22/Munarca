@@ -140,6 +140,7 @@
     <Content Include="js\modernizr-2.0.6.min.js" />
     <Content Include="js\npm.js" />
     <Content Include="js\password_strength.js" />
+    <Content Include="js\tableToExcel.js" />
     <Content Include="media\img\user.png" />
     <Content Include="ModificarNegocioPropietario.aspx" />
     <Content Include="ModificarServicioPropietario.aspx" />

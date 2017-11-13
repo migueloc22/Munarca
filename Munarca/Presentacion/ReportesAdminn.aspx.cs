@@ -5,12 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
+using System.IO;
+using System.Drawing;
 
 namespace Presentacion
 {
     public partial class ReportesAdminn : System.Web.UI.Page
     {
-        
+
         #region Metodos
         private void CargarCAlificaion()
         {
@@ -30,7 +32,7 @@ namespace Presentacion
                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
                 <strong>Error! </strong> " + ex.Message + "</div>";
             }
-            
+
         }
         private void CargarVisita()
         {
@@ -59,7 +61,7 @@ namespace Presentacion
             {
                 CargarCAlificaion();
             }
-            
+
         }
 
         protected void btnVisita_Click(object sender, EventArgs e)
@@ -70,6 +72,29 @@ namespace Presentacion
         protected void btnCalificacion_Click(object sender, EventArgs e)
         {
             CargarCAlificaion();
+        }
+
+        protected void btnExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+            Response.ClearContent();
+			Response.AddHeader("content-disposition", "attachment; filename=gvtoexcel.xls");
+			Response.ContentType = "application/excel";
+			System.IO.StringWriter sw = new System.IO.StringWriter();
+            HtmlTextWriter htw = new HtmlTextWriter(sw);
+            gvCalificaion.RenderControl(htw);
+			Response.Write(sw.ToString());
+            Response.End();
+            }
+            catch (Exception ex)
+            {
+
+                ltMsn.Text = @"<div class='alert alert-danger alert-dismissable'>
+                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                <strong>Error! </strong> " + ex.Message + "</div>";
+            }
+
         }
     }
 }
