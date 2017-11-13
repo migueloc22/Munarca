@@ -144,6 +144,7 @@
     <Content Include="ModificarNegocioPropietario.aspx" />
     <Content Include="ModificarServicioPropietario.aspx" />
     <Content Include="ModificarUsuAdmin.aspx" />
+    <Content Include="ModificarUsuarioAdminn.aspx" />
     <Content Include="NegocioPropietario.aspx" />
     <Content Include="NegociosAdmin.aspx" />
     <Content Include="packages.config" />
@@ -152,6 +153,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="MasterPage.Master" />
+    <Content Include="PerfilUsuarioAdminn.aspx" />
     <Content Include="Prueba.aspx" />
     <Content Include="recuperarPass.aspx" />
     <Content Include="ReportesAdmin.aspx" />
@@ -315,6 +317,13 @@
     <Compile Include="ModificarUsuAdmin.aspx.designer.cs">
       <DependentUpon>ModificarUsuAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ModificarUsuarioAdminn.aspx.cs">
+      <DependentUpon>ModificarUsuarioAdminn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarUsuarioAdminn.aspx.designer.cs">
+      <DependentUpon>ModificarUsuarioAdminn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NegocioPropietario.aspx.cs">
       <DependentUpon>NegocioPropietario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -328,6 +337,13 @@
     </Compile>
     <Compile Include="NegociosAdmin.aspx.designer.cs">
       <DependentUpon>NegociosAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilUsuarioAdminn.aspx.cs">
+      <DependentUpon>PerfilUsuarioAdminn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilUsuarioAdminn.aspx.designer.cs">
+      <DependentUpon>PerfilUsuarioAdminn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prueba.aspx.cs">

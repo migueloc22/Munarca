@@ -39,10 +39,12 @@
                                         <asp:BoundField DataField="apellido_1" HeaderText="Primer Apellido"></asp:BoundField>
                                         <asp:BoundField DataField="num_documento" HeaderText="Documento"></asp:BoundField>
                                        
-                                        <asp:CommandField ButtonType="Button" DeleteText="Eliminar" ControlStyle-CssClass="btn btn-danger" ShowDeleteButton="True"  >
-                                        <ControlStyle CssClass="btn btn-danger" />
+                                        <asp:CommandField DeleteText="Eliminar" ControlStyle-CssClass="btn btn-danger" SelectText="Ver" ShowSelectButton="True" ButtonType="Button">
+                                            <ControlStyle CssClass="btn btn-default " />
                                         </asp:CommandField>
-                                        <asp:CommandField ButtonType="Button" SelectText="Modificar" ControlStyle-CssClass="btn btn-default" ShowSelectButton="True" />
+                                        <asp:CommandField ButtonType="Button" ControlStyle-CssClass="btn btn-default" ShowDeleteButton="True">
+                                             <ControlStyle CssClass="btn btn-danger"></ControlStyle>
+                                        </asp:CommandField>
                                     </Columns>
                                 </asp:GridView>
                             </div>
