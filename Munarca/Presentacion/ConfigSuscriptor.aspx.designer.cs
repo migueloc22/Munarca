@@ -310,15 +310,6 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.Button btnImagen;
         
         /// <summary>
-        /// Control ltImagen.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltImagen;
-        
-        /// <summary>
         /// Control btnImagen_ModalPopupExtender.
         /// </summary>
         /// <remarks>
@@ -326,6 +317,15 @@ namespace Presentacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender btnImagen_ModalPopupExtender;
+        
+        /// <summary>
+        /// Control ltImagen.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltImagen;
         
         /// <summary>
         /// Control pnImagen.

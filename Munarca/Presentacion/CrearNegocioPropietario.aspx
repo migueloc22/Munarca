@@ -34,12 +34,7 @@
                                 <div class="form-group">
                                     <asp:Label ID="Label4" runat="server" Text="Categoria :"></asp:Label>
                                     <asp:DropDownList ID="dpCategoria" runat="server" CssClass="form-control dropdown"></asp:DropDownList>
-                                </div>
-                                <div class="form-group">
-                                    <asp:Label ID="Label5" runat="server" Text="Dirección :"></asp:Label>
-                                    <asp:TextBox ID="txtDir" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtDir" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                </div>
+                                </div>                               
                                 <div class="form-group">
                                     <asp:Label ID="Label2" runat="server" Text="Telefono :"></asp:Label>
                                     <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
@@ -81,6 +76,8 @@
                                         locationNameInput: $('#<%=txtUbicacion.ClientID%>')
                                     },
                                     enableAutocomplete: true,
+                                    radius: 300,
+                                    addressFormat: 'street_address'
                                 });
 
                             </script>
@@ -108,7 +105,7 @@
     <asp:Panel ID="pnModal" runat="server" Style="display: none; background-color: white; width: auto; height: auto;">
 
         <div class="modal-body">
-            <h1>Negocio Fuel Agregado</h1>
+            <h1>Negocio Registrado</h1>
         </div>
         <div class="modal-footer">
             <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-danger" NavigateUrl="~/NegocioPropietario.aspx">Regresar a Negocio</asp:HyperLink>

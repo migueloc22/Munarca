@@ -81,14 +81,18 @@ namespace Negocio
             }
         }
         public Boolean validarCorreo(string correo){
-            Boolean retorno = false;
+            Boolean retorno = true;
             cnn = Conexion.AbrirCnn();
             try
             {
-                command = new SqlCommand("select count(*) usuario where correo like %@correo%",cnn);
+                command = new SqlCommand("select count(*) usuario where correo=@correo", cnn);
                 command.Parameters.AddWithValue("@correo", correo);
-                command.ExecuteNonQuery();
-                retorno = true;
+                reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    retorno = false;
+                }
+                
             }
             catch (Exception ex)
             {
@@ -174,7 +178,7 @@ namespace Negocio
             cnn = Conexion.AbrirCnn();
             try
             {
-                command = new SqlCommand("select count(*) usuario  where correo=@correo", cnn);
+                command = new SqlCommand("select count(*) from usuario  where correo=@correo", cnn);
                 command.Parameters.AddWithValue("@correo", correo);
                 int num = command.ExecuteNonQuery();
                 if (num == 0)

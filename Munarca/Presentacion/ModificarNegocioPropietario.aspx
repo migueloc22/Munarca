@@ -39,11 +39,7 @@
                                     <asp:Label ID="Label4" runat="server" Text="Categoria :"></asp:Label>
                                     <asp:DropDownList ID="dpCategoria" runat="server" CssClass="form-control dropdown"></asp:DropDownList>
                                 </div>
-                                <div class="form-group">
-                                    <asp:Label ID="Label5" runat="server" Text="Dirección :"></asp:Label>
-                                    <asp:TextBox ID="txtDir" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtDir" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                </div>
+                               
                                 <div class="form-group">
                                     <asp:Label ID="Label2" runat="server" Text="Telefono :"></asp:Label>
                                     <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
@@ -83,8 +79,11 @@
                                         latitudeInput: $('#<%=hdLatFt.ClientID%>'),
                                         longitudeInput: $('#<%=hdLonft.ClientID%>'),
                                         locationNameInput: $('#<%=txtUbicacion.ClientID%>')
+
                                     },
                                     enableAutocomplete: true,
+                                    radius: 300,
+                                    addressFormat: 'street_address'
                                 });
 
                             </script>
