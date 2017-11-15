@@ -24,7 +24,7 @@
 <body>
     <form id="form1" runat="server">
         <div id="encabezaso"></div>
-        <div id="Contenedor">
+        <div >
             <img src="img/logoFinal.png" id="logo" />
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
@@ -45,7 +45,7 @@
                         </div>--%>
 
                         <div class="form-group">
-                            <asp:TextBox ID="txtEMail" runat="server" CssClass="form-control form-group-lg" placeholder="email" TextMode="Email" MaxLength="25"></asp:TextBox>
+                            <asp:TextBox ID="txtEMail" runat="server" CssClass="form-control form-group-lg" placeholder="email" TextMode="Email" MaxLength="35"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <asp:TextBox ID="txtPass" runat="server" CssClass="form-control form-group-lg" placeholder="Contraseña" TextMode="Password" MaxLength="15"></asp:TextBox>

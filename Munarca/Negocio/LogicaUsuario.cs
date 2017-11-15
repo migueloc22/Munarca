@@ -85,10 +85,14 @@ namespace Negocio
             cnn = Conexion.AbrirCnn();
             try
             {
-                command = new SqlCommand("select count(*) usuario where correo like %@correo%",cnn);
+                command = new SqlCommand("select count(*) usuario where correo=@correo", cnn);
                 command.Parameters.AddWithValue("@correo", correo);
                 command.ExecuteNonQuery();
-                retorno = true;
+                if (command.ExecuteNonQuery()>0)
+                {
+                    retorno = true;
+                }
+               
             }
             catch (Exception ex)
             {

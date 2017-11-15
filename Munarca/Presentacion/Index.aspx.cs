@@ -206,8 +206,8 @@ namespace Presentacion
             {
                 util = new csUtilidades();
                 LogicaUsuario lgusuario = new LogicaUsuario();
-                if (lgusuario.validarCorreo(txtCorreo.Text))
-                {
+                //if (lgusuario.validarCorreo(txtCorreo.Text))
+                //{
                     String pass = util.CrearPassword(10);
                     String pass2 = util.Encriptar(pass);
                     csUsuario user = new csUsuario(0, txtNom1.Text, txtNom2.Text, txtApe1.Text, txtApe2.Text, txtCorreo.Text, "user.png", txtDir.Text, txtFechaNac.Text, txtTelefono.Text, int.Parse(txtNumDoc.Text), int.Parse(dlTipoDoc.SelectedValue.ToString()), int.Parse(dlCiudad.SelectedValue.ToString()), pass2);
@@ -224,19 +224,19 @@ namespace Presentacion
                                 <strong>No se registro La usuario</strong> Su contraseña sera enviada a su correo electronio.
                             </div>";
                     }
-                }
-                else
-                {
-                    HyperLink3_ModalPopupExtender.Show();
-                    lbRepuesta.Text = "Correo ya existe";
-                }
+                //}
+                //else
+                //{
+                //    HyperLink3_ModalPopupExtender.Show();
+                //    lbRepuesta.Text = "Correo ya existe";
+                //}
                 
 
             }
             catch (Exception ex)
             {
 
-                Response.Write(ex.ToString());
+                ex.ToString();
             }
 
         }
