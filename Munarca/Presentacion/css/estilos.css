@@ -12,7 +12,7 @@ body {
     -moz-background-size:cover;
     -o-background-size:cover;
     -ms-background-size:cover;    
-   
+    
 }
 
 #logo {
@@ -61,7 +61,7 @@ body {
     }
 
    .scrolling {
-    height: 550px;
+    height: 450px;
     overflow-y: scroll;
     overflow-x: hidden;
 }

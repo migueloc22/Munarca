@@ -22,18 +22,17 @@ namespace Presentacion
         #region Metodos
         private void cargarDatos()
         {
-            if (Request.Params["negocio"]!=null)
+            if (Request.Params["negocio"] != null)
             {
                 lgNegocio = new LogicaNegocio();
                 negocio = lgNegocio.SessionNegocio(int.Parse(Request.Params["negocio"]));
                 txtDescdrip.Text = negocio.descripcion;
                 txtNombre.Text = negocio.nombre;
-                txtDir.Text = negocio.direccion;
                 hdCodNegocio.Value = negocio.id_negocio.ToString();
                 //hdImag.Value = negocio.foto_negocio;
                 txtTelefono.Text = negocio.telefono.ToString();
                 dpCategoria.SelectedValue = negocio.fk_id_categoria.ToString();
-                
+
             }
             else
             {
@@ -43,22 +42,22 @@ namespace Presentacion
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
-                if (!IsPostBack)
-                {
-                    
-                    LogicaCategoria lgCategoria;
-                    lgCategoria = new LogicaCategoria();
-                    dpCategoria.DataSource = lgCategoria.Listar();
-                    dpCategoria.DataTextField = "categoria";
-                    dpCategoria.DataValueField = "id_categoria";
-                    dpCategoria.DataBind();
-                    cargarDatos();
 
 
-                }
-            
+            if (!IsPostBack)
+            {
+
+                LogicaCategoria lgCategoria;
+                lgCategoria = new LogicaCategoria();
+                dpCategoria.DataSource = lgCategoria.Listar();
+                dpCategoria.DataTextField = "categoria";
+                dpCategoria.DataValueField = "id_categoria";
+                dpCategoria.DataBind();
+                cargarDatos();
+
+
+            }
+
         }
 
         protected void btnModificarNegocio_Click(object sender, EventArgs e)
@@ -75,30 +74,25 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                
+
                 Response.Write(ex.ToString());
             }
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-
-            LogicaNegocio lgNegocio = new LogicaNegocio();
-            lgPath = new LogicaPath();
-            csUsuario usuario = (csUsuario)Session["Usuario"];
-
-
-
-            if ((uploadFile1.PostedFile != null) && (uploadFile1.PostedFile.ContentLength > 0))
+            try
             {
-                try
+                LogicaNegocio lgNegocio = new LogicaNegocio();
+                lgPath = new LogicaPath();
+                csUsuario usuario = (csUsuario)Session["Usuario"];
+                if ((uploadFile1.PostedFile != null) && (uploadFile1.PostedFile.ContentLength > 0))
                 {
-
                     string fn = System.IO.Path.GetFileName(uploadFile1.PostedFile.FileName);
                     string SaveLocation = Server.MapPath("media/img") + "/" + fn;
-                    csNegocio negocio = new csNegocio(int.Parse(hdCodNegocio.Value), txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario, int.Parse(dpCategoria.SelectedValue.ToString()), txtDir.Text, uploadFile1.FileName, hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
-                    
-                    if(lgNegocio.ModificarNegocio(negocio))                     
+                    csNegocio negocio = new csNegocio(int.Parse(hdCodNegocio.Value), txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario, int.Parse(dpCategoria.SelectedValue.ToString()),uploadFile1.FileName, hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
+
+                    if (lgNegocio.ModificarNegocio(negocio))
                     {
                         uploadFile1.PostedFile.SaveAs(SaveLocation);
                         Button2_ModalPopupExtender.Show();
@@ -109,28 +103,16 @@ namespace Presentacion
                              <strong>Danger!</strong> no guardor el registro.
                              </div>";
                     }
-
                 }
-                catch (Exception ex)
+                else
                 {
-                    ltRepuesta.Text = @"<div class='alert alert-danger'>
-                    <strong>Advertencia</strong> " + ex.Message + "</div>";
-
-                }
-
-            }
-            else
-            {
-                try
-                {
-
-                    string fn = System.IO.Path.GetFileName(uploadFile1.PostedFile.FileName);
-                    string SaveLocation = Server.MapPath("media/img") + "/" + fn;
-                    csNegocio negocio = new csNegocio(int.Parse(hdCodNegocio.Value), txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario, int.Parse(dpCategoria.SelectedValue.ToString()), txtDir.Text, "", hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
+                    //string fn = System.IO.Path.GetFileName(uploadFile1.PostedFile.FileName);
+                    //string SaveLocation = Server.MapPath("media/img") + "/" + fn;
+                    csNegocio negocio = new csNegocio(int.Parse(hdCodNegocio.Value), txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario, int.Parse(dpCategoria.SelectedValue.ToString()), "", hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
 
                     if (lgNegocio.ModificarNegocio2(negocio))
                     {
-                        uploadFile1.PostedFile.SaveAs(SaveLocation);
+                        //uploadFile1.PostedFile.SaveAs(SaveLocation);
                         Button2_ModalPopupExtender.Show();
                     }
                     else
@@ -141,13 +123,15 @@ namespace Presentacion
                     }
 
                 }
-                catch (Exception ex)
-                {
-                    ltRepuesta.Text = @"<div class='alert alert-danger'>
-                    <strong>Advertencia</strong> " + ex.Message + "</div>";
+            }
+            catch (Exception ex)
+            {
 
-                }
-            }   
+                ltRepuesta.Text = @"<div class='alert alert-danger alert-dismissable'>
+<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+<strong>Error! </strong> " + ex.Message + "</div>";
+            }
+            
         }
     }
 }

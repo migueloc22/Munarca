@@ -256,7 +256,16 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.Label lbRepuesta;
         
         /// <summary>
-        /// RequiredFieldValidator6 control.
+        /// Control RegularExpressionValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
+        /// Control RequiredFieldValidator6.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -319,16 +328,16 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
         
         /// <summary>
-        /// txtFechaNac_CalendarExtender control.
+        /// Control txtFechaNac_CalendarExtender.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender txtFechaNac_CalendarExtender;
         
         /// <summary>
-        /// dlCiudad control.
+        /// Control dlCiudad.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

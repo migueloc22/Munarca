@@ -10,60 +10,51 @@
 namespace Presentacion {
     
     
-    public partial class BuscarUsuarioaspx {
+    public partial class ReportesAdminn {
         
         /// <summary>
-        /// Control UpdatePanel1.
+        /// Control ltMsn.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Literal ltMsn;
         
         /// <summary>
-        /// Control HyperLink1.
+        /// Control btnCalificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.Button btnCalificacion;
         
         /// <summary>
-        /// Control txtBuscador.
+        /// Control btnVisita.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBuscador;
+        protected global::System.Web.UI.WebControls.Button btnVisita;
         
         /// <summary>
-        /// Control btnBuscar.
+        /// Control gvCalificaion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnBuscar;
+        protected global::System.Web.UI.WebControls.GridView gvCalificaion;
         
         /// <summary>
-        /// Control lbMensaje.
+        /// Control gvVisita.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbMensaje;
-        
-        /// <summary>
-        /// Control GvUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GvUsuario;
+        protected global::System.Web.UI.WebControls.GridView gvVisita;
     }
 }

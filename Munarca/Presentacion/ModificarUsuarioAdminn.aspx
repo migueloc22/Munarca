@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioSuscriptor.master" AutoEventWireup="true" CodeBehind="ConfigSuscriptor.aspx.cs" Inherits="Presentacion.ConfigSuscriptor" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsusarioAdminn.master" AutoEventWireup="true" CodeBehind="ModificarUsuarioAdminn.aspx.cs" Inherits="Presentacion.ModificarUsuarioAdminn" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="panel">
         <div class="  panel-primary">
@@ -106,11 +105,10 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <asp:Button ID="btnImagen" CssClass="btn btn-danger btn-block" CausesValidation="false" runat="server" Text="Cambiar Imagen" />
-                                        <ajaxToolkit:ModalPopupExtender runat="server" BehaviorID="btnImagen_ModalPopupExtender" TargetControlID="btnImagen" ID="btnImagen_ModalPopupExtender" PopupControlID="pnImagen" BackgroundCssClass="fondo" CancelControlID="cancel1" ></ajaxToolkit:ModalPopupExtender>
+                                        <asp:Button ID="btnImagen"  CssClass="btn btn-danger btn-block" runat="server" Text="Cambiar Imagen" CausesValidation="False" />
                                         <asp:Literal ID="ltImagen" runat="server"></asp:Literal>
-                                       <%-- <ajaxToolkit:ModalPopupExtender ID="btnImagen_ModalPopupExtender" runat="server" BehaviorID="btnImagen_ModalPopupExtender" TargetControlID="btnImagen" PopupControlID="pnImagen" BackgroundCssClass="fondo" CancelControlID="cancel1">
-                                        </ajaxToolkit:ModalPopupExtender>--%>
+                                        <ajaxToolkit:ModalPopupExtender ID="btnImagen_ModalPopupExtender" runat="server" BehaviorID="btnImagen_ModalPopupExtender" TargetControlID="btnImagen" PopupControlID="pnImagen" BackgroundCssClass="fondo" CancelControlID="cancel1">
+                                        </ajaxToolkit:ModalPopupExtender>
                                         <asp:Panel ID="pnImagen" runat="server" Style="display: none; background-color: white; width: 400px; height: auto; border-radius: 5px;">
                                             <div class="modal-header">
                                                 <button type="button" class="close" id="cancel1" data-dismiss="modal">&times;</button>
@@ -212,7 +210,7 @@
                             </div>
                             <div class="form-group">
                                 <asp:Literal ID="ltMsntpUserCambio" runat="server"></asp:Literal>
-                                <asp:Button ID="btnCmbiarUser" OnClick="btnCmbiarUser_Click" CssClass="btn " runat="server" Text="Cambiar de tipo" />
+                                <asp:Button ID="btnCmbiarUser"  CssClass="btn " runat="server" Text="Cambiar de tipo" />
                             </div>
                         </div>
                     </div>

@@ -56,7 +56,8 @@ namespace Presentacion
         protected void GvUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
             int cod = int.Parse(GvUsuario.SelectedDataKey.Values[0].ToString());
-            lbMensaje.Text = cod.ToString();
+            //lbMensaje.Text = cod.ToString();
+            Response.Redirect("PerfilUsuarioAdminn.aspx?perfil="+cod);
 
         }
     }
