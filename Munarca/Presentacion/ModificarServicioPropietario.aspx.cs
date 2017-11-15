@@ -48,7 +48,6 @@ namespace Presentacion
                         txtDescripcion.Text = servicio.descripcion;
                         txtValor.Text = servicio.valor.ToString();
                         lbImagen.Text = servicio.imagen;
-                        dpListServicios.SelectedValue = servicio.fk_id_tpServicios.ToString();
                         ViewState["codServicio"] = servicio.id_servicio;
                     }
                     catch (Exception ex)
@@ -85,7 +84,7 @@ namespace Presentacion
                         int codService = int.Parse(ViewState["codServicio"].ToString());
                         int codNegocio=int.Parse(util.desencriptar(Request.Params["show"].ToString()));
                         postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
-                        servicio = new csServicio(codService, txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), "", "", int.Parse(txtValor.Text),codNegocio, int.Parse(dpListServicios.SelectedValue.ToString()));
+                        servicio = new csServicio(codService, txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), "", "", int.Parse(txtValor.Text),codNegocio);
                         if (lgServicio.ModificarServicio(servicio))
                         {
                             Button2_ModalPopupExtender.Show();
@@ -104,7 +103,7 @@ namespace Presentacion
 
                         int codService = int.Parse(ViewState["codServicio"].ToString());
                         int codNegocio = int.Parse(util.desencriptar(Request.Params["show"].ToString()));
-                        servicio = new csServicio(codService, txtNombre.Text, txtDescripcion.Text, "", "", "", int.Parse(txtValor.Text), codNegocio, int.Parse(dpListServicios.SelectedValue.ToString()));
+                        servicio = new csServicio(codService, txtNombre.Text, txtDescripcion.Text, "", "", "", int.Parse(txtValor.Text), codNegocio);
                         if (lgServicio.ModificarServicio2(servicio))
                         {
                             Button2_ModalPopupExtender.Show();

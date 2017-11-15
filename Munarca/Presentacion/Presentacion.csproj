@@ -361,6 +361,27 @@
     <Compile Include="recuperarPass.aspx.designer.cs">
       <DependentUpon>recuperarPass.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReportesAdmin.aspx.cs">
+      <DependentUpon>ReportesAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesAdmin.aspx.designer.cs">
+      <DependentUpon>ReportesAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAdminn.aspx.cs">
+      <DependentUpon>ReportesAdminn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesAdminn.aspx.designer.cs">
+      <DependentUpon>ReportesAdminn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TiposNegocioAdmin.aspx.cs">
+      <DependentUpon>TiposNegocioAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TiposNegocioAdmin.aspx.designer.cs">
+      <DependentUpon>TiposNegocioAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioPropietario.master.cs">
       <DependentUpon>UsuarioPropietario.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

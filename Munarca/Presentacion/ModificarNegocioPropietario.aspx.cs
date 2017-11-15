@@ -31,7 +31,6 @@ namespace Presentacion
                 hdCodNegocio.Value = negocio.id_negocio.ToString();
                 //hdImag.Value = negocio.foto_negocio;
                 txtTelefono.Text = negocio.telefono.ToString();
-                dpCategoria.SelectedValue = negocio.fk_id_categoria.ToString();
 
             }
             else
@@ -90,7 +89,7 @@ namespace Presentacion
                 {
                     string fn = System.IO.Path.GetFileName(uploadFile1.PostedFile.FileName);
                     string SaveLocation = Server.MapPath("media/img") + "/" + fn;
-                    csNegocio negocio = new csNegocio(int.Parse(hdCodNegocio.Value), txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario, int.Parse(dpCategoria.SelectedValue.ToString()),uploadFile1.FileName, hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
+                    csNegocio negocio = new csNegocio(int.Parse(hdCodNegocio.Value), txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario,uploadFile1.FileName, hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
 
                     if (lgNegocio.ModificarNegocio(negocio))
                     {
@@ -108,7 +107,7 @@ namespace Presentacion
                 {
                     //string fn = System.IO.Path.GetFileName(uploadFile1.PostedFile.FileName);
                     //string SaveLocation = Server.MapPath("media/img") + "/" + fn;
-                    csNegocio negocio = new csNegocio(int.Parse(hdCodNegocio.Value), txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario, int.Parse(dpCategoria.SelectedValue.ToString()), "", hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
+                    csNegocio negocio = new csNegocio(int.Parse(hdCodNegocio.Value), txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario,  "", hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
 
                     if (lgNegocio.ModificarNegocio2(negocio))
                     {

@@ -28,7 +28,6 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@image", servico.imagen);
                 cmd.Parameters.AddWithValue("@valor", servico.valor);
                 cmd.Parameters.AddWithValue("@fk_id_negocio", servico.fk_id_negocio);
-                cmd.Parameters.AddWithValue("@fk_id_tp_servicio", servico.fk_id_tpServicios);
                 cmd.ExecuteNonQuery();
                 Conexion.CerrarCnn(cnn);
                 retorno = true;
@@ -54,7 +53,6 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@id_sevicio", servico.id_servicio);
                 cmd.Parameters.AddWithValue("@valor", servico.valor);
                 cmd.Parameters.AddWithValue("@fk_id_negocio", servico.fk_id_negocio);
-                cmd.Parameters.AddWithValue("@fk_id_tp_servicio", servico.fk_id_tpServicios);
                 cmd.ExecuteNonQuery();
                 Conexion.CerrarCnn(cnn);
                 retorno = true;
@@ -79,7 +77,6 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@valor", servico.valor);
                 cmd.Parameters.AddWithValue("@id_sevicio", servico.id_servicio);
                 cmd.Parameters.AddWithValue("@fk_id_negocio", servico.fk_id_negocio);
-                cmd.Parameters.AddWithValue("@fk_id_tp_servicio", servico.fk_id_tpServicios);
                 cmd.ExecuteNonQuery();
                 Conexion.CerrarCnn(cnn);
                 retorno = true;
@@ -224,8 +221,7 @@ namespace Negocio
                     hora = read["hora"].ToString();
                     valor = int.Parse(read["valor"].ToString());
                     fk_id_negocio = int.Parse(read["fk_id_negocio"].ToString());
-                    fk_id_tpServicios = read["fk_id_tp_servicio"].ToString();
-                    servicio = new csServicio(id_servicio, nombre, descripcion, imagen, fecha, hora, valor, fk_id_negocio, int.Parse(fk_id_tpServicios));
+                    servicio = new csServicio(id_servicio, nombre, descripcion, imagen, fecha, hora, valor, fk_id_negocio);
                     Conexion.CerrarCnn(cnn);
                     
                 }

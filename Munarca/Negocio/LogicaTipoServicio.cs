@@ -30,5 +30,9 @@ namespace Negocio
             finally { Conexion.CerrarCnn(cnn); }
             return table;
         }
+        public void CrearEstadoServicio() { }
+        public void ModificarEstadoServicio() { }
+        public void TableEstadoServicio() { }
+        public void EliminarEstadoServicio() { }
     }
 }

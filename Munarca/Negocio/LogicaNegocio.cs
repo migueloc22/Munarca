@@ -31,7 +31,6 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@latitud", negocio.descripcion);
                 cmd.Parameters.AddWithValue("@telef", negocio.telefono.ToString());
                 cmd.Parameters.AddWithValue("@codUser", negocio.fk_id_usuario);
-                cmd.Parameters.AddWithValue("@codCateg", negocio.fk_id_categoria);
                 SqlParameter paramaterCod = new SqlParameter();
                 paramaterCod.ParameterName = "@cod";
                 paramaterCod.SqlDbType = SqlDbType.Int;
@@ -143,8 +142,7 @@ namespace Negocio
                     string telefono = read["telefono"].ToString();
                     string foto_negocio = "media/img/" + read["foto_neg"].ToString();
                     int codUsuario = int.Parse(read["fk_id_propietario"].ToString());
-                    int codCategoria = int.Parse(read["fk_id_categoria"].ToString());
-                    negocio = new csNegocio(cod, nombre, descrip, telefono, codUsuario, codCategoria, foto_negocio, longitud, ubicacion, latitud);
+                    negocio = new csNegocio(cod, nombre, descrip, telefono, codUsuario, foto_negocio, longitud, ubicacion, latitud);
 
                 }
 
@@ -194,7 +192,6 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@latitud", negocio.latitud);
                 cmd.Parameters.AddWithValue("@telefono", negocio.telefono);
                 cmd.Parameters.AddWithValue("@foto_neg", negocio.foto_negocio);
-                cmd.Parameters.AddWithValue("@fk_id_categoria", negocio.fk_id_categoria);
                 cmd.Parameters.AddWithValue("@id_negocio", negocio.id_negocio);
                 cmd.ExecuteNonQuery();
                 retorno = true;
@@ -223,7 +220,6 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@ubicacion", negocio.ubicacion);
                 cmd.Parameters.AddWithValue("@latitud", negocio.latitud);
                 cmd.Parameters.AddWithValue("@telefono", negocio.telefono);
-                cmd.Parameters.AddWithValue("@fk_id_categoria", negocio.fk_id_categoria);
                 cmd.Parameters.AddWithValue("@id_negocio", negocio.id_negocio);
                 cmd.ExecuteNonQuery();
                 retorno = true;
@@ -268,10 +264,9 @@ namespace Negocio
                     latitud = double.Parse(read["latitud"].ToString());
                     telefono = read["telefono"].ToString();
                     fk_id_usuario = int.Parse(read["fk_id_propietario"].ToString());
-                    fk_id_categoria = int.Parse(read["fk_id_categoria"].ToString());
                     foto_negocio = "media/img/" + read["foto_neg"].ToString();
                     distancia = csUtilidades.CalcularDistancia(lon, lat, latitud, longitud);
-                    negocio = new csNegocio(id_negocio, nombre, descripcion, telefono, fk_id_usuario, fk_id_categoria,foto_negocio, longitud.ToString(), ubicacion, latitud.ToString(), distancia);
+                    negocio = new csNegocio(id_negocio, nombre, descripcion, telefono, fk_id_usuario,foto_negocio, longitud.ToString(), ubicacion, latitud.ToString(), distancia);
                     lista.Add(negocio);
 
                 }
