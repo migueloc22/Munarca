@@ -14,12 +14,14 @@ namespace Presentacion
     public partial class CrearNegocioPropietario : System.Web.UI.Page
     {
         List<csUbicacion> listarUbicacion;
+        LogicaEstadoNegocio lgExtNegocio;
         csUbicacion Ubicacion;
         csUsuario Usuario;
         csPath path;
         LogicaPath lgPath;
         csUbicacion ubicacion;
         LogicaUbicacion lgUbicacion;
+        csEstadoNegocio estNegocio;
         //#region metodos
         //private List<csUbicacion> ObtenerNuevaLista()
         //{
@@ -68,10 +70,10 @@ namespace Presentacion
             {
                 LogicaCategoria lgCategoria;
                 lgCategoria = new LogicaCategoria();
-                dpCategoria.DataSource = lgCategoria.Listar();
-                dpCategoria.DataTextField = "categoria";
-                dpCategoria.DataValueField = "id_categoria";
-                dpCategoria.DataBind();
+                chekListCategoria.DataSource = lgCategoria.Listar();
+                chekListCategoria.DataTextField = "categoria";
+                chekListCategoria.DataValueField = "id_categoria";
+                chekListCategoria.DataBind();
             }
 
         }
@@ -84,20 +86,28 @@ namespace Presentacion
             LogicaNegocio lgNegocio = new LogicaNegocio();
             lgPath = new LogicaPath();        
             csUsuario usuario = (csUsuario)Session["Usuario"];
+             lgExtNegocio = new LogicaEstadoNegocio();
 
-
-            if ((uploadFile1.PostedFile != null) && (uploadFile1.PostedFile.ContentLength > 0))
+            if (IsValid)
+            {
+                if ((uploadFile1.PostedFile != null) && (uploadFile1.PostedFile.ContentLength > 0))
                 {
                     try
                     {
-                        
+
                         string fn = System.IO.Path.GetFileName(uploadFile1.PostedFile.FileName);
-                        string SaveLocation = Server.MapPath("media\\img")+"\\"+ fn;
-                        csNegocio negocio = new csNegocio(0, txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario,uploadFile1.FileName, hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
+                        string SaveLocation = Server.MapPath("media\\img") + "\\" + fn;
+                        csNegocio negocio = new csNegocio(0, txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario, uploadFile1.FileName, hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
                         int codNegoc = int.Parse(lgNegocio.CrearNegocio(negocio));
-                        if (codNegoc>0)
+                        if (codNegoc > 0)
                         {
                             uploadFile1.PostedFile.SaveAs(SaveLocation);
+                            foreach (ListItem item in chekListCategoria.Items)
+                            {
+                                estNegocio=new csEstadoNegocio(0,int.Parse(item.Value.ToString()),codNegoc);
+                                lgExtNegocio.CrearEstadoNegocio(estNegocio);
+                            }
+                            
                             Button2_ModalPopupExtender.Show();
                         }
                         else
@@ -106,22 +116,37 @@ namespace Presentacion
                              <strong>Danger!</strong> no guardor el registro.
                              </div>";
                         }
-                        
+
                     }
                     catch (Exception ex)
                     {
                         ltRepuesta.Text = @"<div class='alert alert-danger'>
-                    <strong>Advertencia</strong> "+ex.Message+"</div>";
-                        
+                    <strong>Advertencia</strong> " + ex.Message + "</div>";
+
                     }
-                    
+
                 }
                 else
                 {
                     ltRepuesta.Text = @"<div class='alert alert-danger'>
                     <strong>Danger!</strong> No cargo la Foto.
                     </div>";
-                }          
+                } 
+            }
+                     
+        }
+
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = true;
+            if (chekListCategoria.SelectedIndex == -1)
+            {
+                args.IsValid = false;
+            }
+            //for (int i = 0; i < (chekListCategoria.Items.Count-1); i++)
+            //{
+            //    chekListCategoria.Items(i).sel
+            //}
         }
 
         //protected void btnAgregarNegocio_Click(object sender, EventArgs e)

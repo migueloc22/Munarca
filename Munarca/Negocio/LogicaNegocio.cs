@@ -69,7 +69,6 @@ namespace Negocio
                   ,latitud
                   ,telefono
                   ,fk_id_propietario
-                  ,fk_id_categoria
                    from  negocio where estado=1 order by nombre", cnn);
                 //cmd.CommandText = "select * from  negocio";
                 //cmd.Connection = cnn;
@@ -103,7 +102,6 @@ namespace Negocio
                   ,latitud
                   ,telefono
                   ,fk_id_propietario
-                  ,fk_id_categoria
                    from  negocio where fk_id_propietario=@cod and estado=1 order by nombre", cnn);
                 //cmd.CommandText = "select * from  negocio";
                 //cmd.Connection = cnn;

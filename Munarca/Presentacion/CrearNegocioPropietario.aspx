@@ -27,25 +27,34 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <asp:Label ID="Label1" runat="server" Text="Nombre Negocio :"></asp:Label>
+                                    <asp:Label ID="Label1" CssClass="control-label" runat="server" Text="Nombre Negocio :"></asp:Label>
                                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="35"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNombre" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group">
+                               <%-- <div class="form-group">
                                     <asp:Label ID="Label4" runat="server" Text="Categoria :"></asp:Label>
                                     <asp:DropDownList ID="dpCategoria" runat="server" CssClass="form-control dropdown"></asp:DropDownList>
-                                </div>                               
+                                </div> --%>                              
                                 <div class="form-group">
-                                    <asp:Label ID="Label2" runat="server" Text="Telefono :"></asp:Label>
+                                    <asp:Label ID="Label2" CssClass="control-label" runat="server" Text="Telefono :"></asp:Label>
                                     <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Solo Numero" ControlToValidate="txtTelefono" ForeColor="Red" ValidationExpression="([0-9]|-)*">*</asp:RegularExpressionValidator>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtTelefono" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:Label ID="Label6" runat="server" Text="Descripción :"></asp:Label>
+                                    <asp:Label ID="Label6" CssClass="control-label" runat="server" Text="Descripción :"></asp:Label>
                                     <asp:TextBox ID="txtDescdrip" TextMode="MultiLine" row="3" runat="server" CssClass="form-control" MaxLength="250"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtDescdrip" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="checkboxes">Categoria</label>
+                                    <div class="col-md-4">
+                                    <asp:CheckBoxList ID="chekListCategoria" CssClass="checkbox" runat="server"></asp:CheckBoxList>
+                                        <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Seleccione a menos una categoría"   ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate">*</asp:CustomValidator>
+                                        
+                                    </div>
+                                </div>
+                                
 
 
                             </div>
