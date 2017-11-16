@@ -24,7 +24,7 @@
                                         <div class="col-xs-4" >
                                             <div class="thumbnail" style="box-shadow: 3px 3px 5px #888888;">
                                                 <asp:Label ID="lbIdPath" runat="server" Text='<%# Eval("id_path") %>' Visible="false"></asp:Label>
-                                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("media") %>' CssClass="img-responsive" style="width:100%" />
+                                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("media") %>' CssClass="img-responsive" style="width:100%;height:120px" />
                                                 <div class="caption">
                                                     <asp:Button ID="btnEliminar" Enabled="true"  runat="server" Text="Eliminar" CssClass="btn btn-danger btn-block"  OnClick="btnEliminar_Click1" />
                                                    <%-- <asp:Button ID="btnDelete" OnClick="btnDelete_Click" runat="server" Text="Button" />--%>
