@@ -80,16 +80,22 @@ namespace Negocio
             }
             return retorno;
         }
-        public bool ValidacionCalificacion(int codNegocio)
+        public bool ValidacionCalificacion(int codNegocio, int fk_id_usuario)
         {
             bool retorno = true;
             cnn = Conexion.AbrirCnn();
             try
             {
-                cmd = new SqlCommand("select count(*) Promedio from calificacion where fk_id_usuario=@fk_id_negocio;", cnn);
+                cmd = new SqlCommand("select count(*) Promedio from calificacion where fk_id_usuario=@fk_id_usuario and fk_id_negocio=@fk_id_negocio;", cnn);
                 cmd.Parameters.AddWithValue("@fk_id_negocio", codNegocio);
-                read = cmd.ExecuteReader();
-                if (read.Read())
+                cmd.Parameters.AddWithValue("@fk_id_usuario", fk_id_usuario);
+                //read = cmd.ExecuteReader();
+                //if (read.Read())
+                //{
+                //    retorno = false;
+                //}
+                int resultado=cmd.ExecuteNonQuery();
+                if (resultado>0)
                 {
                     retorno = false;
                 }
