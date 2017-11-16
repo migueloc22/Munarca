@@ -67,7 +67,7 @@ namespace Presentacion
                     {
 
                         postefile.SaveAs(Server.MapPath(@"media\img\") + Path.GetFileName(postefile.FileName));
-                        servicio = new csServicio(0, txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), fecha, hora, int.Parse(txtValor.Text), codnegocio, int.Parse(dpListServicios.SelectedValue.ToString()));
+                        servicio = new csServicio(0, txtNombre.Text, txtDescripcion.Text, postefile.FileName.ToString(), fecha, hora, int.Parse(txtValor.Text), codnegocio);
                         if (lgServicio.CrearServicio(servicio))
                         {
                             Button2_ModalPopupExtender.Show();

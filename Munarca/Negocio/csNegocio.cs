@@ -19,13 +19,11 @@ namespace Negocio
         public string latitud { get; set; }
         public string telefono { get; set; }
         public int fk_id_usuario { get; set; }
-        public int fk_id_categoria { get; set; }
         public double distancia { get; set; }
         #endregion
-        public csNegocio(int id_negocio, string nombre, string descripcion, string telefono, int fk_id_usuario, int fk_id_categoria,string foto_negocio, string longitud, string ubicacion, string latitud) 
+        public csNegocio(int id_negocio, string nombre, string descripcion, string telefono, int fk_id_usuario, string foto_negocio, string longitud, string ubicacion, string latitud) 
         {
             this.descripcion = descripcion;
-            this.fk_id_categoria = fk_id_categoria;
             this.fk_id_usuario = fk_id_usuario;
             this.nombre = nombre;
             this.telefono = telefono;
@@ -35,10 +33,9 @@ namespace Negocio
             this.longitud = longitud;
             this.foto_negocio = foto_negocio;
         }
-        public csNegocio(int id_negocio, string nombre, string descripcion, string telefono, int fk_id_usuario, int fk_id_categoria, string foto_negocio, string longitud, string ubicacion, string latitud, double distancia)
+        public csNegocio(int id_negocio, string nombre, string descripcion, string telefono, int fk_id_usuario,string foto_negocio, string longitud, string ubicacion, string latitud, double distancia)
         {
             this.descripcion = descripcion;
-            this.fk_id_categoria = fk_id_categoria;
             this.fk_id_usuario = fk_id_usuario;
             this.nombre = nombre;
             this.telefono = telefono;

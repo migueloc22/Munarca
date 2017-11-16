@@ -42,11 +42,14 @@
     <Compile Include="csCalificacion.cs" />
     <Compile Include="csCategoria.cs" />
     <Compile Include="csComentario.cs" />
+    <Compile Include="csEstadoNegocio.cs" />
+    <Compile Include="csEstadoServicio.cs" />
     <Compile Include="csEstadoUsuario.cs" />
     <Compile Include="csNegocio.cs" />
     <Compile Include="csPath.cs" />
     <Compile Include="csRespuesta.cs" />
     <Compile Include="csServicio.cs" />
+    <Compile Include="csTipoServicio.cs" />
     <Compile Include="csUbicacion.cs" />
     <Compile Include="csUsuario.cs" />
     <Compile Include="csUtilidades.cs" />
@@ -56,6 +59,8 @@
     <Compile Include="LogicaCiudad.cs" />
     <Compile Include="LogicaComentario.cs" />
     <Compile Include="LogicaDepartamento.cs" />
+    <Compile Include="LogicaEstadoNegocio.cs" />
+    <Compile Include="LogicaEstadoServicio.cs" />
     <Compile Include="LogicaEstadoUsuario.cs" />
     <Compile Include="LogicaNegocio.cs" />
     <Compile Include="LogicaPath.cs" />

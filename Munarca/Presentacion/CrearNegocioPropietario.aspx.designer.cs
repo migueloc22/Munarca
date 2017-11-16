@@ -58,25 +58,7 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
-        /// dpCategoria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpCategoria;
-        
-        /// <summary>
-        /// Label2 control.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -85,7 +67,7 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// txtTelefono control.
+        /// Control dpCategoria.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -94,7 +76,7 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.TextBox txtTelefono;
         
         /// <summary>
-        /// RegularExpressionValidator1 control.
+        /// Control RegularExpressionValidator1.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -103,7 +85,7 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// Control txtTelefono.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -112,7 +94,7 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// Label6 control.
+        /// Control Label6.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -121,7 +103,7 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// txtDescdrip control.
+        /// Control txtDescdrip.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -130,13 +112,31 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.TextBox txtDescdrip;
         
         /// <summary>
-        /// RequiredFieldValidator5 control.
+        /// Control RequiredFieldValidator5.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        
+        /// <summary>
+        /// Control chekListCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList chekListCategoria;
+        
+        /// <summary>
+        /// Control CustomValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
         
         /// <summary>
         /// Label3 control.
