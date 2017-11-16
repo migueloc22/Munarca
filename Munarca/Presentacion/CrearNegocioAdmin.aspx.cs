@@ -99,7 +99,7 @@ namespace Presentacion
 
                     string fn = System.IO.Path.GetFileName(uploadFile1.PostedFile.FileName);
                     string SaveLocation = Server.MapPath("media\\img") + "\\" + fn;
-                    csNegocio negocio = new csNegocio(0, txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, int.Parse(Request.Params["perfil"]), int.Parse(dpCategoria.SelectedValue.ToString()), uploadFile1.FileName, hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
+                    csNegocio negocio = new csNegocio(0, txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, int.Parse(Request.Params["perfil"]), uploadFile1.FileName, hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
                     int codNegoc = int.Parse(lgNegocio.CrearNegocio(negocio));
                     if (codNegoc > 0)
                     {
