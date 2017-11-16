@@ -126,17 +126,33 @@ namespace Presentacion
                 calificacion = new csCalificacion(0, int.Parse(Rating1.CurrentRating.ToString()), fecha, hora, negocio.id_negocio, usuario.id_usuario);
                 if (lgCalificacion.ValidacionCalificacion(negocio.id_negocio, usuario.id_usuario))
                 {
-                    string calificacion2 = lgCalificacion.PromedioCalificacion(negocio.id_negocio).ToString();                    
-                    lgCalificacion.CrearCalificacion(calificacion);
-                    lbCalificacion.Text = "Tu Calificacion es: " + Rating1.CurrentRating.ToString();
-                    lbRating.Text = calificacion2;
+
+                    if (lgCalificacion.CrearCalificacion(calificacion))
+                    {
+                        string calificacion2 = lgCalificacion.PromedioCalificacion(negocio.id_negocio).ToString();
+                        lbCalificacion.Text = "Tu Calificacion es: " + Rating1.CurrentRating.ToString();
+                        lbRating.Text = calificacion2;
+                    }
+                    else
+                    {
+                        lbCalificacion.Text = "No se califico" ;
+                    }
+                    
                 }
                 else
                 {
-                    string calificacion2 = lgCalificacion.PromedioCalificacion(negocio.id_negocio).ToString();                    
-                    lgCalificacion.ModificarCalificacion(calificacion);
-                    lbCalificacion.Text = "Tu Calificacion se modifico: " + Rating1.CurrentRating.ToString();
-                    lbRating.Text = calificacion2;
+                    if (lgCalificacion.ModificarCalificacion(calificacion))
+                    {
+                        
+                        string calificacion2 = lgCalificacion.PromedioCalificacion(negocio.id_negocio).ToString();
+                        lbCalificacion.Text = "Tu Calificacion se modifico: " + Rating1.CurrentRating.ToString();
+                        lbRating.Text = calificacion2;
+                    }
+                    else
+                    {
+                        lbCalificacion.Text = "No se califico";
+                    }
+                    
                 }
                 
             }

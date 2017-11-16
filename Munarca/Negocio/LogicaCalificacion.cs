@@ -44,7 +44,7 @@ namespace Negocio
             cnn = Conexion.AbrirCnn();
             try
             {
-                cmd = new SqlCommand(@"update calificacion set calificacion=@calificacion where fk_id_usuario=@fk_id_usuario)", cnn);
+                cmd = new SqlCommand(@"update calificacion set calificacion=@calificacion where fk_id_usuario=@fk_id_usuario", cnn);
                 cmd.Parameters.AddWithValue("@calificacion", calificacion.calificaion);
                 cmd.Parameters.AddWithValue("@fk_id_usuario", calificacion.fk_id_usuario);
                 cmd.ExecuteNonQuery();
@@ -86,19 +86,19 @@ namespace Negocio
             cnn = Conexion.AbrirCnn();
             try
             {
-                cmd = new SqlCommand("select count(*) Promedio from calificacion where fk_id_usuario=@fk_id_usuario and fk_id_negocio=@fk_id_negocio;", cnn);
+                cmd = new SqlCommand("select * from calificacion where fk_id_usuario=@fk_id_usuario and fk_id_negocio=@fk_id_negocio;", cnn);
                 cmd.Parameters.AddWithValue("@fk_id_negocio", codNegocio);
                 cmd.Parameters.AddWithValue("@fk_id_usuario", fk_id_usuario);
-                //read = cmd.ExecuteReader();
-                //if (read.Read())
-                //{
-                //    retorno = false;
-                //}
-                int resultado=cmd.ExecuteNonQuery();
-                if (resultado>0)
+                read = cmd.ExecuteReader();
+                if (read.Read())
                 {
                     retorno = false;
                 }
+                //int resultado=cmd.ExecuteNonQuery();
+                //if (resultado>0)
+                //{
+                //    retorno = false;
+                //}
                 Conexion.CerrarCnn(cnn);
             }
             catch (Exception ex)
