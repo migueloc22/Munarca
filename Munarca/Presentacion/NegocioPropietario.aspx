@@ -7,7 +7,7 @@
                 <div class="panel-default">
                 <div class="panel-body">
                     <center>
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/CrearNegocioPropietario.aspx" CssClass="btn btn-danger"><span class="glyphicon glyphicon-plus btn-md">Agregar</span></asp:HyperLink>
+                    <a href="NegocioPropietario.aspx">NegocioPropietario.aspx</a><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/CrearNegocioPropietario.aspx" CssClass="btn btn-danger"><span class="glyphicon glyphicon-plus btn-md">Agregar</span></asp:HyperLink>
 
                         <br />
                         <br />

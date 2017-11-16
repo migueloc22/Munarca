@@ -12,6 +12,64 @@ namespace Presentacion
     {
         csUsuario usuario;
         LogicaUsuario lgUsuario;
+        LogicaNegocio lgNegocio;
+
+        #region  metodos 
+        private void CargarTabla()
+        {
+            
+            lgNegocio = new LogicaNegocio();
+            gvNegocio.DataSource = lgNegocio.listarNegocio(int.Parse(Request.Params["perfil"]) );
+            gvNegocio.DataBind();
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            lgNegocio = new LogicaNegocio();
+            int cod = int.Parse(ViewState["codEliminar"].ToString());
+            lgNegocio.eliminarNeocio(cod);
+            CargarTabla();
+        }
+
+        protected void gvNegocio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string cod = gvNegocio.SelectedDataKey.Values[0].ToString();
+                Response.Redirect("ModificarNegocioPropietario.aspx?negocio=" + cod, false);
+            }
+            catch (Exception ex)
+            {
+
+                Response.Write(ex.Message);
+            }
+
+            //Response.Redirect("ModificarNegocioPropietario.aspx");
+
+        }
+        protected void gvNegocio_RowDeleting1(object sender, GridViewDeleteEventArgs e)
+        {
+
+            btnModal_ModalPopupExtender.Show();
+            try
+            {
+
+                int cod = Int32.Parse(gvNegocio.DataKeys[e.RowIndex].Value.ToString());
+                ViewState["codEliminar"] = cod;
+            }
+            catch (Exception ex)
+            {
+
+                Response.Write(ex.ToString());
+            }
+        }
+
+        #endregion
+
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.Params["perfil"]!=null)
@@ -30,6 +88,7 @@ namespace Presentacion
                 lbDir.Text = usuario.direccion;
                 lbTel.Text = usuario.telefono;
                 lbTel.Text = usuario.correo;
+                hplinkCreaNegocio.NavigateUrl = "~/CrearNegocioAdmin.aspx?perfil=" + Request.Params["perfil"];
 
                 hLinkModificar.NavigateUrl = "ModificarUsuarioAdminn.aspx?perfil=" + Request.Params["perfil"];
             }

@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsuarioPropietario.master" AutoEventWireup="true" CodeBehind="CrearNegocioPropietario.aspx.cs" Inherits="Presentacion.CrearNegocioPropietario" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UsusarioAdminn.master" AutoEventWireup="true" CodeBehind="CrearNegocioAdmin.aspx.cs" Inherits="Presentacion.CrearNegocioAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1">

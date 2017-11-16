@@ -32,8 +32,7 @@
                                 <li>
                                     <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/NegociosAdmin.aspx">Negocios</asp:HyperLink></li>
                                 <li>
-                                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/TiposNegocioAdmin.aspx">Tipo de negocio</asp:HyperLink></li>
-                                <li>
+                                
                                     <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/ReportesAdminn.aspx">Reportes</asp:HyperLink></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">

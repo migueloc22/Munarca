@@ -74,6 +74,7 @@
     <Content Include="ConfigAdmin.aspx" />
     <Content Include="ConfigPropietario.aspx" />
     <Content Include="ConfigSuscriptor.aspx" />
+    <Content Include="CrearNegocioAdmin.aspx" />
     <Content Include="CrearNegocioPropietario.aspx" />
     <Content Include="CrearServicioPropietario.aspx" />
     <Content Include="css\bootstrap-datepicker.min.css" />
@@ -142,6 +143,7 @@
     <Content Include="js\password_strength.js" />
     <Content Include="js\tableToExcel.js" />
     <Content Include="media\img\user.png" />
+    <Content Include="ModificarNegocioAdmin.aspx" />
     <Content Include="ModificarNegocioPropietario.aspx" />
     <Content Include="ModificarServicioPropietario.aspx" />
     <Content Include="ModificarUsuAdmin.aspx" />
@@ -209,6 +211,13 @@
     </Compile>
     <Compile Include="ConfigSuscriptor.aspx.designer.cs">
       <DependentUpon>ConfigSuscriptor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearNegocioAdmin.aspx.cs">
+      <DependentUpon>CrearNegocioAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearNegocioAdmin.aspx.designer.cs">
+      <DependentUpon>CrearNegocioAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="CrearNegocioPropietario.aspx.cs">
       <DependentUpon>CrearNegocioPropietario.aspx</DependentUpon>
@@ -297,6 +306,13 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="ModificarNegocioAdmin.aspx.cs">
+      <DependentUpon>ModificarNegocioAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarNegocioAdmin.aspx.designer.cs">
+      <DependentUpon>ModificarNegocioAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ModificarNegocioPropietario.aspx.cs">
       <DependentUpon>ModificarNegocioPropietario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -360,6 +376,13 @@
     </Compile>
     <Compile Include="recuperarPass.aspx.designer.cs">
       <DependentUpon>recuperarPass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAdminn.aspx.cs">
+      <DependentUpon>ReportesAdminn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesAdminn.aspx.designer.cs">
+      <DependentUpon>ReportesAdminn.aspx</DependentUpon>
     </Compile>
     <Compile Include="UsuarioPropietario.master.cs">
       <DependentUpon>UsuarioPropietario.master</DependentUpon>
