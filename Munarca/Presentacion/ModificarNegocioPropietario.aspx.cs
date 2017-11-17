@@ -48,10 +48,10 @@ namespace Presentacion
 
                 LogicaCategoria lgCategoria;
                 lgCategoria = new LogicaCategoria();
-                dpCategoria.DataSource = lgCategoria.Listar();
-                dpCategoria.DataTextField = "categoria";
-                dpCategoria.DataValueField = "id_categoria";
-                dpCategoria.DataBind();
+                chekListCategoria.DataSource = lgCategoria.Listar();
+                chekListCategoria.DataTextField = "categoria";
+                chekListCategoria.DataValueField = "id_categoria";
+                chekListCategoria.DataBind();
                 cargarDatos();
 
 
@@ -77,7 +77,18 @@ namespace Presentacion
                 Response.Write(ex.ToString());
             }
         }
-
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = true;
+            if (chekListCategoria.SelectedIndex == -1)
+            {
+                args.IsValid = false;
+            }
+            //for (int i = 0; i < (chekListCategoria.Items.Count-1); i++)
+            //{
+            //    chekListCategoria.Items(i).sel
+            //}
+        }
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             try

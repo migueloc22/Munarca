@@ -7,14 +7,44 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Munarca</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="css/jquery-ui.min.css" rel="stylesheet" />
     <link href="css/estilos.css" rel="stylesheet" />
     <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-datepicker.es.min.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/jquery.MultiFile.js"></script>
-    <script src="js/JavaScript.js"></script>
+    <script>
+        $.datepicker.regional['es'] = {
+            closeText: 'Cerrar',
+            prevText: '<Ant',
+            nextText: 'Sig>',
+            currentText: 'Hoy',
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
+            weekHeader: 'Sm',
+            dateFormat: 'dd/mm/yy',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+        $(function () {
+            $(".DataPicker").datepicker({
+                dateFormat: "yy/mm/dd",
+                yearRange: '1950:2000',
+                changeMonth: true,
+                changeYear: true
+
+
+            });
+        });
+
+
+    </script>
     <style>
         .fondo {
             background-color: black;
@@ -23,12 +53,12 @@
             z-index: 10000;
         }
     </style>
-    
+
 </head>
 <body>
     <form id="form1" runat="server">
         <div id="encabezaso"></div>
-        <div >
+        <div>
             <img src="img/logoFinal.png" id="logo" />
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
@@ -78,7 +108,7 @@
         </div>
         <%-- Inicio Modal --%>
 
-        <asp:Panel ID="PanelRegistro" runat="server" Style="display: none; background-color: white; width: auto; height: auto; border-radius: 5px; margin-top:1%">
+        <asp:Panel ID="PanelRegistro" runat="server" Style="display: none; background-color: white; width: auto; height: auto; border-radius: 5px; margin-top: 1%">
             <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                 <ContentTemplate>
                     <div class="modal-header">
@@ -141,24 +171,11 @@
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtApe2" ForeColor="Red">*</asp:RequiredFieldValidator>
                                     </div>
                                     <div class="form-group">
-                                        <label for="usr">Fecha De Nacimiento:</label>
-                                        <div class="input-group date" data-provide="datepicker">
-                                            <%--<input type="text" class="form-control">--%>
-                                            <asp:TextBox ID="txtFechaNac" runat="server"  CssClass="form-control " placeholder="Fecha de Nacimiento"></asp:TextBox>
-                                            <div class="input-group-addon">
-                                                <span class="glyphicon glyphicon-th"></span>
-                                            </div>
-                                        </div>
-                                        <script>
-                                            $('.datepicker').datepicker({
-                                                //language: "es",
-                                                //format: 'mm/dd/yyyy',                 
-                                                format: 'mm-dd-yyyy'
-
-                                            });
-    </script>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtFechaNac" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                        <%--<ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtFechaNac_CalendarExtender" TargetControlID="txtFechaNac" ID="txtFechaNac_CalendarExtender" Format="yyyy/M/d"></ajaxToolkit:CalendarExtender>--%>
+                                        <label>Fecha De Nacimiento</label>
+                                        <asp:HiddenField ID="hdFechaNac" runat="server" />
+                                        <asp:TextBox ID="txtFechaNac" runat="server" CssClass="form-control DataPicker" placeholder="Fecha De Nacimiento" MaxLength="10"></asp:TextBox>
+                                        <%--<ajaxToolkit:CalendarExtender ID="txtFechaNac_CalendarExtender" runat="server" BehaviorID="txtFechaNac_CalendarExtender" Format="yyyy/M/d" TargetControlID="txtFechaNac" />--%>
+                                        <asp:RequiredFieldValidator ControlToValidate="txtFechaNac" ID="RequiredFieldValidator8" runat="server" ErrorMessage="Campo vacio" ValidationGroup="Panel1" ForeColor="Red">*</asp:RequiredFieldValidator>
                                     </div>
 
                                     <div class="form-group">

@@ -15,7 +15,7 @@
                             <asp:ListItem Value="asc">Minimo</asp:ListItem>
                         </asp:RadioButtonList>
                     </fieldset>
-                    <fieldset>
+                    <%--<fieldset>
                         <legend>Rango de precios</legend>
                         <div class="form-group">
                             <div class="col-xs-6">
@@ -26,7 +26,7 @@
                             </div>
                         </div>
 
-                    </fieldset>
+                    </fieldset>--%>
                     <fieldset>
                         <legend>
                             <h3>Buscar por Nombre</h3>

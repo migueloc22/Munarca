@@ -35,10 +35,7 @@
                                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="15"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtNombre" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group">
-                                    <asp:Label ID="Label4" runat="server" Text="Categoria :"></asp:Label>
-                                    <asp:DropDownList ID="dpCategoria" runat="server" CssClass="form-control dropdown"></asp:DropDownList>
-                                </div>
+                                 
                                
                                 <div class="form-group">
                                     <asp:Label ID="Label2" runat="server" Text="Telefono :"></asp:Label>
@@ -51,7 +48,14 @@
                                     <asp:TextBox ID="txtDescdrip" TextMode="MultiLine" row="3" runat="server" CssClass="form-control" MaxLength="250"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtDescdrip" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </div>
-
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="checkboxes">Categoria</label>
+                                    <div class="col-md-4">
+                                    <asp:CheckBoxList ID="chekListCategoria" CssClass="checkbox" runat="server"></asp:CheckBoxList>
+                                        <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Seleccione a menos una categoría"   ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate">*</asp:CustomValidator>
+                                        
+                                    </div>
+                                </div>
 
                             </div>
                         </div>

@@ -104,8 +104,12 @@ namespace Presentacion
                             uploadFile1.PostedFile.SaveAs(SaveLocation);
                             foreach (ListItem item in chekListCategoria.Items)
                             {
-                                estNegocio=new csEstadoNegocio(0,int.Parse(item.Value.ToString()),codNegoc);
-                                lgExtNegocio.CrearEstadoNegocio(estNegocio);
+                                if (item.Selected)
+                                {
+                                    estNegocio = new csEstadoNegocio(0, int.Parse(item.Value.ToString()), codNegoc);
+                                    lgExtNegocio.CrearEstadoNegocio(estNegocio);
+                                }
+                               
                             }
                             
                             Button2_ModalPopupExtender.Show();
