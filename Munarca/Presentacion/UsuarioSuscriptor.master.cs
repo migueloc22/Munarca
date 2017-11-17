@@ -28,7 +28,7 @@ namespace Presentacion
                         Response.Redirect("IndexPropietario.aspx"); ;
                         break;
                     default:
-                        Response.Redirect("IndexAdmin.aspx");
+                        Response.Redirect("IndexAdminn.aspx");
                         break;
                 }
             }
