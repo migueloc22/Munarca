@@ -32,41 +32,51 @@ namespace Presentacion
         }
         protected string obtenerDatos()
         {
-            csUtilidades util = new csUtilidades();
-
-            DataTable datos =new DataTable();
-            LogicaVisita lgVisita = new LogicaVisita();
-            datos = lgVisita.LineaTeiempoVisita(int.Parse(util.desencriptar(Request.Params["show"])));
-            ////string strDatos = "[['Negocio', 'Visita'],";
-            //datos.Columns.Add(new DataColumn("año", typeof(string)));
-            //datos.Columns.Add(new DataColumn("java", typeof(string)));
-            //datos.Columns.Add(new DataColumn("c#", typeof(string)));
-            //datos.Columns.Add(new DataColumn("phyton", typeof(string)));
-            //datos.Columns.Add(new DataColumn("javascript", typeof(string)));
-            //datos.Rows.Add(new Object[] {"new Date(2015,5,6)",15,2.8,5.7,3.6});
-            //datos.Rows.Add(new Object[] { "new Date(2016,1,2)", 21, 4.4, 5.4, 3.9});
-            //datos.Rows.Add(new Object[] { "new Date(2017,4,6)", 14.6, 3.5, 3.6, 3.0});
-            string strDatos;
-            strDatos = "[";
-
-            //foreach (DataRow dr in datos.Rows)
-            //{
-            //    strDatos = strDatos + "[";
-            //    strDatos = strDatos + "" + dr[0] + "" + "," + 
-            //    dr[1].ToString().Replace(",",".")+","+
-            //    dr[2].ToString().Replace(",",".")+","+
-            //    dr[3].ToString().Replace(",",".")+","+
-            //    dr[4].ToString().Replace(",",".");
-            //    strDatos = strDatos + "],";
-            //}
-            foreach (DataRow dr in datos.Rows)
+            string strDatos="";
+            try
             {
-                strDatos = strDatos + "[";
-                strDatos = strDatos + "" + dr[0] + "" + "," +
-                dr[1].ToString().Replace(",", ".");
-                strDatos = strDatos + "],";
+                csUtilidades util = new csUtilidades();
+
+                DataTable datos = new DataTable();
+                LogicaVisita lgVisita = new LogicaVisita();
+                datos = lgVisita.LineaTeiempoVisita(int.Parse(util.desencriptar(Request.Params["show"])));
+                ////string strDatos = "[['Negocio', 'Visita'],";
+                //datos.Columns.Add(new DataColumn("año", typeof(string)));
+                //datos.Columns.Add(new DataColumn("java", typeof(string)));
+                //datos.Columns.Add(new DataColumn("c#", typeof(string)));
+                //datos.Columns.Add(new DataColumn("phyton", typeof(string)));
+                //datos.Columns.Add(new DataColumn("javascript", typeof(string)));
+                //datos.Rows.Add(new Object[] {"new Date(2015,5,6)",15,2.8,5.7,3.6});
+                //datos.Rows.Add(new Object[] { "new Date(2016,1,2)", 21, 4.4, 5.4, 3.9});
+                //datos.Rows.Add(new Object[] { "new Date(2017,4,6)", 14.6, 3.5, 3.6, 3.0});
+                
+                strDatos = "[";
+
+                //foreach (DataRow dr in datos.Rows)
+                //{
+                //    strDatos = strDatos + "[";
+                //    strDatos = strDatos + "" + dr[0] + "" + "," + 
+                //    dr[1].ToString().Replace(",",".")+","+
+                //    dr[2].ToString().Replace(",",".")+","+
+                //    dr[3].ToString().Replace(",",".")+","+
+                //    dr[4].ToString().Replace(",",".");
+                //    strDatos = strDatos + "],";
+                //}
+                foreach (DataRow dr in datos.Rows)
+                {
+                    strDatos = strDatos + "[";
+                    strDatos = strDatos + "" + dr[0] + "" + "," +
+                    dr[1].ToString().Replace(",", ".");
+                    strDatos = strDatos + "],";
+                }
+                strDatos = strDatos + "]";
+                
             }
-            strDatos = strDatos + "]";
+            catch (Exception ex)
+            {
+
+                ltError.Text = ex.Message;
+            }
             return strDatos;
 
         }

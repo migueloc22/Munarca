@@ -20,7 +20,7 @@ namespace Negocio
             try
             {
                 cnn = Conexion.AbrirCnn();
-                cmd = new SqlCommand("insert into servicio(nombre_servicio,descripcion,fecha,hora,image,fk_id_negocio,valor,fk_id_tp_servicio) values(@nombre_servicio,@descripcion,@fecha,@hora,@image,@fk_id_negocio,@valor,@fk_id_tp_servicio)", cnn);
+                cmd = new SqlCommand("insert into servicio(nombre_servicio,descripcion,fecha,hora,image,fk_id_negocio,valor) values(@nombre_servicio,@descripcion,@fecha,@hora,@image,@fk_id_negocio,@valor)", cnn);
                 cmd.Parameters.AddWithValue("@nombre_servicio", servico.nombre);
                 cmd.Parameters.AddWithValue("@descripcion", servico.descripcion);
                 cmd.Parameters.AddWithValue("@fecha", servico.fecha);
@@ -46,7 +46,7 @@ namespace Negocio
             try
             {
                 cnn = Conexion.AbrirCnn();
-                cmd = new SqlCommand("update servicio set nombre_servicio=@nombre_servicio , descripcion=@descripcion,image=@image,fk_id_negocio=@fk_id_negocio,valor=@valor,fk_id_tp_servicio=@fk_id_tp_servicio where id_servicio=@id_sevicio", cnn);
+                cmd = new SqlCommand("update servicio set nombre_servicio=@nombre_servicio , descripcion=@descripcion,image=@image,fk_id_negocio=@fk_id_negocio,valor=@valor where id_servicio=@id_sevicio", cnn);
                 cmd.Parameters.AddWithValue("@nombre_servicio", servico.nombre);
                 cmd.Parameters.AddWithValue("@descripcion", servico.descripcion);
                 cmd.Parameters.AddWithValue("@image", servico.imagen);
@@ -71,7 +71,7 @@ namespace Negocio
             try
             {
                 cnn = Conexion.AbrirCnn();
-                cmd = new SqlCommand("update servicio set nombre_servicio=@nombre_servicio ,fk_id_negocio=@fk_id_negocio,descripcion=@descripcion,valor=@valor,fk_id_tp_servicio=@fk_id_tp_servicio where id_servicio=@id_sevicio", cnn);
+                cmd = new SqlCommand("update servicio set nombre_servicio=@nombre_servicio ,fk_id_negocio=@fk_id_negocio,descripcion=@descripcion,valor=@valor where id_servicio=@id_sevicio", cnn);
                 cmd.Parameters.AddWithValue("@nombre_servicio", servico.nombre);
                 cmd.Parameters.AddWithValue("@descripcion", servico.descripcion);
                 cmd.Parameters.AddWithValue("@valor", servico.valor);

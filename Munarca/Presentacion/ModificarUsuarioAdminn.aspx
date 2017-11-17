@@ -13,7 +13,7 @@
                                 <ContentTemplate>
 
                                     <%-- inicio primera columna --%>
-                                    <div class="col-xs-4">
+                                    <div class="col-xs-6">
                                         <div class="form-group">
                                             <label>Primer Nombre</label>
                                             <asp:TextBox ID="txtNombre1" runat="server" CssClass="form-control" placeholder="Primer Nombre" MaxLength="15"></asp:TextBox>
@@ -49,7 +49,7 @@
                                     </div>
                                     <%-- Fin segunda columna --%>
                                     <%-- inicio primera columna --%>
-                                    <div class="col-xs-4">
+                                    <div class="col-xs-6">
                                         <div class="form-group">
                                             <label>TeleFono</label>
                                             <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" placeholder="Numero de Telefono" MaxLength="10"></asp:TextBox>
@@ -97,7 +97,7 @@
                         </asp:Panel>
 
                         <%-- Fin tercera columna --%>
-                        <div class="col-xs-4">
+                       <%-- <div class="col-xs-4">
                             <div class="row">
                                 <div class="col-xs-7 col-xs-offset-4 well">
                                     <div class="form-group">
@@ -140,7 +140,7 @@
                             </div>
 
 
-                        </div>
+                        </div>--%>
                         <%-- Fin tercera columna --%>
                     </div>
                 </fieldset>

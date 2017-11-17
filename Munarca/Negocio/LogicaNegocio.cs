@@ -26,9 +26,9 @@ namespace Negocio
                 cmd.Parameters.AddWithValue("@nomNegoc", negocio.nombre);
                 cmd.Parameters.AddWithValue("@descrip", negocio.descripcion);
                 cmd.Parameters.AddWithValue("@foto_neg", negocio.foto_negocio);
-                cmd.Parameters.AddWithValue("@longitud", negocio.descripcion);
+                cmd.Parameters.AddWithValue("@longitud", negocio.longitud);
                 cmd.Parameters.AddWithValue("@ubicacion", negocio.ubicacion);
-                cmd.Parameters.AddWithValue("@latitud", negocio.descripcion);
+                cmd.Parameters.AddWithValue("@latitud", negocio.latitud);
                 cmd.Parameters.AddWithValue("@telef", negocio.telefono.ToString());
                 cmd.Parameters.AddWithValue("@codUser", negocio.fk_id_usuario);
                 SqlParameter paramaterCod = new SqlParameter();

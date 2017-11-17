@@ -70,7 +70,7 @@ namespace Presentacion
                 {
                     lgUsuario=new LogicaUsuario();
                     usuario =lgUsuario.SessioUsuario(int.Parse(Request.Params["perfil"])) ;
-                    imgUser.ImageUrl = usuario.foto;
+                    //imgUser.ImageUrl = usuario.foto;
                     txtApe1.Text = usuario.apellido1;
                     txtApe2.Text = usuario.apellido2;
                     txtCorreo.Text = usuario.correo;
@@ -95,43 +95,43 @@ namespace Presentacion
                 <strong>Error!</strong> " + ex.Message + "</div>";
             }
         }
-        protected void txtGuadarImg_Click(object sender, EventArgs e)
-        {
-            if ((FileUpload1.PostedFile != null) && (FileUpload1.PostedFile.ContentLength > 0))
-            {
-                string fn = System.IO.Path.GetFileName(FileUpload1.PostedFile.FileName);
-                string SaveLocation = Server.MapPath("media\\img") + "\\" + fn;
-                try
-                {
-                    FileUpload1.PostedFile.SaveAs(SaveLocation);
+//        protected void txtGuadarImg_Click(object sender, EventArgs e)
+//        {
+//            if ((FileUpload1.PostedFile != null) && (FileUpload1.PostedFile.ContentLength > 0))
+//            {
+//                string fn = System.IO.Path.GetFileName(FileUpload1.PostedFile.FileName);
+//                string SaveLocation = Server.MapPath("media\\img") + "\\" + fn;
+//                try
+//                {
+//                    FileUpload1.PostedFile.SaveAs(SaveLocation);
 
-                    usuario = (csUsuario)Session["usuario"];
+//                    usuario = (csUsuario)Session["usuario"];
 
-                    imgUser.ImageUrl = "media/img/" + FileUpload1.FileName;
-                    lgUsuario = new LogicaUsuario();
-                    lgUsuario.CambiarFoto(FileUpload1.FileName, int.Parse(Request.Params["perfil"]));                    
-                    ltImagen.Text = @"<div class='alert alert-info alert-dismissable'>
-                        <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                        <strong>¡Información!</strong>Foto actulizada</div>";
+//                    imgUser.ImageUrl = "media/img/" + FileUpload1.FileName;
+//                    lgUsuario = new LogicaUsuario();
+//                    lgUsuario.CambiarFoto(FileUpload1.FileName, int.Parse(Request.Params["perfil"]));                    
+//                    ltImagen.Text = @"<div class='alert alert-info alert-dismissable'>
+//                        <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+//                        <strong>¡Información!</strong>Foto actulizada</div>";
 
-                }
-                catch (Exception ex)
-                {
-                    ltImagen.Text = @"<div class='alert alert-danger alert-dismissable'>
-                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                <strong>Error!</strong> " + ex.Message + "</div>";
-                    //Note: Exception.Message returns a detailed message that describes the current exception. 
-                    //For security reasons, we do not recommend that you return Exception.Message to end users in 
-                    //production environments. It would be better to put a generic error message. 
-                }
-            }
-            else
-            {
-                ltImagen.Text = @"<div class='alert alert-danger alert-dismissable'>
-                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                <strong>Error!</strong> No Cargo La Foto</div>";
-            }
-        }
+//                }
+//                catch (Exception ex)
+//                {
+//                    ltImagen.Text = @"<div class='alert alert-danger alert-dismissable'>
+//                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+//                <strong>Error!</strong> " + ex.Message + "</div>";
+//                    //Note: Exception.Message returns a detailed message that describes the current exception. 
+//                    //For security reasons, we do not recommend that you return Exception.Message to end users in 
+//                    //production environments. It would be better to put a generic error message. 
+//                }
+//            }
+//            else
+//            {
+//                ltImagen.Text = @"<div class='alert alert-danger alert-dismissable'>
+//                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+//                <strong>Error!</strong> No Cargo La Foto</div>";
+//            }
+//        }
 
         protected void btnDatos_Click(object sender, EventArgs e)
         {
