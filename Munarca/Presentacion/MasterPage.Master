@@ -9,10 +9,8 @@
     <%-- estilos --%>
     <link href="css/bootstrap.min.css" rel="stylesheet" />    
     <link href="css/jquery.rondell.min.css" rel="stylesheet" />
+    <link href="css/jquery-ui.min.css" rel="stylesheet" />
     <link href="css/fileinput.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-datepicker.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-datepicker3.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" />
     <link href="css/strength.css" rel="stylesheet" />
     <link href="css/estilos2.css" rel="stylesheet" />
     <%-- JavaScrip --%>
@@ -25,10 +23,9 @@
     <%--<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>--%>
     <script src="js/locationpicker.jquery.js"></script>
     <script src="js/gmaps.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.MultiFile.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script>
-    <script src="js/bootstrap-datepicker.es.min.js"></script>
     <script src="js/modernizr-2.0.6.min.js"></script>
     <script src="js/jquery.rondell.min.js"></script>
     <script src="js/password_strength.js"></script>
