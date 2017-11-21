@@ -20,26 +20,9 @@
                         <asp:Button ID="btnFilter" CssClass="btn btn-default" OnClick="btnFilter_Click" runat="server" Text="Filtrar" />
                     </div>
         <script>
-            $.datepicker.regional['es'] = {
-                closeText: 'Cerrar',
-                prevText: '<Ant',
-                nextText: 'Sig>',
-                currentText: 'Hoy',
-                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-                monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
-                dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
-                weekHeader: 'Sm',
-                dateFormat: 'dd/mm/yy',
-                firstDay: 1,
-                isRTL: false,
-                showMonthAfterYear: false,
-                yearSuffix: ''
-            };
-            $.datepicker.setDefaults($.datepicker.regional['es']);
+           
             $(function () {
-                var dateFormat = "yy/mm/dd",
+                var dateFormat = "mm/dd/yy",
                   from = $(".dateInicio")
                     .datepicker({
                         defaultDate: "+1w",
@@ -52,6 +35,7 @@
                   to = $(".dateFinal").datepicker({
                       defaultDate: "+1w",
                       changeMonth: true,
+                      maxDate: +1 ,
                       numberOfMonths: 2
                   })
                   .on("change", function () {
