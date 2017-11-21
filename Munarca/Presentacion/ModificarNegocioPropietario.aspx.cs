@@ -19,6 +19,8 @@ namespace Presentacion
         LogicaUbicacion lgUbicacion;
         csNegocio negocio;
         LogicaNegocio lgNegocio;
+        LogicaEstadoNegocio lgEstaNegocio;
+        csEstadoNegocio estNegocio;
         #region Metodos
         private void cargarDatos()
         {
@@ -31,7 +33,21 @@ namespace Presentacion
                 hdCodNegocio.Value = negocio.id_negocio.ToString();
                 //hdImag.Value = negocio.foto_negocio;
                 txtTelefono.Text = negocio.telefono.ToString();
+                lgEstaNegocio = new LogicaEstadoNegocio();
+                List<csEstadoNegocio> lista = new List<csEstadoNegocio>();
+                lista = lgEstaNegocio.listEstadoNegocio(negocio.id_negocio);
+                for (int i = 0; i < chekListCategoria.Items.Count; i++)
+                {
+                    foreach (csEstadoNegocio estNeg in lista)
+                    {
+                        if (chekListCategoria.Items[i].Value == estNeg.fk_id_categoria.ToString())
+                        {
+                            chekListCategoria.Items[i].Selected = true;
+                        }
+                    }
 
+
+                }
             }
             else
             {
@@ -52,7 +68,9 @@ namespace Presentacion
                 chekListCategoria.DataTextField = "categoria";
                 chekListCategoria.DataValueField = "id_categoria";
                 chekListCategoria.DataBind();
+
                 cargarDatos();
+
 
 
             }
@@ -93,45 +111,94 @@ namespace Presentacion
         {
             try
             {
-                LogicaNegocio lgNegocio = new LogicaNegocio();
-                lgPath = new LogicaPath();
-                csUsuario usuario = (csUsuario)Session["Usuario"];
-                if ((uploadFile1.PostedFile != null) && (uploadFile1.PostedFile.ContentLength > 0))
+                if (IsValid)
                 {
-                    string fn = System.IO.Path.GetFileName(uploadFile1.PostedFile.FileName);
-                    string SaveLocation = Server.MapPath("media/img") + "/" + fn;
-                    csNegocio negocio = new csNegocio(int.Parse(hdCodNegocio.Value), txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario,uploadFile1.FileName, hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
 
-                    if (lgNegocio.ModificarNegocio(negocio))
+
+                    LogicaNegocio lgNegocio = new LogicaNegocio();
+                    lgPath = new LogicaPath();
+                    csUsuario usuario = (csUsuario)Session["Usuario"];
+                    int codNegoc = int.Parse(Request.Params["negocio"]);
+                    lgEstaNegocio = new LogicaEstadoNegocio();
+                    if ((uploadFile1.PostedFile != null) && (uploadFile1.PostedFile.ContentLength > 0))
                     {
-                        uploadFile1.PostedFile.SaveAs(SaveLocation);
-                        Button2_ModalPopupExtender.Show();
+                        string fn = System.IO.Path.GetFileName(uploadFile1.PostedFile.FileName);
+                        string SaveLocation = Server.MapPath("media/img") + "/" + fn;
+                        csNegocio negocio = new csNegocio(int.Parse(hdCodNegocio.Value), txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario, uploadFile1.FileName, hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
+
+                        if (lgNegocio.ModificarNegocio(negocio))
+                        {
+                            foreach (ListItem item in chekListCategoria.Items)
+                            {
+                                if (item.Selected)
+                                {
+                                    if (lgEstaNegocio.validarEstadNegocio(int.Parse(item.Value.ToString()), codNegoc) == false)
+                                    {
+                                        estNegocio = new csEstadoNegocio(0, int.Parse(item.Value.ToString()), codNegoc);
+                                        lgEstaNegocio.CrearEstadoNegocio(estNegocio);
+                                    }
+
+                                }
+                                if (item.Selected == false)
+                                {
+                                    if (lgEstaNegocio.validarEstadNegocio(int.Parse(item.Value.ToString()), codNegoc))
+                                    {
+
+                                        lgEstaNegocio.EliminarEstadoNegocio(int.Parse(item.Value.ToString()));
+                                    }
+                                }
+
+                            }
+                            uploadFile1.PostedFile.SaveAs(SaveLocation);
+                            Button2_ModalPopupExtender.Show();
+                        }
+                        else
+                        {
+                            ltRepuesta.Text = @"<div class='alert alert-danger'>
+                             <strong>Danger!</strong> no guardor el registro.
+                             </div>";
+                        }
                     }
                     else
                     {
-                        ltRepuesta.Text = @"<div class='alert alert-danger'>
+                        //string fn = System.IO.Path.GetFileName(uploadFile1.PostedFile.FileName);
+                        //string SaveLocation = Server.MapPath("media/img") + "/" + fn;
+                        csNegocio negocio = new csNegocio(int.Parse(hdCodNegocio.Value), txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario, "", hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
+
+                        if (lgNegocio.ModificarNegocio2(negocio))
+                        {
+                            foreach (ListItem item in chekListCategoria.Items)
+                            {
+                                if (item.Selected)
+                                {
+                                    if (lgEstaNegocio.validarEstadNegocio(int.Parse(item.Value.ToString()), codNegoc) == false)
+                                    {
+                                        estNegocio = new csEstadoNegocio(0, int.Parse(item.Value.ToString()), codNegoc);
+                                        lgEstaNegocio.CrearEstadoNegocio(estNegocio);
+                                    }
+
+                                }
+                                if (item.Selected == false)
+                                {
+                                    if (lgEstaNegocio.validarEstadNegocio(int.Parse(item.Value.ToString()), codNegoc))
+                                    {
+
+                                        lgEstaNegocio.EliminarEstadoNegocio(int.Parse(item.Value.ToString()));
+                                    }
+                                }
+
+                            }
+                            //uploadFile1.PostedFile.SaveAs(SaveLocation);
+                            Button2_ModalPopupExtender.Show();
+                        }
+                        else
+                        {
+                            ltRepuesta.Text = @"<div class='alert alert-danger'>
                              <strong>Danger!</strong> no guardor el registro.
                              </div>";
-                    }
-                }
-                else
-                {
-                    //string fn = System.IO.Path.GetFileName(uploadFile1.PostedFile.FileName);
-                    //string SaveLocation = Server.MapPath("media/img") + "/" + fn;
-                    csNegocio negocio = new csNegocio(int.Parse(hdCodNegocio.Value), txtNombre.Text, txtDescdrip.Text, txtTelefono.Text, usuario.id_usuario,  "", hdLonft.Value, txtUbicacion.Text, hdLatFt.Value);
+                        }
 
-                    if (lgNegocio.ModificarNegocio2(negocio))
-                    {
-                        //uploadFile1.PostedFile.SaveAs(SaveLocation);
-                        Button2_ModalPopupExtender.Show();
                     }
-                    else
-                    {
-                        ltRepuesta.Text = @"<div class='alert alert-danger'>
-                             <strong>Danger!</strong> no guardor el registro.
-                             </div>";
-                    }
-
                 }
             }
             catch (Exception ex)
@@ -141,7 +208,7 @@ namespace Presentacion
 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
 <strong>Error! </strong> " + ex.Message + "</div>";
             }
-            
+
         }
     }
 }

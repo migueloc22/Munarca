@@ -127,5 +127,24 @@ namespace Negocio
             return table;
         
         }
+        public DataTable ReportesCAlificacionFilter(string filter)
+        {
+            DataTable table = new DataTable();
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                cmd = new SqlCommand("select   negocio.nombre , CONVERT(decimal(18,2),AVG(calificacion.calificacion))  as Promedio ,count(id_calificacion)  as N_Calificaiones, calificacion.fecha as Fecha from calificacion inner join negocio on calificacion.fk_id_negocio=negocio.id_negocio where " + filter + " group by negocio.nombre,calificacion.fecha", cnn);
+                read = cmd.ExecuteReader();
+                table.Load(read);
+            }
+            catch (Exception ex)
+            {
+
+                rta = ex.Message;
+            }
+            finally { Conexion.CerrarCnn(cnn); }
+            return table;
+
+        }
     }
 }

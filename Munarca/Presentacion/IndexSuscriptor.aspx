@@ -11,8 +11,8 @@
                             <h3>Ordenar Precios</h3>
                         </legend>
                         <asp:RadioButtonList ID="rdListOrdenar" CssClass="checkbox" runat="server">
-                            <asp:ListItem Selected="True" Value="desc">Maximo</asp:ListItem>
-                            <asp:ListItem Value="asc">Minimo</asp:ListItem>
+                            <asp:ListItem Selected="True" Value="desc">Max. Valor</asp:ListItem>
+                            <asp:ListItem Value="asc">Min. Valor</asp:ListItem>
                         </asp:RadioButtonList>
                     </fieldset>
                     <%--<fieldset>

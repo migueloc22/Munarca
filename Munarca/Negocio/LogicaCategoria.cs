@@ -105,6 +105,35 @@ namespace Negocio
             }
             return retorno;
         }
+        public List<csCategoria> listCategoria(int cod)
+        {
+            List<csCategoria> lista = new List<csCategoria>();
+            cnn = Conexion.AbrirCnn();
+            csCategoria categoria;
+            int id_categoria = 0;
+            string categ = "";
+            try
+            {
+                comman = new SqlCommand("select * from categoria id_categoria=@id_categoria", cnn);
+                comman.Parameters.AddWithValue("id_categoria", cod);
+                read = comman.ExecuteReader();
+                while (read.Read())
+                {
+                    id_categoria = int.Parse(read["id_categoria"].ToString());
+                    categ = read["id_categoria"].ToString();
+                    categoria = new csCategoria(id_categoria,categ);
+                    lista.Add(categoria);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                rta = ex.Message;
+            }
+            finally { Conexion.CerrarCnn(cnn); }
+            return lista;
+        
+        }
 
         
 

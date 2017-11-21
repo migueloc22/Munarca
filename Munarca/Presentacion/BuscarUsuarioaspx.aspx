@@ -31,7 +31,7 @@
 
                         <div class="row">
                             <div class="col-lg-8 col-lg-offset-2">
-                                <asp:Label ID="lbMensaje" runat="server" Text="Label"></asp:Label>
+                                <asp:Label ID="lbMensaje" runat="server" Text=""></asp:Label>
                                 <asp:GridView ID="GvUsuario" runat="server" CssClass="table  table-striped" AutoGenerateColumns="False" GridLines="None" DataKeyNames="id_usuario" OnSelectedIndexChanged="GvUsuario_SelectedIndexChanged" OnRowDeleting="GvUsuario_RowDeleting">
 
                                     <Columns>

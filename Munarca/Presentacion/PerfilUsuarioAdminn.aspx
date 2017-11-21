@@ -47,7 +47,7 @@
                             </label>
                         </div>
                     </div>
-                   
+
                     <div class="form-group">
                         <label class="col-xs-4 h3 text-muted">Fecha Necimiento :</label>
                         <div class="col-xs-8">
@@ -74,7 +74,7 @@
                             </label>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <%-- <div class="form-group">
                         <label class="col-xs-4 h3 text-muted">Edad :</label>
                         <div class="col-xs-8">
                             <label class="control-label h3 text-muted ">
@@ -82,7 +82,7 @@
 
                             </label>
                         </div>
-                    </div>
+                    </div>--%>
                     <div class="form-group">
                         <label class="col-xs-4 h3 text-muted">Dirreción :</label>
                         <div class="col-xs-8">
@@ -107,9 +107,9 @@
                             </label>
                         </div>
                     </div>
-                    <asp:Panel ID="pnNegocio" runat="server">
-                        
-                    <a href="NegocioPropietario.aspx">NegocioPropietario.aspx</a><asp:HyperLink ID="hplinkCreaNegocio" runat="server"  CssClass="btn btn-danger"><span class="glyphicon glyphicon-plus btn-md">Agregar</span></asp:HyperLink>
+                    <asp:Panel ID="pnNegocio" Visible="false" runat="server">
+
+                        <asp:HyperLink ID="hplinkCreaNegocio" runat="server" CssClass="btn btn-danger"><span class="glyphicon glyphicon-plus btn-md">Agregar</span></asp:HyperLink>
 
                         <br />
                         <br />
@@ -118,28 +118,28 @@
                                 <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
                             </div>
                         </div>
-                    <div class="scrolling">
-                    <br />
-                    <br />
+                        <div class="scrolling">
+                            <br />
+                            <br />
                             <asp:GridView ID="gvNegocio" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered table-hover table-condensed " DataKeyNames="id_negocio" OnRowDeleting="gvNegocio_RowDeleting1" OnSelectedIndexChanged="gvNegocio_SelectedIndexChanged" GridLines="None">
-                        <Columns>
+                                <Columns>
                                     <asp:BoundField DataField="id_negocio" ReadOnly="True" SortExpression="id_negocio" Visible="false" />
-                            <asp:BoundField DataField="nombre" HeaderText="Nombre Negocio" />
-                            <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
-                            <asp:BoundField DataField="ubicacion" HeaderText="Ubicación" />
-                            <asp:BoundField DataField="telefono" HeaderText="telefono" />
+                                    <asp:BoundField DataField="nombre" HeaderText="Nombre Negocio" />
+                                    <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
+                                    <asp:BoundField DataField="ubicacion" HeaderText="Ubicación" />
+                                    <asp:BoundField DataField="telefono" HeaderText="telefono" />
                                     <asp:ButtonField ButtonType="Button" CommandName="Delete" ControlStyle-CssClass="btn btn-danger" HeaderText="Eliminar" ShowHeader="True" Text="Eliminar">
 
                                         <ControlStyle CssClass="btn btn-default"></ControlStyle>
-                            </asp:ButtonField>
+                                    </asp:ButtonField>
                                     <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="btn btn-default" HeaderText="Modificar" SelectText="Modificar">
 
                                         <ControlStyle CssClass="btn btn-default"></ControlStyle>
 
-                            </asp:CommandField>                         
+                                    </asp:CommandField>
 
-                        </Columns>
-                    </asp:GridView>
+                                </Columns>
+                            </asp:GridView>
                         </div>
                         <script>
                             $(document).ready(function () {
@@ -152,10 +152,25 @@
                             });
                         </script>
 
-                    <asp:Button ID="btnModal" runat="server" Text="Button" Style="display: none;" />
-                    <ajaxToolkit:ModalPopupExtender runat="server" BehaviorID="btnModal_ModalPopupExtender" TargetControlID="btnModal" ID="btnModal_ModalPopupExtender" PopupControlID="PanelModal" CancelControlID="exit" BackgroundCssClass="fondo"></ajaxToolkit:ModalPopupExtender>
+                        <asp:Button ID="btnModal" runat="server" Text="Button" Style="display: none;" />
+                        <ajaxToolkit:ModalPopupExtender runat="server" BehaviorID="btnModal_ModalPopupExtender" TargetControlID="btnModal" ID="btnModal_ModalPopupExtender" PopupControlID="PanelModal" CancelControlID="exit" BackgroundCssClass="fondo"></ajaxToolkit:ModalPopupExtender>
+                        <%-- Inicio Modal --%>
+                        <asp:Panel ID="PanelModal" runat="server" Style="display: none; background-color: white; width: auto; height: auto;">
+
+                            <div class="modal-body">
+                                <h3>¿Desea Eliminar el registro de Negocio?</h3>
+
+                            </div>
+                            <div class="modal-footer">
+
+                                <button id="exit" class=" btn btn-default">Cancelar</button>
+                                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger " CausesValidation="False" OnClick="btnEliminar_Click" />
 
 
+                            </div>
+
+                        </asp:Panel>
+                        <%-- Panel Modal --%>
                     </asp:Panel>
                 </div>
             </div>
