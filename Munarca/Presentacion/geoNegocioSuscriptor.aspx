@@ -33,7 +33,9 @@
                         },
                         enableAutocomplete: true,
                         enableReverseGeocode: true,
-                        markerDraggable: true
+                        markerDraggable: true,
+                        radius: 300,
+                        addressFormat: 'street_address'
                     });
 
                 </script>
@@ -72,7 +74,7 @@
                                 <div style="height: 40px"></div>
                                 <span class="center-block text-center glyphicon glyphicon-map-marker" style="font-size: 150px; color: #808080"></span>
                                 <br />
-                                <h1>Busque el negocio mas cercanos</h1>
+                                <h4>Para buscar negocio: por favor ubique el marcador en un lugar o escriba la dirección</h4>
                                <%-- <p>
                                     Bootstrap is the most popular HTML, CSS, and JS framework for developing
                                     responsive, mobile-first projects on the web.
@@ -97,12 +99,12 @@
                                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("descripcion") %>'></asp:Label>
                                         </p>
                                     </div>
-                                    <div class="media-right media-middle">
+                                   <%-- <div class="media-right media-middle">
                                         <div class="panel">
                                             <h3 class="media-heading text-muted text-center" style="width: 120px; font-size: 45px"><span class="glyphicon glyphicon-star-empty"><strong style="font-size: 60px;">4.0</strong></span></h3>
                                             <small class="text-center text-muted center-block">1233232.23<span class="glyphicon glyphicon-user"></span></small>
                                         </div>
-                                    </div>
+                                    </div>--%>
                                 </div>
                                 <hr />
                             </ItemTemplate>

@@ -5,10 +5,12 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <h1 class="col-xs-offset-4">Gestión de Categorias</h1>
+           
 
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <asp:TextBox ID="txtNomCategoria" runat="server" CssClass="form-control" placeholder="Categoria"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="El campo esta vacio" ControlToValidate="txtNomCategoria" ></asp:RequiredFieldValidator>
                     <div class="input-group-btn">
                         <asp:LinkButton ID="btnAgregar" CssClass="btn btn-default " OnClick="btnAgregar_Click" runat="server" Text="Agregar"></asp:LinkButton>
                         <asp:Button ID="btnModificar" CssClass="btn btn-default " OnClick="btnModificar_Click" Visible="false" runat="server" Text="Modificar" />

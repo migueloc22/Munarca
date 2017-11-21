@@ -79,7 +79,7 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <%-- Boton de cerrar Session --%>
-                                                            <asp:Button ID="btnCerrarSession" CssClass="btn btn-default btn-sm pull-right" runat="server" Text="Salir" OnClick="btnCerrarSession_Click1" />
+                                                            <asp:Button ID="btnCerrarSession" CausesValidation="false" CssClass="btn btn-default btn-sm pull-right" runat="server" Text="Salir" OnClick="btnCerrarSession_Click1" />
                                                             <%--<a href="#" class="btn btn-default btn-sm pull-right"><i class="fa fa-power-off" aria-hidden="true"></i>Sign Out</a>--%>
                                                         </div>
                                                     </div>

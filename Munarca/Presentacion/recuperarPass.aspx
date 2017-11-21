@@ -33,7 +33,7 @@
 
                     <asp:Label ID="lbRespuesta" runat="server" Text="" ForeColor="Red"></asp:Label>                   
                     <div class="alert alert-link">
-                        <strong>Informacion</strong> Su contraseña sera enviada a su correo electronio y para regresar a la pagina inicia siga este
+                        <strong>Informacion</strong> Su contraseña sera enviada a su correo electronio. para regresar a la pagina inicial siga este
                         <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Index.aspx" runat="server">link</asp:HyperLink>.
                     </div>
                     <div class="form-group">

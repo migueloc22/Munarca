@@ -104,9 +104,9 @@ namespace Presentacion
             mmsg.Bcc.Add("munarca1@gmail.com"); //Opcional
 
             //Cuerpo del Mensaje
-            mmsg.Body = "Hola nuevo Usuario su contraseña es :(" + pass + ") Podra cambia contraseña y la foto de perfil en configuraciones";
+            mmsg.Body = "<H1>TE DAMOS LA BIENVENIDA!!</H1><br><hr><b> Munarca</b> <i>te conecta con el mejor servicio tecnico con eficiencia, ya puedes acceder esta es tu contraseña  " + pass + " puedes cambiarla en configuraciones</i>";
             mmsg.BodyEncoding = System.Text.Encoding.UTF8;
-            mmsg.IsBodyHtml = false; //Si no queremos que se envíe como HTML
+            mmsg.IsBodyHtml = true; //Si no queremos que se envíe como HTML
 
             //Correo electronico desde la que enviamos el mensaje
             mmsg.From = new System.Net.Mail.MailAddress("munarca1@gmail.com");
@@ -208,7 +208,7 @@ namespace Presentacion
                 LogicaUsuario lgusuario = new LogicaUsuario();
                 //if (lgusuario.validarCorreo(txtCorreo.Text))
                 //{
-                    String pass = util.CrearPassword(10);
+                    String pass = util.CrearPassword(6);
                     String pass2 = util.Encriptar(pass);
                     csUsuario user = new csUsuario(0, txtNom1.Text, txtNom2.Text, txtApe1.Text, txtApe2.Text, txtCorreo.Text, "user.png", txtDir.Text, "1997/01/15", txtTelefono.Text, int.Parse(txtNumDoc.Text), int.Parse(dlTipoDoc.SelectedValue.ToString()), int.Parse(dlCiudad.SelectedValue.ToString()), pass2);
                     Boolean resultado = lgusuario.CrearUsuario(user, dlTipoUsuario.SelectedValue.ToString());
@@ -221,7 +221,7 @@ namespace Presentacion
                     else
                     {
                         ltMensaje.Text = @"<div class='alert alert-danger'>
-                                <strong>No se registro La usuario</strong> Su contraseña sera enviada a su correo electronio.
+                                <strong>No se registro el usuario</strong> Su contraseña sera enviada a su correo electronio.
                             </div>";
                     }
                 //}

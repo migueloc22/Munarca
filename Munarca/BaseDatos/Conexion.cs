@@ -13,7 +13,7 @@ namespace BaseDatos
       
         public static SqlConnection AbrirCnn(){
             //Conexion  de Viviana
-            //SqlConnection conexion = new SqlConnection("server=DESKTOP-BU4GL9O ; database=MunarcaDB ; integrated security = true");
+            SqlConnection conexion = new SqlConnection("server=DESKTOP-BU4GL9O ; database=MunarcaDB ; integrated security = true");
             //Conexion de Miguel
            // SqlConnection conexion = new SqlConnection(@"server=DESKTOP-157HBSM\SQLEXPRESS; database=MunarcaDB ; integrated security = true");
             try

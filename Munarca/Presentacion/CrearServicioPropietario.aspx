@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label >Desecripción de Servicio:</label>                                    
-                                    <asp:TextBox ID="txtDescripcion" runat="server" MaxLength="250" TextMode="MultiLine" CssClass="form-control" placeholder="Desecripción de Servicio"></asp:TextBox>
+                                    <asp:TextBox ID="txtDescripcion" runat="server" MaxLength="250" TextMode="MultiLine" CssClass="form-control" placeholder="Descripción de Servicio"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtDescripcion" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
@@ -42,10 +42,10 @@
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Solo Numeros" ControlToValidate="txtValor" ForeColor="Red" ValidationExpression="([0-9]|-)*">*</asp:RegularExpressionValidator>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtValor" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group">
+                                <%--<div class="form-group">
                                     <label >Valor de Servicio:</label>   
                                     <asp:DropDownList ID="dpListServicios" CssClass="form-control" runat="server"></asp:DropDownList>
-                                </div>
+                                </di--%>
                             </div>
                         </div>
                          <div class="form-group">

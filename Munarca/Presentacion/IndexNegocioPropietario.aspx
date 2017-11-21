@@ -99,7 +99,7 @@
                             <fieldset>
                                 <h1 class="text-muted">Servicios</h1>
                                 <hr />
-                                <asp:HyperLink ID="btnAgregarSv" runat="server" CssClass="btn btn-danger "><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Agregar Sercicio</asp:HyperLink>
+                                <asp:HyperLink ID="btnAgregarSv" runat="server" CssClass="btn btn-danger "><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Agregar Servicio</asp:HyperLink>
                                 <br />
                                 <br />
                                 <div  style="overflow: auto ;width:100%" >

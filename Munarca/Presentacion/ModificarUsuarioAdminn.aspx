@@ -70,7 +70,7 @@
                                         <div class="form-group">
                                             <label>Fecha De Nacimiento</label>
                                             <asp:HiddenField ID="hdFechaNac" runat="server" />
-                                            <asp:TextBox ID="txtFechaNac" runat="server" CssClass="form-control" placeholder="Fecha De Nacimiento" MaxLength="10"></asp:TextBox>
+                                            <asp:TextBox ID="txtFechaNac" runat="server" CssClass="form-control DataPicker" placeholder="Fecha De Nacimiento" MaxLength="10"></asp:TextBox>
                                             <ajaxToolkit:CalendarExtender ID="txtFechaNac_CalendarExtender" runat="server" BehaviorID="txtFechaNac_CalendarExtender" Format="yyyy/M/d" TargetControlID="txtFechaNac" />
                                             <asp:RequiredFieldValidator ControlToValidate="txtFechaNac" ID="RequiredFieldValidator8" runat="server" ErrorMessage="Campo vacio" ValidationGroup="Panel1" ForeColor="Red">*</asp:RequiredFieldValidator>
                                         </div>

@@ -16,6 +16,20 @@ namespace Presentacion
 
         
         #region metodos
+
+
+        private void LimpiarCajas() {
+            txtApe1.Text = "";
+            txtApe2.Text = "";
+            txtCorreo.Text = "";
+            txtDir.Text = "";
+            txtFechaNac.Text = "";
+            txtNom1.Text = "";
+            txtNom2.Text = "";
+            txtNumDoc.Text = "";
+            txtTelefono.Text="";            
+
+        }
         private void cargarTipoUsu()
         {
             LogicaTipoUsuario lgUsu = new LogicaTipoUsuario();
@@ -150,9 +164,10 @@ namespace Presentacion
                   <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
                   <strong>Error!</strong>Usuario Agregado</div>";
                     EnviarCorreo(pass2, txtCorreo.Text);
+                    LimpiarCajas();
                 }
                 else {
-                    ltMensaje.Text = @"<div class='alert alert-danger alert-dismissable'>
+                    ltMensaje.Text = @"<div class='alert alert-success alert-dismissable'>
                   <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
                   <strong>Error!</strong>El Usuario no fue agregado</div>";
                 }
@@ -166,5 +181,11 @@ namespace Presentacion
                   <strong>Error!</strong> "+ex.Message+"</div>";
             }
         }
+
+        protected void dlDpto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarCiudad();
+        }
+        
     }
 }

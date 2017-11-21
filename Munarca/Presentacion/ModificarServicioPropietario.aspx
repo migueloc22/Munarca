@@ -44,10 +44,10 @@
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Solo Numeros" ControlToValidate="txtValor" ForeColor="Red" ValidationExpression="([0-9]|-)*">*</asp:RegularExpressionValidator>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtValor" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group">
+                                <%--<div class="form-group">
                                     <label>Valor de Servicio:</label>
                                     <asp:DropDownList ID="dpListServicios" CssClass="form-control" runat="server"></asp:DropDownList>
-                                </div>
+                                </div>--%>
                             </div>
                         </div>
                         <div class="form-group">

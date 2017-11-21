@@ -35,7 +35,7 @@
         $(function () {
             $(".DataPicker").datepicker({
                 dateFormat: "yy/mm/dd",
-                yearRange: '1950:2000',
+                yearRange: '1950:2001',
                 changeMonth: true,
                 changeYear: true
 
@@ -173,7 +173,7 @@
                                     <div class="form-group">
                                         <label>Fecha De Nacimiento</label>
                                         <asp:HiddenField ID="hdFechaNac" runat="server" />
-                                        <asp:TextBox ID="txtFechaNac" runat="server" CssClass="form-control DataPicker" placeholder="Fecha De Nacimiento" MaxLength="10"></asp:TextBox>
+                                        <asp:TextBox ID="txtFechaNac" runat="server" Text="1997/01/15" CssClass="form-control DataPicker" placeholder="Fecha De Nacimiento" MaxLength="10"></asp:TextBox>
                                         <%--<ajaxToolkit:CalendarExtender ID="txtFechaNac_CalendarExtender" runat="server" BehaviorID="txtFechaNac_CalendarExtender" Format="yyyy/M/d" TargetControlID="txtFechaNac" />--%>
                                         <asp:RequiredFieldValidator ControlToValidate="txtFechaNac" ID="RequiredFieldValidator8" runat="server" ErrorMessage="Campo vacio" ValidationGroup="Panel1" ForeColor="Red">*</asp:RequiredFieldValidator>
                                     </div>
@@ -231,7 +231,7 @@
                                 </div>
                             </div>
                             <div class="alert alert-success">
-                                <strong>Informacion</strong> Su contraseña sera enviada a su correo electronio.
+                                <strong>Información</strong> Su contraseña será enviada a su correo electronio.
                             </div>
                             <asp:Literal ID="ltMensaje" runat="server"></asp:Literal>
                             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
@@ -253,7 +253,7 @@
             <div class="modal-body">
                 <span class="center-block text-center glyphicon glyphicon-ok-circle" style="font-size: 150px; color: #0094ff"></span>
                 <div class="alert alert-info">
-                    <strong>Info!</strong> El Usuario Registrado...
+                    <strong>Info!</strong> Usuario Registrado...
                 </div>
             </div>
             <div class="modal-footer">

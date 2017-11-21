@@ -22,7 +22,10 @@ namespace Presentacion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            filter();
+            if (!IsPostBack) {
+                filter();            
+            }
+            
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -32,7 +35,7 @@ namespace Presentacion
           if (lgcategoria.crearCategoria(txtNomCategoria.Text))
             {
                 lbMensaje.Text = "Categoria Agregada";
-                
+                filter(); 
             }
           else
           {

@@ -18,15 +18,15 @@ namespace Presentacion
         csNegocio negocio;
         LogicaTipoServicio lgTpServicios;
         #region Metodos
-        private void CargarList()
-        {
-            lgTpServicios = new LogicaTipoServicio();
-            dpListServicios.DataSource = lgTpServicios.dtTpServicio();
-            dpListServicios.DataTextField = "tipo_servicio";
-            dpListServicios.DataValueField = "id_tipo_servicio";
-            dpListServicios.DataBind();
+        //private void CargarList()
+        //{
+        //    lgTpServicios = new LogicaTipoServicio();
+        //    dpListServicios.DataSource = lgTpServicios.dtTpServicio();
+        //    dpListServicios.DataTextField = "tipo_servicio";
+        //    dpListServicios.DataValueField = "id_tipo_servicio";
+        //    dpListServicios.DataBind();
         
-        }
+        //}
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,7 +38,7 @@ namespace Presentacion
                 bntRegresar.NavigateUrl = "IndexNegocioPropietario.aspx?show=" + Request.Params["show"];
                 bntRegresar2.NavigateUrl = "IndexNegocioPropietario.aspx?show=" + Request.Params["show"];
                 
-                CargarList();
+                //CargarList();
             }
             
         }

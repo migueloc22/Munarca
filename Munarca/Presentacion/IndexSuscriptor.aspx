@@ -39,7 +39,7 @@
                     <br />
                     <fieldset>
                         <legend>Filtrar</legend>
-                        <asp:Button ID="btnFiltrol" runat="server" Text="filtrol" CssClass="btn btn-danger" OnClick="btnFiltrol_Click" />
+                        <asp:Button ID="btnFiltrol" runat="server" Text="filtrar" CssClass="btn btn-danger" OnClick="btnFiltrol_Click" />
                         <asp:Button ID="btnReset" runat="server" Text="Restablecer" CssClass="btn btn-default" OnClick="btnReset_Click" />
                     </fieldset>                    
                 </div>

@@ -28,7 +28,7 @@
                                  <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="txtTelefono" ValidationExpression="^[1-9]+\d*$"  ForeColor="red" ErrorMessage="Solo Números">*</asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group">
-                                <asp:DropDownList ID="dlDpto" runat="server" CssClass="form-control"></asp:DropDownList>
+                                <asp:DropDownList ID="dlDpto" AutoPostBack="true" runat="server" CssClass="form-control" OnSelectedIndexChanged="dlDpto_SelectedIndexChanged"></asp:DropDownList>
                             </div>
                             <div class="form-group">
                                 <label class="label">Tipo de Usuario</label>
@@ -41,9 +41,9 @@
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Correo incorrecto" ControlToValidate="txtCorreo" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group">
-                                <asp:TextBox ID="txtFechaNac" runat="server" CssClass="form-control" placeholder="Fecha de Nacimiento"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtFechaNac" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtFechaNac_CalendarExtender" TargetControlID="txtFechaNac" ID="txtFechaNac_CalendarExtender" Format="yyyy/M/d"></ajaxToolkit:CalendarExtender>
+                                <asp:TextBox ID="txtFechaNac" runat="server" CssClass="form-control DataPicker" placeholder="Fecha de Nacimiento"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Llene el campo vacio" ControlToValidate="txtFechaNac" Text="1997/01/15" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                <%--<ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtFechaNac_CalendarExtender" TargetControlID="txtFechaNac" ID="txtFechaNac_CalendarExtender" Format="yyyy/M/d"></ajaxToolkit:CalendarExtender>--%>
                             </div>
                         </div>
 
