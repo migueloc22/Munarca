@@ -69,13 +69,17 @@ namespace Presentacion
                         negocio = lgNegocio.SessionNegocio(codNegocio);
                         if (negocio != null)
                         {
+                            if (!IsPostBack)
+                            {
+                                lgVisita.CrearVisita(codNegocio);
+                            }
                             string calificacion = lgCalificacion.PromedioCalificacion(negocio.id_negocio).ToString();
                             CargarGaleria(codNegocio);
                             lbNombreNeg.Text = negocio.nombre;
                             //Rating1.CurrentRating = int.Parse(calificacion);
                             //dtListComentario.DataSource = lgComentario.DataComentario(codNegocio);
                             //dtListComentario.DataBind();
-                            lgVisita.CrearVisita(codNegocio);
+                            
                             foto_Negocio.ImageUrl = negocio.foto_negocio;
                             CargarComment();
                             hdLat.Value = negocio.latitud;

@@ -72,6 +72,26 @@ namespace Negocio
             finally { Conexion.CerrarCnn(cnn); }
             return data;
         }
+        public DataTable ReportesVisitaFilter(string filter)
+        {
+            DataTable data = new DataTable();
+            cnn = Conexion.AbrirCnn();
+            try
+            {
+                cmd = new SqlCommand("select  nombre as Nombre,count(id_negocio) as N_Visita ,Visita.tiempo as Fecha  from Visita inner join negocio on Visita.fk_id_negocio=negocio.id_negocio where " + filter + " group by Visita.tiempo, nombre ", cnn);
+                read = cmd.ExecuteReader();
+                data.Load(read);
+
+
+            }
+            catch (SqlException ex)
+            {
+
+                rta = ex.ToString();
+            }
+            finally { Conexion.CerrarCnn(cnn); }
+            return data;
+        }
         public DataTable LineaTeiempoVisita(int idNegocio)
         {
             DataTable data = new DataTable();
